@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-14T21:30:00+05:30</updated><entry><title>Configuring Github pages with Custom Domain</title><link href="http://archerimagine.com/articles/configure-github-custom-domain.html" rel="alternate"></link><published>2017-04-14T21:30:00+05:30</published><updated>2017-04-14T21:30:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-14:/articles/configure-github-custom-domain.html</id><summary type="html">&lt;p&gt;How to configure a Pelican blog using Github Pages and a Custom domain.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have mentioned some of the links in references, have visited all of the below and few more, but the configuration is much simpler.&lt;/p&gt;
 &lt;p&gt;The process can be broken into 2 broad steps.
-1. Configure your Github repo
-2. Configure the DNS at &lt;a href="https://in.godaddy.com/"&gt;GoDaddy&lt;/a&gt;&lt;/p&gt;
+1. Configure your Github repo&lt;br&gt;
+2. Configure the DNS at &lt;a href="https://in.godaddy.com/"&gt;GoDaddy&lt;/a&gt;  &lt;/p&gt;
 &lt;h2&gt;Configure your Github repo&lt;/h2&gt;
 &lt;p&gt;The prequsite is that we have a github pages of like this &lt;a href="http://archeranimesh.github.io"&gt;archeranimesh.github.io&lt;/a&gt;, if not kindly visit this &lt;a href="https://pages.github.com/"&gt;link&lt;/a&gt; for generating one.&lt;/p&gt;
 &lt;p&gt;The first thing we would like to do is to configure a CNAME in the above repo.&lt;/p&gt;
