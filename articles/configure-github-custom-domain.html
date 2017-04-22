@@ -77,16 +77,34 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#configure-your-github-repo">Configure your Github repo</a><ul>
+<li><a href="#local-repo">Local Repo</a></li>
+<li><a href="#directly-on-github">Directly on GitHub</a></li>
+</ul>
+</li>
+<li><a href="#configure-the-dns-at-godaddy">Configure the DNS at GoDaddy</a></li>
+<li><a href="#the-domain-xyx-is-no-longer-parked-by-godaddy">The domain XYX is no longer parked by godaddy</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
-            <p>I have mentioned some of the links in references, have visited all of the below and few more, but the configuration is much simpler.</p>
+            
+<p>I have mentioned some of the links in references, have visited all of the below and few more, but the configuration is much simpler.</p>
 <p>The process can be broken into 2 broad steps.</p>
 <ol>
 <li>Configure your Github repo  </li>
-<li>Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a>  </li>
+<li>Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a> </li>
 </ol>
-<h2>Configure your Github repo</h2>
+<h2 id="configure-your-github-repo">Configure your Github repo<a class="headerlink" href="#configure-your-github-repo" title="Permanent link">¶</a></h2>
 <p>The prequsite is that we have a github pages of like this <a href="http://archeranimesh.github.io">archeranimesh.github.io</a>, if not kindly visit this <a href="https://pages.github.com/">link</a> for generating one.</p>
 <p>The first thing we would like to do is to configure a CNAME in the above repo.</p>
 <p>There are two ways to do this.</p>
@@ -94,37 +112,37 @@
 <li>Local Repo</li>
 <li>Directly on Github.</li>
 </ol>
-<h3>Local Repo</h3>
+<h3 id="local-repo">Local Repo<a class="headerlink" href="#local-repo" title="Permanent link">¶</a></h3>
 <ol>
 <li>Create a local file in the repo with the name CNAME.</li>
 <li>Just have one line in the file. <code>example.com</code>, where <code>example.com</code> is your domain you have bought from <a href="https://in.godaddy.com/">GoDaddy</a>.</li>
 <li>Push the changes to <a href="https://github.com/">Github</a></li>
 </ol>
-<h3>Directly on GitHub</h3>
+<h3 id="directly-on-github">Directly on GitHub<a class="headerlink" href="#directly-on-github" title="Permanent link">¶</a></h3>
 <p>On the repository in <a href="https://github.com/">Github</a>, you will see something like this.</p>
-<p><img alt="GitHub Settings" src="../images/launchSite/Settings.png" title="GitHub Setting"></p>
+<p><img alt="GitHub Settings" src="../images/launchSite/Settings.png" title="GitHub Setting"/></p>
 <p>In the above Click on the <code>Settings</code>, Scroll down you will see something like this.</p>
-<p><img alt="GitHub Pages Settings" src="../images/launchSite/gitHubPages.png" title="GitHub Pages Setting"></p>
+<p><img alt="GitHub Pages Settings" src="../images/launchSite/gitHubPages.png" title="GitHub Pages Setting"/></p>
 <p>Enter the domain you have purchased from <a href="https://in.godaddy.com/">GoDaddy</a>.</p>
 <p>These are the only changes required to be done in GitHub.</p>
-<h2>Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a></h2>
+<h2 id="configure-the-dns-at-godaddy">Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a><a class="headerlink" href="#configure-the-dns-at-godaddy" title="Permanent link">¶</a></h2>
 <p>The most easiest of the all the below references is <a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html">Configuring a Godaddy domain name with github pages</a>.</p>
 <p>The real issue is all of the links shows the old UI of <a href="https://in.godaddy.com/">GoDaddy</a>, so some things get confusing.</p>
 <ol>
 <li>Go to the account setting page, which mostly will like in this <a href="https://mya.godaddy.com/?pc=urlargs">link</a>.</li>
 <li>The link will look like this.</li>
-<li><img alt="Godaddy Accounts Settings" src="../images/launchSite/accountSettingsGodaddy.png" title="Godaddy Accounts Settings"></li>
+<li><img alt="Godaddy Accounts Settings" src="../images/launchSite/accountSettingsGodaddy.png" title="Godaddy Accounts Settings"/></li>
 <li>Click on the <code>+</code> Symbols in Front of Domain, and Click on the <code>Manage DNS</code> Link</li>
-<li><img alt="Godaddy DNS Management" src="../images/launchSite/manageDNS.png" title="Godaddy DNS Management"></li>
+<li><img alt="Godaddy DNS Management" src="../images/launchSite/manageDNS.png" title="Godaddy DNS Management"/></li>
 <li>The link will show a lot of <code>Records</code>, go to the end of the <code>Records</code>, and click on the link <strong>ADD</strong></li>
-<li><img alt="Godaddy Add Options" src="../images/launchSite/AddOption.png" title="Godaddy Add Options"></li>
+<li><img alt="Godaddy Add Options" src="../images/launchSite/AddOption.png" title="Godaddy Add Options"/></li>
 <li>From the above option we have to add 3 entries.</li>
 <li>These is how all the 3 would look like after adding.</li>
 </ol>
 <p><img alt="Godaddy A Options" src="../images/launchSite/AOptions.png" title="Godaddy A Options">
-<img alt="Godaddy www Options" src="../images/launchSite/wwwOption.png" title="Godaddy www Options"></p>
+<img alt="Godaddy www Options" src="../images/launchSite/wwwOption.png" title="Godaddy www Options"/></img></p>
 <p>Now you can launch and check your desired domain. Kindly wait 48 hrs for these changes to reflect, do not try to configure multiple times, if it does not work even after 48 hours kindly search for help, till then take a coffee break and have a nice time out of this screen.</p>
-<h2>The domain XYX is no longer parked by godaddy</h2>
+<h2 id="the-domain-xyx-is-no-longer-parked-by-godaddy">The domain XYX is no longer parked by godaddy<a class="headerlink" href="#the-domain-xyx-is-no-longer-parked-by-godaddy" title="Permanent link">¶</a></h2>
 <p>When we are doing the above process, even after 24 hours, when you launch your website, we find one of these error.</p>
 <ol>
 <li>The domain XYX is no longer parked by godaddy</li>
@@ -133,10 +151,10 @@
 <p>The website might launch for some times and sometimes you might get any one of the above 2 errors. kindly check this in the <strong>Manage DNS</strong> page.</p>
 <ul>
 <li>We had added two <strong>A</strong> Names pointing to the GitHub URL as shown below.
-<img alt="Godaddy A Options" src="../images/launchSite/AOptions.png" title="Godaddy A Options"></li>
+<img alt="Godaddy A Options" src="../images/launchSite/AOptions.png" title="Godaddy A Options"/></li>
 </ul>
 <p>Check if you have any other <strong>A</strong> Names in addition to the above two, if you have, kindly delete that. The detailed issue can be read <a href="https://serverfault.com/questions/743327/godaddy-domain-randomly-not-resolving-to-github-pages">GoDaddy domain (randomly) not resolving to GitHub Pages</a></p>
-<h2>References</h2>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ol>
 <li><a href="http://www.mycowsworld.com/blog/2015/07/12/setting-up-a-godaddy-domain-name-with-github/">Setting Up a GoDaddy Domain Name With GitHub</a></li>
 <li><a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html">Configuring a Godaddy domain name with github pages</a></li>
@@ -151,6 +169,7 @@
 </ol>
             
             <section>
+<p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
@@ -202,7 +221,7 @@
                     <span>1</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
     <a href="https://github.com/archeranimesh" title="My github Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-github sidebar-social-links"></i></a>
     <a href="https://www.linkedin.com/in/animeshkbhadra/" title="My linkedin-square Profile" class="sidebar-social-links" target="_blank">
