@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/</loc>
-<lastmod>2017-04-23T23:35:20-00:00</lastmod>
+<lastmod>2017-04-26T00:14:53-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/archives.html</loc>
-<lastmod>2017-04-23T23:35:20-00:00</lastmod>
+<lastmod>2017-04-26T00:14:53-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/tags.html</loc>
-<lastmod>2017-04-23T23:35:20-00:00</lastmod>
+<lastmod>2017-04-26T00:14:53-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/categories.html</loc>
-<lastmod>2017-04-23T23:35:20-00:00</lastmod>
+<lastmod>2017-04-26T00:14:53-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://archerimagine.com/pages/about.html</loc>
 <lastmod>2017-04-14T22:30:00+05:30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html</loc>
+<lastmod>2017-04-26T00:14:42+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -47,7 +54,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/author/animesh-bhadra.html</loc>
-<lastmod>2017-04-14T21:30:00+05:53</lastmod>
+<lastmod>2017-04-26T00:14:42+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
