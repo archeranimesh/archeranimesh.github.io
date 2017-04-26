@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-26T00:14:42+05:30</updated><entry><title>Cost effective blogging with Pelican and Github</title><link href="http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html" rel="alternate"></link><published>2017-04-25T23:20:03+05:30</published><updated>2017-04-26T00:14:42+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-25:/articles/cost-effective-blogging-with-Pelican-and-Github.html</id><summary type="html">&lt;p&gt;This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-26T23:56:43+05:30</updated><entry><title>How to setup Anaconda Python environment for Pelican Blog.</title><link href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html" rel="alternate"></link><published>2017-04-26T22:39:03+05:30</published><updated>2017-04-26T23:50:52+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-26:/articles/python-setup-for-pelican-blog.html</id><summary type="html">&lt;p&gt;Anaconda is a well know distribution of Python, supporting both python 2 and 3. We can setup a exclusive environment for Pelican blog using conda.&lt;/p&gt;</summary><content type="html">
+&lt;h2 id="installing-pelican"&gt;Installing Pelican&lt;a class="headerlink" href="#installing-pelican" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pelican is a python package, so we can have multiple option to install pelican. There can be 3 option which I can think of.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Direct Installation&lt;ul&gt;
+&lt;li&gt;If we have only one python installation on the system, and we do not have any issue if we screw up this installation just use &lt;code&gt;pip&lt;/code&gt; to install pelican.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Installation using VirtualEnv.&lt;ul&gt;
+&lt;li&gt;This approach is already mentioned in official documentation of &lt;a href="http://docs.getpelican.com/en/stable/install.html" title="Installing Pelican"&gt;pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Installation using Conda.&lt;ul&gt;
+&lt;li&gt;By now you could have understood that we will use Conda to install pelican. This is because Anaconda is already a pre-packaged installation of very well know python package in both version 2 and 3. In future I will will update this page if I wrote about Anaconda installation, for now refer any documents on the google search for installation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="configure-anaconda-for-pelican-blog"&gt;Configure Anaconda for Pelican Blog&lt;a class="headerlink" href="#configure-anaconda-for-pelican-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The first thing we have to do is to create a environment using the python version 2. This can be done by this command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda create -n pelican1 python=2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once we have executed the above command we will have &lt;code&gt;pelican1&lt;/code&gt; as an environment.&lt;/p&gt;
+&lt;p&gt;We can see the list of environment in the system by using.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda info --envs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which will provide an output like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican1                 /home/username/anaconda3/envs/pelican1
+py27                     /home/username/anaconda3/envs/py27
+py35                     /home/username/anaconda3/envs/py35
+root                  *  /home/username/anaconda3
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This shows all the available environment.&lt;/p&gt;
+&lt;p&gt;We can activate the &lt;code&gt;pelican1&lt;/code&gt; by using this command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source activate pelican1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we have an environment which we can used for pelican development. The reason for this environment creation is to have a separate environment for experimentation with pelican, if anything goes wrong we do not disturb already existing programs.&lt;/p&gt;
+&lt;h3 id="configure-pelican-environment-for-blog"&gt;Configure Pelican Environment for Blog&lt;a class="headerlink" href="#configure-pelican-environment-for-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Once we have the environment we have install few packages in this environment. The first is to install PiP to install other package. Install Pip by using.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda install pip
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With the completion of installing &lt;code&gt;pip&lt;/code&gt;, the first and foremost package to install is pelican, with this command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pelican
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since we will be using Markdown to write our blogs we need the markdown package, which we can install using.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Markdown
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are some plugin and themes in pelican which might need some additional packages, we will install these 2.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Fabric
+pip install beautifulsoup4
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="freeze-the-requirement"&gt;Freeze the Requirement&lt;a class="headerlink" href="#freeze-the-requirement" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;When we have all our installation complete, we should save our package history into a &lt;code&gt;requirement.txt&lt;/code&gt;. We can use this &lt;code&gt;requirement.txt&lt;/code&gt; to install all the above mentioned packages with same version in one go.&lt;/p&gt;
+&lt;p&gt;We can freeze the details by using.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip freeze &amp;gt; requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="dependencies"&gt;Dependencies&lt;a class="headerlink" href="#dependencies" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If we check the &lt;code&gt;requirement.txt&lt;/code&gt; generated in the above step, we will see a lot of packages already installed apart from &lt;code&gt;pelican&lt;/code&gt;, &lt;code&gt;markdown&lt;/code&gt;, &lt;code&gt;Fabric&lt;/code&gt; and &lt;code&gt;beautifulsoup4&lt;/code&gt;. These extra packages are dependencies for running pelican.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;feedgenerator:&lt;/strong&gt; to generate the Atom feeds&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;jinja2:&lt;/strong&gt; for templating support&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pygments:&lt;/strong&gt; for syntax highlighting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;docutils:&lt;/strong&gt; for supporting reStructuredText as an input format&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pytz:&lt;/strong&gt; for timezone definitions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;blinker:&lt;/strong&gt; an object-to-object and broadcast signaling system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;unidecode:&lt;/strong&gt; for ASCII transliterations of Unicode text&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;six:&lt;/strong&gt; for Python 2 and 3 compatibility utilities&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MarkupSafe:&lt;/strong&gt; for a markup safe string implementation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;python-dateutil:&lt;/strong&gt; to read the date metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have completed 2 important steps of our own blog publishing.&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;Installing Pelican &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://conda.io/docs/py2or3.html"&gt;Managing Python &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Cost effective blogging with Pelican and Github</title><link href="http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html" rel="alternate"></link><published>2017-04-25T23:20:03+05:30</published><updated>2017-04-26T23:56:43+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-25:/articles/cost-effective-blogging-with-Pelican-and-Github.html</id><summary type="html">&lt;p&gt;This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;This is a series of blog post to help set up a static blog at minimal cost and integrating with all the popular tools such as Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.&lt;/p&gt;
-&lt;p&gt;I am a novice blogger and this blog would act as a journal, which will document my approach towards bloging, software development. The idea is to generate some revenue out of this blog in the long run. We all might have read about so many blogs which are able to generate good amount of traffic but in any one of those we have never read how do they achieve it.&lt;/p&gt;
+&lt;p&gt;I am a novice blogger and this blog would act as a journal, which will document my approach towards bloging, software development. The idea is to generate some revenue out of this blog in the long run. We all might have read about so many blogs which are able to generate good amount of traffic but in none one of those we have never read how do they achieve it.&lt;/p&gt;
 &lt;p&gt;I may fail in my attempt, which might work as a guidance for someone to not follow this path and try another path for the same goal. The background theme to support this is to minimize my cost to the bare minimum so that the failure does not hurt me financially.&lt;/p&gt;
 &lt;h2 id="why-static-blog"&gt;Why Static Blog?&lt;a class="headerlink" href="#why-static-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;There are already a lot of literature present behind this, just wanted to summarize those:-&lt;/p&gt;
@@ -13,7 +87,7 @@
 &lt;/ul&gt;
 &lt;p&gt;The above three are the main reason for choosing static blogs, but there could be many more valid reason for choosing static blogs. Most of the reason for me was personal in nature so you can also choose accordingly.&lt;/p&gt;
 &lt;h2 id="why-pelican"&gt;Why Pelican?&lt;a class="headerlink" href="#why-pelican" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, &lt;a href="https://blog.getpelican.com/"&gt;Pelican &lt;/a&gt; or &lt;a href="https://jekyllrb.com/"&gt;Jerkll &lt;/a&gt;. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these to.&lt;/p&gt;
+&lt;p&gt;Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, &lt;a href="https://blog.getpelican.com/"&gt;Pelican &lt;/a&gt; or &lt;a href="https://jekyllrb.com/"&gt;Jerkll &lt;/a&gt;. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these two.&lt;/p&gt;
 &lt;h2 id="why-github"&gt;Why Github?&lt;a class="headerlink" href="#why-github" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The final decision to be taken before starting this blog was to finalize the hosting provider. We have already mentioned some of the popular choice are &lt;/p&gt;
 &lt;ul&gt;
@@ -23,6 +97,10 @@
 &lt;/ul&gt;
 &lt;p&gt;I chose Github, for its near zero cost, it may cost you if you want to keep your repository private else it is completely free were as Amazon S3 would have required to shell out some money though less, with some extra benefits, but for the time being when I am just measuring the water it made sense to keep my cost down.&lt;/p&gt;
 &lt;p&gt;Once all the above 3 moral questions were answered, setting up the blogs was easy and which will be documented in future.&lt;/p&gt;
+&lt;h2 id="collated-blog-post"&gt;Collated Blog post.&lt;a class="headerlink" href="#collated-blog-post" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"&gt;How to setup Anaconda Python environment for Pelican Blog.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://nafiulis.me/making-a-static-blog-with-pelican.html"&gt;Making a Static Blog with Pelican &lt;/a&gt;&lt;ul&gt;
@@ -31,6 +109,10 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="http://arunrocks.com/moving-blogs-to-pelican/"&gt;Moving Blogs to Pelican &lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;This blog has a terrific explanation for pelican vs jekyll.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://discuss.gohugo.io/t/hosting-amazon-s3-vs-github-gh-pages-vs/340"&gt;Amazon S3 Vs Github Pages&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;This explains the benefits of Amazon S3 over Github Pages, kindly check if you are affected because of this.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Configuring Github pages with Custom Domain</title><link href="http://archerimagine.com/articles/configure-github-custom-domain.html" rel="alternate"></link><published>2017-04-14T21:30:00+05:30</published><updated>2017-04-14T21:30:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-14:/articles/configure-github-custom-domain.html</id><summary type="html">&lt;p&gt;How to configure a Pelican blog using Github Pages and a Custom domain.&lt;/p&gt;</summary><content type="html">
