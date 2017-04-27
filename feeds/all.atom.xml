@@ -1,5 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-26T23:56:43+05:30</updated><entry><title>How to setup Anaconda Python environment for Pelican Blog.</title><link href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html" rel="alternate"></link><published>2017-04-26T22:39:03+05:30</published><updated>2017-04-26T23:50:52+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-26:/articles/python-setup-for-pelican-blog.html</id><summary type="html">&lt;p&gt;Anaconda is a well know distribution of Python, supporting both python 2 and 3. We can setup a exclusive environment for Pelican blog using conda.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-28T01:15:09+05:30</updated><entry><title>Pelican HelloWorld using pelican-quickstart</title><link href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html" rel="alternate"></link><published>2017-04-27T23:26:43+05:30</published><updated>2017-04-28T01:15:09+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-27:/articles/helloworld-pelican-quickstart.html</id><summary type="html">&lt;p&gt;We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command &lt;code&gt;pelican-quickstart&lt;/code&gt;, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.&lt;/p&gt;
+&lt;h2 id="activate-python-environment"&gt;Activate Python environment&lt;a class="headerlink" href="#activate-python-environment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We had setup a separate python anaconda environment in our previous &lt;a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"&gt;post&lt;/a&gt; now is the time to active the environment, we can do that by using a simple command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate pelican1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It will activate the &lt;code&gt;pelican1&lt;/code&gt; environment, and we can identify it by check the terminal prompt which will change to &lt;code&gt;(pelican1)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once the work is done we can deactivate the same with a simple command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; deactivate pelican1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;All the above command will work for linux and Mac, kindly check the windows equivalent of the same.&lt;/p&gt;
+&lt;h2 id="pelican-quickstart"&gt;pelican-quickstart&lt;a class="headerlink" href="#pelican-quickstart" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now we are ready to divulge in the world of pelican. Pelican has a ready to bake command to setup the basic boilerplate for the blog. The command is called&lt;/p&gt;
+&lt;p&gt;Before executing the below commands just create a directory where you want your blog files to be stored.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir ~/myBlogDirectory
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/myBlogDirectory
+pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Just execute this commands and it asks you these series of questions, which we will talk in details.&lt;/p&gt;
+&lt;h3 id="pelican-quickstart-options"&gt;pelican-quickstart options&lt;a class="headerlink" href="#pelican-quickstart-options" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The options shown after executing the &lt;code&gt;pelican-quickstart&lt;/code&gt; are as below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelican quickstart options" src="http://archerimagine.com/images/pelicanQuickStart/pelicanQuickStartoptions.png" title="pelican quickstart options"&gt;&lt;/p&gt;
+&lt;p&gt;We will discuss each and every options and there usage, we can always choose the default shown in capital letter, &lt;code&gt;{Y|n}&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Where do you want to create your new Web site ? [.]&lt;ul&gt;
+&lt;li&gt;Most probably we will keep the default as we are already in that directory, if not you can specify the path &lt;code&gt;/home/pathtomyblog&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What will be the title of the blog?&lt;ul&gt;
+&lt;li&gt;Provide a suitable title to your blog, do not worry even if you want to change it latter we can change it. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Who will be the author of this Web site ?&lt;ul&gt;
+&lt;li&gt;Just provide any name you want whose name should be present as a author on the blog post, it can be your name also.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What will be the default language  of this Web site ? [en]&lt;ul&gt;
+&lt;li&gt;The default choice is &lt;code&gt;english&lt;/code&gt;, else you can give any language format mentioned in ISO 639-1 Language Codes, the list can be found &lt;a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="ISO Language codes"&gt;ISO Language codes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to specify a URL prefix? e.g., http://example.com   (Y/n)&lt;ul&gt;
+&lt;li&gt;If you already have purchased a domain give the domain name as shown in the example, else continue with &lt;code&gt;n&lt;/code&gt;, we can later fill the domain name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to enable article pagination? (Y/n)&lt;ul&gt;
+&lt;li&gt;We can go with the default of having pagination, which means how many post of a the blogs will be displayed in one page, the choice of this is in the next question.&lt;ul&gt;
+&lt;li&gt;How many articles per page do you want? [10] &lt;ul&gt;
+&lt;li&gt;The default choice is &lt;code&gt;10&lt;/code&gt;, for the time being keep it that way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What is your time zone? [Europe/Paris]&lt;ul&gt;
+&lt;li&gt;To change the time zone, we should be aware that these are &lt;strong&gt;tz database&lt;/strong&gt; time zone, to exactly get the time zone codes for your country visit &lt;a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones"&gt;List of tz database time zones&lt;/a&gt;, give the code without the &lt;code&gt;[]&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)&lt;ul&gt;
+&lt;li&gt;There are multiple ways to automate the blog publishing process, makefile and fabic comes to our help, just chose the default and we will decide on this later. This creates two files in the directory, &lt;code&gt;fabfile.py&lt;/code&gt; and &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development? (Y/n)&lt;ul&gt;
+&lt;li&gt;We have the help of auto-reload commands to automatically generates the preview as soon as we change anything in the themes, we might not require it initially, so keep it false.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using FTP? (y/N)&lt;ul&gt;
+&lt;li&gt;If we had an FTP site where we could upload, just choose the default and say &lt;code&gt;n&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using SSH? (y/N)&lt;ul&gt;
+&lt;li&gt;If your hosting uses SSH, for our use case we will choose &lt;code&gt;N&lt;/code&gt;, which is the default.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using Dropbox? (y/N)&lt;ul&gt;
+&lt;li&gt;We can also use dropbox to upload out static files, but for this, we will try some other time, for now choose the default which is &lt;code&gt;N&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using S3? (y/N)&lt;ul&gt;
+&lt;li&gt;We also have the facility of choosing amazon S3 for our site hosting, for now not needed chose &lt;code&gt;N&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using Rackspace Cloud Files? (y/N) &lt;ul&gt;
+&lt;li&gt;Again the default &lt;code&gt;N&lt;/code&gt;, we are not using Rackspace.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using GitHub Pages? (y/N)&lt;ul&gt;
+&lt;li&gt;We can choose &lt;code&gt;y&lt;/code&gt; here, but we will try another mechanism, for now choose the default &lt;code&gt;N&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you had chosen &lt;code&gt;y&lt;/code&gt; in this option you will get this sub option.&lt;ul&gt;
+&lt;li&gt;Is this your personal page (username.github.io)? (y/N)&lt;ul&gt;
+&lt;li&gt;Choose &lt;code&gt;y&lt;/code&gt;, &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;After this we will get this message in either case.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Done. Your new project is available at /home/username/myWork/mySampleBlog
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Our blogs boilerplate is available. Here is the folder structure.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/" title="How did the command option help"&gt;How I setup Pelican &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones"&gt;List of tz database time zones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="List of ISO 639-1 codes"&gt;List of ISO 639-1 codes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>How to setup Anaconda Python environment for Pelican Blog.</title><link href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html" rel="alternate"></link><published>2017-04-26T22:39:03+05:30</published><updated>2017-04-26T23:50:52+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-26:/articles/python-setup-for-pelican-blog.html</id><summary type="html">&lt;p&gt;Anaconda is a well know distribution of Python, supporting both python 2 and 3. We can setup a exclusive environment for Pelican blog using conda.&lt;/p&gt;</summary><content type="html">
 &lt;h2 id="installing-pelican"&gt;Installing Pelican&lt;a class="headerlink" href="#installing-pelican" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pelican is a python package, so we can have multiple option to install pelican. There can be 3 option which I can think of.&lt;/p&gt;
 &lt;ul&gt;
