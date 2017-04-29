@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-28T01:21:00+05:30</updated><entry><title>Pelican HelloWorld using pelican-quickstart</title><link href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html" rel="alternate"></link><published>2017-04-27T23:26:43+05:30</published><updated>2017-04-28T01:21:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-27:/articles/helloworld-pelican-quickstart.html</id><summary type="html">&lt;p&gt;We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command &lt;code&gt;pelican-quickstart&lt;/code&gt;, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-29T23:12:16+05:30</updated><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-04-29T23:12:16+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some of pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
+&lt;h2 id="first-pelican-blog"&gt;First Pelican Blog&lt;a class="headerlink" href="#first-pelican-blog" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We have see the folder structure here&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
+&lt;p&gt;Now we will first execute some commands and see what happens with this boilerplate. Remember to be in the &lt;code&gt;pelican1&lt;/code&gt; environment. We can do this by.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate pelican1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once we are in &lt;code&gt;pelican1&lt;/code&gt; environment, we have all the &lt;code&gt;pelican&lt;/code&gt; commands at our disposal. Kindly execute this command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The above command we are passing &lt;code&gt;content&lt;/code&gt; as a parameter, which is nothing but one of the directory of the folder structure.&lt;/p&gt;
+&lt;p&gt;The output will be&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;WARNING: No valid files found in content.
+Done: Processed &lt;span class="m"&gt;0&lt;/span&gt; articles, &lt;span class="m"&gt;0&lt;/span&gt; drafts, &lt;span class="m"&gt;0&lt;/span&gt; pages and &lt;span class="m"&gt;0&lt;/span&gt; hidden pages in &lt;span class="m"&gt;0&lt;/span&gt;.12 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It clearly warn us about no valid files found in &lt;strong&gt;content&lt;/strong&gt;, as we have not added any post to the directory. If you see inside the &lt;code&gt;output&lt;/code&gt; folder, we will see some content in that namely these files&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;archives.html
+authors.html
+categories.html
+index.html
+tags.html
+theme &lt;span class="c1"&gt;#directory which contains some predefined images and css.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now let us see what the blog looks like. Just execute these commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; output/
+python -m pelican.server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once you execute the above commands we can see the output on browser on this path &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt; and it will look something like this&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pelican First Post" src="http://archerimagine.com/images/pelicanCommands/firstPostPelican.png" title="The first post from pelican"&gt;&lt;/p&gt;
+&lt;p&gt;Nothing fancy here, but we will some content with some link and a default theme. It is petty good for being a boilerplate.&lt;/p&gt;
+&lt;h2 id="the-first-post"&gt;The first post.&lt;a class="headerlink" href="#the-first-post" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now we are ready for our first post, we will do the sample hello world which is the de-facto standard in programming languages first program.&lt;/p&gt;
+&lt;p&gt;We will write the first post in &lt;strong&gt;Markdown&lt;/strong&gt;. Create a file named &lt;code&gt;HelloWorld.md&lt;/code&gt; in this directory &lt;code&gt;content&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: Hello World
+Date: 2017-04-29 11:01
+Category: Pelican
+
+Hello World to Pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once create and saved this file, just run this command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will have the following output.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Done: Processed &lt;span class="m"&gt;1&lt;/span&gt; article, &lt;span class="m"&gt;0&lt;/span&gt; drafts, &lt;span class="m"&gt;0&lt;/span&gt; pages and &lt;span class="m"&gt;0&lt;/span&gt; hidden pages in &lt;span class="m"&gt;0&lt;/span&gt;.27 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This time it clearly states that we have &lt;code&gt;1&lt;/code&gt; article. Then follow the other commands as discussed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; output/
+python -m pelican.server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Again check the output on the browser at &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. Now this time the output is different and it look like this.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pelican Hello World Post" src="http://archerimagine.com/images/pelicanCommands/helloWorldPelicanPost.png" title="The HelloWorld post from pelican"&gt;&lt;/p&gt;
+&lt;p&gt;The area surrounded in ellipse are new. This shows us the power of pelican, we do not have to bother how the content is presented on screen, we have to only concentrate on writing content.&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican Doc Quickstart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican HelloWorld using pelican-quickstart</title><link href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html" rel="alternate"></link><published>2017-04-27T23:26:43+05:30</published><updated>2017-04-29T22:09:10+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-27:/articles/helloworld-pelican-quickstart.html</id><summary type="html">&lt;p&gt;We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command &lt;code&gt;pelican-quickstart&lt;/code&gt;, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.&lt;/p&gt;
 &lt;h2 id="activate-python-environment"&gt;Activate Python environment&lt;a class="headerlink" href="#activate-python-environment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We had setup a separate python anaconda environment in our previous &lt;a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"&gt;post&lt;/a&gt; now is the time to active the environment, we can do that by using a simple command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate pelican1
@@ -109,6 +182,7 @@ pelican-quickstart
 
 &lt;p&gt;Our blogs boilerplate is available. Here is the folder structure.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
+&lt;p&gt;We have still not seen how the blog will look like, we will divulge into this in the next post, with all the pelican commands which is extremely important to get the full juice out of pelican.&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/" title="How did the command option help"&gt;How I setup Pelican &lt;/a&gt;&lt;/li&gt;
@@ -231,7 +305,7 @@ pip install beautifulsoup4
 &lt;li&gt;This explains the benefits of Amazon S3 over Github Pages, kindly check if you are affected because of this.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Configuring Github pages with Custom Domain</title><link href="http://archerimagine.com/articles/configure-github-custom-domain.html" rel="alternate"></link><published>2017-04-14T21:30:00+05:30</published><updated>2017-04-14T21:30:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-14:/articles/configure-github-custom-domain.html</id><summary type="html">&lt;p&gt;How to configure a Pelican blog using Github Pages and a Custom domain.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Configuring Github pages with Custom Domain</title><link href="http://archerimagine.com/articles/LaunchingSite.html" rel="alternate"></link><published>2017-04-14T21:30:00+05:30</published><updated>2017-04-29T22:07:21+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-14:/articles/LaunchingSite.html</id><summary type="html">&lt;p&gt;How to configure a Pelican blog using Github Pages and a Custom domain.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;I have mentioned some of the links in references, have visited all of the below and few more, but the configuration is much simpler.&lt;/p&gt;
 &lt;p&gt;The process can be broken into 2 broad steps.&lt;/p&gt;
 &lt;ol&gt;
