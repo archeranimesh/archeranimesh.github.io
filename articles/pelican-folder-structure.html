@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, " />
+<meta name="keywords" content="pelican, Pelican, Pelican folder structure" />
 
-<meta property="og:title" content="Configuring Github pages with Custom Domain "/>
-<meta property="og:url" content="http://archerimagine.com/articles/LaunchingSite.html" />
-<meta property="og:description" content="How to configure a Pelican blog using Github Pages and a Custom domain." />
+<meta property="og:title" content="Pelican Folder Structure  - Creating Magic "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican-folder-structure.html" />
+<meta property="og:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-14T21:30:00+05:30" />
-<meta property="" content="2017-04-29T22:07:21+05:30" />
-<meta name="twitter:title" content="Configuring Github pages with Custom Domain ">
-<meta name="twitter:description" content="How to configure a Pelican blog using Github Pages and a Custom domain.">
+<meta property="og:article:published_time" content="2017-04-29T22:10:10+05:30" />
+<meta property="" content="2017-04-30T12:56:57+05:30" />
+<meta name="twitter:title" content="Pelican Folder Structure  - Creating Magic ">
+<meta name="twitter:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.">
 
-        <title>Configuring Github pages with Custom Domain  · Archer Imagine
+        <title>Pelican Folder Structure  - Creating Magic  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,101 +82,124 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/LaunchingSite.html"> Configuring Github pages with Custom Domain  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican-folder-structure.html"> Pelican Folder Structure  <small> Creating Magic </small>  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
-    <div class="span2 table-of-content">
-        <nav>
-        <h4>Contents</h4>
-        <div class="toc">
-<ul>
-<li><a href="#configure-your-github-repo">Configure your Github repo</a><ul>
-<li><a href="#local-repo">Local Repo</a></li>
-<li><a href="#directly-on-github">Directly on GitHub</a></li>
-</ul>
-</li>
-<li><a href="#configure-the-dns-at-godaddy">Configure the DNS at GoDaddy</a></li>
-<li><a href="#the-domain-xyx-is-no-longer-parked-by-godaddy">The domain XYX is no longer parked by godaddy</a></li>
-<li><a href="#references">References</a></li>
-</ul>
-</div>
-        </nav>
-    </div>
-    <div class="span8 article-content">
+        <div class="span8 offset2 article-content">
 
             
-            
-<p>I have mentioned some of the links in references, have visited all of the below and few more, but the configuration is much simpler.</p>
-<p>The process can be broken into 2 broad steps.</p>
-<ol>
-<li>Configure your Github repo  </li>
-<li>Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a> </li>
-</ol>
-<h2 id="configure-your-github-repo">Configure your Github repo<a class="headerlink" href="#configure-your-github-repo" title="Permanent link">¶</a></h2>
-<p>The prequsite is that we have a github pages of like this <a href="http://archeranimesh.github.io">archeranimesh.github.io</a>, if not kindly visit this <a href="https://pages.github.com/">link</a> for generating one.</p>
-<p>The first thing we would like to do is to configure a CNAME in the above repo.</p>
-<p>There are two ways to do this.</p>
-<ol>
-<li>Local Repo</li>
-<li>Directly on Github.</li>
-</ol>
-<h3 id="local-repo">Local Repo<a class="headerlink" href="#local-repo" title="Permanent link">¶</a></h3>
-<ol>
-<li>Create a local file in the repo with the name CNAME.</li>
-<li>Just have one line in the file. <code>example.com</code>, where <code>example.com</code> is your domain you have bought from <a href="https://in.godaddy.com/">GoDaddy</a>.</li>
-<li>Push the changes to <a href="https://github.com/">Github</a></li>
-</ol>
-<h3 id="directly-on-github">Directly on GitHub<a class="headerlink" href="#directly-on-github" title="Permanent link">¶</a></h3>
-<p>On the repository in <a href="https://github.com/">Github</a>, you will see something like this.</p>
-<p><img alt="GitHub Settings" src="../images/launchSite/Settings.png" title="GitHub Setting"/></p>
-<p>In the above Click on the <code>Settings</code>, Scroll down you will see something like this.</p>
-<p><img alt="GitHub Pages Settings" src="../images/launchSite/gitHubPages.png" title="GitHub Pages Setting"/></p>
-<p>Enter the domain you have purchased from <a href="https://in.godaddy.com/">GoDaddy</a>.</p>
-<p>These are the only changes required to be done in GitHub.</p>
-<h2 id="configure-the-dns-at-godaddy">Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a><a class="headerlink" href="#configure-the-dns-at-godaddy" title="Permanent link">¶</a></h2>
-<p>The most easiest of the all the below references is <a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html">Configuring a Godaddy domain name with github pages</a>.</p>
-<p>The real issue is all of the links shows the old UI of <a href="https://in.godaddy.com/">GoDaddy</a>, so some things get confusing.</p>
-<ol>
-<li>Go to the account setting page, which mostly will like in this <a href="https://mya.godaddy.com/?pc=urlargs">link</a>.</li>
-<li>The link will look like this.</li>
-<li><img alt="Godaddy Accounts Settings" src="../images/launchSite/accountSettingsGodaddy.png" title="Godaddy Accounts Settings"/></li>
-<li>Click on the <code>+</code> Symbols in Front of Domain, and Click on the <code>Manage DNS</code> Link</li>
-<li><img alt="Godaddy DNS Management" src="../images/launchSite/manageDNS.png" title="Godaddy DNS Management"/></li>
-<li>The link will show a lot of <code>Records</code>, go to the end of the <code>Records</code>, and click on the link <strong>ADD</strong></li>
-<li><img alt="Godaddy Add Options" src="../images/launchSite/AddOption.png" title="Godaddy Add Options"/></li>
-<li>From the above option we have to add 3 entries.</li>
-<li>These is how all the 3 would look like after adding.</li>
-</ol>
-<p><img alt="Godaddy A Options" src="../images/launchSite/AOptions.png" title="Godaddy A Options">
-<img alt="Godaddy www Options" src="../images/launchSite/wwwOption.png" title="Godaddy www Options"/></img></p>
-<p>Now you can launch and check your desired domain. Kindly wait 48 hrs for these changes to reflect, do not try to configure multiple times, if it does not work even after 48 hours kindly search for help, till then take a coffee break and have a nice time out of this screen.</p>
-<h2 id="the-domain-xyx-is-no-longer-parked-by-godaddy">The domain XYX is no longer parked by godaddy<a class="headerlink" href="#the-domain-xyx-is-no-longer-parked-by-godaddy" title="Permanent link">¶</a></h2>
-<p>When we are doing the above process, even after 24 hours, when you launch your website, we find one of these error.</p>
-<ol>
-<li>The domain XYX is no longer parked by godaddy</li>
-<li>It is detected as a Malware in the office network.</li>
-</ol>
-<p>The website might launch for some times and sometimes you might get any one of the above 2 errors. kindly check this in the <strong>Manage DNS</strong> page.</p>
+            <p>When will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.</p>
+<p>After the first blog post if we give <code>make clean</code> command we will see a folder structure just like this. This will have a empty <code>output</code> folder.</p>
+<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure">  </p>
+<p>We will understand the use of these folder and a proper way of managing your content.</p>
+<h2 id="content-folder">content folder<a class="headerlink" href="#content-folder" title="Permanent link">&para;</a></h2>
+<p>This is the folder where all the magic happens. This is the root folder for our all content, we can use this folder for these purposes.</p>
 <ul>
-<li>We had added two <strong>A</strong> Names pointing to the GitHub URL as shown below.
-<img alt="Godaddy A Options" src="../images/launchSite/AOptions.png" title="Godaddy A Options"/></li>
+<li>Writing content</li>
+<li>Saving the images references in the content</li>
+<li>Static Pages (ex: about, contact etc)</li>
+<li>folder for storing our favicon.ico and apple icon</li>
 </ul>
-<p>Check if you have any other <strong>A</strong> Names in addition to the above two, if you have, kindly delete that. The detailed issue can be read <a href="https://serverfault.com/questions/743327/godaddy-domain-randomly-not-resolving-to-github-pages">GoDaddy domain (randomly) not resolving to GitHub Pages</a></p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
-<ol>
-<li><a href="http://www.mycowsworld.com/blog/2015/07/12/setting-up-a-godaddy-domain-name-with-github/">Setting Up a GoDaddy Domain Name With GitHub</a></li>
-<li><a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html">Configuring a Godaddy domain name with github pages</a></li>
-<li><a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">Using a custom domain with GitHub Pages</a></li>
-<li><a href="http://blog.teamtreehouse.com/using-github-pages-to-host-your-website">Using GitHub Pages To Host Your Website</a></li>
-<li><a href="https://serverfault.com/questions/743327/godaddy-domain-randomly-not-resolving-to-github-pages">GoDaddy domain (randomly) not resolving to GitHub Pages</a></li>
-<li><a href="https://www.reddit.com/r/webdev/comments/653q6z/help_how_to_correctly_connect_my_github_pages/">[Help]: How to correctly connect my github pages blog to a custom domain?</a></li>
-<li><a href="https://ongspxm.github.io/blog/2016/08/github-custom-domain-godaddy/">Redirecting GitHub Page to a custom domain</a><ol>
-<li>Kindly read the above site, to understand what is the use of CNAME and A Record. Great introduction. </li>
-</ol>
+<h3 id="writing-content">Writing Content<a class="headerlink" href="#writing-content" title="Permanent link">&para;</a></h3>
+<p>In traditional wordpress or most of the bloging platform the content is stored in this format <code>/2015/05/24/my-content/</code> now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the url. In my opinion we can better organize ourself with some meaning full structure.</p>
+<p>What we can do is we can create a folder in side <code>content</code> named <code>articles</code> and the sub folders inside <code>articles</code> for each category which you want to write or if you want to have a flat system you can place all your content inside <code>articles</code>. I prefer the sub folder approach as we can derive the category name just from the folder name.</p>
+<p>So go ahead for beginning create a folder inside <code>content</code> name <code>articles</code></p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
+mkdir articles
+</pre></div>
+
+
+<p>Now create your second post inside this and publish the content based on the command we learned on the previous post.</p>
+<p>Now if you launch the <a href="http://localhost:8000/">localhost:8000</a>, and click on the article title, you will see no difference but if you see on the url bar, we still see that our post is without the <code>article</code> folder structure. We did not wanted this. Have a look</p>
+<p><img alt="url without article " src="http://archerimagine.com/images/pelicanFolder/URLwithoutarticles.png" title="URL without articles."></p>
+<p>In order to get the proper URL in the address bar we have to change somethings in the <code>pelicanconf.py</code>, we will explain what is the purpose of this file in a short file for not just add these 3 line into that config.</p>
+<div class="highlight"><pre><span></span><span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;articles&#39;</span><span class="p">,]</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}.html&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}.html&#39;</span>
+</pre></div>
+
+
+<p>With is configuration in the config folder, just generate the blog with the commands already learned and then check the <a href="http://localhost:8000/">localhost:8000</a>. It should look like this.</p>
+<p><img alt="url with article " src="http://archerimagine.com/images/pelicanFolder/URLwitharticles.png" title="URL with articles."></p>
+<p>Now we have a proper folder structure.</p>
+<h3 id="static-pages">Static Pages<a class="headerlink" href="#static-pages" title="Permanent link">&para;</a></h3>
+<p>Most often then not we will want some pages which will rarely change, like an <strong>About</strong> and a <strong>Contact</strong> pages. These type of static pages is also supported in the pelican blog. Just create a folder named <code>pages</code> inside <code>content</code> folder like this.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
+mkdir pages
+</pre></div>
+
+
+<p>Now we are ready to make our sample <code>About.md</code> and <code>Contact.md</code>  inside <code>pages</code> directory.</p>
+<div class="highlight"><pre><span></span>Title: About
+Date: 2017-04-14 22:30
+Modified: 2017-04-14 22:30
+Slug: About
+Author: username
+Summary: This is a sample blog.
+
+
+The About Page for the blog.
+</pre></div>
+
+
+<p>and <code>Contact.md</code></p>
+<div class="highlight"><pre><span></span>Title: Contact
+Date: 2017-04-14 22:30
+Modified: 2017-04-14 22:30
+Slug: Contact
+Author: username
+Summary: This is a sample blog contact page.
+
+
+The Contact Page for the blog.
+</pre></div>
+
+
+<p>We again generate the blog and check it on <a href="http://localhost:8000/">localhost:8000</a>.</p>
+<p>When we see the output of <code>pelican content</code> command we will see this.</p>
+<div class="highlight"><pre><span></span>Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">2</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.20 seconds.
+</pre></div>
+
+
+<p>Which means that the <code>pages</code> are generated. When we launch the <a href="http://localhost:8000/">localhost:8000</a>. we will see that the <code>About</code> and <code>Contact</code> menu like this</p>
+<p><img alt="About and Contact Page " src="http://archerimagine.com/images/pelicanFolder/staticPages.png" title="About and Contact Page."></p>
+<p>We can modify these pages with the information which you want to furnish.</p>
+<h3 id="static-images">Static Images<a class="headerlink" href="#static-images" title="Permanent link">&para;</a></h3>
+<p>Most often then not we will use images to link in our blogs, we can store all these images inside the <code>content</code> folder, having a directory called <code>images</code>. Do this by following these commands.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
+mkdir images
+</pre></div>
+
+
+<p>Now we can copy any image inside this folder and try to link it into one of our blog. Just copy any image in this folder and copy the file name.</p>
+<p>Now create a link to this file inside the already existing blog post by the help of <code>link</code> of markdown, here is a sample.</p>
+<div class="highlight"><pre><span></span>![<span class="nt">Hello World 1</span>](<span class="na">{filename}../images/helloWorldPelicanPost.png &quot;Hello World 2&quot;</span>)
+</pre></div>
+
+
+<p>We should understand some details about the above piece of code.</p>
+<ul>
+<li><code>Hello World 1</code><ul>
+<li>The <code>alt</code> text is good if there is a browser which block image, this <code>alt</code> text is displayed, showing an information about what this images was supposed to do.</li>
+</ul>
 </li>
-</ol>
+<li><code>"Hello World 2"</code><ul>
+<li>This is the <code>title</code> of the image, which is shown as a tool tip once we hover over the image.</li>
+</ul>
+</li>
+<li><code>{filename}</code><ul>
+<li>This is a special syntax which is used by pelican to generate links, so be it url or images, when using relative urls kindly use this format.</li>
+</ul>
+</li>
+</ul>
+<p>We have covered most of the folder structure inside <code>article</code> we will see the configuration files in the next blog post.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://docs.getpelican.com/en/stable/content.html#pages">Pages</a></li>
+<li><a href="http://docs.getpelican.com/en/stable/content.html#linking-to-internal-content">Linking to internal content </a></li>
+</ul>
             
             <section>
 <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
@@ -184,7 +207,7 @@
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/LaunchingSite.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican-folder-structure.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -194,8 +217,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/LaunchingSite.html';
-    var disqus_url = 'http://archerimagine.com/articles/LaunchingSite.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican-folder-structure.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican-folder-structure.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -218,10 +241,10 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-14T21:30:00+05:30">Apr 14, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-29T22:10:10+05:30">Apr 29, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-04-29T22:07:21+05:30">Apr 29, 2017</time>
+<time datetime="2017-04-30T12:56:57+05:30">Apr 30, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

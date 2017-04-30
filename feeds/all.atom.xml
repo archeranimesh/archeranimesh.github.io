@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-29T23:12:16+05:30</updated><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-04-29T23:12:16+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some of pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-30T12:56:57+05:30</updated><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-04-29T23:12:16+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some of pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
 &lt;h2 id="first-pelican-blog"&gt;First Pelican Blog&lt;a class="headerlink" href="#first-pelican-blog" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We have see the folder structure here&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
@@ -72,6 +72,115 @@ python -m pelican.server
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican Doc Quickstart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican Folder Structure</title><link href="http://archerimagine.com/articles/pelican-folder-structure.html" rel="alternate"></link><published>2017-04-29T22:10:10+05:30</published><updated>2017-04-30T12:56:57+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-folder-structure.html</id><summary type="html">&lt;p&gt;In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.&lt;/p&gt;
+&lt;p&gt;After the first blog post if we give &lt;code&gt;make clean&lt;/code&gt; command we will see a folder structure just like this. This will have a empty &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
+&lt;p&gt;We will understand the use of these folder and a proper way of managing your content.&lt;/p&gt;
+&lt;h2 id="content-folder"&gt;content folder&lt;a class="headerlink" href="#content-folder" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is the folder where all the magic happens. This is the root folder for our all content, we can use this folder for these purposes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Writing content&lt;/li&gt;
+&lt;li&gt;Saving the images references in the content&lt;/li&gt;
+&lt;li&gt;Static Pages (ex: about, contact etc)&lt;/li&gt;
+&lt;li&gt;folder for storing our favicon.ico and apple icon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="writing-content"&gt;Writing Content&lt;a class="headerlink" href="#writing-content" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In traditional wordpress or most of the bloging platform the content is stored in this format &lt;code&gt;/2015/05/24/my-content/&lt;/code&gt; now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the url. In my opinion we can better organize ourself with some meaning full structure.&lt;/p&gt;
+&lt;p&gt;What we can do is we can create a folder in side &lt;code&gt;content&lt;/code&gt; named &lt;code&gt;articles&lt;/code&gt; and the sub folders inside &lt;code&gt;articles&lt;/code&gt; for each category which you want to write or if you want to have a flat system you can place all your content inside &lt;code&gt;articles&lt;/code&gt;. I prefer the sub folder approach as we can derive the category name just from the folder name.&lt;/p&gt;
+&lt;p&gt;So go ahead for beginning create a folder inside &lt;code&gt;content&lt;/code&gt; name &lt;code&gt;articles&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; content/
+mkdir articles
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now create your second post inside this and publish the content based on the command we learned on the previous post.&lt;/p&gt;
+&lt;p&gt;Now if you launch the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and click on the article title, you will see no difference but if you see on the url bar, we still see that our post is without the &lt;code&gt;article&lt;/code&gt; folder structure. We did not wanted this. Have a look&lt;/p&gt;
+&lt;p&gt;&lt;img alt="url without article " src="http://archerimagine.com/images/pelicanFolder/URLwithoutarticles.png" title="URL without articles."&gt;&lt;/p&gt;
+&lt;p&gt;In order to get the proper URL in the address bar we have to change somethings in the &lt;code&gt;pelicanconf.py&lt;/code&gt;, we will explain what is the purpose of this file in a short file for not just add these 3 line into that config.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ARTICLE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;articles&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;articles/{slug}.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;articles/{slug}.html&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;With is configuration in the config folder, just generate the blog with the commands already learned and then check the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. It should look like this.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="url with article " src="http://archerimagine.com/images/pelicanFolder/URLwitharticles.png" title="URL with articles."&gt;&lt;/p&gt;
+&lt;p&gt;Now we have a proper folder structure.&lt;/p&gt;
+&lt;h3 id="static-pages"&gt;Static Pages&lt;a class="headerlink" href="#static-pages" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Most often then not we will want some pages which will rarely change, like an &lt;strong&gt;About&lt;/strong&gt; and a &lt;strong&gt;Contact&lt;/strong&gt; pages. These type of static pages is also supported in the pelican blog. Just create a folder named &lt;code&gt;pages&lt;/code&gt; inside &lt;code&gt;content&lt;/code&gt; folder like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; content/
+mkdir pages
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we are ready to make our sample &lt;code&gt;About.md&lt;/code&gt; and &lt;code&gt;Contact.md&lt;/code&gt;  inside &lt;code&gt;pages&lt;/code&gt; directory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: About
+Date: 2017-04-14 22:30
+Modified: 2017-04-14 22:30
+Slug: About
+Author: username
+Summary: This is a sample blog.
+
+
+The About Page for the blog.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and &lt;code&gt;Contact.md&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: Contact
+Date: 2017-04-14 22:30
+Modified: 2017-04-14 22:30
+Slug: Contact
+Author: username
+Summary: This is a sample blog contact page.
+
+
+The Contact Page for the blog.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We again generate the blog and check it on &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When we see the output of &lt;code&gt;pelican content&lt;/code&gt; command we will see this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Done: Processed &lt;span class="m"&gt;1&lt;/span&gt; article, &lt;span class="m"&gt;0&lt;/span&gt; drafts, &lt;span class="m"&gt;2&lt;/span&gt; pages and &lt;span class="m"&gt;0&lt;/span&gt; hidden pages in &lt;span class="m"&gt;0&lt;/span&gt;.20 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which means that the &lt;code&gt;pages&lt;/code&gt; are generated. When we launch the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. we will see that the &lt;code&gt;About&lt;/code&gt; and &lt;code&gt;Contact&lt;/code&gt; menu like this&lt;/p&gt;
+&lt;p&gt;&lt;img alt="About and Contact Page " src="http://archerimagine.com/images/pelicanFolder/staticPages.png" title="About and Contact Page."&gt;&lt;/p&gt;
+&lt;p&gt;We can modify these pages with the information which you want to furnish.&lt;/p&gt;
+&lt;h3 id="static-images"&gt;Static Images&lt;a class="headerlink" href="#static-images" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Most often then not we will use images to link in our blogs, we can store all these images inside the &lt;code&gt;content&lt;/code&gt; folder, having a directory called &lt;code&gt;images&lt;/code&gt;. Do this by following these commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; content/
+mkdir images
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we can copy any image inside this folder and try to link it into one of our blog. Just copy any image in this folder and copy the file name.&lt;/p&gt;
+&lt;p&gt;Now create a link to this file inside the already existing blog post by the help of &lt;code&gt;link&lt;/code&gt; of markdown, here is a sample.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;![&lt;span class="nt"&gt;Hello World 1&lt;/span&gt;](&lt;span class="na"&gt;{filename}../images/helloWorldPelicanPost.png &amp;quot;Hello World 2&amp;quot;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We should understand some details about the above piece of code.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Hello World 1&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;alt&lt;/code&gt; text is good if there is a browser which block image, this &lt;code&gt;alt&lt;/code&gt; text is displayed, showing an information about what this images was supposed to do.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;"Hello World 2"&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is the &lt;code&gt;title&lt;/code&gt; of the image, which is shown as a tool tip once we hover over the image.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{filename}&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is a special syntax which is used by pelican to generate links, so be it url or images, when using relative urls kindly use this format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have covered most of the folder structure inside &lt;code&gt;article&lt;/code&gt; we will see the configuration files in the next blog post.&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/content.html#pages"&gt;Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/content.html#linking-to-internal-content"&gt;Linking to internal content &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican HelloWorld using pelican-quickstart</title><link href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html" rel="alternate"></link><published>2017-04-27T23:26:43+05:30</published><updated>2017-04-29T22:09:10+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-27:/articles/helloworld-pelican-quickstart.html</id><summary type="html">&lt;p&gt;We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command &lt;code&gt;pelican-quickstart&lt;/code&gt;, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.&lt;/p&gt;
 &lt;h2 id="activate-python-environment"&gt;Activate Python environment&lt;a class="headerlink" href="#activate-python-environment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We had setup a separate python anaconda environment in our previous &lt;a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"&gt;post&lt;/a&gt; now is the time to active the environment, we can do that by using a simple command.&lt;/p&gt;

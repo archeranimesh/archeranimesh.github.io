@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/</loc>
-<lastmod>2017-04-29T23:17:15-00:00</lastmod>
+<lastmod>2017-04-30T12:59:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/archives.html</loc>
-<lastmod>2017-04-29T23:17:15-00:00</lastmod>
+<lastmod>2017-04-30T12:59:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/tags.html</loc>
-<lastmod>2017-04-29T23:17:15-00:00</lastmod>
+<lastmod>2017-04-30T12:59:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/categories.html</loc>
-<lastmod>2017-04-29T23:17:15-00:00</lastmod>
+<lastmod>2017-04-30T12:59:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html</loc>
 <lastmod>2017-04-29T23:12:16+05:30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://archerimagine.com/articles/pelican-folder-structure.html</loc>
+<lastmod>2017-04-30T12:56:57+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -75,7 +82,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/author/animesh-bhadra.html</loc>
-<lastmod>2017-04-29T23:12:16+05:53</lastmod>
+<lastmod>2017-04-30T12:56:57+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
