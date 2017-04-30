@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, Pelican folder structure" />
+<meta name="keywords" content="pelican, Pelican, pelicanconf.py, publishconf.py" />
 
-<meta property="og:title" content="Pelican Folder Structure  - Creating Magic "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican-folder-structure.html" />
-<meta property="og:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come." />
+<meta property="og:title" content="Understanding the Pelican Settings files.  - Enhancing Pelican "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican-settings-files.html" />
+<meta property="og:description" content="By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-29T22:10:10+05:30" />
-<meta property="" content="2017-04-30T17:06:34+05:30" />
-<meta name="twitter:title" content="Pelican Folder Structure  - Creating Magic ">
-<meta name="twitter:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.">
+<meta property="og:article:published_time" content="2017-04-30T17:07:03+05:30" />
+<meta property="" content="2017-04-30T18:11:34+05:30" />
+<meta name="twitter:title" content="Understanding the Pelican Settings files.  - Enhancing Pelican ">
+<meta name="twitter:description" content="By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.">
 
-        <title>Pelican Folder Structure  - Creating Magic  · Archer Imagine
+        <title>Understanding the Pelican Settings files.  - Enhancing Pelican  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican-folder-structure.html"> Pelican Folder Structure  <small> Creating Magic </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican-settings-files.html"> Understanding the Pelican Settings files.  <small> Enhancing Pelican </small>  </a></h1>
     </header>
 </div>
 
@@ -90,115 +90,147 @@
         <div class="span8 offset2 article-content">
 
             
-            <p>We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.</p>
-<p>After the first blog post if we give <code>make clean</code> command we will see a folder structure just like this. This will have a empty <code>output</code> folder.</p>
-<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure">  </p>
-<p>We will understand the use of these folder and a proper way of managing your content.</p>
-<h2 id="content-folder">content folder<a class="headerlink" href="#content-folder" title="Permanent link">&para;</a></h2>
-<p>This is the folder where all the magic happens. This is the root folder for our all content, we can use this folder for these purposes.</p>
+            <p>The basic work flow in pelican blogging is to first generate content, verify it locally using a <a href="http://localhost:8000/">localhost:8000</a>, and when everything is fine will publish it.</p>
+<p>Pelican comes with two settings files to separate these 2 process. These two files are.</p>
 <ul>
-<li>Writing content</li>
-<li>Saving the images references in the content</li>
-<li>Static Pages (ex: about, contact etc)</li>
-<li>folder for storing our favicon.ico and apple icon</li>
+<li><code>pelicanconf.py</code></li>
+<li><code>publishconf.py</code></li>
 </ul>
-<h3 id="writing-content">Writing Content<a class="headerlink" href="#writing-content" title="Permanent link">&para;</a></h3>
-<p>In traditional wordpress or most of the bloging platform the content is stored in this format <code>/2015/05/24/my-content/</code> now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the url. In my opinion we can better organize ourself with some meaning full structure.</p>
-<p>What we can do is we can create a folder in side <code>content</code> named <code>articles</code> and the sub folders inside <code>articles</code> for each category which you want to write or if you want to have a flat system you can place all your content inside <code>articles</code>. I prefer the sub folder approach as we can derive the category name just from the folder name.</p>
-<p>So go ahead for beginning create a folder inside <code>content</code> name <code>articles</code></p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
-mkdir articles
-</pre></div>
+<p>Lets check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.</p>
+<p>These setting files are mostly passed to the templates associated with the themes to generate the site, all these settings are some parameters to these templates.</p>
+<h2 id="pelicanconfpy">pelicanconf.py<a class="headerlink" href="#pelicanconfpy" title="Permanent link">&para;</a></h2>
+<p>We had used the <code>pelican-quickstart</code> to generate this blog, when we use this command, we get a pre-configured <code>pelicanconf.py</code> and a <code>publishconf.py</code> files. This have the bare basic configuration to be used based on the questions we answered on the options.</p>
+<p>These files basically contains the settings identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), booleans (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.</p>
+<p><code>pelicanconf.py</code> is used to generate the site locally and tested over <a href="http://localhost:8000/">localhost:8000</a>. The basic <code>pelicanconf.py</code> would look like this.</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Animesh&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Hello World&#39;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-<p>Now create your second post inside this and publish the content based on the command we learned on the previous post.</p>
-<p>Now if you launch the <a href="http://localhost:8000/">localhost:8000</a>, and click on the article title, you will see no difference but if you see on the url bar, we still see that our post is without the <code>article</code> folder structure. We did not wanted this. Have a look</p>
-<p><img alt="url without article " src="http://archerimagine.com/images/pelicanFolder/URLwithoutarticles.png" title="URL without articles."></p>
-<p>In order to get the proper URL in the address bar we have to change somethings in the <code>pelicanconf.py</code>, we will explain what is the purpose of this file in a short file for not just add these 3 line into that config.</p>
-<div class="highlight"><pre><span></span><span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;articles&#39;</span><span class="p">,]</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Asia/Kolkata&#39;</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;en&#39;</span>
+
+<span class="c1"># Feed generation is usually not desired when developing</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;articles&#39;</span><span class="p">,]</span>
 <span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}.html&#39;</span>
 <span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}.html&#39;</span>
+
+<span class="c1"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s1">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s1">&#39;http://python.org/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s1">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;You can modify those links in your config file&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),)</span>
+
+<span class="c1"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;You can add links in your config file&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;Another social link&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),)</span>
+
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Uncomment following line if you want document-relative URLs when developing</span>
+<span class="c1">#RELATIVE_URLS = True</span>
 </pre></div>
 
 
-<p>With is configuration in the config folder, just generate the blog with the commands already learned and then check the <a href="http://localhost:8000/">localhost:8000</a>. It should look like this.</p>
-<p><img alt="url with article " src="http://archerimagine.com/images/pelicanFolder/URLwitharticles.png" title="URL with articles."></p>
-<p>Now we have a proper folder structure.</p>
-<h3 id="static-pages">Static Pages<a class="headerlink" href="#static-pages" title="Permanent link">&para;</a></h3>
-<p>Most often then not we will want some pages which will rarely change, like an <strong>About</strong> and a <strong>Contact</strong> pages. These type of static pages is also supported in the pelican blog. Just create a folder named <code>pages</code> inside <code>content</code> folder like this.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
-mkdir pages
-</pre></div>
-
-
-<p>Now we are ready to make our sample <code>About.md</code> and <code>Contact.md</code>  inside <code>pages</code> directory.</p>
-<div class="highlight"><pre><span></span>Title: About
-Date: 2017-04-14 22:30
-Modified: 2017-04-14 22:30
-Slug: About
-Author: username
-Summary: This is a sample blog.
-
-
-The About Page for the blog.
-</pre></div>
-
-
-<p>and <code>Contact.md</code></p>
-<div class="highlight"><pre><span></span>Title: Contact
-Date: 2017-04-14 22:30
-Modified: 2017-04-14 22:30
-Slug: Contact
-Author: username
-Summary: This is a sample blog contact page.
-
-
-The Contact Page for the blog.
-</pre></div>
-
-
-<p>We again generate the blog and check it on <a href="http://localhost:8000/">localhost:8000</a>.</p>
-<p>When we see the output of <code>pelican content</code> command we will see this.</p>
-<div class="highlight"><pre><span></span>Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">2</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.20 seconds.
-</pre></div>
-
-
-<p>Which means that the <code>pages</code> are generated. When we launch the <a href="http://localhost:8000/">localhost:8000</a>. we will see that the <code>About</code> and <code>Contact</code> menu like this</p>
-<p><img alt="About and Contact Page " src="http://archerimagine.com/images/pelicanFolder/staticPages.png" title="About and Contact Page."></p>
-<p>We can modify these pages with the information which you want to furnish.</p>
-<h3 id="static-images">Static Images<a class="headerlink" href="#static-images" title="Permanent link">&para;</a></h3>
-<p>Most often then not we will use images to link in our blogs, we can store all these images inside the <code>content</code> folder, having a directory called <code>images</code>. Do this by following these commands.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
-mkdir images
-</pre></div>
-
-
-<p>Now we can copy any image inside this folder and try to link it into one of our blog. Just copy any image in this folder and copy the file name.</p>
-<p>Now create a link to this file inside the already existing blog post by the help of <code>link</code> of markdown, here is a sample.</p>
-<div class="highlight"><pre><span></span>![<span class="nt">Hello World 1</span>](<span class="na">{filename}../images/helloWorldPelicanPost.png &quot;Hello World 2&quot;</span>)
-</pre></div>
-
-
-<p>We should understand some details about the above piece of code.</p>
+<p>If you remember correctly some of the settings value we had provided during the <code>pelican-quickstart</code> commands, like</p>
 <ul>
-<li><code>Hello World 1</code><ul>
-<li>The <code>alt</code> text is good if there is a browser which block image, this <code>alt</code> text is displayed, showing an information about what this images was supposed to do.</li>
+<li><code>AUTHOR</code><ul>
+<li>This is the name of the site author which we had entered during the questions asked.</li>
 </ul>
 </li>
-<li><code>"Hello World 2"</code><ul>
-<li>This is the <code>title</code> of the image, which is shown as a tool tip once we hover over the image.</li>
+<li><code>SITENAME</code> <ul>
+<li>This is the Name of the site which we provided.</li>
 </ul>
 </li>
-<li><code>{filename}</code><ul>
-<li>This is a special syntax which is used by pelican to generate links, so be it url or images, when using relative urls kindly use this format.</li>
+<li><code>SITEURL</code><ul>
+<li>Since we still do not have domain name registered, we had kept this empty, and also it make sense to keep this empty for <code>localhost</code> testing.</li>
+</ul>
+</li>
+<li><code>PATH</code><ul>
+<li><code>content</code> where we write our blog is the default path set.</li>
+</ul>
+</li>
+<li><code>TIMEZONE</code><ul>
+<li>This we had entered during the initial process, and in future if we want to change this we can change this settings.</li>
+</ul>
+</li>
+<li><code>DEFAULT_LANG</code><ul>
+<li>This was also entered during the <code>pelican-quickstart</code> process.</li>
+</ul>
+</li>
+<li><code>FEEDS_*</code><ul>
+<li>All the <code>FEEDS_*</code> related settings are empty because we have still not configured the RSS feeds settings, this we will change in future.</li>
+</ul>
+</li>
+<li><code>ARTICLE_*</code><ul>
+<li>This is the settings which we modified for keeping the path of the post into one folder.</li>
+</ul>
+</li>
+<li><code>LINKS</code><ul>
+<li>This is a tuple of tuple, with each entry showing a links which you want provide in you blog.</li>
+</ul>
+</li>
+<li><code>SOCIAL</code><ul>
+<li>This is also a tuple of tuple, were each entry is meant to point to a name of a social network say <code>Facebook</code> and the link to your profile.</li>
+</ul>
+</li>
+<li><code>DEFAULT_PAGINATION</code><ul>
+<li>This is a number showing how many blogs should be listed on the front page. Some Themes use this setting for some other purposes.</li>
 </ul>
 </li>
 </ul>
-<p>We have covered most of the folder structure inside <code>article</code> we will see the configuration files in the next blog post.</p>
+<p>Now these settings are not fully exhaustive, Pelican has a huge list of setting, which we will revisit once we have the need of them.</p>
+<h2 id="publishconfpy">publishconf.py<a class="headerlink" href="#publishconfpy" title="Permanent link">&para;</a></h2>
+<p>Unlike <code>pelicanconf.py</code>, this setting file is only used when we are supposed to publish our blog to the domain hosting. This configuration is accessed when we generate the site using the following commands.</p>
+<div class="highlight"><pre><span></span>pelican content -s publishconf.py
+</pre></div>
+
+
+<p>The basic content of these files look like this.</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="c1"># This file is only used if you use `make publish` or</span>
+<span class="c1"># explicitly specify it as your config file.</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pelicanconf</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">RELATIVE_URLS</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s1">&#39;feeds/all.atom.xml&#39;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s1">&#39;feeds/</span><span class="si">%s</span><span class="s1">.atom.xml&#39;</span>
+
+<span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="c1"># Following items are often useful when publishing</span>
+
+<span class="c1">#DISQUS_SITENAME = &quot;&quot;</span>
+<span class="c1">#GOOGLE_ANALYTICS = &quot;&quot;</span>
+</pre></div>
+
+
+<p>This file, basically build on top of the <code>pelicanconf.py</code>, as we can see from this line, <code>from pelicanconf import *</code>. What this means is all the configuration from <code>pelicancongf.py</code> is taken into consideration along with some specific configuration which is required for just publishing.</p>
+<p>If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integraton with the <code>DISQUS</code> comment system, and the <code>GOOGLE_ANALYTICS</code> code. We will see the use of this code once we integrate these feature into our blog.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="http://docs.getpelican.com/en/stable/content.html#pages">Pages</a></li>
-<li><a href="http://docs.getpelican.com/en/stable/content.html#linking-to-internal-content">Linking to internal content </a></li>
+<li><a href="http://docs.getpelican.com/en/stable/settings.html">Pelican Settings</a></li>
 </ul>
             
             <section>
@@ -207,7 +239,7 @@ mkdir images
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican-folder-structure.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican-settings-files.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -217,8 +249,8 @@ mkdir images
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican-folder-structure.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican-folder-structure.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican-settings-files.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican-settings-files.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -241,10 +273,10 @@ mkdir images
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-29T22:10:10+05:30">Apr 29, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-30T17:07:03+05:30">Apr 30, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-04-30T17:06:34+05:30">Apr 30, 2017</time>
+<time datetime="2017-04-30T18:11:34+05:30">Apr 30, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

@@ -1,5 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-30T12:56:57+05:30</updated><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-04-29T23:12:16+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some of pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-30T18:11:34+05:30</updated><entry><title>Understanding the Pelican Settings files.</title><link href="http://archerimagine.com/articles/pelican-settings-files.html" rel="alternate"></link><published>2017-04-30T17:07:03+05:30</published><updated>2017-04-30T18:11:34+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/pelican-settings-files.html</id><summary type="html">&lt;p&gt;By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The basic work flow in pelican blogging is to first generate content, verify it locally using a &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and when everything is fine will publish it.&lt;/p&gt;
+&lt;p&gt;Pelican comes with two settings files to separate these 2 process. These two files are.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publishconf.py&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lets check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.&lt;/p&gt;
+&lt;p&gt;These setting files are mostly passed to the templates associated with the themes to generate the site, all these settings are some parameters to these templates.&lt;/p&gt;
+&lt;h2 id="pelicanconfpy"&gt;pelicanconf.py&lt;a class="headerlink" href="#pelicanconfpy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We had used the &lt;code&gt;pelican-quickstart&lt;/code&gt; to generate this blog, when we use this command, we get a pre-configured &lt;code&gt;pelicanconf.py&lt;/code&gt; and a &lt;code&gt;publishconf.py&lt;/code&gt; files. This have the bare basic configuration to be used based on the questions we answered on the options.&lt;/p&gt;
+&lt;p&gt;These files basically contains the settings identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), booleans (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt; is used to generate the site locally and tested over &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. The basic &lt;code&gt;pelicanconf.py&lt;/code&gt; would look like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+
+&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Animesh&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Asia/Kolkata&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;en&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Feed generation is usually not desired when developing&lt;/span&gt;
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;TRANSLATION_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+
+&lt;span class="n"&gt;ARTICLE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;articles&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;articles/{slug}.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;articles/{slug}.html&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Blogroll&lt;/span&gt;
+&lt;span class="n"&gt;LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Pelican&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://getpelican.com/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Python.org&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://python.org/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Jinja2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://jinja.pocoo.org/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;You can modify those links in your config file&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Social widget&lt;/span&gt;
+&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;You can add links in your config file&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Another social link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+
+&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Uncomment following line if you want document-relative URLs when developing&lt;/span&gt;
+&lt;span class="c1"&gt;#RELATIVE_URLS = True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you remember correctly some of the settings value we had provided during the &lt;code&gt;pelican-quickstart&lt;/code&gt; commands, like&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AUTHOR&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is the name of the site author which we had entered during the questions asked.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SITENAME&lt;/code&gt; &lt;ul&gt;
+&lt;li&gt;This is the Name of the site which we provided.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SITEURL&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;Since we still do not have domain name registered, we had kept this empty, and also it make sense to keep this empty for &lt;code&gt;localhost&lt;/code&gt; testing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PATH&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;content&lt;/code&gt; where we write our blog is the default path set.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TIMEZONE&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This we had entered during the initial process, and in future if we want to change this we can change this settings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DEFAULT_LANG&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This was also entered during the &lt;code&gt;pelican-quickstart&lt;/code&gt; process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FEEDS_*&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;All the &lt;code&gt;FEEDS_*&lt;/code&gt; related settings are empty because we have still not configured the RSS feeds settings, this we will change in future.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ARTICLE_*&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is the settings which we modified for keeping the path of the post into one folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LINKS&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is a tuple of tuple, with each entry showing a links which you want provide in you blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SOCIAL&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is also a tuple of tuple, were each entry is meant to point to a name of a social network say &lt;code&gt;Facebook&lt;/code&gt; and the link to your profile.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DEFAULT_PAGINATION&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is a number showing how many blogs should be listed on the front page. Some Themes use this setting for some other purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now these settings are not fully exhaustive, Pelican has a huge list of setting, which we will revisit once we have the need of them.&lt;/p&gt;
+&lt;h2 id="publishconfpy"&gt;publishconf.py&lt;a class="headerlink" href="#publishconfpy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Unlike &lt;code&gt;pelicanconf.py&lt;/code&gt;, this setting file is only used when we are supposed to publish our blog to the domain hosting. This configuration is accessed when we generate the site using the following commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content -s publishconf.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The basic content of these files look like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+
+&lt;span class="c1"&gt;# This file is only used if you use `make publish` or&lt;/span&gt;
+&lt;span class="c1"&gt;# explicitly specify it as your config file.&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;curdir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelicanconf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;RELATIVE_URLS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;feeds/all.atom.xml&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;feeds/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;.atom.xml&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;DELETE_OUTPUT_DIRECTORY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Following items are often useful when publishing&lt;/span&gt;
+
+&lt;span class="c1"&gt;#DISQUS_SITENAME = &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;#GOOGLE_ANALYTICS = &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This file, basically build on top of the &lt;code&gt;pelicanconf.py&lt;/code&gt;, as we can see from this line, &lt;code&gt;from pelicanconf import *&lt;/code&gt;. What this means is all the configuration from &lt;code&gt;pelicancongf.py&lt;/code&gt; is taken into consideration along with some specific configuration which is required for just publishing.&lt;/p&gt;
+&lt;p&gt;If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integraton with the &lt;code&gt;DISQUS&lt;/code&gt; comment system, and the &lt;code&gt;GOOGLE_ANALYTICS&lt;/code&gt; code. We will see the use of this code once we integrate these feature into our blog.&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/settings.html"&gt;Pelican Settings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-04-29T23:12:16+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some of pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
 &lt;h2 id="first-pelican-blog"&gt;First Pelican Blog&lt;a class="headerlink" href="#first-pelican-blog" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We have see the folder structure here&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
@@ -72,7 +213,7 @@ python -m pelican.server
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican Doc Quickstart&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican Folder Structure</title><link href="http://archerimagine.com/articles/pelican-folder-structure.html" rel="alternate"></link><published>2017-04-29T22:10:10+05:30</published><updated>2017-04-30T12:56:57+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-folder-structure.html</id><summary type="html">&lt;p&gt;In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican Folder Structure</title><link href="http://archerimagine.com/articles/pelican-folder-structure.html" rel="alternate"></link><published>2017-04-29T22:10:10+05:30</published><updated>2017-04-30T17:06:34+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-folder-structure.html</id><summary type="html">&lt;p&gt;In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.&lt;/p&gt;
 &lt;p&gt;After the first blog post if we give &lt;code&gt;make clean&lt;/code&gt; command we will see a folder structure just like this. This will have a empty &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"&gt;  &lt;/p&gt;
 &lt;p&gt;We will understand the use of these folder and a proper way of managing your content.&lt;/p&gt;
