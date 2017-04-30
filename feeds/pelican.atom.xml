@@ -1,5 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-30T18:11:34+05:30</updated><entry><title>Understanding the Pelican Settings files.</title><link href="http://archerimagine.com/articles/pelican-settings-files.html" rel="alternate"></link><published>2017-04-30T17:07:03+05:30</published><updated>2017-04-30T18:11:34+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/pelican-settings-files.html</id><summary type="html">&lt;p&gt;By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The basic work flow in pelican blogging is to first generate content, verify it locally using a &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and when everything is fine will publish it.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-04-30T22:10:54+05:30</updated><entry><title>Publishing your blog to github pages.</title><link href="http://archerimagine.com/articles/publishing-blog-github-pages.html" rel="alternate"></link><published>2017-04-30T18:44:09+05:30</published><updated>2017-04-30T22:10:54+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/publishing-blog-github-pages.html</id><summary type="html">&lt;p&gt;In this post we will try to make your small blog visible to the world with the help of github pages. This is the most easiest and free way to put your work for the world to see.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have set the basic blog, though it may not look great because of the theme which we are using, but we will change those. Presently we will focus on taking this blog for the world to see. &lt;a href="https://pages.github.com/" title="GitHub Pages"&gt;Github Pages&lt;/a&gt; is the way to publish your blog on to the www.&lt;/p&gt;
+&lt;p&gt;We will have 2 repository for doing this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One repository is for the source, which is our blog content.&lt;/li&gt;
+&lt;li&gt;Second repository is for the generated files in the &lt;code&gt;output&lt;/code&gt; folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="prerequisite"&gt;Prerequisite&lt;a class="headerlink" href="#prerequisite" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We all should have a &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; account, if you have then continue else go to &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; and create an account. The process is very straight forward, just follow the instruction on the website.&lt;/p&gt;
+&lt;p&gt;The git should be locally configured. Kindly follow the steps mention in this page &lt;a href="https://help.github.com/articles/setting-your-email-in-git/"&gt;Setting your email in Git&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="the-first-repository"&gt;The first Repository&lt;a class="headerlink" href="#the-first-repository" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We should now create out first Repository onto github. Click on the &lt;code&gt;+&lt;/code&gt; icon which shows this drop down.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepo.png" title="The create repo link"&gt;&lt;/p&gt;
+&lt;p&gt;and click on the option &lt;code&gt;New Repository&lt;/code&gt; as shown above.&lt;/p&gt;
+&lt;p&gt;This will open up a page with looks like this&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepoForm.png" title="The create repo form"&gt;&lt;/p&gt;
+&lt;p&gt;Fill in the repository name which you want to name, and write a little &lt;code&gt;Description&lt;/code&gt; also do not click on the check-box which read&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Initialize this repository with a README&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Because we already have a folder in our local system to check-in we can leave this box unchecked. In future if need we can create a &lt;code&gt;README&lt;/code&gt; file manually.&lt;/p&gt;
+&lt;p&gt;Once you click on the &lt;code&gt;Create Repository&lt;/code&gt; link, you will taken to this page, with these as a content.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Github Push Commands" src="http://archerimagine.com/images/githubAccount/commandsGitHub2Push.png" title="The Github push commands"&gt;&lt;/p&gt;
+&lt;p&gt;This is the symbol of empty repository which is created and now we can push our local code to this folder.&lt;/p&gt;
+&lt;h3 id="push-code-from-local-to-github-repository"&gt;Push code from local to Github repository&lt;a class="headerlink" href="#push-code-from-local-to-github-repository" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We can follow the instruction mentioned above to push our local code to github, but we have to make sure that we do not push the &lt;code&gt;output&lt;/code&gt; directory in the same repository as the code, because the handling of &lt;code&gt;output&lt;/code&gt; directory is different.&lt;/p&gt;
+&lt;p&gt;Go to the root of the folder, where your blog is kept.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cd ~/mySampleBlog/&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;Go to the root of the directory where the blog post are kept&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This command initializes a empty repository in the same folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Create a file named &lt;code&gt;.gitignore&lt;/code&gt; in the same folder.&lt;/li&gt;
+&lt;li&gt;Copy the below content to the &lt;code&gt;.gitignore&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*~
+._*
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.py&lt;span class="o"&gt;[&lt;/span&gt;cod&lt;span class="o"&gt;]&lt;/span&gt;
+output
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;The above code basically prevents all the local temporary files and the &lt;code&gt;output&lt;/code&gt; directory to be checked in.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git status&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This command will make sure that the &lt;code&gt;output&lt;/code&gt; folder is not tracked by git, check the output as shown below.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;On branch master
+
+Initial commit
+
+Untracked files:
+  &lt;span class="o"&gt;(&lt;/span&gt;use &lt;span class="s2"&gt;&amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot;&lt;/span&gt; to include in what will be committed&lt;span class="o"&gt;)&lt;/span&gt;
+
+    .gitignore
+    Makefile
+    content/
+    fabfile.py
+    pelicanconf.py
+    publishconf.py
+
+nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/span&gt;use &lt;span class="s2"&gt;&amp;quot;git add&amp;quot;&lt;/span&gt; to track&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Only files listed above will be tracked, and &lt;code&gt;output&lt;/code&gt; directory is not one of them.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;Adds all the above files to be ready for commit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -m "first commit"&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This will make a commit locally with the commit message as &lt;code&gt;first commit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote add origin https://github.com/pelicanBlog/mySampleBlog.git&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This commands connects the remote repository of github with our local code. The URL might be different for you.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This will push the local changes to the GitHub repository we created.&lt;/li&gt;
+&lt;li&gt;It will ask for your username and password, kindly provide those and we have pushed our code to github.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="pushing-the-output-folder"&gt;Pushing the &lt;code&gt;output&lt;/code&gt; folder&lt;a class="headerlink" href="#pushing-the-output-folder" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;output&lt;/code&gt; folder is out actual blog, so this is a little different then the previous way of pushing code to github.&lt;/p&gt;
+&lt;p&gt;Please follow along to create this special repository.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the same &lt;code&gt;New Repository&lt;/code&gt; from the &lt;code&gt;+&lt;/code&gt; icon shown in previous repository.&lt;/li&gt;
+&lt;li&gt;In the New Repository form, the magic happens with the &lt;code&gt;Repository Name&lt;/code&gt; field, fill in the name as &lt;code&gt;username.github.io&lt;/code&gt;, where &lt;code&gt;username&lt;/code&gt; is your github username.&lt;/li&gt;
+&lt;li&gt;Fill In the description.&lt;/li&gt;
+&lt;li&gt;Now there are two ways to push the &lt;code&gt;output&lt;/code&gt; folder to this new repository, you can follow any one of them.&lt;ul&gt;
+&lt;li&gt;Push the &lt;code&gt;output&lt;/code&gt; folder as a repository which we already know.&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -m "first commit"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote add origin https://github.com/pelicanBlog/pelicanBlog.github.io.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;After the above command, just launch this url in your browser, &lt;code&gt;https://username.github.io/&lt;/code&gt;, just change &lt;code&gt;username&lt;/code&gt; with your username.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Since the original source folder we create with &lt;code&gt;output&lt;/code&gt; directory mentioned in &lt;code&gt;.gitignore&lt;/code&gt;, we can now add this repository as a submodule in that repository, to provide a link between both the source and the &lt;code&gt;output&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;Go to the root of the blog content, in this case &lt;code&gt;cd ~/mySampleBlog&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git submodule add -f https://github.com/pelicanBlog/pelicanBlog.github.io.git output&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This adds the &lt;code&gt;output&lt;/code&gt; folder as a submodule.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -m "added submodule"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;The above will make the &lt;code&gt;output&lt;/code&gt; as a submodule&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this we have completed our part part of the blog series. With this series of blog post we are able to achieve this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Understand what is pelican blog and how to use it with github pages.&lt;/li&gt;
+&lt;li&gt;How to setup the Anaconda environment for pelican development.&lt;/li&gt;
+&lt;li&gt;Understood what &lt;code&gt;pelican-quickstart&lt;/code&gt; command does.&lt;/li&gt;
+&lt;li&gt;Understood the basic commands to generate the pelican blog&lt;/li&gt;
+&lt;li&gt;Understood the basic folder structure of the pelican blog&lt;/li&gt;
+&lt;li&gt;Understood the pelican settings files and its uses.&lt;/li&gt;
+&lt;li&gt;Created a github pages and pushed both our content and the blog post to it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next series will focus into&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to configure a domain with github pages.&lt;/li&gt;
+&lt;li&gt;Use of a themes and plugin to enhance the website&lt;/li&gt;
+&lt;li&gt;Integration with google analytics, mail chimp etc.&lt;/li&gt;
+&lt;li&gt;Modifying the blogs to get the most out of the themes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/categories/setup/"&gt;Github Help&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/setting-your-email-in-git/"&gt;Setting your email in Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://git-scm.com/docs/git-submodule"&gt;git-submodule &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://hernantz.github.io/how-to-publish-a-pelican-site-on-github.html"&gt;How to publish a pelican site on Github &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Understanding the Pelican Settings files.</title><link href="http://archerimagine.com/articles/pelican-settings-files.html" rel="alternate"></link><published>2017-04-30T17:07:03+05:30</published><updated>2017-04-30T18:11:34+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/pelican-settings-files.html</id><summary type="html">&lt;p&gt;By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The basic work flow in pelican blogging is to first generate content, verify it locally using a &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and when everything is fine will publish it.&lt;/p&gt;
 &lt;p&gt;Pelican comes with two settings files to separate these 2 process. These two files are.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/li&gt;

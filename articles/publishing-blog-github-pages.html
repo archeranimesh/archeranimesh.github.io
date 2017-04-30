@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, pelicanconf.py, publishconf.py" />
+<meta name="keywords" content="pelican, Pelican, Pelican Blog, Github Pages." />
 
-<meta property="og:title" content="Understanding the Pelican Settings files.  - Enhancing Pelican "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican-settings-files.html" />
-<meta property="og:description" content="By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings." />
+<meta property="og:title" content="Publishing your blog to github pages.  - Live to the World "/>
+<meta property="og:url" content="http://archerimagine.com/articles/publishing-blog-github-pages.html" />
+<meta property="og:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the most easiest and free way to put your work for the world to see." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-30T17:07:03+05:30" />
-<meta property="" content="2017-04-30T18:11:34+05:30" />
-<meta name="twitter:title" content="Understanding the Pelican Settings files.  - Enhancing Pelican ">
-<meta name="twitter:description" content="By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.">
+<meta property="og:article:published_time" content="2017-04-30T18:44:09+05:30" />
+<meta property="" content="2017-04-30T22:10:54+05:30" />
+<meta name="twitter:title" content="Publishing your blog to github pages.  - Live to the World ">
+<meta name="twitter:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the most easiest and free way to put your work for the world to see.">
 
-        <title>Understanding the Pelican Settings files.  - Enhancing Pelican  · Archer Imagine
+        <title>Publishing your blog to github pages.  - Live to the World  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican-settings-files.html"> Understanding the Pelican Settings files.  <small> Enhancing Pelican </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/publishing-blog-github-pages.html"> Publishing your blog to github pages.  <small> Live to the World </small>  </a></h1>
     </header>
 </div>
 
@@ -90,147 +90,155 @@
         <div class="span8 offset2 article-content">
 
             
-            <p>The basic work flow in pelican blogging is to first generate content, verify it locally using a <a href="http://localhost:8000/">localhost:8000</a>, and when everything is fine will publish it.</p>
-<p>Pelican comes with two settings files to separate these 2 process. These two files are.</p>
+            <p>We have set the basic blog, though it may not look great because of the theme which we are using, but we will change those. Presently we will focus on taking this blog for the world to see. <a href="https://pages.github.com/" title="GitHub Pages">Github Pages</a> is the way to publish your blog on to the www.</p>
+<p>We will have 2 repository for doing this.</p>
 <ul>
-<li><code>pelicanconf.py</code></li>
-<li><code>publishconf.py</code></li>
+<li>One repository is for the source, which is our blog content.</li>
+<li>Second repository is for the generated files in the <code>output</code> folder.</li>
 </ul>
-<p>Lets check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.</p>
-<p>These setting files are mostly passed to the templates associated with the themes to generate the site, all these settings are some parameters to these templates.</p>
-<h2 id="pelicanconfpy">pelicanconf.py<a class="headerlink" href="#pelicanconfpy" title="Permanent link">&para;</a></h2>
-<p>We had used the <code>pelican-quickstart</code> to generate this blog, when we use this command, we get a pre-configured <code>pelicanconf.py</code> and a <code>publishconf.py</code> files. This have the bare basic configuration to be used based on the questions we answered on the options.</p>
-<p>These files basically contains the settings identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), booleans (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.</p>
-<p><code>pelicanconf.py</code> is used to generate the site locally and tested over <a href="http://localhost:8000/">localhost:8000</a>. The basic <code>pelicanconf.py</code> would look like this.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># -*- coding: utf-8 -*- #</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
-
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Animesh&#39;</span>
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Hello World&#39;</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-
-<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
-
-<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Asia/Kolkata&#39;</span>
-
-<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;en&#39;</span>
-
-<span class="c1"># Feed generation is usually not desired when developing</span>
-<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="bp">None</span>
-
-<span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;articles&#39;</span><span class="p">,]</span>
-<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}.html&#39;</span>
-<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}.html&#39;</span>
-
-<span class="c1"># Blogroll</span>
-<span class="n">LINKS</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s1">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
-         <span class="p">(</span><span class="s1">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s1">&#39;http://python.org/&#39;</span><span class="p">),</span>
-         <span class="p">(</span><span class="s1">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s1">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">),</span>
-         <span class="p">(</span><span class="s1">&#39;You can modify those links in your config file&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),)</span>
-
-<span class="c1"># Social widget</span>
-<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;You can add links in your config file&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s1">&#39;Another social link&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),)</span>
-
-<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="c1"># Uncomment following line if you want document-relative URLs when developing</span>
-<span class="c1">#RELATIVE_URLS = True</span>
-</pre></div>
-
-
-<p>If you remember correctly some of the settings value we had provided during the <code>pelican-quickstart</code> commands, like</p>
+<h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">&para;</a></h2>
+<p>We all should have a <a href="https://github.com/">GitHub</a> account, if you have then continue else go to <a href="https://github.com/">GitHub</a> and create an account. The process is very straight forward, just follow the instruction on the website.</p>
+<p>The git should be locally configured. Kindly follow the steps mention in this page <a href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a>.</p>
+<h2 id="the-first-repository">The first Repository<a class="headerlink" href="#the-first-repository" title="Permanent link">&para;</a></h2>
+<p>We should now create out first Repository onto github. Click on the <code>+</code> icon which shows this drop down.</p>
+<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepo.png" title="The create repo link"></p>
+<p>and click on the option <code>New Repository</code> as shown above.</p>
+<p>This will open up a page with looks like this</p>
+<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepoForm.png" title="The create repo form"></p>
+<p>Fill in the repository name which you want to name, and write a little <code>Description</code> also do not click on the check-box which read</p>
+<p><code>Initialize this repository with a README</code></p>
+<p>Because we already have a folder in our local system to check-in we can leave this box unchecked. In future if need we can create a <code>README</code> file manually.</p>
+<p>Once you click on the <code>Create Repository</code> link, you will taken to this page, with these as a content.</p>
+<p><img alt="Github Push Commands" src="http://archerimagine.com/images/githubAccount/commandsGitHub2Push.png" title="The Github push commands"></p>
+<p>This is the symbol of empty repository which is created and now we can push our local code to this folder.</p>
+<h3 id="push-code-from-local-to-github-repository">Push code from local to Github repository<a class="headerlink" href="#push-code-from-local-to-github-repository" title="Permanent link">&para;</a></h3>
+<p>We can follow the instruction mentioned above to push our local code to github, but we have to make sure that we do not push the <code>output</code> directory in the same repository as the code, because the handling of <code>output</code> directory is different.</p>
+<p>Go to the root of the folder, where your blog is kept.</p>
 <ul>
-<li><code>AUTHOR</code><ul>
-<li>This is the name of the site author which we had entered during the questions asked.</li>
+<li><code>cd ~/mySampleBlog/</code><ul>
+<li>Go to the root of the directory where the blog post are kept</li>
 </ul>
 </li>
-<li><code>SITENAME</code> <ul>
-<li>This is the Name of the site which we provided.</li>
+<li><code>git init</code><ul>
+<li>This command initializes a empty repository in the same folder.</li>
 </ul>
 </li>
-<li><code>SITEURL</code><ul>
-<li>Since we still do not have domain name registered, we had kept this empty, and also it make sense to keep this empty for <code>localhost</code> testing.</li>
+<li>Create a file named <code>.gitignore</code> in the same folder.</li>
+<li>Copy the below content to the <code>.gitignore</code> file.</li>
 </ul>
-</li>
-<li><code>PATH</code><ul>
-<li><code>content</code> where we write our blog is the default path set.</li>
-</ul>
-</li>
-<li><code>TIMEZONE</code><ul>
-<li>This we had entered during the initial process, and in future if we want to change this we can change this settings.</li>
-</ul>
-</li>
-<li><code>DEFAULT_LANG</code><ul>
-<li>This was also entered during the <code>pelican-quickstart</code> process.</li>
-</ul>
-</li>
-<li><code>FEEDS_*</code><ul>
-<li>All the <code>FEEDS_*</code> related settings are empty because we have still not configured the RSS feeds settings, this we will change in future.</li>
-</ul>
-</li>
-<li><code>ARTICLE_*</code><ul>
-<li>This is the settings which we modified for keeping the path of the post into one folder.</li>
-</ul>
-</li>
-<li><code>LINKS</code><ul>
-<li>This is a tuple of tuple, with each entry showing a links which you want provide in you blog.</li>
-</ul>
-</li>
-<li><code>SOCIAL</code><ul>
-<li>This is also a tuple of tuple, were each entry is meant to point to a name of a social network say <code>Facebook</code> and the link to your profile.</li>
-</ul>
-</li>
-<li><code>DEFAULT_PAGINATION</code><ul>
-<li>This is a number showing how many blogs should be listed on the front page. Some Themes use this setting for some other purposes.</li>
-</ul>
-</li>
-</ul>
-<p>Now these settings are not fully exhaustive, Pelican has a huge list of setting, which we will revisit once we have the need of them.</p>
-<h2 id="publishconfpy">publishconf.py<a class="headerlink" href="#publishconfpy" title="Permanent link">&para;</a></h2>
-<p>Unlike <code>pelicanconf.py</code>, this setting file is only used when we are supposed to publish our blog to the domain hosting. This configuration is accessed when we generate the site using the following commands.</p>
-<div class="highlight"><pre><span></span>pelican content -s publishconf.py
+<div class="highlight"><pre><span></span>*~
+._*
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.py<span class="o">[</span>cod<span class="o">]</span>
+output
 </pre></div>
 
 
-<p>The basic content of these files look like this.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># -*- coding: utf-8 -*- #</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<ul>
+<li>The above code basically prevents all the local temporary files and the <code>output</code> directory to be checked in.</li>
+<li><code>git status</code><ul>
+<li>This command will make sure that the <code>output</code> folder is not tracked by git, check the output as shown below.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>On branch master
 
-<span class="c1"># This file is only used if you use `make publish` or</span>
-<span class="c1"># explicitly specify it as your config file.</span>
+Initial commit
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">pelicanconf</span> <span class="kn">import</span> <span class="o">*</span>
+Untracked files:
+  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="o">)</span>
 
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="n">RELATIVE_URLS</span> <span class="o">=</span> <span class="bp">False</span>
+    .gitignore
+    Makefile
+    content/
+    fabfile.py
+    pelicanconf.py
+    publishconf.py
 
-<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s1">&#39;feeds/all.atom.xml&#39;</span>
-<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s1">&#39;feeds/</span><span class="si">%s</span><span class="s1">.atom.xml&#39;</span>
-
-<span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="bp">True</span>
-
-<span class="c1"># Following items are often useful when publishing</span>
-
-<span class="c1">#DISQUS_SITENAME = &quot;&quot;</span>
-<span class="c1">#GOOGLE_ANALYTICS = &quot;&quot;</span>
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
 </pre></div>
 
 
-<p>This file, basically build on top of the <code>pelicanconf.py</code>, as we can see from this line, <code>from pelicanconf import *</code>. What this means is all the configuration from <code>pelicancongf.py</code> is taken into consideration along with some specific configuration which is required for just publishing.</p>
-<p>If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integraton with the <code>DISQUS</code> comment system, and the <code>GOOGLE_ANALYTICS</code> code. We will see the use of this code once we integrate these feature into our blog.</p>
+<ul>
+<li>Only files listed above will be tracked, and <code>output</code> directory is not one of them.</li>
+<li><code>git add .</code><ul>
+<li>Adds all the above files to be ready for commit.</li>
+</ul>
+</li>
+<li><code>git commit -m "first commit"</code><ul>
+<li>This will make a commit locally with the commit message as <code>first commit</code></li>
+</ul>
+</li>
+<li><code>git remote add origin https://github.com/pelicanBlog/mySampleBlog.git</code><ul>
+<li>This commands connects the remote repository of github with our local code. The URL might be different for you.</li>
+</ul>
+</li>
+<li><code>git push -u origin master</code><ul>
+<li>This will push the local changes to the GitHub repository we created.</li>
+<li>It will ask for your username and password, kindly provide those and we have pushed our code to github.</li>
+</ul>
+</li>
+</ul>
+<h2 id="pushing-the-output-folder">Pushing the <code>output</code> folder<a class="headerlink" href="#pushing-the-output-folder" title="Permanent link">&para;</a></h2>
+<p>The <code>output</code> folder is out actual blog, so this is a little different then the previous way of pushing code to github.</p>
+<p>Please follow along to create this special repository.</p>
+<ul>
+<li>Select the same <code>New Repository</code> from the <code>+</code> icon shown in previous repository.</li>
+<li>In the New Repository form, the magic happens with the <code>Repository Name</code> field, fill in the name as <code>username.github.io</code>, where <code>username</code> is your github username.</li>
+<li>Fill In the description.</li>
+<li>Now there are two ways to push the <code>output</code> folder to this new repository, you can follow any one of them.<ul>
+<li>Push the <code>output</code> folder as a repository which we already know.<ul>
+<li><code>git init</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m "first commit"</code></li>
+<li><code>git remote add origin https://github.com/pelicanBlog/pelicanBlog.github.io.git</code></li>
+<li><code>git push -u origin master</code></li>
+<li>After the above command, just launch this url in your browser, <code>https://username.github.io/</code>, just change <code>username</code> with your username.</li>
+</ul>
+</li>
+<li>Since the original source folder we create with <code>output</code> directory mentioned in <code>.gitignore</code>, we can now add this repository as a submodule in that repository, to provide a link between both the source and the <code>output</code><ul>
+<li>Go to the root of the blog content, in this case <code>cd ~/mySampleBlog</code></li>
+<li><code>git submodule add -f https://github.com/pelicanBlog/pelicanBlog.github.io.git output</code><ul>
+<li>This adds the <code>output</code> folder as a submodule.</li>
+</ul>
+</li>
+<li><code>git commit -m "added submodule"</code></li>
+<li><code>git push -u origin master</code><ul>
+<li>The above will make the <code>output</code> as a submodule</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>With this we have completed our part part of the blog series. With this series of blog post we are able to achieve this.</p>
+<ul>
+<li>Understand what is pelican blog and how to use it with github pages.</li>
+<li>How to setup the Anaconda environment for pelican development.</li>
+<li>Understood what <code>pelican-quickstart</code> command does.</li>
+<li>Understood the basic commands to generate the pelican blog</li>
+<li>Understood the basic folder structure of the pelican blog</li>
+<li>Understood the pelican settings files and its uses.</li>
+<li>Created a github pages and pushed both our content and the blog post to it.</li>
+</ul>
+<p>The next series will focus into</p>
+<ul>
+<li>How to configure a domain with github pages.</li>
+<li>Use of a themes and plugin to enhance the website</li>
+<li>Integration with google analytics, mail chimp etc.</li>
+<li>Modifying the blogs to get the most out of the themes.</li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="http://docs.getpelican.com/en/stable/settings.html">Pelican Settings</a></li>
+<li><a href="https://help.github.com/categories/setup/">Github Help</a></li>
+<li><a href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a></li>
+<li><a href="https://git-scm.com/docs/git-submodule">git-submodule </a></li>
+<li><a href="http://hernantz.github.io/how-to-publish-a-pelican-site-on-github.html">How to publish a pelican site on Github </a></li>
+<li><a href="https://pages.github.com/">Github Pages</a></li>
 </ul>
             
             <section>
@@ -239,7 +247,7 @@
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican-settings-files.html#disqus_thread">
+                href="http://archerimagine.com/articles/publishing-blog-github-pages.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -249,8 +257,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican-settings-files.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican-settings-files.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/publishing-blog-github-pages.html';
+    var disqus_url = 'http://archerimagine.com/articles/publishing-blog-github-pages.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -273,10 +281,10 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-30T17:07:03+05:30">Apr 30, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-30T18:44:09+05:30">Apr 30, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-04-30T18:11:34+05:30">Apr 30, 2017</time>
+<time datetime="2017-04-30T22:10:54+05:30">Apr 30, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
