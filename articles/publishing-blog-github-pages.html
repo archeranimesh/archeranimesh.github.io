@@ -15,13 +15,13 @@
 
 <meta property="og:title" content="Publishing your blog to github pages.  - Live to the World "/>
 <meta property="og:url" content="http://archerimagine.com/articles/publishing-blog-github-pages.html" />
-<meta property="og:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the most easiest and free way to put your work for the world to see." />
+<meta property="og:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the easiest and free way to put your work for the world to see." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2017-04-30T18:44:09+05:30" />
-<meta property="" content="2017-04-30T22:10:54+05:30" />
+<meta property="" content="2017-05-02T23:09:01+05:30" />
 <meta name="twitter:title" content="Publishing your blog to github pages.  - Live to the World ">
-<meta name="twitter:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the most easiest and free way to put your work for the world to see.">
+<meta name="twitter:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the easiest and free way to put your work for the world to see.">
 
         <title>Publishing your blog to github pages.  - Live to the World  · Archer Imagine
 </title>
@@ -87,31 +87,48 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#prerequisite">Prerequisite</a></li>
+<li><a href="#the-first-repository">The first Repository</a><ul>
+<li><a href="#push-code-from-local-to-github-repository">Push code from local to Github repository</a></li>
+</ul>
+</li>
+<li><a href="#pushing-the-output-folder">Pushing the output folder</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
-            <p>We have set the basic blog, though it may not look great because of the theme which we are using, but we will change those. Presently we will focus on taking this blog for the world to see. <a href="https://pages.github.com/" title="GitHub Pages">Github Pages</a> is the way to publish your blog on to the www.</p>
-<p>We will have 2 repository for doing this.</p>
+            
+<p>We have set the basic blog, though it may not look great because of the theme which we are using, but we will change those. Presently we will focus on taking this blog for the world to see. <a href="https://pages.github.com/" title="GitHub Pages">Github Pages</a> is the way to publish your blog on to the WWW.</p>
+<p>We will have 2 repositories for doing this.</p>
 <ul>
 <li>One repository is for the source, which is our blog content.</li>
 <li>Second repository is for the generated files in the <code>output</code> folder.</li>
 </ul>
-<h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">¶</a></h2>
 <p>We all should have a <a href="https://github.com/">GitHub</a> account, if you have then continue else go to <a href="https://github.com/">GitHub</a> and create an account. The process is very straight forward, just follow the instruction on the website.</p>
 <p>The git should be locally configured. Kindly follow the steps mention in this page <a href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a>.</p>
-<h2 id="the-first-repository">The first Repository<a class="headerlink" href="#the-first-repository" title="Permanent link">&para;</a></h2>
-<p>We should now create out first Repository onto github. Click on the <code>+</code> icon which shows this drop down.</p>
-<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepo.png" title="The create repo link"></p>
-<p>and click on the option <code>New Repository</code> as shown above.</p>
+<h2 id="the-first-repository">The first Repository<a class="headerlink" href="#the-first-repository" title="Permanent link">¶</a></h2>
+<p>We should now create our first Repository onto github. Click on the <code>+</code> icon which shows this drop down.</p>
+<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepo.png" title="The create repo link"/></p>
+<p>And click on the option <code>New Repository</code> as shown above.</p>
 <p>This will open up a page with looks like this</p>
-<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepoForm.png" title="The create repo form"></p>
+<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepoForm.png" title="The create repo form"/></p>
 <p>Fill in the repository name which you want to name, and write a little <code>Description</code> also do not click on the check-box which read</p>
 <p><code>Initialize this repository with a README</code></p>
-<p>Because we already have a folder in our local system to check-in we can leave this box unchecked. In future if need we can create a <code>README</code> file manually.</p>
-<p>Once you click on the <code>Create Repository</code> link, you will taken to this page, with these as a content.</p>
-<p><img alt="Github Push Commands" src="http://archerimagine.com/images/githubAccount/commandsGitHub2Push.png" title="The Github push commands"></p>
+<p>Since we already have a folder in our local system to check-in we can leave this box unchecked. In future if need we can create a <code>README</code> file manually.</p>
+<p>Once you click on the <code>Create Repository</code> link, you will be taken to this page, with these as a content.</p>
+<p><img alt="Github Push Commands" src="http://archerimagine.com/images/githubAccount/commandsGitHub2Push.png" title="The Github push commands"/></p>
 <p>This is the symbol of empty repository which is created and now we can push our local code to this folder.</p>
-<h3 id="push-code-from-local-to-github-repository">Push code from local to Github repository<a class="headerlink" href="#push-code-from-local-to-github-repository" title="Permanent link">&para;</a></h3>
+<h3 id="push-code-from-local-to-github-repository">Push code from local to Github repository<a class="headerlink" href="#push-code-from-local-to-github-repository" title="Permanent link">¶</a></h3>
 <p>We can follow the instruction mentioned above to push our local code to github, but we have to make sure that we do not push the <code>output</code> directory in the same repository as the code, because the handling of <code>output</code> directory is different.</p>
 <p>Go to the root of the folder, where your blog is kept.</p>
 <ul>
@@ -135,8 +152,6 @@
 *.py<span class="o">[</span>cod<span class="o">]</span>
 output
 </pre></div>
-
-
 <ul>
 <li>The above code basically prevents all the local temporary files and the <code>output</code> directory to be checked in.</li>
 <li><code>git status</code><ul>
@@ -149,7 +164,7 @@ output
 Initial commit
 
 Untracked files:
-  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="o">)</span>
 
     .gitignore
     Makefile
@@ -158,10 +173,8 @@ Untracked files:
     pelicanconf.py
     publishconf.py
 
-nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span>
 </pre></div>
-
-
 <ul>
 <li>Only files listed above will be tracked, and <code>output</code> directory is not one of them.</li>
 <li><code>git add .</code><ul>
@@ -182,8 +195,8 @@ nothing added to commit but untracked files present <span class="o">(</span>use 
 </ul>
 </li>
 </ul>
-<h2 id="pushing-the-output-folder">Pushing the <code>output</code> folder<a class="headerlink" href="#pushing-the-output-folder" title="Permanent link">&para;</a></h2>
-<p>The <code>output</code> folder is out actual blog, so this is a little different then the previous way of pushing code to github.</p>
+<h2 id="pushing-the-output-folder">Pushing the <code>output</code> folder<a class="headerlink" href="#pushing-the-output-folder" title="Permanent link">¶</a></h2>
+<p>The <code>output</code> folder is out actual blog, so this is a little different from the previous way of pushing code to github.</p>
 <p>Please follow along to create this special repository.</p>
 <ul>
 <li>Select the same <code>New Repository</code> from the <code>+</code> icon shown in previous repository.</li>
@@ -215,10 +228,10 @@ nothing added to commit but untracked files present <span class="o">(</span>use 
 </ul>
 </li>
 </ul>
-<p>With this we have completed our part part of the blog series. With this series of blog post we are able to achieve this.</p>
+<p>With this we have completed our part of the blog series. With this series of blog post we are able to achieve this.</p>
 <ul>
 <li>Understand what is pelican blog and how to use it with github pages.</li>
-<li>How to setup the Anaconda environment for pelican development.</li>
+<li>How to set up the Anaconda environment for pelican development.</li>
 <li>Understood what <code>pelican-quickstart</code> command does.</li>
 <li>Understood the basic commands to generate the pelican blog</li>
 <li>Understood the basic folder structure of the pelican blog</li>
@@ -232,7 +245,7 @@ nothing added to commit but untracked files present <span class="o">(</span>use 
 <li>Integration with google analytics, mail chimp etc.</li>
 <li>Modifying the blogs to get the most out of the themes.</li>
 </ul>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://help.github.com/categories/setup/">Github Help</a></li>
 <li><a href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a></li>
@@ -284,7 +297,7 @@ nothing added to commit but untracked files present <span class="o">(</span>use 
             <time pubdate="pubdate" datetime="2017-04-30T18:44:09+05:30">Apr 30, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-04-30T22:10:54+05:30">Apr 30, 2017</time>
+<time datetime="2017-05-02T23:09:01+05:30">May 2, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
