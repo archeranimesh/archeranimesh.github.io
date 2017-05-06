@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, pelican commands, pelican blog post." />
+<meta name="keywords" content="pelican, Pelican, Pelican folder structure" />
 
-<meta property="og:title" content="Pelican commands to generate the first blog.  - Beyond HelloWorld "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" />
-<meta property="og:description" content="In this post we will check some of pelican commands, and how it helps us to generate a blog post." />
+<meta property="og:title" content="Pelican Folder Structure  - Creating Magic "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/pelican-folder-structure.html" />
+<meta property="og:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-29T22:15:05+05:30" />
-<meta property="" content="2017-05-02T23:08:47+05:30" />
-<meta name="twitter:title" content="Pelican commands to generate the first blog.  - Beyond HelloWorld ">
-<meta name="twitter:description" content="In this post we will check some of pelican commands, and how it helps us to generate a blog post.">
+<meta property="og:article:published_time" content="2017-04-29T22:10:10+05:30" />
+<meta property="" content="2017-05-06T23:56:03+05:30" />
+<meta name="twitter:title" content="Pelican Folder Structure  - Creating Magic ">
+<meta name="twitter:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.">
 
-        <title>Pelican commands to generate the first blog.  - Beyond HelloWorld  · Archer Imagine
+        <title>Pelican Folder Structure  - Creating Magic  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html"> Pelican commands to generate the first blog.  <small> Beyond HelloWorld </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/pelican-folder-structure.html"> Pelican Folder Structure  <small> Creating Magic </small>  </a></h1>
     </header>
 </div>
 
@@ -92,8 +92,12 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#first-pelican-blog">First Pelican Blog</a></li>
-<li><a href="#the-first-post">The first post.</a></li>
+<li><a href="#content-folder">content folder</a><ul>
+<li><a href="#writing-content">Writing Content</a></li>
+<li><a href="#static-pages">Static Pages</a></li>
+<li><a href="#static-images">Static Images</a></li>
+</ul>
+</li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -103,61 +107,99 @@
 
             
             
-<p>We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.</p>
-<h2 id="first-pelican-blog">First Pelican Blog<a class="headerlink" href="#first-pelican-blog" title="Permanent link">¶</a></h2>
-<p>We have see the folder structure here</p>
-<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"> </img></p>
-<p>Now we will first execute some commands and see what happens with this boilerplate. Remember to be in the <code>pelican1</code> environment. We can do this by.</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> activate pelican1
+<p>We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some files forms the basic of this. We will understand some of these files and folder use in this post.</p>
+<p>After the first blog post if we give <code>make clean</code> command we will see a folder structure just like this. This will have an empty <code>output</code> folder.</p>
+<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"> </img></p>
+<p>We will understand the use of these folder and a proper way of managing your content.</p>
+<h2 id="content-folder">content folder<a class="headerlink" href="#content-folder" title="Permanent link">¶</a></h2>
+<p>This is the folder where all the magic happens. This is the root folder for our all content, we can use this folder for these purposes.</p>
+<ul>
+<li>Writing content</li>
+<li>Saving the images references in the content</li>
+<li>Static Pages (ex: about, contact etc)</li>
+<li>folder for storing our favicon.ico and apple icon</li>
+</ul>
+<h3 id="writing-content">Writing Content<a class="headerlink" href="#writing-content" title="Permanent link">¶</a></h3>
+<p>In traditional wordpress or most of the blogging platform the content is stored in this format <code>/2015/05/24/my-content/</code> now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the URL. In my opinion we can better organize our self with some meaning full structure.</p>
+<p>What we can do is we can create a folder in side <code>content</code> named <code>articles</code> and the sub folders inside <code>articles</code> for each category which you want to write or if you want to have a flat system you can place all your content inside <code>articles</code>. I prefer the sub folder approach as we can derive the category name just from the folder name.</p>
+<p>So go ahead for beginning create a folder inside <code>content</code> name <code>articles</code></p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
+mkdir articles
 </pre></div>
-<p>Once we are in <code>pelican1</code> environment, we have all the <code>pelican</code> commands at our disposal. Kindly execute this command.</p>
-<div class="highlight"><pre><span></span>pelican content
+<p>Now create your second post inside this and publish the content based on the command we learned on the previous post.</p>
+<p>Now if you launch the <a href="http://localhost:8000/">localhost:8000</a>, and click on the article title, you will see no difference but if you see on the URL bar, we still see that our post is without the <code>article</code> folder structure. We did not want this. Have a look</p>
+<p><img alt="url without article " src="http://archerimagine.com/images/pelicanFolder/URLwithoutarticles.png" title="URL without articles."/></p>
+<p>In order to get the proper URL in the address bar we have to change somethings in the <code>pelicanconf.py</code>, we will explain what is the purpose of this file in a short file for not just add these 3 line into that config.</p>
+<div class="highlight"><pre><span></span><span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'articles'</span><span class="p">,]</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">'articles/{slug}.html'</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">'articles/{slug}.html'</span>
 </pre></div>
-<p>The above command we are passing <code>content</code> as a parameter, which is nothing but one of the directory of the folder structure.</p>
-<p>The output will be</p>
-<div class="highlight"><pre><span></span>WARNING: No valid files found in content.
-Done: Processed <span class="m">0</span> articles, <span class="m">0</span> drafts, <span class="m">0</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.12 seconds.
+<p>With is configuration in the config folder, just generate the blog with the commands already learned and then check the <a href="http://localhost:8000/">localhost:8000</a>. It should look like this.</p>
+<p><img alt="url with article " src="http://archerimagine.com/images/pelicanFolder/URLwitharticles.png" title="URL with articles."/></p>
+<p>Now we have a proper folder structure.</p>
+<h3 id="static-pages">Static Pages<a class="headerlink" href="#static-pages" title="Permanent link">¶</a></h3>
+<p>Most often than not we will want some pages which will rarely change, like an <strong>About</strong> and a <strong>Contact</strong> pages. These type of static pages is also supported in the pelican blog. Just create a folder named <code>pages</code> inside <code>content</code> folder like this.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
+mkdir pages
 </pre></div>
-<p>It clearly warn us about no valid files found in <strong>content</strong>, as we have not added any post to the directory. If you see inside the <code>output</code> folder, we will see some content in that namely these files</p>
-<div class="highlight"><pre><span></span>archives.html
-authors.html
-categories.html
-index.html
-tags.html
-theme <span class="c1">#directory which contains some predefined images and css.</span>
-</pre></div>
-<p>Now let us see what the blog looks like. Just execute these commands.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> output/
-python -m pelican.server
-</pre></div>
-<p>Once you execute the above commands we can see the output on browser on this path <a href="http://localhost:8000/">localhost:8000</a> and it will look something like this</p>
-<p><img alt="Pelican First Post" src="http://archerimagine.com/images/pelicanCommands/firstPostPelican.png" title="The first post from pelican"/></p>
-<p>Nothing fancy here, but we will some content with some link and a default theme. It is petty good for being a boilerplate.</p>
-<h2 id="the-first-post">The first post.<a class="headerlink" href="#the-first-post" title="Permanent link">¶</a></h2>
-<p>Now we are ready for our first post, we will do the sample hello world which is the de-facto standard in programming languages first program.</p>
-<p>We will write the first post in <strong>Markdown</strong>. Create a file named <code>HelloWorld.md</code> in this directory <code>content</code>.</p>
-<div class="highlight"><pre><span></span>Title: Hello World
-Date: 2017-04-29 11:01
-Category: Pelican
+<p>Now we are ready to make our sample <code>About.md</code> and <code>Contact.md</code>  inside <code>pages</code> directory.</p>
+<div class="highlight"><pre><span></span>Title: About
+Date: 2017-04-14 22:30
+Modified: 2017-04-14 22:30
+Slug: About
+Author: username
+Summary: This is a sample blog.
 
-Hello World to Pelican
+
+The About Page for the blog.
 </pre></div>
-<p>Once create and saved this file, just run this command.</p>
-<div class="highlight"><pre><span></span>pelican content
+<p>and <code>Contact.md</code></p>
+<div class="highlight"><pre><span></span>Title: Contact
+Date: 2017-04-14 22:30
+Modified: 2017-04-14 22:30
+Slug: Contact
+Author: username
+Summary: This is a sample blog contact page.
+
+
+The Contact Page for the blog.
 </pre></div>
-<p>This will have the following output.</p>
-<div class="highlight"><pre><span></span>Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">0</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.27 seconds.
+<p>We again generate the blog and check it on <a href="http://localhost:8000/">localhost:8000</a>.</p>
+<p>When we see the output of <code>pelican content</code> command we will see this.</p>
+<div class="highlight"><pre><span></span>Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">2</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.20 seconds.
 </pre></div>
-<p>This time it clearly states that we have <code>1</code> article. Then follow the other commands as discussed.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> output/
-python -m pelican.server
+<p>Which means that, the <code>pages</code> are generated. When we launch the <a href="http://localhost:8000/">localhost:8000</a>. we will see that the <code>About</code> and <code>Contact</code> menu like this</p>
+<p><img alt="About and Contact Page " src="http://archerimagine.com/images/pelicanFolder/staticPages.png" title="About and Contact Page."/></p>
+<p>We can modify these pages with the information which you want to furnish.</p>
+<h3 id="static-images">Static Images<a class="headerlink" href="#static-images" title="Permanent link">¶</a></h3>
+<p>Most often than not we will use images to link in our blogs, we can store all these images inside the <code>content</code> folder, having a directory called <code>images</code>. Do this by following these commands.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
+mkdir images
 </pre></div>
-<p>Again check the output on the browser at <a href="http://localhost:8000/">localhost:8000</a>. Now this time the output is different and it look like this.</p>
-<p><img alt="Pelican Hello World Post" src="http://archerimagine.com/images/pelicanCommands/helloWorldPelicanPost.png" title="The HelloWorld post from pelican"/></p>
-<p>The area surrounded in ellipse are new. This shows us the power of pelican, we do not have to bother how the content is presented on screen, we have to only concentrate on writing content.</p>
+<p>Now we can copy any image inside this folder and try to link it into one of our blog. Just copy any image in this folder and copy the file name.</p>
+<p>Now create a link to this file inside the already existing blog post by the help of <code>link</code> of markdown, here is a sample.</p>
+<div class="highlight"><pre><span></span>![<span class="nt">Hello World 1</span>](<span class="na">{filename}../../images/helloWorldPelicanPost.png "Hello World 2"</span>)
+</pre></div>
+<p>We should understand some details about the above piece of code.</p>
+<ul>
+<li><code>Hello World 1</code><ul>
+<li>The <code>alt</code> text is good if there is a browser which block image, this <code>alt</code> text is displayed, showing an information about what this images were supposed to do.</li>
+</ul>
+</li>
+<li><code>"Hello World 2"</code><ul>
+<li>This is the <code>title</code> of the image, which is shown as a tool tip once we hover over the image.</li>
+</ul>
+</li>
+<li><code>{filename}</code><ul>
+<li>This is a special syntax which is used by pelican to generate links, so be it URL or images, when using relative URLs kindly use this format.</li>
+</ul>
+</li>
+</ul>
+<p>We have covered most of the folder structure inside <code>article</code> we will see the configuration files in the next blog post.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="http://docs.getpelican.com/en/stable/quickstart.html">Pelican Doc Quickstart</a></li>
+<li><a href="http://docs.getpelican.com/en/stable/content.html#pages">Pages</a></li>
+<li><a href="http://docs.getpelican.com/en/stable/content.html#linking-to-internal-content">Linking to internal content </a></li>
 </ul>
             
             <section>
@@ -166,7 +208,7 @@ python -m pelican.server
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/pelican-folder-structure.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -176,8 +218,8 @@ python -m pelican.server
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/pelican-folder-structure.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/pelican-folder-structure.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -200,10 +242,10 @@ python -m pelican.server
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-29T22:15:05+05:30">Apr 29, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-29T22:10:10+05:30">Apr 29, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-02T23:08:47+05:30">May 2, 2017</time>
+<time datetime="2017-05-06T23:56:03+05:30">May 6, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

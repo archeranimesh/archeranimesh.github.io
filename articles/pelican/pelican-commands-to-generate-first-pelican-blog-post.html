@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, pelican, helloworld, pelican-quickstart" />
+<meta name="keywords" content="pelican, Pelican, pelican commands, pelican blog post." />
 
-<meta property="og:title" content="Pelican HelloWorld using pelican-quickstart  - base configuration "/>
-<meta property="og:url" content="http://archerimagine.com/articles/helloworld-pelican-quickstart.html" />
-<meta property="og:description" content="We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box." />
+<meta property="og:title" content="Pelican commands to generate the first blog.  - Beyond HelloWorld "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html" />
+<meta property="og:description" content="In this post we will check some pelican commands, and how it helps us to generate a blog post." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-27T23:26:43+05:30" />
-<meta property="" content="2017-05-02T23:08:35+05:30" />
-<meta name="twitter:title" content="Pelican HelloWorld using pelican-quickstart  - base configuration ">
-<meta name="twitter:description" content="We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.">
+<meta property="og:article:published_time" content="2017-04-29T22:15:05+05:30" />
+<meta property="" content="2017-05-06T23:52:35+05:30" />
+<meta name="twitter:title" content="Pelican commands to generate the first blog.  - Beyond HelloWorld ">
+<meta name="twitter:description" content="In this post we will check some pelican commands, and how it helps us to generate a blog post.">
 
-        <title>Pelican HelloWorld using pelican-quickstart  - base configuration  · Archer Imagine
+        <title>Pelican commands to generate the first blog.  - Beyond HelloWorld  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html"> Pelican HelloWorld using pelican-quickstart  <small> base configuration </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html"> Pelican commands to generate the first blog.  <small> Beyond HelloWorld </small>  </a></h1>
     </header>
 </div>
 
@@ -92,12 +92,9 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#activate-python-environment">Activate Python environment</a></li>
-<li><a href="#pelican-quickstart">pelican-quickstart</a><ul>
-<li><a href="#pelican-quickstart-options">pelican-quickstart options</a></li>
-</ul>
-</li>
-<li><a href="#references">References</a></li>
+<li><a href="#first-pelican-blog">First Pelican Blog</a></li>
+<li><a href="#the-first-post">The first post.</a></li>
+<li><a href="#reference">Reference</a></li>
 </ul>
 </div>
         </nav>
@@ -106,115 +103,61 @@
 
             
             
-<p>Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command <code>pelican-quickstart</code>, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.</p>
-<h2 id="activate-python-environment">Activate Python environment<a class="headerlink" href="#activate-python-environment" title="Permanent link">¶</a></h2>
-<p>We had setup a separate python anaconda environment in our previous <a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html">post</a> now is the time to active the environment, we can do that by using a simple command.</p>
+<p>We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.</p>
+<h2 id="first-pelican-blog">First Pelican Blog<a class="headerlink" href="#first-pelican-blog" title="Permanent link">¶</a></h2>
+<p>We have seen the folder structure here</p>
+<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"> </img></p>
+<p>Now we will first execute some commands and see what happens with this boilerplate. Remember to be in the <code>pelican1</code> environment. We can do this by.</p>
 <div class="highlight"><pre><span></span><span class="nb">source</span> activate pelican1
 </pre></div>
-<p>It will activate the <code>pelican1</code> environment, and we can identify it by check the terminal prompt which will change to <code>(pelican1)</code>.</p>
-<p>Once the work is done we can deactivate the same with a simple command.</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> deactivate pelican1
+<p>Once we are in <code>pelican1</code> environment, we have all the <code>pelican</code> commands at our disposal. Kindly execute this command.</p>
+<div class="highlight"><pre><span></span>pelican content
 </pre></div>
-<p>All the above command will work for linux and Mac, kindly check the windows equivalent of the same.</p>
-<h2 id="pelican-quickstart">pelican-quickstart<a class="headerlink" href="#pelican-quickstart" title="Permanent link">¶</a></h2>
-<p>Now we are ready to divulge in the world of pelican. Pelican has a ready to bake command to setup the basic boilerplate for the blog. The command is called</p>
-<p>Before executing the below commands just create a directory where you want your blog files to be stored.</p>
-<div class="highlight"><pre><span></span>mkdir ~/myBlogDirectory
-<span class="nb">cd</span> ~/myBlogDirectory
-pelican-quickstart
+<p>The above command we are passing <code>content</code> as a parameter, which is nothing but one of the directory of the folder structure.</p>
+<p>The output will be</p>
+<div class="highlight"><pre><span></span>WARNING: No valid files found in content.
+Done: Processed <span class="m">0</span> articles, <span class="m">0</span> drafts, <span class="m">0</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.12 seconds.
 </pre></div>
-<p>Just execute this commands and it asks you these series of questions, which we will talk in details.</p>
-<h3 id="pelican-quickstart-options">pelican-quickstart options<a class="headerlink" href="#pelican-quickstart-options" title="Permanent link">¶</a></h3>
-<p>The options shown after executing the <code>pelican-quickstart</code> are as below.</p>
-<p><img alt="pelican quickstart options" src="http://archerimagine.com/images/pelicanQuickStart/pelicanQuickStartoptions.png" title="pelican quickstart options"/></p>
-<p>We will discuss each and every options and there usage, we can always choose the default shown in capital letter, <code>{Y|n}</code>.</p>
+<p>It clearly warns us about no valid files found in <strong>content</strong>, as we have not added any post to the directory. If you see inside the <code>output</code> folder, we will see some content in that namely these files</p>
+<div class="highlight"><pre><span></span>archives.html
+authors.html
+categories.html
+index.html
+tags.html
+theme <span class="c1">#directory which contains some predefined images and css.</span>
+</pre></div>
+<p>Now let us see what the blog looks like. Just execute these commands.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> output/
+python -m pelican.server
+</pre></div>
+<p>Once you execute the above commands we can see the output on browser on this path <a href="http://localhost:8000/">localhost:8000</a> and it will look something like this</p>
+<p><img alt="Pelican First Post" src="http://archerimagine.com/images/pelicanCommands/firstPostPelican.png" title="The first post from pelican"/></p>
+<p>Nothing fancy here, but we will some content with some link and a default theme. It is petty good for being a boilerplate.</p>
+<h2 id="the-first-post">The first post.<a class="headerlink" href="#the-first-post" title="Permanent link">¶</a></h2>
+<p>Now we are ready for our first post, we will do the sample hello world which is the de-facto standard in programming languages first program.</p>
+<p>We will write the first post in <strong>Markdown</strong>. Create a file named <code>HelloWorld.md</code> in this directory <code>content</code>.</p>
+<div class="highlight"><pre><span></span>Title: Hello World
+Date: 2017-04-29 11:01
+Category: Pelican
+
+Hello World to Pelican
+</pre></div>
+<p>Once create and saved this file, just run this command.</p>
+<div class="highlight"><pre><span></span>pelican content
+</pre></div>
+<p>This will have the following output.</p>
+<div class="highlight"><pre><span></span>Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">0</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.27 seconds.
+</pre></div>
+<p>This time it clearly states that we have <code>1</code> article. Then follow the other commands as discussed.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> output/
+python -m pelican.server
+</pre></div>
+<p>Again check the output on the browser at <a href="http://localhost:8000/">localhost:8000</a>. Now this time the output is different and it look like this.</p>
+<p><img alt="Pelican Hello World Post" src="http://archerimagine.com/images/pelicanCommands/helloWorldPelicanPost.png" title="The HelloWorld post from pelican"/></p>
+<p>The area surrounded in ellipse are new. This shows us the power of pelican, we do not have to bother how the content is presented on screen, we have to only concentrate on writing content.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
-<li>Where do you want to create your new Web site ? [.]<ul>
-<li>Most probably we will keep the default as we are already in that directory, if not you can specify the path <code>/home/pathtomyblog</code></li>
-</ul>
-</li>
-<li>What will be the title of the blog?<ul>
-<li>Provide a suitable title to your blog, do not worry even if you want to change it latter we can change it. </li>
-</ul>
-</li>
-<li>Who will be the author of this Web site ?<ul>
-<li>Just provide any name you want whose name should be present as a author on the blog post, it can be your name also.</li>
-</ul>
-</li>
-<li>What will be the default language  of this Web site ? [en]<ul>
-<li>The default choice is <code>english</code>, else you can give any language format mentioned in ISO 639-1 Language Codes, the list can be found <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="ISO Language codes">ISO Language codes</a></li>
-</ul>
-</li>
-<li>Do you want to specify a URL prefix? e.g., http://example.com   (Y/n)<ul>
-<li>If you already have purchased a domain give the domain name as shown in the example, else continue with <code>n</code>, we can later fill the domain name.</li>
-</ul>
-</li>
-<li>Do you want to enable article pagination? (Y/n)<ul>
-<li>We can go with the default of having pagination, which means how many post of a the blogs will be displayed in one page, the choice of this is in the next question.<ul>
-<li>How many articles per page do you want? [10] <ul>
-<li>The default choice is <code>10</code>, for the time being keep it that way.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>What is your time zone? [Europe/Paris]<ul>
-<li>To change the time zone, we should be aware that these are <strong>tz database</strong> time zone, to exactly get the time zone codes for your country visit <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones">List of tz database time zones</a>, give the code without the <code>[]</code>.</li>
-</ul>
-</li>
-<li>Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)<ul>
-<li>There are multiple ways to automate the blog publishing process, makefile and fabic comes to our help, just chose the default and we will decide on this later. This creates two files in the directory, <code>fabfile.py</code> and <code>Makefile</code></li>
-</ul>
-</li>
-<li>Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n)<ul>
-<li>We have the help of auto-reload commands to automatically generates the preview as soon as we change anything in the themes, we might not require it initially, so keep it false.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using FTP? (y/N)<ul>
-<li>If we had an FTP site where we could upload, just choose the default and say <code>n</code></li>
-</ul>
-</li>
-<li>Do you want to upload your website using SSH? (y/N)<ul>
-<li>If your hosting uses SSH, for our use case we will choose <code>N</code>, which is the default.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using Dropbox? (y/N)<ul>
-<li>We can also use dropbox to upload out static files, but for this, we will try some other time, for now choose the default which is <code>N</code>.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using S3? (y/N)<ul>
-<li>We also have the facility of choosing amazon S3 for our site hosting, for now not needed chose <code>N</code></li>
-</ul>
-</li>
-<li>Do you want to upload your website using Rackspace Cloud Files? (y/N) <ul>
-<li>Again the default <code>N</code>, we are not using Rackspace.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using GitHub Pages? (y/N)<ul>
-<li>We can choose <code>y</code> here, but we will try another mechanism, for now choose the default <code>N</code></li>
-<li>If you had chosen <code>y</code> in this option you will get this sub option.<ul>
-<li>Is this your personal page (username.github.io)? (y/N)<ul>
-<li>Choose <code>y</code>, </li>
-</ul>
-</li>
-<li>After this we will get this message in either case.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span>Done. Your new project is available at /home/username/myWork/mySampleBlog
-</pre></div>
-<p>Our blogs boilerplate is available. Here is the folder structure.</p>
-<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"> </img></p>
-<p>We have still not seen how the blog will look like, we will divulge into this in the next post, with all the pelican commands which is extremely important to get the full juice out of pelican.</p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/" title="How did the command option help">How I setup Pelican </a></li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones">List of tz database time zones</a></li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="List of ISO 639-1 codes">List of ISO 639-1 codes</a></li>
-<li><a href="https://gist.github.com/almet/1140861">pelican-quickstart.py</a></li>
+<li><a href="http://docs.getpelican.com/en/stable/quickstart.html">Pelican Doc Quickstart</a></li>
 </ul>
             
             <section>
@@ -223,7 +166,7 @@ pelican-quickstart
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -233,8 +176,8 @@ pelican-quickstart
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/helloworld-pelican-quickstart.html';
-    var disqus_url = 'http://archerimagine.com/articles/helloworld-pelican-quickstart.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -257,10 +200,10 @@ pelican-quickstart
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-27T23:26:43+05:30">Apr 27, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-29T22:15:05+05:30">Apr 29, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-02T23:08:35+05:30">May 2, 2017</time>
+<time datetime="2017-05-06T23:52:35+05:30">May 6, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

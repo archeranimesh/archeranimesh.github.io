@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, Conda, Anaconda, Python, Pelican, Envs." />
+<meta name="keywords" content="pelican, Pelican, Pelican Blog, Github Pages." />
 
-<meta property="og:title" content="How to setup Anaconda Python environment for Pelican Blog.  - Using Conda. "/>
-<meta property="og:url" content="http://archerimagine.com/articles/python-setup-for-pelican-blog.html" />
-<meta property="og:description" content="Anaconda is a well know distribution of Python, supporting both python 2 and 3. We can setup a exclusive environment for Pelican blog using conda." />
+<meta property="og:title" content="Publishing your blog to github pages.  - Live to the World "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html" />
+<meta property="og:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the easiest and free way to put your work for the world to see." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-26T22:39:03+05:30" />
-<meta property="" content="2017-04-26T23:50:52+05:30" />
-<meta name="twitter:title" content="How to setup Anaconda Python environment for Pelican Blog.  - Using Conda. ">
-<meta name="twitter:description" content="Anaconda is a well know distribution of Python, supporting both python 2 and 3. We can setup a exclusive environment for Pelican blog using conda.">
+<meta property="og:article:published_time" content="2017-04-30T18:44:09+05:30" />
+<meta property="" content="2017-05-07T00:01:11+05:30" />
+<meta name="twitter:title" content="Publishing your blog to github pages.  - Live to the World ">
+<meta name="twitter:description" content="In this post we will try to make your small blog visible to the world with the help of github pages. This is the easiest and free way to put your work for the world to see.">
 
-        <title>How to setup Anaconda Python environment for Pelican Blog.  - Using Conda.  · Archer Imagine
+        <title>Publishing your blog to github pages.  - Live to the World  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"> How to setup Anaconda Python environment for Pelican Blog.  <small> Using Conda. </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html"> Publishing your blog to github pages.  <small> Live to the World </small>  </a></h1>
     </header>
 </div>
 
@@ -92,13 +92,12 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#installing-pelican">Installing Pelican</a><ul>
-<li><a href="#configure-anaconda-for-pelican-blog">Configure Anaconda for Pelican Blog</a></li>
-<li><a href="#configure-pelican-environment-for-blog">Configure Pelican Environment for Blog</a></li>
-<li><a href="#freeze-the-requirement">Freeze the Requirement</a></li>
+<li><a href="#prerequisite">Prerequisite</a></li>
+<li><a href="#the-first-repository">The first Repository</a><ul>
+<li><a href="#push-code-from-local-to-github-repository">Push code from local to Github repository</a></li>
 </ul>
 </li>
-<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#pushing-the-output-folder">Pushing the output folder</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -108,79 +107,151 @@
 
             
             
-<h2 id="installing-pelican">Installing Pelican<a class="headerlink" href="#installing-pelican" title="Permanent link">¶</a></h2>
-<p>Pelican is a python package, so we can have multiple option to install pelican. There can be 3 option which I can think of.</p>
+<p>We have set the basic blog, though it may not look great because of the theme which we are using, but we will change those. Presently we will focus on taking this blog for the world to see. <a href="https://pages.github.com/" title="GitHub Pages">Github Pages</a> is the way to publish your blog on to the WWW.</p>
+<p>We will have 2 repositories for doing this.</p>
 <ul>
-<li>Direct Installation<ul>
-<li>If we have only one python installation on the system, and we do not have any issue if we screw up this installation just use <code>pip</code> to install pelican.</li>
+<li>One repository is for the source, which is our blog content.</li>
+<li>Second repository is for the generated files in the <code>output</code> folder.</li>
 </ul>
-</li>
-<li>Installation using VirtualEnv.<ul>
-<li>This approach is already mentioned in official documentation of <a href="http://docs.getpelican.com/en/stable/install.html" title="Installing Pelican">pelican</a></li>
-</ul>
-</li>
-<li>Installation using Conda.<ul>
-<li>By now you could have understood that we will use Conda to install pelican. This is because Anaconda is already a pre-packaged installation of very well know python package in both version 2 and 3. In future I will will update this page if I wrote about Anaconda installation, for now refer any documents on the google search for installation.</li>
-</ul>
-</li>
-</ul>
-<h3 id="configure-anaconda-for-pelican-blog">Configure Anaconda for Pelican Blog<a class="headerlink" href="#configure-anaconda-for-pelican-blog" title="Permanent link">¶</a></h3>
-<p>The first thing we have to do is to create a environment using the python version 2. This can be done by this command.</p>
-<div class="highlight"><pre><span></span>conda create -n pelican1 python=2
-</pre></div>
-<p>Once we have executed the above command we will have <code>pelican1</code> as an environment.</p>
-<p>We can see the list of environment in the system by using.</p>
-<div class="highlight"><pre><span></span>conda info --envs
-</pre></div>
-<p>Which will provide an output like this.</p>
-<div class="highlight"><pre><span></span>pelican1                 /home/username/anaconda3/envs/pelican1
-py27                     /home/username/anaconda3/envs/py27
-py35                     /home/username/anaconda3/envs/py35
-root                  *  /home/username/anaconda3
-</pre></div>
-<p>This shows all the available environment.</p>
-<p>We can activate the <code>pelican1</code> by using this command.</p>
-<div class="highlight"><pre><span></span>source activate pelican1
-</pre></div>
-<p>Now we have an environment which we can used for pelican development. The reason for this environment creation is to have a separate environment for experimentation with pelican, if anything goes wrong we do not disturb already existing programs.</p>
-<h3 id="configure-pelican-environment-for-blog">Configure Pelican Environment for Blog<a class="headerlink" href="#configure-pelican-environment-for-blog" title="Permanent link">¶</a></h3>
-<p>Once we have the environment we have install few packages in this environment. The first is to install PiP to install other package. Install Pip by using.</p>
-<div class="highlight"><pre><span></span>conda install pip
-</pre></div>
-<p>With the completion of installing <code>pip</code>, the first and foremost package to install is pelican, with this command.</p>
-<div class="highlight"><pre><span></span>pip install pelican
-</pre></div>
-<p>Since we will be using Markdown to write our blogs we need the markdown package, which we can install using.</p>
-<div class="highlight"><pre><span></span>pip install Markdown
-</pre></div>
-<p>There are some plugin and themes in pelican which might need some additional packages, we will install these 2.</p>
-<div class="highlight"><pre><span></span>pip install Fabric
-pip install beautifulsoup4
-</pre></div>
-<h3 id="freeze-the-requirement">Freeze the Requirement<a class="headerlink" href="#freeze-the-requirement" title="Permanent link">¶</a></h3>
-<p>When we have all our installation complete, we should save our package history into a <code>requirement.txt</code>. We can use this <code>requirement.txt</code> to install all the above mentioned packages with same version in one go.</p>
-<p>We can freeze the details by using.</p>
-<div class="highlight"><pre><span></span>pip freeze &gt; requirements.txt
-</pre></div>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">¶</a></h2>
-<p>If we check the <code>requirement.txt</code> generated in the above step, we will see a lot of packages already installed apart from <code>pelican</code>, <code>markdown</code>, <code>Fabric</code> and <code>beautifulsoup4</code>. These extra packages are dependencies for running pelican.</p>
+<h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">¶</a></h2>
+<p>We all should have a <a href="https://github.com/">GitHub</a> account, if you have then continue, else go to <a href="https://github.com/">GitHub</a> and create an account. The process is very straight forward, just follow the instruction on the website.</p>
+<p>The git should be locally configured. Kindly follow the steps mention in this page <a href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a>.</p>
+<h2 id="the-first-repository">The first Repository<a class="headerlink" href="#the-first-repository" title="Permanent link">¶</a></h2>
+<p>We should now create our first Repository onto github. Click on the <code>+</code> icon which shows this drop down.</p>
+<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepo.png" title="The create repo link"/></p>
+<p>And click on the option <code>New Repository</code> as shown above.</p>
+<p>This will open up a page with looks like this</p>
+<p><img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepoForm.png" title="The create repo form"/></p>
+<p>Fill in the repository name which you want to name, and write a little <code>Description</code> also do not click on the check-box which read</p>
+<p><code>Initialize this repository with a README</code></p>
+<p>Since we already have a folder in our local system, to check-in we can leave this box unchecked. In future if need we can create a <code>README</code> file manually.</p>
+<p>Once you click on the <code>Create Repository</code> link, you will be taken to this page, with these as a content.</p>
+<p><img alt="Github Push Commands" src="http://archerimagine.com/images/githubAccount/commandsGitHub2Push.png" title="The Github push commands"/></p>
+<p>This is the symbol of empty repository which is created and now we can push our local code to this folder.</p>
+<h3 id="push-code-from-local-to-github-repository">Push code from local to Github repository<a class="headerlink" href="#push-code-from-local-to-github-repository" title="Permanent link">¶</a></h3>
+<p>We can follow the instruction mentioned above to push our local code to github, but we have to make sure that we do not push the <code>output</code> directory in the same repository as the code, because the handling of <code>output</code> directory is different.</p>
+<p>Go to the root of the folder, where your blog is kept.</p>
 <ul>
-<li><strong>feedgenerator:</strong> to generate the Atom feeds</li>
-<li><strong>jinja2:</strong> for templating support</li>
-<li><strong>pygments:</strong> for syntax highlighting</li>
-<li><strong>docutils:</strong> for supporting reStructuredText as an input format</li>
-<li><strong>pytz:</strong> for timezone definitions</li>
-<li><strong>blinker:</strong> an object-to-object and broadcast signaling system</li>
-<li><strong>unidecode:</strong> for ASCII transliterations of Unicode text</li>
-<li><strong>six:</strong> for Python 2 and 3 compatibility utilities</li>
-<li><strong>MarkupSafe:</strong> for a markup safe string implementation</li>
-<li><strong>python-dateutil:</strong> to read the date metadata</li>
+<li><code>cd ~/mySampleBlog/</code><ul>
+<li>Go to the root of the directory where the blog post are kept</li>
 </ul>
-<p>We have completed 2 important steps of our own blog publishing.</p>
+</li>
+<li><code>git init</code><ul>
+<li>This command initializes an empty repository in the same folder.</li>
+</ul>
+</li>
+<li>Create a file named <code>.gitignore</code> in the same folder.</li>
+<li>Copy the below content to the <code>.gitignore</code> file.</li>
+</ul>
+<div class="highlight"><pre><span></span>*~
+._*
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.py<span class="o">[</span>cod<span class="o">]</span>
+output
+</pre></div>
+<ul>
+<li>The above code basically prevents all the local temporary files and the <code>output</code> directory to be checked in.</li>
+<li><code>git status</code><ul>
+<li>This command will make sure that the <code>output</code> folder is not tracked by git, check the output as shown below.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>On branch master
+
+Initial commit
+
+Untracked files:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="o">)</span>
+
+    .gitignore
+    Makefile
+    content/
+    fabfile.py
+    pelicanconf.py
+    publishconf.py
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span>
+</pre></div>
+<ul>
+<li>Only files listed above will be tracked, and <code>output</code> directory is not one of them.</li>
+<li><code>git add .</code><ul>
+<li>Adds all the above files to be ready for commit.</li>
+</ul>
+</li>
+<li><code>git commit -m "first commit"</code><ul>
+<li>This will make a commit locally with the commit message as <code>first commit</code></li>
+</ul>
+</li>
+<li><code>git remote add origin https://github.com/pelicanBlog/mySampleBlog.git</code><ul>
+<li>This commands connects the remote repository of github with our local code. The URL might be different for you.</li>
+</ul>
+</li>
+<li><code>git push -u origin master</code><ul>
+<li>This will push the local changes to the GitHub repository we created.</li>
+<li>It will ask for your username and password, kindly provide those and we have pushed our code to github.</li>
+</ul>
+</li>
+</ul>
+<h2 id="pushing-the-output-folder">Pushing the <code>output</code> folder<a class="headerlink" href="#pushing-the-output-folder" title="Permanent link">¶</a></h2>
+<p>The <code>output</code> folder is out actual blog, so this is a little different from the previous way of pushing code to github.</p>
+<p>Please follow along to create this special repository.</p>
+<ul>
+<li>Select the same <code>New Repository</code> from the <code>+</code> icon shown in previous repository.</li>
+<li>In the New Repository form, the magic happens with the <code>Repository Name</code> field, fill in the name as <code>username.github.io</code>, where <code>username</code> is your github username.</li>
+<li>Fill In the description.</li>
+<li>Now there are two ways to push the <code>output</code> folder to this new repository, you can follow any one of them.<ul>
+<li>Push the <code>output</code> folder as a repository which we already know.<ul>
+<li><code>git init</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m "first commit"</code></li>
+<li><code>git remote add origin https://github.com/pelicanBlog/pelicanBlog.github.io.git</code></li>
+<li><code>git push -u origin master</code></li>
+<li>After the above command, just launch this URL in your browser, <code>https://username.github.io/</code>, just change <code>username</code> with your username.</li>
+</ul>
+</li>
+<li>Since the original source folder we create with <code>output</code> directory mentioned in <code>.gitignore</code>, we can now add this repository as a submodule in that repository, to provide a link between both the source and the <code>output</code><ul>
+<li>Go to the root of the blog content, in this case <code>cd ~/mySampleBlog</code></li>
+<li><code>git submodule add -f https://github.com/pelicanBlog/pelicanBlog.github.io.git output</code><ul>
+<li>This adds the <code>output</code> folder as a submodule.</li>
+</ul>
+</li>
+<li><code>git commit -m "added submodule"</code></li>
+<li><code>git push -u origin master</code><ul>
+<li>The above will make the <code>output</code> as a submodule</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>With this we have completed our part of the blog series. With this series of blog post we are able to achieve this.</p>
+<ul>
+<li>Understand what is pelican blog and how to use it with github pages.</li>
+<li>How to set up the Anaconda environment for pelican development.</li>
+<li>Understood what <code>pelican-quickstart</code> command does.</li>
+<li>Understood the basic commands to generate the pelican blog</li>
+<li>Understood the basic folder structure of the pelican blog</li>
+<li>Understood the pelican settings files and its uses.</li>
+<li>Created a github pages and pushed both our content and the blog post to it.</li>
+</ul>
+<p>The next series will focus into</p>
+<ul>
+<li>How to configure a domain with github pages.</li>
+<li>Use of a themes and plugin to enhance the website</li>
+<li>Integration with google analytics, mail chimp etc.</li>
+<li>Modifying the blogs to get the most out of the themes.</li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="http://docs.getpelican.com/en/stable/install.html">Installing Pelican </a></li>
-<li><a href="https://conda.io/docs/py2or3.html">Managing Python </a></li>
+<li><a href="https://help.github.com/categories/setup/">Github Help</a></li>
+<li><a href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a></li>
+<li><a href="https://git-scm.com/docs/git-submodule">git-submodule </a></li>
+<li><a href="http://hernantz.github.io/how-to-publish-a-pelican-site-on-github.html">How to publish a pelican site on Github </a></li>
+<li><a href="https://pages.github.com/">Github Pages</a></li>
 </ul>
             
             <section>
@@ -189,7 +260,7 @@ pip install beautifulsoup4
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -199,8 +270,8 @@ pip install beautifulsoup4
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/python-setup-for-pelican-blog.html';
-    var disqus_url = 'http://archerimagine.com/articles/python-setup-for-pelican-blog.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -223,10 +294,10 @@ pip install beautifulsoup4
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-26T22:39:03+05:30">Apr 26, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-30T18:44:09+05:30">Apr 30, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-04-26T23:50:52+05:30">Apr 26, 2017</time>
+<time datetime="2017-05-07T00:01:11+05:30">May 7, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

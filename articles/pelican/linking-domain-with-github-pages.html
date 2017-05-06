@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, pelican, Google Analytics, MailChimp, Disqus, Google Adsense, Github" />
+<meta name="keywords" content="pelican, Pelican, GoDaddy, Github Pages." />
 
-<meta property="og:title" content="Cost effective blogging with Pelican and Github  - The easy way. "/>
-<meta property="og:url" content="http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html" />
-<meta property="og:description" content="This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog." />
+<meta property="og:title" content="Configuring Github pages with Custom Domain  - Connected World "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html" />
+<meta property="og:description" content="We will link our Godaddy domain name with our own Github pages." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-25T23:20:03+05:30" />
-<meta property="" content="2017-05-02T23:07:42+05:30" />
-<meta name="twitter:title" content="Cost effective blogging with Pelican and Github  - The easy way. ">
-<meta name="twitter:description" content="This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.">
+<meta property="og:article:published_time" content="2017-05-02T23:22:29+05:30" />
+<meta property="" content="2017-05-06T23:38:22+05:30" />
+<meta name="twitter:title" content="Configuring Github pages with Custom Domain  - Connected World ">
+<meta name="twitter:description" content="We will link our Godaddy domain name with our own Github pages.">
 
-        <title>Cost effective blogging with Pelican and Github  - The easy way.  · Archer Imagine
+        <title>Configuring Github pages with Custom Domain  - Connected World  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html"> Cost effective blogging with Pelican and Github  <small> The easy way. </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html"> Configuring Github pages with Custom Domain  <small> Connected World </small>  </a></h1>
     </header>
 </div>
 
@@ -92,11 +92,14 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#why-static-blog">Why Static Blog?</a></li>
-<li><a href="#why-pelican">Why Pelican?</a></li>
-<li><a href="#why-github">Why Github?</a></li>
-<li><a href="#collated-blog-post">Collated Blog post.</a></li>
-<li><a href="#reference">Reference</a></li>
+<li><a href="#configure-github-repository">Configure Github Repository</a><ul>
+<li><a href="#local-repository">Local Repository</a></li>
+<li><a href="#directly-on-github-pages">Directly on Github Pages.</a></li>
+</ul>
+</li>
+<li><a href="#configure-the-dns-at-godaddy">Configure the DNS at GoDaddy</a></li>
+<li><a href="#the-domain-xyx-is-no-longer-parked-by-godaddy">The domain XYX is no longer parked by Godaddy</a></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
         </nav>
@@ -105,48 +108,74 @@
 
             
             
-<p>This is a series of blog post to help set up a static blog at minimal cost and integrating with all the popular tools such as Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.</p>
-<p>I am a novice blogger and this blog would act as a journal, which will document my approach towards blogging, software development. The idea is to generate some revenues out of this blog in the long run. We all might have read about so many blogs which are able to generate good amount of traffic but in none one of those we have never read how do they achieve it.</p>
-<p>I may fail in my attempt, which might work as a guidance for someone to not follow this path and try another path for the same goal. The background theme to support this is to minimize my cost to the bare minimum so that the failure does not hurt me financially.</p>
-<h2 id="why-static-blog">Why Static Blog?<a class="headerlink" href="#why-static-blog" title="Permanent link">¶</a></h2>
-<p>There are already a lot of literature present behind this, just wanted to summarize those:-</p>
+<p>In the first series of blog post we have seen how to create a pelican blog, customize a little and also host it from Github pages. We can also use Github pages as a hosting service and link any of the domain name providers with this hosting. In this post I have taken the example of GoDaddy, but the process should not much different for any other domain name provider.</p>
+<p>The process to link a Godaddy Domain to Github Pages can be divided into 2 Steps.</p>
+<ol>
+<li>Configure your Github repository</li>
+<li>Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a></li>
+</ol>
+<h2 id="configure-github-repository">Configure Github Repository<a class="headerlink" href="#configure-github-repository" title="Permanent link">¶</a></h2>
+<p>We have already made a Github Pages website in our previous post, kindly follow the steps mentioned <a href="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html">here</a>.</p>
+<p>Once we have a Github Pages URL, we have to configure a CNAME in this repository, this can be done in 2 ways.</p>
+<ol>
+<li>Local Repository</li>
+<li>Directly on Github.</li>
+</ol>
+<h3 id="local-repository">Local Repository<a class="headerlink" href="#local-repository" title="Permanent link">¶</a></h3>
+<ol>
+<li>Create a local file in the repository with the name CNAME.</li>
+<li>Just have one line in the file. <code>example.com</code>, where <code>example.com</code> is your domain you have bought from <a href="https://in.godaddy.com/">GoDaddy</a>.</li>
+<li>Push the changes to <a href="https://github.com/">Github</a></li>
+</ol>
+<h3 id="directly-on-github-pages">Directly on Github Pages.<a class="headerlink" href="#directly-on-github-pages" title="Permanent link">¶</a></h3>
+<p>On the repository in <a href="https://github.com/">Github</a>, you will see something like this.</p>
+<p><img alt="GitHub Settings" src="http://archerimagine.com/images/launchSite/Settings.png" title="GitHub Setting"/></p>
+<p>In the above Click on the <code>Settings</code>, Scroll down you will see something like this.</p>
+<p><img alt="GitHub Pages Settings" src="http://archerimagine.com/images/launchSite/gitHubPages.png" title="GitHub Pages Setting"/></p>
+<p>Enter the domain you have purchased from <a href="https://in.godaddy.com/">GoDaddy</a>.</p>
+<p>These are the only changes required to be done in GitHub.</p>
+<h2 id="configure-the-dns-at-godaddy">Configure the DNS at <a href="https://in.godaddy.com/">GoDaddy</a><a class="headerlink" href="#configure-the-dns-at-godaddy" title="Permanent link">¶</a></h2>
+<p>The easiest of the all the below references is <a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html">Configuring a Godaddy domain name with github pages</a>.</p>
+<p>The real issue in all the links is that it shows the old UI of <a href="https://in.godaddy.com/">GoDaddy</a>, so some things get confusing.</p>
+<ol>
+<li>Go to the account setting page, which mostly will like in this <a href="https://mya.godaddy.com/?pc=urlargs">link</a>.</li>
+<li>The link will look like this.</li>
+<li><img alt="Godaddy Accounts Settings" src="http://archerimagine.com/images/launchSite/accountSettingsGodaddy.png" title="Godaddy Accounts Settings"/></li>
+<li>Click on the <code>+</code> Symbols in Front of Domain, and Click on the <code>Manage DNS</code> Link</li>
+<li><img alt="Godaddy DNS Management" src="http://archerimagine.com/images/launchSite/manageDNS.png" title="Godaddy DNS Management"/></li>
+<li>The link will show a lot of <code>Records</code>, go to the end of the <code>Records</code>, and click on the link <strong>ADD</strong></li>
+<li><img alt="Godaddy Add Options" src="http://archerimagine.com/images/launchSite/AddOption.png" title="Godaddy Add Options"/></li>
+<li>From the above option we have to add 3 entries.</li>
+<li>This is how all the 3 would look like after adding.</li>
+</ol>
+<p><img alt="Godaddy A Options" src="http://archerimagine.com/images/launchSite/AOptions.png" title="Godaddy A Options">
+<img alt="Godaddy www Options" src="http://archerimagine.com/images/launchSite/wwwOption.png" title="Godaddy www Options"/></img></p>
+<p>Now you can launch and check your desired domain. Kindly wait 48 hrs for these changes to reflect, do not try to configure multiple times, if it does not work even after 48 hours kindly search for help, till then take a coffee break and have a nice time out of this screen.</p>
+<h2 id="the-domain-xyx-is-no-longer-parked-by-godaddy">The domain XYX is no longer parked by Godaddy<a class="headerlink" href="#the-domain-xyx-is-no-longer-parked-by-godaddy" title="Permanent link">¶</a></h2>
+<p>When we are doing the above process, even after 24 hours, when you launch your website, we find one of these errors.</p>
+<ol>
+<li>The domain XYX is no longer parked by Godaddy</li>
+<li>It is detected as a Malware in the office network.</li>
+</ol>
+<p>The website might launch for some times and sometimes you might get any one of the above 2 errors. Kindly check this in the <strong>Manage DNS</strong> page.</p>
 <ul>
-<li><strong>Cost:-</strong> This was the deciding factor for me, because of using a static website, this complete website can be hosted and deployed by just registering a domain name with a provider. I do not have to go for any hosting services etc.</li>
-<li><strong>Easy of Writing Content:-</strong> I wanted to write my content using just <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, as i have grown comfortable writing in markdown. With using a static blog this was possible.</li>
-<li><strong>Hosting:-</strong> We can serve these static HTML pages practically from any place, be it <a href="https://github.com/">Github</a>, <a href="https://aws.amazon.com/s3/">Amazon S3</a>, <a href="https://www.dropbox.com/">Dropbox</a> or any other place which can serve static HTML pages. I have chosen Github just to save the cost.</li>
-<li><strong>Easy workFlow:-</strong> The work flow is very simple when deploying with static blogs, just right you content in markdown, generate HTML, push your changes to github and that's it. Your content is not available online. You can even go crazy you cam automate the whole thing other than writing content.</li>
+<li>We had added two <strong>A</strong> Names pointing to the GitHub URL as shown below.
+<img alt="Godaddy A Options" src="http://archerimagine.com/images/launchSite/AOptions.png" title="Godaddy A Options"/></li>
 </ul>
-<p>The above three are the main reason for choosing static blogs, but there could be many more valid reason for choosing static blogs. Most of the reason for me was personal in nature so you can also choose accordingly.</p>
-<h2 id="why-pelican">Why Pelican?<a class="headerlink" href="#why-pelican" title="Permanent link">¶</a></h2>
-<p>Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, <a href="https://blog.getpelican.com/">Pelican </a> or <a href="https://jekyllrb.com/">Jerkll </a>. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these two.</p>
-<h2 id="why-github">Why Github?<a class="headerlink" href="#why-github" title="Permanent link">¶</a></h2>
-<p>The final decision to be taken before starting this blog was to finalize the hosting provider. We have already mentioned some popular choice are</p>
-<ul>
-<li><a href="https://github.com/">Github</a></li>
-<li><a href="https://aws.amazon.com/s3/">Amazon S3</a></li>
-<li><a href="https://www.dropbox.com/">Dropbox</a></li>
-</ul>
-<p>I chose Github, for its near zero cost, it may cost you if you want to keep your repository private else it is completely free were as Amazon S3 would have required to shell out some money though less, with some extra benefits, but for the time being when I am just measuring the water it made sense to keep my cost down.</p>
-<p>Once all the above 3 moral questions were answered, setting up the blogs was easy and which will be documented in the future.</p>
-<h2 id="collated-blog-post">Collated Blog post.<a class="headerlink" href="#collated-blog-post" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html">How to setup Anaconda Python environment for Pelican Blog.</a></li>
-</ul>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html">Making a Static Blog with Pelican </a><ul>
-<li>This above blog explains why a static blog generator is good.</li>
-</ul>
+<p>Check if you have any other <strong>A</strong> Names in addition to the above two, if you have, kindly delete that. The detailed issue can be read <a href="https://serverfault.com/questions/743327/godaddy-domain-randomly-not-resolving-to-github-pages">GoDaddy domain (randomly) not resolving to GitHub Pages</a></p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<ol>
+<li><a href="http://www.mycowsworld.com/blog/2015/07/12/setting-up-a-godaddy-domain-name-with-github/">Setting Up a GoDaddy Domain Name With GitHub</a></li>
+<li><a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html">Configuring a Godaddy domain name with github pages</a></li>
+<li><a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">Using a custom domain with GitHub Pages</a></li>
+<li><a href="http://blog.teamtreehouse.com/using-github-pages-to-host-your-website">Using GitHub Pages To Host Your Website</a></li>
+<li><a href="https://serverfault.com/questions/743327/godaddy-domain-randomly-not-resolving-to-github-pages">GoDaddy domain (randomly) not resolving to GitHub Pages</a></li>
+<li><a href="https://www.reddit.com/r/webdev/comments/653q6z/help_how_to_correctly_connect_my_github_pages/">[Help]: How to correctly connect my github pages blog to a custom domain?</a></li>
+<li><a href="https://ongspxm.github.io/blog/2016/08/github-custom-domain-godaddy/">Redirecting GitHub Page to a custom domain</a><ol>
+<li>Kindly read the above site, to understand what is the use of CNAME and A Record. Great introduction. </li>
+</ol>
 </li>
-<li><a href="http://arunrocks.com/moving-blogs-to-pelican/">Moving Blogs to Pelican </a><ul>
-<li>This blog has a terrific explanation for pelican vs jekyll.</li>
-</ul>
-</li>
-<li><a href="https://discuss.gohugo.io/t/hosting-amazon-s3-vs-github-gh-pages-vs/340">Amazon S3 Vs Github Pages</a><ul>
-<li>This explains the benefits of Amazon S3 over Github Pages, kindly check if you are affected because of this.</li>
-</ul>
-</li>
-</ul>
+</ol>
             
             <section>
 <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
@@ -154,7 +183,7 @@
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -164,8 +193,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html';
-    var disqus_url = 'http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -188,10 +217,10 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-25T23:20:03+05:30">Apr 25, 2017</time>
+            <time pubdate="pubdate" datetime="2017-05-02T23:22:29+05:30">May 2, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-02T23:07:42+05:30">May 2, 2017</time>
+<time datetime="2017-05-06T23:38:22+05:30">May 6, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

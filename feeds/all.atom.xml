@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-03T23:50:44+05:30</updated><entry><title>Customizing Pelican blog with the help of Plugin and themes</title><link href="http://archerimagine.com/articles/customizing-pelican-blog-with-plugin-and-themes.html" rel="alternate"></link><published>2017-05-03T23:05:51+05:30</published><updated>2017-05-03T23:50:44+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-03:/articles/customizing-pelican-blog-with-plugin-and-themes.html</id><summary type="html">&lt;p&gt;Pelican blog has a active community of developers who are always at the look out to modify and enhance the power of Pelican blog. Pelican plugin and Themes are one way of doing the same.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-07T00:03:25+05:30</updated><entry><title>Customizing Pelican blog with the help of Plugin and themes</title><link href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" rel="alternate"></link><published>2017-05-03T23:05:51+05:30</published><updated>2017-05-05T22:55:47+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-03:/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html</id><summary type="html">&lt;p&gt;Pelican blog has an active community of developers who are always at the look out to modify and enhance the power of Pelican blog. Pelican plugin and Themes are one way of doing the same.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;Pelican Blogs gives its user the full power to customize to the want of the user. We have been using the default themes and default setting provided by Pelican with not much customization and the results are also quite good.&lt;/p&gt;
-&lt;p&gt;Enhancing the present blog further will require us to use certain Plugins and Themes which will extended the functionality. These are the 2 repository which we should clone into for getting this enhancements.&lt;/p&gt;
+&lt;p&gt;Enhancing the present blog further will require us to use certain Plugins and Themes which will extended the functionality. These are the 2 repository which we should clone into for getting these enhancements.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;pelican-plugins &lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;pelican-plugins&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;This is the repository for the plugins.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-plugins.git plugins&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -15,8 +15,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="plugins-vs-themes"&gt;Plugins Vs Themes&lt;a class="headerlink" href="#plugins-vs-themes" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;The first things which we have to decide is to choose the list of plugins or the Themes we want to use. I would say first decide on Themes and the see what all plugins are required to support this themes. All plugins are not pluggable with all the themes.&lt;/p&gt;
-&lt;p&gt;We have to first start by choosing the themes, and the corresponding plugin required for it. This path is again the easiest as we are already treading the knowns, when we are comfortable with this integration we can always go ahead and enhance the existing themes and plugins to suit our needs. Till we reach the Jedi stage this pre-cooked solution is the best approach.&lt;/p&gt;
+&lt;p&gt;The first things which we have to decide is to choose the list of plugins or the Themes we want to use. I would say first decide on Themes and the see what all plugins are required to support these themes. All plugins are not plug able with all the themes.&lt;/p&gt;
+&lt;p&gt;We have to first start by choosing the themes, and the corresponding plugin required for it. This path is again the easiest as we are already treading the known, when we are comfortable with this integration we can always go ahead and enhance the existing themes and plugins to suit our needs. Till we reach the Jedi stage this precooked solution is the best approach.&lt;/p&gt;
 &lt;h2 id="flex-vs-elegant-vs-bootstrap3"&gt;Flex Vs Elegant vs BootStrap3&lt;a class="headerlink" href="#flex-vs-elegant-vs-bootstrap3" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;When we are deciding on which themes to choose for the blog, broadly the working choice would be &lt;/p&gt;
 &lt;ul&gt;
@@ -25,31 +25,31 @@
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" title="BootStrap3"&gt;BootStrap3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There are many others, which you are free to explore, but for my blog I had considered these 3 options. Each one has its own pros and cons, the choice was very difficult between these 3, and in future I might even consider jumping ships to the other themes.&lt;/p&gt;
-&lt;p&gt;Lets discuss some outline of the above 3 themes &lt;/p&gt;
+&lt;p&gt;Let's discuss some outline of the above 3 themes &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://blog.alexandrevicenzi.com/flex-pelican-theme.html" title="Flex: Responsive Pelican theme "&gt;Flex: Responsive Pelican theme &lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;This has out of the box integration with a lot of plugins including &lt;a href="http://www.addthis.com/" title="AddThis"&gt;AddThis&lt;/a&gt;, which is not available for any other themes.&lt;/li&gt;
 &lt;li&gt;This also has support for Google AdSense, which again is missing in most of the plugin.&lt;/li&gt;
 &lt;li&gt;Actively maintained, the last check-in on its Github repository was on Apr 24, 2017.&lt;/li&gt;
-&lt;li&gt;Tipue_Search is also on the way, there is a open issue on the repository, &lt;a href="https://github.com/alexandrevicenzi/Flex/issues/49" title="Tipue Search "&gt;Search #49&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;Tipue_Search is also on the way, there is an open issue on the repository, &lt;a href="https://github.com/alexandrevicenzi/Flex/issues/49" title="Tipue Search "&gt;Search #49&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;This facility of search is the only reason I dropped &lt;a href="https://blog.alexandrevicenzi.com/flex-pelican-theme.html" title="Flex: Responsive Pelican theme "&gt;Flex &lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" title="BootStrap3"&gt;BootStrap3&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;This is a full hackable implementation of BootStrap3, and will try to use this Themes, once I get my hand dirty enough with the modern CSS and Web Technologies.&lt;/li&gt;
+&lt;li&gt;This is a full hack able implementation of BootStrap3, and will try to use these Themes, once I get my hand dirty enough with the modern CSS and Web Technologies.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant Why it is the best Pelican theme"&gt;Elegant Why it is the best Pelican theme &lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;I chose this theme just for its minimalistic design and search feature.&lt;/li&gt;
+&lt;li&gt;I chose this theme just for its minimalist design and search feature.&lt;/li&gt;
 &lt;li&gt;It has an integration with MailChimp.&lt;/li&gt;
 &lt;li&gt;This is not an actively managed project, the last commit on this repository was on Sep 8, 2014, which is good 3 years ago.&lt;/li&gt;
-&lt;li&gt;We can use and modify this theme for the our satisfaction if a bug is hampering our development.&lt;/li&gt;
+&lt;li&gt;We can use and modify this theme for our satisfaction if a bug is hampering our development.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We have decided on our Themes, the Plugins required for this themes are as below.&lt;/p&gt;
+&lt;p&gt;We have decided on our Themes, the Plugins required for these themes are as below.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;sitemap&lt;/li&gt;
 &lt;li&gt;tipue_search&lt;/li&gt;
@@ -73,7 +73,7 @@
 &lt;li&gt;&lt;a href="https://blog.alexandrevicenzi.com/flex-pelican-theme.html" title="Flex: Responsive Pelican theme "&gt;Flex: Responsive Pelican theme &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes"&gt;pelican-themes &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;pelican-plugins &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Configuring Github pages with Custom Domain</title><link href="http://archerimagine.com/articles/linking-domain-with-github-pages.html" rel="alternate"></link><published>2017-05-02T23:22:29+05:30</published><updated>2017-05-02T23:43:56+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-02:/articles/linking-domain-with-github-pages.html</id><summary type="html">&lt;p&gt;We will link our Godaddy domain name with our own Github pages.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Configuring Github pages with Custom Domain</title><link href="http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html" rel="alternate"></link><published>2017-05-02T23:22:29+05:30</published><updated>2017-05-06T23:38:22+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-02:/articles/pelican/linking-domain-with-github-pages.html</id><summary type="html">&lt;p&gt;We will link our Godaddy domain name with our own Github pages.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;In the first series of blog post we have seen how to create a pelican blog, customize a little and also host it from Github pages. We can also use Github pages as a hosting service and link any of the domain name providers with this hosting. In this post I have taken the example of GoDaddy, but the process should not much different for any other domain name provider.&lt;/p&gt;
 &lt;p&gt;The process to link a Godaddy Domain to Github Pages can be divided into 2 Steps.&lt;/p&gt;
 &lt;ol&gt;
@@ -81,7 +81,7 @@
 &lt;li&gt;Configure the DNS at &lt;a href="https://in.godaddy.com/"&gt;GoDaddy&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="configure-github-repository"&gt;Configure Github Repository&lt;a class="headerlink" href="#configure-github-repository" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We have already made a Github Pages website in our previous post, kindly follow the steps mentioned &lt;a href="http://archerimagine.com/articles/publishing-blog-github-pages.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We have already made a Github Pages website in our previous post, kindly follow the steps mentioned &lt;a href="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Once we have a Github Pages URL, we have to configure a CNAME in this repository, this can be done in 2 ways.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Local Repository&lt;/li&gt;
@@ -141,7 +141,7 @@
 &lt;li&gt;Kindly read the above site, to understand what is the use of CNAME and A Record. Great introduction. &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="pelican"></category></entry><entry><title>Publishing your blog to github pages.</title><link href="http://archerimagine.com/articles/publishing-blog-github-pages.html" rel="alternate"></link><published>2017-04-30T18:44:09+05:30</published><updated>2017-05-02T23:09:01+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/publishing-blog-github-pages.html</id><summary type="html">&lt;p&gt;In this post we will try to make your small blog visible to the world with the help of github pages. This is the easiest and free way to put your work for the world to see.&lt;/p&gt;</summary><content type="html">
+&lt;/ol&gt;</content><category term="pelican"></category></entry><entry><title>Publishing your blog to github pages.</title><link href="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html" rel="alternate"></link><published>2017-04-30T18:44:09+05:30</published><updated>2017-05-07T00:01:11+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/pelican/publishing-blog-github-pages.html</id><summary type="html">&lt;p&gt;In this post we will try to make your small blog visible to the world with the help of github pages. This is the easiest and free way to put your work for the world to see.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;We have set the basic blog, though it may not look great because of the theme which we are using, but we will change those. Presently we will focus on taking this blog for the world to see. &lt;a href="https://pages.github.com/" title="GitHub Pages"&gt;Github Pages&lt;/a&gt; is the way to publish your blog on to the WWW.&lt;/p&gt;
 &lt;p&gt;We will have 2 repositories for doing this.&lt;/p&gt;
 &lt;ul&gt;
@@ -149,7 +149,7 @@
 &lt;li&gt;Second repository is for the generated files in the &lt;code&gt;output&lt;/code&gt; folder.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="prerequisite"&gt;Prerequisite&lt;a class="headerlink" href="#prerequisite" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We all should have a &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; account, if you have then continue else go to &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; and create an account. The process is very straight forward, just follow the instruction on the website.&lt;/p&gt;
+&lt;p&gt;We all should have a &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; account, if you have then continue, else go to &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; and create an account. The process is very straight forward, just follow the instruction on the website.&lt;/p&gt;
 &lt;p&gt;The git should be locally configured. Kindly follow the steps mention in this page &lt;a href="https://help.github.com/articles/setting-your-email-in-git/"&gt;Setting your email in Git&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="the-first-repository"&gt;The first Repository&lt;a class="headerlink" href="#the-first-repository" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We should now create our first Repository onto github. Click on the &lt;code&gt;+&lt;/code&gt; icon which shows this drop down.&lt;/p&gt;
@@ -159,7 +159,7 @@
 &lt;p&gt;&lt;img alt="Create repo" src="http://archerimagine.com/images/githubAccount/createRepoForm.png" title="The create repo form"/&gt;&lt;/p&gt;
 &lt;p&gt;Fill in the repository name which you want to name, and write a little &lt;code&gt;Description&lt;/code&gt; also do not click on the check-box which read&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Initialize this repository with a README&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Since we already have a folder in our local system to check-in we can leave this box unchecked. In future if need we can create a &lt;code&gt;README&lt;/code&gt; file manually.&lt;/p&gt;
+&lt;p&gt;Since we already have a folder in our local system, to check-in we can leave this box unchecked. In future if need we can create a &lt;code&gt;README&lt;/code&gt; file manually.&lt;/p&gt;
 &lt;p&gt;Once you click on the &lt;code&gt;Create Repository&lt;/code&gt; link, you will be taken to this page, with these as a content.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Github Push Commands" src="http://archerimagine.com/images/githubAccount/commandsGitHub2Push.png" title="The Github push commands"/&gt;&lt;/p&gt;
 &lt;p&gt;This is the symbol of empty repository which is created and now we can push our local code to this folder.&lt;/p&gt;
@@ -172,7 +172,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;This command initializes a empty repository in the same folder.&lt;/li&gt;
+&lt;li&gt;This command initializes an empty repository in the same folder.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Create a file named &lt;code&gt;.gitignore&lt;/code&gt; in the same folder.&lt;/li&gt;
@@ -244,7 +244,7 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;li&gt;&lt;code&gt;git commit -m "first commit"&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git remote add origin https://github.com/pelicanBlog/pelicanBlog.github.io.git&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;After the above command, just launch this url in your browser, &lt;code&gt;https://username.github.io/&lt;/code&gt;, just change &lt;code&gt;username&lt;/code&gt; with your username.&lt;/li&gt;
+&lt;li&gt;After the above command, just launch this URL in your browser, &lt;code&gt;https://username.github.io/&lt;/code&gt;, just change &lt;code&gt;username&lt;/code&gt; with your username.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Since the original source folder we create with &lt;code&gt;output&lt;/code&gt; directory mentioned in &lt;code&gt;.gitignore&lt;/code&gt;, we can now add this repository as a submodule in that repository, to provide a link between both the source and the &lt;code&gt;output&lt;/code&gt;&lt;ul&gt;
@@ -287,18 +287,18 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;li&gt;&lt;a href="https://git-scm.com/docs/git-submodule"&gt;git-submodule &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://hernantz.github.io/how-to-publish-a-pelican-site-on-github.html"&gt;How to publish a pelican site on Github &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Understanding the Pelican Settings files.</title><link href="http://archerimagine.com/articles/pelican-settings-files.html" rel="alternate"></link><published>2017-04-30T17:07:03+05:30</published><updated>2017-05-02T23:08:56+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/pelican-settings-files.html</id><summary type="html">&lt;p&gt;By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Understanding the Pelican Settings files.</title><link href="http://archerimagine.com/articles/pelican/pelican-settings-files.html" rel="alternate"></link><published>2017-04-30T17:07:03+05:30</published><updated>2017-05-06T23:58:42+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-30:/articles/pelican/pelican-settings-files.html</id><summary type="html">&lt;p&gt;By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;The basic work flow in pelican blogging is to first generate content, verify it locally using a &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and when everything is fine will publish it.&lt;/p&gt;
 &lt;p&gt;Pelican comes with two settings files to separate these 2 process. These two files are.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;publishconf.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Lets check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.&lt;/p&gt;
+&lt;p&gt;Let's check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.&lt;/p&gt;
 &lt;p&gt;These setting files are mostly passed to the templates associated with the themes to generate the site, all these settings are some parameters to these templates.&lt;/p&gt;
 &lt;h2 id="pelicanconfpy"&gt;pelicanconf.py&lt;a class="headerlink" href="#pelicanconfpy" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We had used the &lt;code&gt;pelican-quickstart&lt;/code&gt; to generate this blog, when we use this command, we get a pre-configured &lt;code&gt;pelicanconf.py&lt;/code&gt; and a &lt;code&gt;publishconf.py&lt;/code&gt; files. This have the bare basic configuration to be used based on the questions we answered on the options.&lt;/p&gt;
-&lt;p&gt;These files basically contains the settings identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), booleans (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.&lt;/p&gt;
+&lt;p&gt;These files basically contains the setting's identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), Boolean (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt; is used to generate the site locally and tested over &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. The basic &lt;code&gt;pelicanconf.py&lt;/code&gt; would look like this.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
 &lt;span class="c1"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
@@ -351,7 +351,7 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;SITEURL&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;Since we still do not have domain name registered, we had kept this empty, and also it make sense to keep this empty for &lt;code&gt;localhost&lt;/code&gt; testing.&lt;/li&gt;
+&lt;li&gt;Since we still do not have domain name registered, we had kept this empty, and also it makes sense to keep this empty for &lt;code&gt;localhost&lt;/code&gt; testing.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PATH&lt;/code&gt;&lt;ul&gt;
@@ -359,7 +359,7 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;TIMEZONE&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;This we had entered during the initial process, and in future if we want to change this we can change this settings.&lt;/li&gt;
+&lt;li&gt;This we had entered during the initial process, and in future if we want to change this we can change these settings.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;DEFAULT_LANG&lt;/code&gt;&lt;ul&gt;
@@ -367,7 +367,7 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;FEEDS_*&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;All the &lt;code&gt;FEEDS_*&lt;/code&gt; related settings are empty because we have still not configured the RSS feeds settings, this we will change in future.&lt;/li&gt;
+&lt;li&gt;All the &lt;code&gt;FEEDS_*&lt;/code&gt; related settings are empty because we have still not configured the RSS feeds settings, this we will change in the future.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ARTICLE_*&lt;/code&gt;&lt;ul&gt;
@@ -375,11 +375,11 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;LINKS&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;This is a tuple of tuple, with each entry showing a links which you want provide in you blog.&lt;/li&gt;
+&lt;li&gt;This is a tuple of tuple, with each entry showing a link which you want provide in your blog.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;SOCIAL&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;This is also a tuple of tuple, were each entry is meant to point to a name of a social network say &lt;code&gt;Facebook&lt;/code&gt; and the link to your profile.&lt;/li&gt;
+&lt;li&gt;This is also a tuple of tuple, where each entry is meant to point to a name of a social network say &lt;code&gt;Facebook&lt;/code&gt; and the link to your profile.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;DEFAULT_PAGINATION&lt;/code&gt;&lt;ul&gt;
@@ -419,14 +419,14 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;span class="c1"&gt;#GOOGLE_ANALYTICS = ""&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This file, basically build on top of the &lt;code&gt;pelicanconf.py&lt;/code&gt;, as we can see from this line, &lt;code&gt;from pelicanconf import *&lt;/code&gt;. What this means is all the configuration from &lt;code&gt;pelicancongf.py&lt;/code&gt; is taken into consideration along with some specific configuration which is required for just publishing.&lt;/p&gt;
-&lt;p&gt;If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integraton with the &lt;code&gt;DISQUS&lt;/code&gt; comment system, and the &lt;code&gt;GOOGLE_ANALYTICS&lt;/code&gt; code. We will see the use of this code once we integrate these feature into our blog.&lt;/p&gt;
+&lt;p&gt;If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integration with the &lt;code&gt;DISQUS&lt;/code&gt; comment system, and the &lt;code&gt;GOOGLE_ANALYTICS&lt;/code&gt; code. We will see the use of this code once we integrate these feature into our blog.&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/settings.html"&gt;Pelican Settings&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-05-02T23:08:47+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some of pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican commands to generate the first blog.</title><link href="http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html" rel="alternate"></link><published>2017-04-29T22:15:05+05:30</published><updated>2017-05-06T23:52:35+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html</id><summary type="html">&lt;p&gt;In this post we will check some pelican commands, and how it helps us to generate a blog post.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
 &lt;h2 id="first-pelican-blog"&gt;First Pelican Blog&lt;a class="headerlink" href="#first-pelican-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We have see the folder structure here&lt;/p&gt;
+&lt;p&gt;We have seen the folder structure here&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt; &lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;Now we will first execute some commands and see what happens with this boilerplate. Remember to be in the &lt;code&gt;pelican1&lt;/code&gt; environment. We can do this by.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate pelican1
@@ -439,7 +439,7 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;WARNING: No valid files found in content.
 Done: Processed &lt;span class="m"&gt;0&lt;/span&gt; articles, &lt;span class="m"&gt;0&lt;/span&gt; drafts, &lt;span class="m"&gt;0&lt;/span&gt; pages and &lt;span class="m"&gt;0&lt;/span&gt; hidden pages in &lt;span class="m"&gt;0&lt;/span&gt;.12 seconds.
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;It clearly warn us about no valid files found in &lt;strong&gt;content&lt;/strong&gt;, as we have not added any post to the directory. If you see inside the &lt;code&gt;output&lt;/code&gt; folder, we will see some content in that namely these files&lt;/p&gt;
+&lt;p&gt;It clearly warns us about no valid files found in &lt;strong&gt;content&lt;/strong&gt;, as we have not added any post to the directory. If you see inside the &lt;code&gt;output&lt;/code&gt; folder, we will see some content in that namely these files&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;archives.html
 authors.html
 categories.html
@@ -479,9 +479,9 @@ python -m pelican.server
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican Doc Quickstart&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican Folder Structure</title><link href="http://archerimagine.com/articles/pelican-folder-structure.html" rel="alternate"></link><published>2017-04-29T22:10:10+05:30</published><updated>2017-05-02T23:08:52+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican-folder-structure.html</id><summary type="html">&lt;p&gt;In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.&lt;/p&gt;</summary><content type="html">
-&lt;p&gt;We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.&lt;/p&gt;
-&lt;p&gt;After the first blog post if we give &lt;code&gt;make clean&lt;/code&gt; command we will see a folder structure just like this. This will have a empty &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican Folder Structure</title><link href="http://archerimagine.com/articles/pelican/pelican-folder-structure.html" rel="alternate"></link><published>2017-04-29T22:10:10+05:30</published><updated>2017-05-06T23:56:03+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican/pelican-folder-structure.html</id><summary type="html">&lt;p&gt;In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some files forms the basic of this. We will understand some of these files and folder use in this post.&lt;/p&gt;
+&lt;p&gt;After the first blog post if we give &lt;code&gt;make clean&lt;/code&gt; command we will see a folder structure just like this. This will have an empty &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"&gt; &lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;We will understand the use of these folder and a proper way of managing your content.&lt;/p&gt;
 &lt;h2 id="content-folder"&gt;content folder&lt;a class="headerlink" href="#content-folder" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
@@ -493,14 +493,14 @@ python -m pelican.server
 &lt;li&gt;folder for storing our favicon.ico and apple icon&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="writing-content"&gt;Writing Content&lt;a class="headerlink" href="#writing-content" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;In traditional wordpress or most of the bloging platform the content is stored in this format &lt;code&gt;/2015/05/24/my-content/&lt;/code&gt; now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the url. In my opinion we can better organize ourself with some meaning full structure.&lt;/p&gt;
+&lt;p&gt;In traditional wordpress or most of the blogging platform the content is stored in this format &lt;code&gt;/2015/05/24/my-content/&lt;/code&gt; now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the URL. In my opinion we can better organize our self with some meaning full structure.&lt;/p&gt;
 &lt;p&gt;What we can do is we can create a folder in side &lt;code&gt;content&lt;/code&gt; named &lt;code&gt;articles&lt;/code&gt; and the sub folders inside &lt;code&gt;articles&lt;/code&gt; for each category which you want to write or if you want to have a flat system you can place all your content inside &lt;code&gt;articles&lt;/code&gt;. I prefer the sub folder approach as we can derive the category name just from the folder name.&lt;/p&gt;
 &lt;p&gt;So go ahead for beginning create a folder inside &lt;code&gt;content&lt;/code&gt; name &lt;code&gt;articles&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; content/
 mkdir articles
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now create your second post inside this and publish the content based on the command we learned on the previous post.&lt;/p&gt;
-&lt;p&gt;Now if you launch the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and click on the article title, you will see no difference but if you see on the url bar, we still see that our post is without the &lt;code&gt;article&lt;/code&gt; folder structure. We did not wanted this. Have a look&lt;/p&gt;
+&lt;p&gt;Now if you launch the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;, and click on the article title, you will see no difference but if you see on the URL bar, we still see that our post is without the &lt;code&gt;article&lt;/code&gt; folder structure. We did not want this. Have a look&lt;/p&gt;
 &lt;p&gt;&lt;img alt="url without article " src="http://archerimagine.com/images/pelicanFolder/URLwithoutarticles.png" title="URL without articles."/&gt;&lt;/p&gt;
 &lt;p&gt;In order to get the proper URL in the address bar we have to change somethings in the &lt;code&gt;pelicanconf.py&lt;/code&gt;, we will explain what is the purpose of this file in a short file for not just add these 3 line into that config.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ARTICLE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'articles'&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
@@ -511,7 +511,7 @@ mkdir articles
 &lt;p&gt;&lt;img alt="url with article " src="http://archerimagine.com/images/pelicanFolder/URLwitharticles.png" title="URL with articles."/&gt;&lt;/p&gt;
 &lt;p&gt;Now we have a proper folder structure.&lt;/p&gt;
 &lt;h3 id="static-pages"&gt;Static Pages&lt;a class="headerlink" href="#static-pages" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Most often then not we will want some pages which will rarely change, like an &lt;strong&gt;About&lt;/strong&gt; and a &lt;strong&gt;Contact&lt;/strong&gt; pages. These type of static pages is also supported in the pelican blog. Just create a folder named &lt;code&gt;pages&lt;/code&gt; inside &lt;code&gt;content&lt;/code&gt; folder like this.&lt;/p&gt;
+&lt;p&gt;Most often than not we will want some pages which will rarely change, like an &lt;strong&gt;About&lt;/strong&gt; and a &lt;strong&gt;Contact&lt;/strong&gt; pages. These type of static pages is also supported in the pelican blog. Just create a folder named &lt;code&gt;pages&lt;/code&gt; inside &lt;code&gt;content&lt;/code&gt; folder like this.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; content/
 mkdir pages
 &lt;/pre&gt;&lt;/div&gt;
@@ -541,22 +541,22 @@ The Contact Page for the blog.
 &lt;p&gt;When we see the output of &lt;code&gt;pelican content&lt;/code&gt; command we will see this.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Done: Processed &lt;span class="m"&gt;1&lt;/span&gt; article, &lt;span class="m"&gt;0&lt;/span&gt; drafts, &lt;span class="m"&gt;2&lt;/span&gt; pages and &lt;span class="m"&gt;0&lt;/span&gt; hidden pages in &lt;span class="m"&gt;0&lt;/span&gt;.20 seconds.
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Which means that the &lt;code&gt;pages&lt;/code&gt; are generated. When we launch the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. we will see that the &lt;code&gt;About&lt;/code&gt; and &lt;code&gt;Contact&lt;/code&gt; menu like this&lt;/p&gt;
+&lt;p&gt;Which means that, the &lt;code&gt;pages&lt;/code&gt; are generated. When we launch the &lt;a href="http://localhost:8000/"&gt;localhost:8000&lt;/a&gt;. we will see that the &lt;code&gt;About&lt;/code&gt; and &lt;code&gt;Contact&lt;/code&gt; menu like this&lt;/p&gt;
 &lt;p&gt;&lt;img alt="About and Contact Page " src="http://archerimagine.com/images/pelicanFolder/staticPages.png" title="About and Contact Page."/&gt;&lt;/p&gt;
 &lt;p&gt;We can modify these pages with the information which you want to furnish.&lt;/p&gt;
 &lt;h3 id="static-images"&gt;Static Images&lt;a class="headerlink" href="#static-images" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Most often then not we will use images to link in our blogs, we can store all these images inside the &lt;code&gt;content&lt;/code&gt; folder, having a directory called &lt;code&gt;images&lt;/code&gt;. Do this by following these commands.&lt;/p&gt;
+&lt;p&gt;Most often than not we will use images to link in our blogs, we can store all these images inside the &lt;code&gt;content&lt;/code&gt; folder, having a directory called &lt;code&gt;images&lt;/code&gt;. Do this by following these commands.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; content/
 mkdir images
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now we can copy any image inside this folder and try to link it into one of our blog. Just copy any image in this folder and copy the file name.&lt;/p&gt;
 &lt;p&gt;Now create a link to this file inside the already existing blog post by the help of &lt;code&gt;link&lt;/code&gt; of markdown, here is a sample.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;![&lt;span class="nt"&gt;Hello World 1&lt;/span&gt;](&lt;span class="na"&gt;{filename}../images/helloWorldPelicanPost.png "Hello World 2"&lt;/span&gt;)
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;![&lt;span class="nt"&gt;Hello World 1&lt;/span&gt;](&lt;span class="na"&gt;{filename}../../images/helloWorldPelicanPost.png "Hello World 2"&lt;/span&gt;)
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We should understand some details about the above piece of code.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Hello World 1&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;The &lt;code&gt;alt&lt;/code&gt; text is good if there is a browser which block image, this &lt;code&gt;alt&lt;/code&gt; text is displayed, showing an information about what this images was supposed to do.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;alt&lt;/code&gt; text is good if there is a browser which block image, this &lt;code&gt;alt&lt;/code&gt; text is displayed, showing an information about what this images were supposed to do.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;"Hello World 2"&lt;/code&gt;&lt;ul&gt;
@@ -564,7 +564,7 @@ mkdir images
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;{filename}&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;This is a special syntax which is used by pelican to generate links, so be it url or images, when using relative urls kindly use this format.&lt;/li&gt;
+&lt;li&gt;This is a special syntax which is used by pelican to generate links, so be it URL or images, when using relative URLs kindly use this format.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -573,20 +573,20 @@ mkdir images
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/content.html#pages"&gt;Pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/content.html#linking-to-internal-content"&gt;Linking to internal content &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican HelloWorld using pelican-quickstart</title><link href="http://archerimagine.com/articles/helloworld-pelican-quickstart.html" rel="alternate"></link><published>2017-04-27T23:26:43+05:30</published><updated>2017-05-02T23:08:35+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-27:/articles/helloworld-pelican-quickstart.html</id><summary type="html">&lt;p&gt;We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican HelloWorld using pelican-quickstart</title><link href="http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html" rel="alternate"></link><published>2017-04-27T23:26:43+05:30</published><updated>2017-05-06T23:49:40+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-27:/articles/pelican/helloworld-pelican-quickstart.html</id><summary type="html">&lt;p&gt;We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command &lt;code&gt;pelican-quickstart&lt;/code&gt;, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.&lt;/p&gt;
 &lt;h2 id="activate-python-environment"&gt;Activate Python environment&lt;a class="headerlink" href="#activate-python-environment" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We had setup a separate python anaconda environment in our previous &lt;a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"&gt;post&lt;/a&gt; now is the time to active the environment, we can do that by using a simple command.&lt;/p&gt;
+&lt;p&gt;We had set up a separate python anaconda environment in our previous &lt;a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html"&gt;post&lt;/a&gt; now is the time to active the environment, we can do that by using a simple command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate pelican1
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It will activate the &lt;code&gt;pelican1&lt;/code&gt; environment, and we can identify it by check the terminal prompt which will change to &lt;code&gt;(pelican1)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Once the work is done we can deactivate the same with a simple command.&lt;/p&gt;
+&lt;p&gt;Once the work is done, we can deactivate the same with a simple command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; deactivate pelican1
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;All the above command will work for linux and Mac, kindly check the windows equivalent of the same.&lt;/p&gt;
+&lt;p&gt;All the above command will work for Linux and Mac, kindly check the windows equivalent of the same.&lt;/p&gt;
 &lt;h2 id="pelican-quickstart"&gt;pelican-quickstart&lt;a class="headerlink" href="#pelican-quickstart" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Now we are ready to divulge in the world of pelican. Pelican has a ready to bake command to setup the basic boilerplate for the blog. The command is called&lt;/p&gt;
-&lt;p&gt;Before executing the below commands just create a directory where you want your blog files to be stored.&lt;/p&gt;
+&lt;p&gt;Now we are ready to divulge in the world of pelican. Pelican has a ready to bake command to set up the basic boilerplate for the blog. The command is called&lt;/p&gt;
+&lt;p&gt;Before executing the below commands, just create a directory where you want your blog files to be stored.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir ~/myBlogDirectory
 &lt;span class="nb"&gt;cd&lt;/span&gt; ~/myBlogDirectory
 pelican-quickstart
@@ -595,9 +595,9 @@ pelican-quickstart
 &lt;h3 id="pelican-quickstart-options"&gt;pelican-quickstart options&lt;a class="headerlink" href="#pelican-quickstart-options" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The options shown after executing the &lt;code&gt;pelican-quickstart&lt;/code&gt; are as below.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pelican quickstart options" src="http://archerimagine.com/images/pelicanQuickStart/pelicanQuickStartoptions.png" title="pelican quickstart options"/&gt;&lt;/p&gt;
-&lt;p&gt;We will discuss each and every options and there usage, we can always choose the default shown in capital letter, &lt;code&gt;{Y|n}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We will discuss each and every option and their usage, we can always choose the default shown in capital letter, &lt;code&gt;{Y|n}&lt;/code&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Where do you want to create your new Web site ? [.]&lt;ul&gt;
+&lt;li&gt;Where do you want to create your new Website ? [.]&lt;ul&gt;
 &lt;li&gt;Most probably we will keep the default as we are already in that directory, if not you can specify the path &lt;code&gt;/home/pathtomyblog&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -605,20 +605,20 @@ pelican-quickstart
 &lt;li&gt;Provide a suitable title to your blog, do not worry even if you want to change it latter we can change it. &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Who will be the author of this Web site ?&lt;ul&gt;
-&lt;li&gt;Just provide any name you want whose name should be present as a author on the blog post, it can be your name also.&lt;/li&gt;
+&lt;li&gt;Who will be the author of this Website ?&lt;ul&gt;
+&lt;li&gt;Just provide any name you want whose name should be present as an author on the blog post, it can be your name as well.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;What will be the default language  of this Web site ? [en]&lt;ul&gt;
-&lt;li&gt;The default choice is &lt;code&gt;english&lt;/code&gt;, else you can give any language format mentioned in ISO 639-1 Language Codes, the list can be found &lt;a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="ISO Language codes"&gt;ISO Language codes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;What will be the default language of this Website ? [en]&lt;ul&gt;
+&lt;li&gt;The default choice is &lt;code&gt;English&lt;/code&gt;, else you can give any language format mentioned in ISO 639-1 Language Codes, the list can be found &lt;a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="ISO Language codes"&gt;ISO Language codes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Do you want to specify a URL prefix? e.g., http://example.com   (Y/n)&lt;ul&gt;
+&lt;li&gt;Do you want to specify a URL prefix? e.g., http://example.com (Y/n)&lt;ul&gt;
 &lt;li&gt;If you already have purchased a domain give the domain name as shown in the example, else continue with &lt;code&gt;n&lt;/code&gt;, we can later fill the domain name.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Do you want to enable article pagination? (Y/n)&lt;ul&gt;
-&lt;li&gt;We can go with the default of having pagination, which means how many post of a the blogs will be displayed in one page, the choice of this is in the next question.&lt;ul&gt;
+&lt;li&gt;We can go with the default of having pagination, which means how many posts of the blogs will be displayed in one page, the choice of this is in the next question.&lt;ul&gt;
 &lt;li&gt;How many articles per page do you want? [10] &lt;ul&gt;
 &lt;li&gt;The default choice is &lt;code&gt;10&lt;/code&gt;, for the time being keep it that way.&lt;/li&gt;
 &lt;/ul&gt;
@@ -644,11 +644,11 @@ pelican-quickstart
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Do you want to upload your website using SSH? (y/N)&lt;ul&gt;
-&lt;li&gt;If your hosting uses SSH, for our use case we will choose &lt;code&gt;N&lt;/code&gt;, which is the default.&lt;/li&gt;
+&lt;li&gt;If you are hosting uses SSH, for our use case we will choose &lt;code&gt;N&lt;/code&gt;, which is the default.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Do you want to upload your website using Dropbox? (y/N)&lt;ul&gt;
-&lt;li&gt;We can also use dropbox to upload out static files, but for this, we will try some other time, for now choose the default which is &lt;code&gt;N&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;We can also use Dropbox to upload our static files, but for this, we will try some other time, for now choose the default which is &lt;code&gt;N&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Do you want to upload your website using S3? (y/N)&lt;ul&gt;
@@ -683,7 +683,7 @@ pelican-quickstart
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones"&gt;List of tz database time zones&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="List of ISO 639-1 codes"&gt;List of ISO 639-1 codes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/almet/1140861"&gt;pelican-quickstart.py&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>How to setup Anaconda Python environment for Pelican Blog.</title><link href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html" rel="alternate"></link><published>2017-04-26T22:39:03+05:30</published><updated>2017-04-26T23:50:52+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-26:/articles/python-setup-for-pelican-blog.html</id><summary type="html">&lt;p&gt;Anaconda is a well know distribution of Python, supporting both python 2 and 3. We can setup a exclusive environment for Pelican blog using conda.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>How to setup Anaconda Python environment for Pelican Blog.</title><link href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html" rel="alternate"></link><published>2017-04-26T22:39:03+05:30</published><updated>2017-05-07T00:03:25+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-26:/articles/pelican/python-setup-for-pelican-blog.html</id><summary type="html">&lt;p&gt;Anaconda is a well known distribution of Python, supporting both python 2 and 3. We can set up an exclusive environment for Pelican blog using conda.&lt;/p&gt;</summary><content type="html">
 &lt;h2 id="installing-pelican"&gt;Installing Pelican&lt;a class="headerlink" href="#installing-pelican" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pelican is a python package, so we can have multiple option to install pelican. There can be 3 option which I can think of.&lt;/p&gt;
 &lt;ul&gt;
@@ -696,19 +696,19 @@ pelican-quickstart
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Installation using Conda.&lt;ul&gt;
-&lt;li&gt;By now you could have understood that we will use Conda to install pelican. This is because Anaconda is already a pre-packaged installation of very well know python package in both version 2 and 3. In future I will will update this page if I wrote about Anaconda installation, for now refer any documents on the google search for installation.&lt;/li&gt;
+&lt;li&gt;By now you could have understood that we will use Conda to install pelican. This is because Anaconda is already a prepackaged installation of very well know python package in both version 2 and 3. In future, I will update this page if I wrote about Anaconda installation, for now refer any documents on the google search for installation.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="configure-anaconda-for-pelican-blog"&gt;Configure Anaconda for Pelican Blog&lt;a class="headerlink" href="#configure-anaconda-for-pelican-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The first thing we have to do is to create a environment using the python version 2. This can be done by this command.&lt;/p&gt;
+&lt;p&gt;The first thing we have to do is to create an environment using the python version 2. This can be done by this command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda create -n pelican1 python=2
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once we have executed the above command we will have &lt;code&gt;pelican1&lt;/code&gt; as an environment.&lt;/p&gt;
 &lt;p&gt;We can see the list of environment in the system by using.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda info --envs
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Which will provide an output like this.&lt;/p&gt;
+&lt;p&gt;Which will provide, an output like this.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican1                 /home/username/anaconda3/envs/pelican1
 py27                     /home/username/anaconda3/envs/py27
 py35                     /home/username/anaconda3/envs/py35
@@ -718,9 +718,9 @@ root                  *  /home/username/anaconda3
 &lt;p&gt;We can activate the &lt;code&gt;pelican1&lt;/code&gt; by using this command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source activate pelican1
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now we have an environment which we can used for pelican development. The reason for this environment creation is to have a separate environment for experimentation with pelican, if anything goes wrong we do not disturb already existing programs.&lt;/p&gt;
+&lt;p&gt;Now we have an environment which we can use for pelican development. The reason for this environment creation is to have a separate environment for experimentation with pelican, if anything goes wrong we do not disturb already existing programs.&lt;/p&gt;
 &lt;h3 id="configure-pelican-environment-for-blog"&gt;Configure Pelican Environment for Blog&lt;a class="headerlink" href="#configure-pelican-environment-for-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Once we have the environment we have install few packages in this environment. The first is to install PiP to install other package. Install Pip by using.&lt;/p&gt;
+&lt;p&gt;Once we have the environment, we have to install few packages in this environment. The first is to install PiP to install other package. Install Pip by using.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda install pip
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;With the completion of installing &lt;code&gt;pip&lt;/code&gt;, the first and foremost package to install is pelican, with this command.&lt;/p&gt;
@@ -757,7 +757,7 @@ pip install beautifulsoup4
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;Installing Pelican &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://conda.io/docs/py2or3.html"&gt;Managing Python &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Cost effective blogging with Pelican and Github</title><link href="http://archerimagine.com/articles/cost-effective-blogging-with-Pelican-and-Github.html" rel="alternate"></link><published>2017-04-25T23:20:03+05:30</published><updated>2017-05-02T23:07:42+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-25:/articles/cost-effective-blogging-with-Pelican-and-Github.html</id><summary type="html">&lt;p&gt;This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.&lt;/p&gt;</summary><content type="html">
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Cost effective blogging with Pelican and Github</title><link href="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html" rel="alternate"></link><published>2017-04-25T23:20:03+05:30</published><updated>2017-05-06T23:43:23+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-25:/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html</id><summary type="html">&lt;p&gt;This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;This is a series of blog post to help set up a static blog at minimal cost and integrating with all the popular tools such as Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.&lt;/p&gt;
 &lt;p&gt;I am a novice blogger and this blog would act as a journal, which will document my approach towards blogging, software development. The idea is to generate some revenues out of this blog in the long run. We all might have read about so many blogs which are able to generate good amount of traffic but in none one of those we have never read how do they achieve it.&lt;/p&gt;
 &lt;p&gt;I may fail in my attempt, which might work as a guidance for someone to not follow this path and try another path for the same goal. The background theme to support this is to minimize my cost to the bare minimum so that the failure does not hurt me financially.&lt;/p&gt;
@@ -767,11 +767,11 @@ pip install beautifulsoup4
 &lt;li&gt;&lt;strong&gt;Cost:-&lt;/strong&gt; This was the deciding factor for me, because of using a static website, this complete website can be hosted and deployed by just registering a domain name with a provider. I do not have to go for any hosting services etc.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Easy of Writing Content:-&lt;/strong&gt; I wanted to write my content using just &lt;a href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt;, as i have grown comfortable writing in markdown. With using a static blog this was possible.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Hosting:-&lt;/strong&gt; We can serve these static HTML pages practically from any place, be it &lt;a href="https://github.com/"&gt;Github&lt;/a&gt;, &lt;a href="https://aws.amazon.com/s3/"&gt;Amazon S3&lt;/a&gt;, &lt;a href="https://www.dropbox.com/"&gt;Dropbox&lt;/a&gt; or any other place which can serve static HTML pages. I have chosen Github just to save the cost.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Easy workFlow:-&lt;/strong&gt; The work flow is very simple when deploying with static blogs, just right you content in markdown, generate HTML, push your changes to github and that's it. Your content is not available online. You can even go crazy you cam automate the whole thing other than writing content.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Easy workflow:-&lt;/strong&gt; The work flow is very simple when deploying with static blogs, just right you content in markdown, generate HTML, push your changes to github and that's it. Your content is not available online. You can even go crazy you cam automate the whole thing other than writing content.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The above three are the main reason for choosing static blogs, but there could be many more valid reason for choosing static blogs. Most of the reason for me was personal in nature so you can also choose accordingly.&lt;/p&gt;
 &lt;h2 id="why-pelican"&gt;Why Pelican?&lt;a class="headerlink" href="#why-pelican" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, &lt;a href="https://blog.getpelican.com/"&gt;Pelican &lt;/a&gt; or &lt;a href="https://jekyllrb.com/"&gt;Jerkll &lt;/a&gt;. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these two.&lt;/p&gt;
+&lt;p&gt;Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, &lt;a href="https://blog.getpelican.com/"&gt;Pelican &lt;/a&gt; or &lt;a href="https://jekyllrb.com/"&gt;Jekyll &lt;/a&gt;. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these two.&lt;/p&gt;
 &lt;h2 id="why-github"&gt;Why Github?&lt;a class="headerlink" href="#why-github" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The final decision to be taken before starting this blog was to finalize the hosting provider. We have already mentioned some popular choice are&lt;/p&gt;
 &lt;ul&gt;
@@ -783,7 +783,7 @@ pip install beautifulsoup4
 &lt;p&gt;Once all the above 3 moral questions were answered, setting up the blogs was easy and which will be documented in the future.&lt;/p&gt;
 &lt;h2 id="collated-blog-post"&gt;Collated Blog post.&lt;a class="headerlink" href="#collated-blog-post" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://archerimagine.com/articles/python-setup-for-pelican-blog.html"&gt;How to setup Anaconda Python environment for Pelican Blog.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html"&gt;How to set up Anaconda Python environment for Pelican Blog.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;

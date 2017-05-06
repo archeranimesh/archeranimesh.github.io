@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, Pelican folder structure" />
+<meta name="keywords" content="pelican, Pelican, pelican, Google Analytics, MailChimp, Disqus, Google Adsense, Github" />
 
-<meta property="og:title" content="Pelican Folder Structure  - Creating Magic "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican-folder-structure.html" />
-<meta property="og:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come." />
+<meta property="og:title" content="Cost effective blogging with Pelican and Github  - The easy way. "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html" />
+<meta property="og:description" content="This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-29T22:10:10+05:30" />
-<meta property="" content="2017-05-02T23:08:52+05:30" />
-<meta name="twitter:title" content="Pelican Folder Structure  - Creating Magic ">
-<meta name="twitter:description" content="In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.">
+<meta property="og:article:published_time" content="2017-04-25T23:20:03+05:30" />
+<meta property="" content="2017-05-06T23:43:23+05:30" />
+<meta name="twitter:title" content="Cost effective blogging with Pelican and Github  - The easy way. ">
+<meta name="twitter:description" content="This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.">
 
-        <title>Pelican Folder Structure  - Creating Magic  · Archer Imagine
+        <title>Cost effective blogging with Pelican and Github  - The easy way.  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican-folder-structure.html"> Pelican Folder Structure  <small> Creating Magic </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html"> Cost effective blogging with Pelican and Github  <small> The easy way. </small>  </a></h1>
     </header>
 </div>
 
@@ -92,12 +92,10 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#content-folder">content folder</a><ul>
-<li><a href="#writing-content">Writing Content</a></li>
-<li><a href="#static-pages">Static Pages</a></li>
-<li><a href="#static-images">Static Images</a></li>
-</ul>
-</li>
+<li><a href="#why-static-blog">Why Static Blog?</a></li>
+<li><a href="#why-pelican">Why Pelican?</a></li>
+<li><a href="#why-github">Why Github?</a></li>
+<li><a href="#collated-blog-post">Collated Blog post.</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -107,99 +105,47 @@
 
             
             
-<p>We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some of the files form the basic of this. We will understand some of this files and folder use in this post.</p>
-<p>After the first blog post if we give <code>make clean</code> command we will see a folder structure just like this. This will have a empty <code>output</code> folder.</p>
-<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"> </img></p>
-<p>We will understand the use of these folder and a proper way of managing your content.</p>
-<h2 id="content-folder">content folder<a class="headerlink" href="#content-folder" title="Permanent link">¶</a></h2>
-<p>This is the folder where all the magic happens. This is the root folder for our all content, we can use this folder for these purposes.</p>
+<p>This is a series of blog post to help set up a static blog at minimal cost and integrating with all the popular tools such as Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.</p>
+<p>I am a novice blogger and this blog would act as a journal, which will document my approach towards blogging, software development. The idea is to generate some revenues out of this blog in the long run. We all might have read about so many blogs which are able to generate good amount of traffic but in none one of those we have never read how do they achieve it.</p>
+<p>I may fail in my attempt, which might work as a guidance for someone to not follow this path and try another path for the same goal. The background theme to support this is to minimize my cost to the bare minimum so that the failure does not hurt me financially.</p>
+<h2 id="why-static-blog">Why Static Blog?<a class="headerlink" href="#why-static-blog" title="Permanent link">¶</a></h2>
+<p>There are already a lot of literature present behind this, just wanted to summarize those:-</p>
 <ul>
-<li>Writing content</li>
-<li>Saving the images references in the content</li>
-<li>Static Pages (ex: about, contact etc)</li>
-<li>folder for storing our favicon.ico and apple icon</li>
+<li><strong>Cost:-</strong> This was the deciding factor for me, because of using a static website, this complete website can be hosted and deployed by just registering a domain name with a provider. I do not have to go for any hosting services etc.</li>
+<li><strong>Easy of Writing Content:-</strong> I wanted to write my content using just <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, as i have grown comfortable writing in markdown. With using a static blog this was possible.</li>
+<li><strong>Hosting:-</strong> We can serve these static HTML pages practically from any place, be it <a href="https://github.com/">Github</a>, <a href="https://aws.amazon.com/s3/">Amazon S3</a>, <a href="https://www.dropbox.com/">Dropbox</a> or any other place which can serve static HTML pages. I have chosen Github just to save the cost.</li>
+<li><strong>Easy workflow:-</strong> The work flow is very simple when deploying with static blogs, just right you content in markdown, generate HTML, push your changes to github and that's it. Your content is not available online. You can even go crazy you cam automate the whole thing other than writing content.</li>
 </ul>
-<h3 id="writing-content">Writing Content<a class="headerlink" href="#writing-content" title="Permanent link">¶</a></h3>
-<p>In traditional wordpress or most of the bloging platform the content is stored in this format <code>/2015/05/24/my-content/</code> now this may be what some people might be happy with and you can also do the same, but this impacts the SEO ranking as the path becomes long and the date when the content was created has no significance to the actual content but is occupying space on the url. In my opinion we can better organize ourself with some meaning full structure.</p>
-<p>What we can do is we can create a folder in side <code>content</code> named <code>articles</code> and the sub folders inside <code>articles</code> for each category which you want to write or if you want to have a flat system you can place all your content inside <code>articles</code>. I prefer the sub folder approach as we can derive the category name just from the folder name.</p>
-<p>So go ahead for beginning create a folder inside <code>content</code> name <code>articles</code></p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
-mkdir articles
-</pre></div>
-<p>Now create your second post inside this and publish the content based on the command we learned on the previous post.</p>
-<p>Now if you launch the <a href="http://localhost:8000/">localhost:8000</a>, and click on the article title, you will see no difference but if you see on the url bar, we still see that our post is without the <code>article</code> folder structure. We did not wanted this. Have a look</p>
-<p><img alt="url without article " src="http://archerimagine.com/images/pelicanFolder/URLwithoutarticles.png" title="URL without articles."/></p>
-<p>In order to get the proper URL in the address bar we have to change somethings in the <code>pelicanconf.py</code>, we will explain what is the purpose of this file in a short file for not just add these 3 line into that config.</p>
-<div class="highlight"><pre><span></span><span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'articles'</span><span class="p">,]</span>
-<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">'articles/{slug}.html'</span>
-<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">'articles/{slug}.html'</span>
-</pre></div>
-<p>With is configuration in the config folder, just generate the blog with the commands already learned and then check the <a href="http://localhost:8000/">localhost:8000</a>. It should look like this.</p>
-<p><img alt="url with article " src="http://archerimagine.com/images/pelicanFolder/URLwitharticles.png" title="URL with articles."/></p>
-<p>Now we have a proper folder structure.</p>
-<h3 id="static-pages">Static Pages<a class="headerlink" href="#static-pages" title="Permanent link">¶</a></h3>
-<p>Most often then not we will want some pages which will rarely change, like an <strong>About</strong> and a <strong>Contact</strong> pages. These type of static pages is also supported in the pelican blog. Just create a folder named <code>pages</code> inside <code>content</code> folder like this.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
-mkdir pages
-</pre></div>
-<p>Now we are ready to make our sample <code>About.md</code> and <code>Contact.md</code>  inside <code>pages</code> directory.</p>
-<div class="highlight"><pre><span></span>Title: About
-Date: 2017-04-14 22:30
-Modified: 2017-04-14 22:30
-Slug: About
-Author: username
-Summary: This is a sample blog.
-
-
-The About Page for the blog.
-</pre></div>
-<p>and <code>Contact.md</code></p>
-<div class="highlight"><pre><span></span>Title: Contact
-Date: 2017-04-14 22:30
-Modified: 2017-04-14 22:30
-Slug: Contact
-Author: username
-Summary: This is a sample blog contact page.
-
-
-The Contact Page for the blog.
-</pre></div>
-<p>We again generate the blog and check it on <a href="http://localhost:8000/">localhost:8000</a>.</p>
-<p>When we see the output of <code>pelican content</code> command we will see this.</p>
-<div class="highlight"><pre><span></span>Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">2</span> pages and <span class="m">0</span> hidden pages in <span class="m">0</span>.20 seconds.
-</pre></div>
-<p>Which means that the <code>pages</code> are generated. When we launch the <a href="http://localhost:8000/">localhost:8000</a>. we will see that the <code>About</code> and <code>Contact</code> menu like this</p>
-<p><img alt="About and Contact Page " src="http://archerimagine.com/images/pelicanFolder/staticPages.png" title="About and Contact Page."/></p>
-<p>We can modify these pages with the information which you want to furnish.</p>
-<h3 id="static-images">Static Images<a class="headerlink" href="#static-images" title="Permanent link">¶</a></h3>
-<p>Most often then not we will use images to link in our blogs, we can store all these images inside the <code>content</code> folder, having a directory called <code>images</code>. Do this by following these commands.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> content/
-mkdir images
-</pre></div>
-<p>Now we can copy any image inside this folder and try to link it into one of our blog. Just copy any image in this folder and copy the file name.</p>
-<p>Now create a link to this file inside the already existing blog post by the help of <code>link</code> of markdown, here is a sample.</p>
-<div class="highlight"><pre><span></span>![<span class="nt">Hello World 1</span>](<span class="na">{filename}../images/helloWorldPelicanPost.png "Hello World 2"</span>)
-</pre></div>
-<p>We should understand some details about the above piece of code.</p>
+<p>The above three are the main reason for choosing static blogs, but there could be many more valid reason for choosing static blogs. Most of the reason for me was personal in nature so you can also choose accordingly.</p>
+<h2 id="why-pelican">Why Pelican?<a class="headerlink" href="#why-pelican" title="Permanent link">¶</a></h2>
+<p>Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, <a href="https://blog.getpelican.com/">Pelican </a> or <a href="https://jekyllrb.com/">Jekyll </a>. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these two.</p>
+<h2 id="why-github">Why Github?<a class="headerlink" href="#why-github" title="Permanent link">¶</a></h2>
+<p>The final decision to be taken before starting this blog was to finalize the hosting provider. We have already mentioned some popular choice are</p>
 <ul>
-<li><code>Hello World 1</code><ul>
-<li>The <code>alt</code> text is good if there is a browser which block image, this <code>alt</code> text is displayed, showing an information about what this images was supposed to do.</li>
+<li><a href="https://github.com/">Github</a></li>
+<li><a href="https://aws.amazon.com/s3/">Amazon S3</a></li>
+<li><a href="https://www.dropbox.com/">Dropbox</a></li>
 </ul>
-</li>
-<li><code>"Hello World 2"</code><ul>
-<li>This is the <code>title</code> of the image, which is shown as a tool tip once we hover over the image.</li>
+<p>I chose Github, for its near zero cost, it may cost you if you want to keep your repository private else it is completely free were as Amazon S3 would have required to shell out some money though less, with some extra benefits, but for the time being when I am just measuring the water it made sense to keep my cost down.</p>
+<p>Once all the above 3 moral questions were answered, setting up the blogs was easy and which will be documented in the future.</p>
+<h2 id="collated-blog-post">Collated Blog post.<a class="headerlink" href="#collated-blog-post" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html">How to set up Anaconda Python environment for Pelican Blog.</a></li>
 </ul>
-</li>
-<li><code>{filename}</code><ul>
-<li>This is a special syntax which is used by pelican to generate links, so be it url or images, when using relative urls kindly use this format.</li>
-</ul>
-</li>
-</ul>
-<p>We have covered most of the folder structure inside <code>article</code> we will see the configuration files in the next blog post.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="http://docs.getpelican.com/en/stable/content.html#pages">Pages</a></li>
-<li><a href="http://docs.getpelican.com/en/stable/content.html#linking-to-internal-content">Linking to internal content </a></li>
+<li><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html">Making a Static Blog with Pelican </a><ul>
+<li>This above blog explains why a static blog generator is good.</li>
+</ul>
+</li>
+<li><a href="http://arunrocks.com/moving-blogs-to-pelican/">Moving Blogs to Pelican </a><ul>
+<li>This blog has a terrific explanation for pelican vs jekyll.</li>
+</ul>
+</li>
+<li><a href="https://discuss.gohugo.io/t/hosting-amazon-s3-vs-github-gh-pages-vs/340">Amazon S3 Vs Github Pages</a><ul>
+<li>This explains the benefits of Amazon S3 over Github Pages, kindly check if you are affected because of this.</li>
+</ul>
+</li>
 </ul>
             
             <section>
@@ -208,7 +154,7 @@ mkdir images
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican-folder-structure.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -218,8 +164,8 @@ mkdir images
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican-folder-structure.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican-folder-structure.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -242,10 +188,10 @@ mkdir images
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-29T22:10:10+05:30">Apr 29, 2017</time>
+            <time pubdate="pubdate" datetime="2017-04-25T23:20:03+05:30">Apr 25, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-02T23:08:52+05:30">May 2, 2017</time>
+<time datetime="2017-05-06T23:43:23+05:30">May 6, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

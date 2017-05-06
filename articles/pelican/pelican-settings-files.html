@@ -14,12 +14,12 @@
 <meta name="keywords" content="pelican, Pelican, pelicanconf.py, publishconf.py" />
 
 <meta property="og:title" content="Understanding the Pelican Settings files.  - Enhancing Pelican "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican-settings-files.html" />
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/pelican-settings-files.html" />
 <meta property="og:description" content="By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2017-04-30T17:07:03+05:30" />
-<meta property="" content="2017-05-02T23:08:56+05:30" />
+<meta property="" content="2017-05-06T23:58:42+05:30" />
 <meta name="twitter:title" content="Understanding the Pelican Settings files.  - Enhancing Pelican ">
 <meta name="twitter:description" content="By default pelican comes with 2 settings files, pelicanconf.py and publishconf.py. In this post we try to understand the meaning of these to files and some basic settings.">
 
@@ -82,7 +82,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican-settings-files.html"> Understanding the Pelican Settings files.  <small> Enhancing Pelican </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/pelican-settings-files.html"> Understanding the Pelican Settings files.  <small> Enhancing Pelican </small>  </a></h1>
     </header>
 </div>
 
@@ -109,11 +109,11 @@
 <li><code>pelicanconf.py</code></li>
 <li><code>publishconf.py</code></li>
 </ul>
-<p>Lets check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.</p>
+<p>Let's check what is the use of these 2 files, and how to manipulate these files to get the most out of pelican.</p>
 <p>These setting files are mostly passed to the templates associated with the themes to generate the site, all these settings are some parameters to these templates.</p>
 <h2 id="pelicanconfpy">pelicanconf.py<a class="headerlink" href="#pelicanconfpy" title="Permanent link">¶</a></h2>
 <p>We had used the <code>pelican-quickstart</code> to generate this blog, when we use this command, we get a pre-configured <code>pelicanconf.py</code> and a <code>publishconf.py</code> files. This have the bare basic configuration to be used based on the questions we answered on the options.</p>
-<p>These files basically contains the settings identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), booleans (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.</p>
+<p>These files basically contains the setting's identifier for the pelican blog, all the setting identifiers are in all-caps, and the values numbers (5, 20, etc.), Boolean (True, False, None, etc.), dictionaries, or tuples should not be enclosed in quotation marks.</p>
 <p><code>pelicanconf.py</code> is used to generate the site locally and tested over <a href="http://localhost:8000/">localhost:8000</a>. The basic <code>pelicanconf.py</code> would look like this.</p>
 <div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*- #</span>
@@ -166,7 +166,7 @@
 </ul>
 </li>
 <li><code>SITEURL</code><ul>
-<li>Since we still do not have domain name registered, we had kept this empty, and also it make sense to keep this empty for <code>localhost</code> testing.</li>
+<li>Since we still do not have domain name registered, we had kept this empty, and also it makes sense to keep this empty for <code>localhost</code> testing.</li>
 </ul>
 </li>
 <li><code>PATH</code><ul>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li><code>TIMEZONE</code><ul>
-<li>This we had entered during the initial process, and in future if we want to change this we can change this settings.</li>
+<li>This we had entered during the initial process, and in future if we want to change this we can change these settings.</li>
 </ul>
 </li>
 <li><code>DEFAULT_LANG</code><ul>
@@ -182,7 +182,7 @@
 </ul>
 </li>
 <li><code>FEEDS_*</code><ul>
-<li>All the <code>FEEDS_*</code> related settings are empty because we have still not configured the RSS feeds settings, this we will change in future.</li>
+<li>All the <code>FEEDS_*</code> related settings are empty because we have still not configured the RSS feeds settings, this we will change in the future.</li>
 </ul>
 </li>
 <li><code>ARTICLE_*</code><ul>
@@ -190,11 +190,11 @@
 </ul>
 </li>
 <li><code>LINKS</code><ul>
-<li>This is a tuple of tuple, with each entry showing a links which you want provide in you blog.</li>
+<li>This is a tuple of tuple, with each entry showing a link which you want provide in your blog.</li>
 </ul>
 </li>
 <li><code>SOCIAL</code><ul>
-<li>This is also a tuple of tuple, were each entry is meant to point to a name of a social network say <code>Facebook</code> and the link to your profile.</li>
+<li>This is also a tuple of tuple, where each entry is meant to point to a name of a social network say <code>Facebook</code> and the link to your profile.</li>
 </ul>
 </li>
 <li><code>DEFAULT_PAGINATION</code><ul>
@@ -234,7 +234,7 @@
 <span class="c1">#GOOGLE_ANALYTICS = ""</span>
 </pre></div>
 <p>This file, basically build on top of the <code>pelicanconf.py</code>, as we can see from this line, <code>from pelicanconf import *</code>. What this means is all the configuration from <code>pelicancongf.py</code> is taken into consideration along with some specific configuration which is required for just publishing.</p>
-<p>If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integraton with the <code>DISQUS</code> comment system, and the <code>GOOGLE_ANALYTICS</code> code. We will see the use of this code once we integrate these feature into our blog.</p>
+<p>If you see this setting most of them are empty which we will fill one by one as we make progress in our blog, but from the structure you might get an idea that this file pertains to its integration with the <code>DISQUS</code> comment system, and the <code>GOOGLE_ANALYTICS</code> code. We will see the use of this code once we integrate these feature into our blog.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="http://docs.getpelican.com/en/stable/settings.html">Pelican Settings</a></li>
@@ -246,7 +246,7 @@
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican-settings-files.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/pelican-settings-files.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -256,8 +256,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican-settings-files.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican-settings-files.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/pelican-settings-files.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/pelican-settings-files.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -283,7 +283,7 @@
             <time pubdate="pubdate" datetime="2017-04-30T17:07:03+05:30">Apr 30, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-02T23:08:56+05:30">May 2, 2017</time>
+<time datetime="2017-05-06T23:58:42+05:30">May 6, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
