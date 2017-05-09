@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/</loc>
-<lastmod>2017-05-10T00:10:12-00:00</lastmod>
+<lastmod>2017-05-10T00:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/archives.html</loc>
-<lastmod>2017-05-10T00:10:12-00:00</lastmod>
+<lastmod>2017-05-10T00:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/tags.html</loc>
-<lastmod>2017-05-10T00:10:12-00:00</lastmod>
+<lastmod>2017-05-10T00:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/categories.html</loc>
-<lastmod>2017-05-10T00:10:12-00:00</lastmod>
+<lastmod>2017-05-10T00:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/articles/pelican/home-page-features-elegant-theme.html</loc>
-<lastmod>2017-05-10T00:08:36+05:30</lastmod>
+<lastmod>2017-05-10T00:15:37+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -117,7 +117,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/author/animesh-bhadra.html</loc>
-<lastmod>2017-05-10T00:08:36+05:53</lastmod>
+<lastmod>2017-05-10T00:15:37+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

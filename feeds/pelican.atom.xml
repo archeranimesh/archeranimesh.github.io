@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-10T00:08:36+05:30</updated><entry><title>Home Page feature for Elegant Theme</title><link href="http://archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" rel="alternate"></link><published>2017-05-09T23:53:05+05:30</published><updated>2017-05-10T00:08:36+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-09:/articles/pelican/home-page-features-elegant-theme.html</id><summary type="html">&lt;p&gt;Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working. These feature are again controlled by a configuration.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-10T00:15:37+05:30</updated><entry><title>Home Page feature for Elegant Theme</title><link href="http://archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" rel="alternate"></link><published>2017-05-09T23:53:05+05:30</published><updated>2017-05-10T00:15:37+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-09:/articles/pelican/home-page-features-elegant-theme.html</id><summary type="html">&lt;p&gt;Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working. These feature are again controlled by a configuration.&lt;/p&gt;
 &lt;p&gt;In place of adding this configuration into &lt;code&gt;pelicanconf.py&lt;/code&gt; we will create a new file called &lt;code&gt;elegantconfig.py&lt;/code&gt;, and import this file into &lt;code&gt;pelicanconf.py&lt;/code&gt; by calling &lt;code&gt;from elegantConfig import *&lt;/code&gt;. This will make sure all the configuration from &lt;code&gt;elegantconfig.py&lt;/code&gt; is available while generating the blog.&lt;/p&gt;
 &lt;p&gt;There are two configuration for the Home Page.&lt;/p&gt;
-&lt;h2 id="landing_page_about"&gt;&lt;code&gt;LANDING_PAGE_ABOUT&lt;/code&gt;&lt;a class="headerlink" href="#landing_page_about" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="landing_page_about"&gt;&lt;code&gt;LANDING_PAGE_ABOUT&lt;/code&gt;&lt;a class="headerlink" href="#landing_page_about" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;LANDING_PAGE_ABOUT&lt;/code&gt;&lt;ul&gt;
 &lt;li&gt;This is a Dictionary with two field &lt;code&gt;"title"&lt;/code&gt; and &lt;code&gt;"details"&lt;/code&gt;&lt;ul&gt;
@@ -16,7 +17,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="projects"&gt;&lt;code&gt;PROJECTS&lt;/code&gt;&lt;a class="headerlink" href="#projects" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="projects"&gt;&lt;code&gt;PROJECTS&lt;/code&gt;&lt;a class="headerlink" href="#projects" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;PROJECTS&lt;/code&gt;&lt;ul&gt;
 &lt;li&gt;This is also a list of Dictionary with these field in each dictionary, and the value of each of these field is a &lt;code&gt;string&lt;/code&gt; and not &lt;code&gt;HTML&lt;/code&gt; in case of &lt;code&gt;LANDING_PAGE_ABOUT&lt;/code&gt;'s &lt;code&gt;"details"&lt;/code&gt;&lt;ul&gt;
