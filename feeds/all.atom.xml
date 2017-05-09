@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-07T00:03:25+05:30</updated><entry><title>Customizing Pelican blog with the help of Plugin and themes</title><link href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" rel="alternate"></link><published>2017-05-03T23:05:51+05:30</published><updated>2017-05-05T22:55:47+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-03:/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html</id><summary type="html">&lt;p&gt;Pelican blog has an active community of developers who are always at the look out to modify and enhance the power of Pelican blog. Pelican plugin and Themes are one way of doing the same.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-09T22:49:04+05:30</updated><entry><title>Expressing the content with Pelican Themes.</title><link href="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html" rel="alternate"></link><published>2017-05-07T22:35:15+05:30</published><updated>2017-05-09T22:49:04+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-07:/articles/pelican/expressing-with-pelican-themes.html</id><summary type="html">&lt;p&gt;We will customize of the very popular themes, Elegant, and make it to suit our need and also integrate with the plugins required for Elegant to work.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have already discussed about Pelican Themes and Plugins in this &lt;a href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" title="Customizing Pelican Blog with plugin and themes"&gt;blog&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;We have also seen the comparison between the various popular themes. &lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Comparison between different themes."&gt;Elegant &lt;/a&gt; is our choice of Themes because of search functionality which it provides along with the minimalist concepts.&lt;/p&gt;
+&lt;p&gt;We will first focus on how we can integrate one particular themes and also one particular plugins which will give us a fair amount of idea on how to integrate different plugins.&lt;/p&gt;
+&lt;h2 id="integrating-the-elegant-theme"&gt;Integrating the Elegant Theme&lt;a class="headerlink" href="#integrating-the-elegant-theme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We have already created folder named &lt;code&gt;plugins&lt;/code&gt; and &lt;code&gt;themes&lt;/code&gt;, which are clone of the Pelican &lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;Plugins&lt;/a&gt; and &lt;a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes "&gt;Themes&lt;/a&gt; repository. If we see the directory listing inside &lt;code&gt;themes&lt;/code&gt; folder we fill find different folders with distinguished names, these are the themes name. &lt;/p&gt;
+&lt;p&gt;To use any of the themes in this folder we have to add this pelican settings in the &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;themes/elegant&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Follow the commands to generate the site and launch the site, and you have your new themes applied.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
+&lt;span class="nb"&gt;cd&lt;/span&gt; output/
+python -m pelican.server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="integrating-a-plugin-into-pelican"&gt;Integrating A Plugin into Pelican&lt;a class="headerlink" href="#integrating-a-plugin-into-pelican" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The process to integrate any plugin is also similar to integrating Themes. If we see inside the &lt;code&gt;plugins&lt;/code&gt; directory which we had cloned, we will find a lot of different folder name just like in &lt;code&gt;themes&lt;/code&gt; directory. Each of these name is a &lt;code&gt;plugin&lt;/code&gt; name.&lt;/p&gt;
+&lt;p&gt;To integrate a plugin into Pelican we have to add these 2 configuration into the &lt;code&gt;pelicanconf.py&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;# Name of the directory where plugin are kept.&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sitemap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="c1"&gt;# Name of the particular plugin inside the directory.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the above code sample, we can see we have integrated the &lt;code&gt;sitemap&lt;/code&gt; plugin, and as per the &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap" title="Sitemap Plugin "&gt;documentationn&lt;/a&gt;, this generates a Sitemap which we generally submit it to some Webmaster tools. &lt;/p&gt;
+&lt;p&gt;Likewise if we want to integrate any other &lt;code&gt;plugins&lt;/code&gt;, we have just add it to the list variable &lt;code&gt;PLUGINS&lt;/code&gt; along with the settings required for that plugins defined in its documentation.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant Themes"&gt;Elegant &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;Pelican Plugins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes "&gt;Pelican Themes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap" title="Sitemap Documentation "&gt;Sitemap Documentation&lt;/a&gt;,&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Customizing Pelican blog with the help of Plugin and themes</title><link href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" rel="alternate"></link><published>2017-05-03T23:05:51+05:30</published><updated>2017-05-07T22:56:29+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-03:/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html</id><summary type="html">&lt;p&gt;Pelican blog has an active community of developers who are always at the look out to modify and enhance the power of Pelican blog. Pelican plugin and Themes are one way of doing the same.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;Pelican Blogs gives its user the full power to customize to the want of the user. We have been using the default themes and default setting provided by Pelican with not much customization and the results are also quite good.&lt;/p&gt;
 &lt;p&gt;Enhancing the present blog further will require us to use certain Plugins and Themes which will extended the functionality. These are the 2 repository which we should clone into for getting these enhancements.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;pelican-plugins&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;This is the repository for the plugins.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-plugins.git plugins&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone --recursive https://github.com/getpelican/pelican-plugins.git plugins&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes"&gt;pelican-themes &lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;This is the themes repository.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-themes.git themes&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone --recursive https://github.com/getpelican/pelican-themes.git themes&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
