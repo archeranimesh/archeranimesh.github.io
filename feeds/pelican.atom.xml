@@ -1,32 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-09T22:49:04+05:30</updated><entry><title>Expressing the content with Pelican Themes.</title><link href="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html" rel="alternate"></link><published>2017-05-07T22:35:15+05:30</published><updated>2017-05-09T22:49:04+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-07:/articles/pelican/expressing-with-pelican-themes.html</id><summary type="html">&lt;p&gt;We will customize of the very popular themes, Elegant, and make it to suit our need and also integrate with the plugins required for Elegant to work.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have already discussed about Pelican Themes and Plugins in this &lt;a href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" title="Customizing Pelican Blog with plugin and themes"&gt;blog&lt;/a&gt;. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-09T23:38:17+05:30</updated><entry><title>Problem Faced when integrating with Elegant Themes.</title><link href="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" rel="alternate"></link><published>2017-05-09T22:55:40+05:30</published><updated>2017-05-09T23:37:29+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-09:/articles/pelican/integration-problem-with-elegant-theme.html</id><summary type="html">&lt;p&gt;Elegant was my theme choice, and while integrating this theme with my blog I found that a lot of things does not work out of the box, and some changes are required in the themes itself. I am listing these changes here, if this are still unresolved in the future.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;Elegant was my theme choice, and while integrating this theme with my blog I found that a lot of things does not work out of the box, and some changes are required in the themes itself. I am listing these changes here, if this are still unresolved in the future.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant theme"&gt;Elegant &lt;/a&gt;, requires a lot of different plugins to make it work the way it was designed. If you see the documentation on the above link, it does not mention the important plugins which are required to make it work, it just provides an explanation on the feature.&lt;/p&gt;
+&lt;p&gt;In this blog post I am listing down the issues which I faced while integrating the Elegant themes.&lt;/p&gt;
+&lt;h2 id="faviconico-not-displayed-with-elegant"&gt;favicon.ico not displayed with Elegant&lt;a class="headerlink" href="#faviconico-not-displayed-with-elegant" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you read the &lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#favicon-and-speed-dial-icon" title="Favicon Integration Elegant"&gt;documentation &lt;/a&gt; on how to enable &lt;code&gt;favicon.ico&lt;/code&gt; for Elegant themes, the process is pretty straight forward, just place the icons into this directory &lt;code&gt;content/theme/images&lt;/code&gt;, and define &lt;code&gt;STATIC_PATHS&lt;/code&gt; with &lt;code&gt;STATIC_PATHS = ['theme/images', 'images']&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you follow the above process then most probably you will still not be getting the &lt;code&gt;favicon.ico&lt;/code&gt;, the reason being there is one more configuration which needs to enabled in &lt;code&gt;pelicanconf.py&lt;/code&gt; in addition to above two.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'theme/images'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'images'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;USE_SHORTCUT_ICONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The reason for this is, the links for including &lt;code&gt;favicon&lt;/code&gt; are generated in this template &lt;code&gt;themes/elegant/templates/_includes/favicon_links.html&lt;/code&gt;, and the link generation is under a configuration named &lt;code&gt;USE_SHORTCUT_ICONS&lt;/code&gt;, so until we make it &lt;code&gt;True&lt;/code&gt; the links will not be generated.&lt;/p&gt;
+&lt;h2 id="issues-while-integrating-tipue-search"&gt;Issues while integrating Tipue Search&lt;a class="headerlink" href="#issues-while-integrating-tipue-search" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="prerequisite"&gt;Prerequisite&lt;a class="headerlink" href="#prerequisite" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin "&gt;Tipue Search plugin &lt;/a&gt; integration is little different from other plugin.&lt;/p&gt;
+&lt;p&gt;This plugin has an external dependency on &lt;code&gt;BeautifulSoup&lt;/code&gt;, we have to install this python package first in our environment &lt;code&gt;pelican1&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install beautifulsoup4
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We have to add this plugin name into &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'sitemap'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'tipue_search'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When we build our blog after this we should see our search functionality working, but we see 2 issues.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Search Result are not displayed.&lt;/li&gt;
+&lt;li&gt;Tipue search return undefined URL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="search-result-are-not-displayed"&gt;Search Result are not displayed&lt;a class="headerlink" href="#search-result-are-not-displayed" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Elegant uses some predefined HTML pages to render few of its content, &lt;code&gt;search&lt;/code&gt; functionality is based on one such file, so we have to provide that in the &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DIRECT_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;'index'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'tags'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'categories'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'archives'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'404'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When we do this changes we will see the search result getting listed, but on clicking those link it will redirect to an undefined URL.&lt;/p&gt;
+&lt;h3 id="tipue-search-return-undefined-url"&gt;Tipue search return undefined URL.&lt;a class="headerlink" href="#tipue-search-return-undefined-url" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;When we click on the Search result, we get the URL as undefined, this issues is still not solved, there is already a pull request pending on the Github.&lt;/p&gt;
+&lt;p&gt;Kindly visit these two links for more details.
+&lt;em&gt; &lt;a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url"&gt;Tipue search return undefined url &lt;/a&gt;.
+&lt;/em&gt; To solve the issue, we have to modify the plugin manually as mentioned in the &lt;a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url"&gt;pull request&lt;/a&gt;
+    - Change the file in &lt;code&gt;plugins/tipue_search/tipue_search.py&lt;/code&gt;, line no 61 add this code &lt;code&gt;'loc': page_url&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="toc-integration-with-elegant"&gt;TOC Integration with Elegant&lt;a class="headerlink" href="#toc-integration-with-elegant" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Elegant theme has a side bar with the Table of Content of the blog post displayed. This is also achieved based on a plugin named &lt;code&gt;extract_toc&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We have to add this into the &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'sitemap'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'tipue_search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'extract_toc'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There is also a Markdown settings which we have to update in the same file like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MARKDOWN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;'extension_configs'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s1"&gt;'markdown.extensions.toc'&lt;/span&gt; &lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="s1"&gt;'permalink'&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'true'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In addition to the above changes, every blog post after the file meta-data section should have an entry named &lt;code&gt;[TOC]&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="syntax-highlighting"&gt;Syntax Highlighting&lt;a class="headerlink" href="#syntax-highlighting" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When writing a technical blog we might be interested in syntax highlighting of the code we write, we can achieve this with following configuration in &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MARKDOWN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;'extension_configs'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s1"&gt;'markdown.extensions.codehilite'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'css_class'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'highlight'&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="s1"&gt;'markdown.extensions.extra'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt;
+        &lt;span class="s1"&gt;'markdown.extensions.meta'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt;
+        &lt;span class="s1"&gt;'markdown.extensions.toc'&lt;/span&gt; &lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="s1"&gt;'permalink'&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'true'&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="s1"&gt;'output_format'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'html5'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant theme"&gt;Elegant &lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;Kindly read this documentation for other configuration which gives more flexibility in terms of the themes like Article Subtitle, Add License to your Site etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#favicon-and-speed-dial-icon" title="Favicon Integration Elegant"&gt;Favicon documentation &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin "&gt;Tipue Search plugin &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url"&gt;Tipue search return undefined url &lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url"&gt;Tipue search return undefined url pull request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Expressing the content with Pelican Themes.</title><link href="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html" rel="alternate"></link><published>2017-05-07T22:35:15+05:30</published><updated>2017-05-09T23:38:17+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-07:/articles/pelican/expressing-with-pelican-themes.html</id><summary type="html">&lt;p&gt;We will customize of the very popular themes, Elegant, and make it to suit our need and also integrate with the plugins required for Elegant to work.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;We have already discussed about Pelican Themes and Plugins in this &lt;a href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" title="Customizing Pelican Blog with plugin and themes"&gt;blog&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;We have also seen the comparison between the various popular themes. &lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Comparison between different themes."&gt;Elegant &lt;/a&gt; is our choice of Themes because of search functionality which it provides along with the minimalist concepts.&lt;/p&gt;
 &lt;p&gt;We will first focus on how we can integrate one particular themes and also one particular plugins which will give us a fair amount of idea on how to integrate different plugins.&lt;/p&gt;
-&lt;h2 id="integrating-the-elegant-theme"&gt;Integrating the Elegant Theme&lt;a class="headerlink" href="#integrating-the-elegant-theme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="integrating-the-elegant-theme"&gt;Integrating the Elegant Theme&lt;a class="headerlink" href="#integrating-the-elegant-theme" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We have already created folder named &lt;code&gt;plugins&lt;/code&gt; and &lt;code&gt;themes&lt;/code&gt;, which are clone of the Pelican &lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;Plugins&lt;/a&gt; and &lt;a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes "&gt;Themes&lt;/a&gt; repository. If we see the directory listing inside &lt;code&gt;themes&lt;/code&gt; folder we fill find different folders with distinguished names, these are the themes name. &lt;/p&gt;
 &lt;p&gt;To use any of the themes in this folder we have to add this pelican settings in the &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;themes/elegant&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'themes/elegant'&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;Follow the commands to generate the site and launch the site, and you have your new themes applied.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
 &lt;span class="nb"&gt;cd&lt;/span&gt; output/
 python -m pelican.server
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="integrating-a-plugin-into-pelican"&gt;Integrating A Plugin into Pelican&lt;a class="headerlink" href="#integrating-a-plugin-into-pelican" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="integrating-a-plugin-into-pelican"&gt;Integrating A Plugin into Pelican&lt;a class="headerlink" href="#integrating-a-plugin-into-pelican" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The process to integrate any plugin is also similar to integrating Themes. If we see inside the &lt;code&gt;plugins&lt;/code&gt; directory which we had cloned, we will find a lot of different folder name just like in &lt;code&gt;themes&lt;/code&gt; directory. Each of these name is a &lt;code&gt;plugin&lt;/code&gt; name.&lt;/p&gt;
 &lt;p&gt;To integrate a plugin into Pelican we have to add these 2 configuration into the &lt;code&gt;pelicanconf.py&lt;/code&gt; file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;# Name of the directory where plugin are kept.&lt;/span&gt;
-&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sitemap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="c1"&gt;# Name of the particular plugin inside the directory.&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'plugin'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;# Name of the directory where plugin are kept.&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'sitemap'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="c1"&gt;# Name of the particular plugin inside the directory.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In the above code sample, we can see we have integrated the &lt;code&gt;sitemap&lt;/code&gt; plugin, and as per the &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap" title="Sitemap Plugin "&gt;documentationn&lt;/a&gt;, this generates a Sitemap which we generally submit it to some Webmaster tools. &lt;/p&gt;
-&lt;p&gt;Likewise if we want to integrate any other &lt;code&gt;plugins&lt;/code&gt;, we have just add it to the list variable &lt;code&gt;PLUGINS&lt;/code&gt; along with the settings required for that plugins defined in its documentation.&lt;/p&gt;
-&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the above code sample, we can see we have integrated the &lt;code&gt;sitemap&lt;/code&gt; plugin, and as per the &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap" title="Sitemap Plugin "&gt;documentation&lt;/a&gt;, this generates a Sitemap which we generally submit it to some Webmaster tools. &lt;/p&gt;
+&lt;p&gt;Likewise, if we want to integrate any other &lt;code&gt;plugins&lt;/code&gt;, we have just add it to the list variable &lt;code&gt;PLUGINS&lt;/code&gt; along with the settings required for that plugins defined in its documentation.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant Themes"&gt;Elegant &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins "&gt;Pelican Plugins&lt;/a&gt;&lt;/li&gt;

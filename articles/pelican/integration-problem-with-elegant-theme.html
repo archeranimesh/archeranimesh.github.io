@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Animesh Bhadra" />
+        <meta name="copyright" content="Animesh Bhadra" />
+
+        <meta name="twitter:creator" content="@animeshkbhadra">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="pelican, Pelican, favicon.ico not displayed with Elegant, Tipue search return undefined URL, Tipue Search not working, TOC format changes." />
+
+<meta property="og:title" content="Problem Faced when integrating with Elegant Themes.  - Surprise. "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" />
+<meta property="og:description" content="Elegant was my theme choice, and while integrating this theme with my blog I found that a lot of things does not work out of the box, and some changes are required in the themes itself. I am listing these changes here, if this are still unresolved in the future." />
+<meta property="og:site_name" content="Archer Imagine" />
+<meta property="og:article:author" content="Animesh Bhadra" />
+<meta property="og:article:published_time" content="2017-05-09T22:55:40+05:30" />
+<meta property="" content="2017-05-09T23:37:29+05:30" />
+<meta name="twitter:title" content="Problem Faced when integrating with Elegant Themes.  - Surprise. ">
+<meta name="twitter:description" content="Elegant was my theme choice, and while integrating this theme with my blog I found that a lot of things does not work out of the box, and some changes are required in the themes itself. I am listing these changes here, if this are still unresolved in the future.">
+
+        <title>Problem Faced when integrating with Elegant Themes.  - Surprise.  · Archer Imagine
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/css/custom.css" media="screen">
+        <link rel="shortcut icon" href="http://archerimagine.com/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://archerimagine.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://archerimagine.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://archerimagine.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://archerimagine.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://archerimagine.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="http://archerimagine.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Archer Imagine - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-97386090-1', 'auto');
+    ga('send', 'pageview');
+</script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://archerimagine.com/"><span class=site-name>Archer Imagine</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://archerimagine.com">Home</a></li>
+                            <li ><a href="http://archerimagine.com/pages/about.html">About</a></li>
+                            <li ><a href="http://archerimagine.com/categories.html">Categories</a></li>
+                            <li ><a href="http://archerimagine.com/tags.html">Tags</a></li>
+                            <li ><a href="http://archerimagine.com/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://archerimagine.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html"> Problem Faced when integrating with Elegant Themes.  <small> Surprise. </small>  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#faviconico-not-displayed-with-elegant">favicon.ico not displayed with Elegant</a></li>
+<li><a href="#issues-while-integrating-tipue-search">Issues while integrating Tipue Search</a><ul>
+<li><a href="#prerequisite">Prerequisite</a></li>
+<li><a href="#search-result-are-not-displayed">Search Result are not displayed</a></li>
+<li><a href="#tipue-search-return-undefined-url">Tipue search return undefined URL.</a></li>
+</ul>
+</li>
+<li><a href="#toc-integration-with-elegant">TOC Integration with Elegant</a></li>
+<li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            
+<p>Elegant was my theme choice, and while integrating this theme with my blog I found that a lot of things does not work out of the box, and some changes are required in the themes itself. I am listing these changes here, if this are still unresolved in the future.</p>
+<p><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant theme">Elegant </a>, requires a lot of different plugins to make it work the way it was designed. If you see the documentation on the above link, it does not mention the important plugins which are required to make it work, it just provides an explanation on the feature.</p>
+<p>In this blog post I am listing down the issues which I faced while integrating the Elegant themes.</p>
+<h2 id="faviconico-not-displayed-with-elegant">favicon.ico not displayed with Elegant<a class="headerlink" href="#faviconico-not-displayed-with-elegant" title="Permanent link">¶</a></h2>
+<p>If you read the <a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#favicon-and-speed-dial-icon" title="Favicon Integration Elegant">documentation </a> on how to enable <code>favicon.ico</code> for Elegant themes, the process is pretty straight forward, just place the icons into this directory <code>content/theme/images</code>, and define <code>STATIC_PATHS</code> with <code>STATIC_PATHS = ['theme/images', 'images']</code>.</p>
+<p>If you follow the above process then most probably you will still not be getting the <code>favicon.ico</code>, the reason being there is one more configuration which needs to enabled in <code>pelicanconf.py</code> in addition to above two.</p>
+<div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'theme/images'</span><span class="p">,</span> <span class="s1">'images'</span><span class="p">]</span>
+<span class="n">USE_SHORTCUT_ICONS</span><span class="o">=</span><span class="bp">True</span>
+</pre></div>
+<p>The reason for this is, the links for including <code>favicon</code> are generated in this template <code>themes/elegant/templates/_includes/favicon_links.html</code>, and the link generation is under a configuration named <code>USE_SHORTCUT_ICONS</code>, so until we make it <code>True</code> the links will not be generated.</p>
+<h2 id="issues-while-integrating-tipue-search">Issues while integrating Tipue Search<a class="headerlink" href="#issues-while-integrating-tipue-search" title="Permanent link">¶</a></h2>
+<h3 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">¶</a></h3>
+<p><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin ">Tipue Search plugin </a> integration is little different from other plugin.</p>
+<p>This plugin has an external dependency on <code>BeautifulSoup</code>, we have to install this python package first in our environment <code>pelican1</code></p>
+<div class="highlight"><pre><span></span>pip install beautifulsoup4
+</pre></div>
+<p>We have to add this plugin name into <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sitemap'</span><span class="p">,</span> <span class="s1">'tipue_search'</span><span class="p">]</span>
+</pre></div>
+<p>When we build our blog after this we should see our search functionality working, but we see 2 issues.</p>
+<ul>
+<li>Search Result are not displayed.</li>
+<li>Tipue search return undefined URL.</li>
+</ul>
+<h3 id="search-result-are-not-displayed">Search Result are not displayed<a class="headerlink" href="#search-result-are-not-displayed" title="Permanent link">¶</a></h3>
+<p>Elegant uses some predefined HTML pages to render few of its content, <code>search</code> functionality is based on one such file, so we have to provide that in the <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">DIRECT_TEMPLATES</span> <span class="o">=</span> <span class="p">((</span><span class="s1">'index'</span><span class="p">,</span> <span class="s1">'tags'</span><span class="p">,</span> <span class="s1">'categories'</span><span class="p">,</span> <span class="s1">'archives'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="s1">'404'</span><span class="p">))</span>
+</pre></div>
+<p>When we do this changes we will see the search result getting listed, but on clicking those link it will redirect to an undefined URL.</p>
+<h3 id="tipue-search-return-undefined-url">Tipue search return undefined URL.<a class="headerlink" href="#tipue-search-return-undefined-url" title="Permanent link">¶</a></h3>
+<p>When we click on the Search result, we get the URL as undefined, this issues is still not solved, there is already a pull request pending on the Github.</p>
+<p>Kindly visit these two links for more details.
+<em> <a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url">Tipue search return undefined url </a>.
+</em> To solve the issue, we have to modify the plugin manually as mentioned in the <a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url">pull request</a>
+    - Change the file in <code>plugins/tipue_search/tipue_search.py</code>, line no 61 add this code <code>'loc': page_url</code></p>
+<h2 id="toc-integration-with-elegant">TOC Integration with Elegant<a class="headerlink" href="#toc-integration-with-elegant" title="Permanent link">¶</a></h2>
+<p>Elegant theme has a side bar with the Table of Content of the blog post displayed. This is also achieved based on a plugin named <code>extract_toc</code>.</p>
+<p>We have to add this into the <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sitemap'</span><span class="p">,</span> <span class="s1">'tipue_search'</span><span class="p">,</span> <span class="s1">'extract_toc'</span><span class="p">]</span>
+</pre></div>
+<p>There is also a Markdown settings which we have to update in the same file like this.</p>
+<div class="highlight"><pre><span></span><span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'extension_configs'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'markdown.extensions.toc'</span> <span class="p">:{</span><span class="s1">'permalink'</span> <span class="p">:</span> <span class="s1">'true'</span><span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>In addition to the above changes, every blog post after the file meta-data section should have an entry named <code>[TOC]</code></p>
+<h2 id="syntax-highlighting">Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">¶</a></h2>
+<p>When writing a technical blog we might be interested in syntax highlighting of the code we write, we can achieve this with following configuration in <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'extension_configs'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'markdown.extensions.codehilite'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'css_class'</span><span class="p">:</span> <span class="s1">'highlight'</span><span class="p">},</span>
+        <span class="s1">'markdown.extensions.extra'</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">'markdown.extensions.meta'</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">'markdown.extensions.toc'</span> <span class="p">:{</span><span class="s1">'permalink'</span> <span class="p">:</span> <span class="s1">'true'</span><span class="p">},</span>
+
+    <span class="p">},</span>
+    <span class="s1">'output_format'</span><span class="p">:</span> <span class="s1">'html5'</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant theme">Elegant </a><ul>
+<li>Kindly read this documentation for other configuration which gives more flexibility in terms of the themes like Article Subtitle, Add License to your Site etc.</li>
+</ul>
+</li>
+<li><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#favicon-and-speed-dial-icon" title="Favicon Integration Elegant">Favicon documentation </a></li>
+<li><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin ">Tipue Search plugin </a></li>
+<li><a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url">Tipue search return undefined url </a>.</li>
+<li><a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url">Tipue search return undefined url pull request</a></li>
+</ul>
+            
+            <section>
+<p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'archerimagine';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2017-05-09T22:55:40+05:30">May 9, 2017</time>
+
+<h4>Last Updated</h4>
+<time datetime="2017-05-09T23:37:29+05:30">May 9, 2017</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="http://archerimagine.com/tags.html#pelican-ref">pelican
+                    <span>11</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+    <a href="https://github.com/archeranimesh" title="My github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.linkedin.com/in/animeshkbhadra/" title="My linkedin-square Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin-square sidebar-social-links"></i></a>
+    <a href="https://www.facebook.com/animeshkbhadra" title="My facebook Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-facebook sidebar-social-links"></i></a>
+    <a href="https://www.quora.com/profile/Animesh-Bhadra" title="My quora Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-quora sidebar-social-links"></i></a>
+    <a href="https://www.reddit.com/user/archerimagine/" title="My reddit Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-reddit sidebar-social-links"></i></a>
+    <a href="https://twitter.com/animeshkbhadra" title="My twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Email Newsletter</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Archer Imagine</span> - Anyone can do my job, but no one can be me. Harvey</li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'archerimagine';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementsByClassName('accordion-toggle');
+    var old_innerHTML = link[0].innerHTML;
+    $(link[0]).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link[0]).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
