@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, Conda, Anaconda, Python, Pelican, Envs." />
+<meta name="keywords" content="pelican, Pelican, MailChimp, DISQUS, Google analytics, Google Adsense, RSS feeds" />
 
-<meta property="og:title" content="How to setup Anaconda Python environment for Pelican Blog.  - Using Conda. "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html" />
-<meta property="og:description" content="Anaconda is a well known distribution of Python, supporting both python 2 and 3. We can set up an exclusive environment for Pelican blog using conda." />
+<meta property="og:title" content="Integrating 3rd party services with Pelican Blog.  - Mix and Match. "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html" />
+<meta property="og:description" content="Pelican with its themes and plugins provides lots of functionality, but it also integrates well with 3rd party services like, MailChimp, DISQUS, Google analytics, Google Adsense, RSS feeds etc." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-26T22:39:03+05:30" />
-<meta property="" content="2017-05-07T00:03:25+05:30" />
-<meta name="twitter:title" content="How to setup Anaconda Python environment for Pelican Blog.  - Using Conda. ">
-<meta name="twitter:description" content="Anaconda is a well known distribution of Python, supporting both python 2 and 3. We can set up an exclusive environment for Pelican blog using conda.">
+<meta property="og:article:published_time" content="2017-05-10T22:47:22+05:30" />
+<meta property="" content="2017-05-10T23:48:03+05:30" />
+<meta name="twitter:title" content="Integrating 3rd party services with Pelican Blog.  - Mix and Match. ">
+<meta name="twitter:description" content="Pelican with its themes and plugins provides lots of functionality, but it also integrates well with 3rd party services like, MailChimp, DISQUS, Google analytics, Google Adsense, RSS feeds etc.">
 
-        <title>How to setup Anaconda Python environment for Pelican Blog.  - Using Conda.  · Archer Imagine
+        <title>Integrating 3rd party services with Pelican Blog.  - Mix and Match.  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html"> How to setup Anaconda Python environment for Pelican Blog.  <small> Using Conda. </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html"> Integrating 3rd party services with Pelican Blog.  <small> Mix and Match. </small>  </a></h1>
     </header>
 </div>
 
@@ -91,13 +91,9 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#installing-pelican">Installing Pelican</a><ul>
-<li><a href="#configure-anaconda-for-pelican-blog">Configure Anaconda for Pelican Blog</a></li>
-<li><a href="#configure-pelican-environment-for-blog">Configure Pelican Environment for Blog</a></li>
-<li><a href="#freeze-the-requirement">Freeze the Requirement</a></li>
-</ul>
-</li>
-<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#google-analytics">Google Analytics.</a></li>
+<li><a href="#disqus">DISQUS</a></li>
+<li><a href="#mailchimp">MailChimp</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -107,79 +103,34 @@
 
             
             
-<h2 id="installing-pelican">Installing Pelican<a class="headerlink" href="#installing-pelican" title="Permanent link">¶</a></h2>
-<p>Pelican is a python package, so we can have multiple option to install pelican. There can be 3 option which I can think of.</p>
+<p>We have already discussed two types of settings file in <a href="http://archerimagine.com/articles/pelican/pelican-settings-files.html" title="Pelican Settings File.">pelican</a>, and we found that <code>publishconf.py</code> is the file which is picked along with <code>pelicanconf.py</code> when we are generating the blog for publishing.</p>
+<p>These 3rd party service integration happen over this <code>publishconf.py</code> file, because we do not want these services to be activated when running on <a href="http://localhost:8000/">localhost </a>.</p>
+<h2 id="google-analytics">Google Analytics.<a class="headerlink" href="#google-analytics" title="Permanent link">¶</a></h2>
+<p>Google Analytics provide us with very valuable insights into how a user interacts with the website, like the links which users click the most etc. This is a free service which really helps when we are starting out.</p>
+<p>When we create an account with <a href="https://analytics.google.com/">Google Analytics </a>, we receive a tracking code which we need to provide to Pelican blog. This tracking code is generally of the form <code>UA-********-*</code>, which you can find in this menu flow <code>Administration ---&gt; Property Settings ---&gt; Tracking Id</code>, copy this tracking id and provide it to <code>publishconf.py</code> with this settings</p>
+<div class="highlight"><pre><span></span><span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="s2">"UA-********-*"</span>
+</pre></div>
+<p>This is it, we will get all the analytics data from our website on Google Analytics.</p>
+<h2 id="disqus">DISQUS<a class="headerlink" href="#disqus" title="Permanent link">¶</a></h2>
+<p><a href="https://disqus.com/" title="Disqus">DISQUS</a> is a commenting system which is used extensively in the pelican blog world as we have to engage with our visitors for providing feedback and anything which is deemed important to the visitors.</p>
+<p>Integrating Disqus with any blog requires a <em>ShortName</em>, which is a unique identifier for our site, which can be found in this path <code>https://&lt;username&gt;.disqus.com/admin/settings/general/</code>.</p>
+<p>We need to add this setting into the <code>publishconf.py</code>.</p>
+<div class="highlight"><pre><span></span><span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s2">"shortName"</span>
+</pre></div>
+<p>The <a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#collapsible-comments">Elegant Theme</a> provides a nice feature called <em>Collapsible Comments</em> in which we will not show all the comments when the page loads. This comments will only be shown when a user presses the <code>comment</code> link.</p>
+<p>We can use a <code>COMMENTS_INTRO</code> settings to draw the user for engaging with the site.</p>
+<h2 id="mailchimp">MailChimp<a class="headerlink" href="#mailchimp" title="Permanent link">¶</a></h2>
+<p><a href="https://mailchimp.com/" title="MailChimp ">MailChimp</a> is a way to provide newsletters to your active subscribers, in this way they can be informed for any new post also immediately. Mailchimp can also be used as an email marketing platform. This is also free for basic subscription.</p>
+<p>We will need a <code>MAILCHIMP_FORM_ACTION</code>, URL which we can get by creating one list in MailChimp.</p>
+<p>To create a mailing newsletter we can use these links</p>
 <ul>
-<li>Direct Installation<ul>
-<li>If we have only one python installation on the system, and we do not have any issue if we screw up this installation just use <code>pip</code> to install pelican.</li>
+<li><a href="http://kb.mailchimp.com/lists/growth/create-a-new-list" title="MailChimp Create a New List">MailChimp Create a New List </a></li>
+<li><a href="http://kb.mailchimp.com/lists/signup-forms/add-a-signup-form-to-your-website">Add a Signup Form to Your Website </a></li>
 </ul>
-</li>
-<li>Installation using VirtualEnv.<ul>
-<li>This approach is already mentioned in official documentation of <a href="http://docs.getpelican.com/en/stable/install.html" title="Installing Pelican">pelican</a></li>
-</ul>
-</li>
-<li>Installation using Conda.<ul>
-<li>By now you could have understood that we will use Conda to install pelican. This is because Anaconda is already a prepackaged installation of very well know python package in both version 2 and 3. In future, I will update this page if I wrote about Anaconda installation, for now refer any documents on the google search for installation.</li>
-</ul>
-</li>
-</ul>
-<h3 id="configure-anaconda-for-pelican-blog">Configure Anaconda for Pelican Blog<a class="headerlink" href="#configure-anaconda-for-pelican-blog" title="Permanent link">¶</a></h3>
-<p>The first thing we have to do is to create an environment using the python version 2. This can be done by this command.</p>
-<div class="highlight"><pre><span></span>conda create -n pelican1 python=2
-</pre></div>
-<p>Once we have executed the above command we will have <code>pelican1</code> as an environment.</p>
-<p>We can see the list of environment in the system by using.</p>
-<div class="highlight"><pre><span></span>conda info --envs
-</pre></div>
-<p>Which will provide, an output like this.</p>
-<div class="highlight"><pre><span></span>pelican1                 /home/username/anaconda3/envs/pelican1
-py27                     /home/username/anaconda3/envs/py27
-py35                     /home/username/anaconda3/envs/py35
-root                  *  /home/username/anaconda3
-</pre></div>
-<p>This shows all the available environment.</p>
-<p>We can activate the <code>pelican1</code> by using this command.</p>
-<div class="highlight"><pre><span></span>source activate pelican1
-</pre></div>
-<p>Now we have an environment which we can use for pelican development. The reason for this environment creation is to have a separate environment for experimentation with pelican, if anything goes wrong we do not disturb already existing programs.</p>
-<h3 id="configure-pelican-environment-for-blog">Configure Pelican Environment for Blog<a class="headerlink" href="#configure-pelican-environment-for-blog" title="Permanent link">¶</a></h3>
-<p>Once we have the environment, we have to install few packages in this environment. The first is to install PiP to install other package. Install Pip by using.</p>
-<div class="highlight"><pre><span></span>conda install pip
-</pre></div>
-<p>With the completion of installing <code>pip</code>, the first and foremost package to install is pelican, with this command.</p>
-<div class="highlight"><pre><span></span>pip install pelican
-</pre></div>
-<p>Since we will be using Markdown to write our blogs we need the markdown package, which we can install using.</p>
-<div class="highlight"><pre><span></span>pip install Markdown
-</pre></div>
-<p>There are some plugin and themes in pelican which might need some additional packages, we will install these 2.</p>
-<div class="highlight"><pre><span></span>pip install Fabric
-pip install beautifulsoup4
-</pre></div>
-<h3 id="freeze-the-requirement">Freeze the Requirement<a class="headerlink" href="#freeze-the-requirement" title="Permanent link">¶</a></h3>
-<p>When we have all our installation complete, we should save our package history into a <code>requirement.txt</code>. We can use this <code>requirement.txt</code> to install all the above mentioned packages with same version in one go.</p>
-<p>We can freeze the details by using.</p>
-<div class="highlight"><pre><span></span>pip freeze &gt; requirements.txt
-</pre></div>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">¶</a></h2>
-<p>If we check the <code>requirement.txt</code> generated in the above step, we will see a lot of packages already installed apart from <code>pelican</code>, <code>markdown</code>, <code>Fabric</code> and <code>beautifulsoup4</code>. These extra packages are dependencies for running pelican.</p>
-<ul>
-<li><strong>feedgenerator:</strong> to generate the Atom feeds</li>
-<li><strong>jinja2:</strong> for templating support</li>
-<li><strong>pygments:</strong> for syntax highlighting</li>
-<li><strong>docutils:</strong> for supporting reStructuredText as an input format</li>
-<li><strong>pytz:</strong> for timezone definitions</li>
-<li><strong>blinker:</strong> an object-to-object and broadcast signaling system</li>
-<li><strong>unidecode:</strong> for ASCII transliterations of Unicode text</li>
-<li><strong>six:</strong> for Python 2 and 3 compatibility utilities</li>
-<li><strong>MarkupSafe:</strong> for a markup safe string implementation</li>
-<li><strong>python-dateutil:</strong> to read the date metadata</li>
-</ul>
-<p>We have completed 2 important steps of our own blog publishing.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="http://docs.getpelican.com/en/stable/install.html">Installing Pelican </a></li>
-<li><a href="https://conda.io/docs/py2or3.html">Managing Python </a></li>
+<li><a href="https://help.disqus.com/customer/portal/articles/466208" title="What's a Shortname? ">What's a shortname?</a></li>
+<li><a href="http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms">Host Your Own Signup Forms</a></li>
 </ul>
             
             <section>
@@ -188,7 +139,7 @@ pip install beautifulsoup4
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -198,8 +149,8 @@ pip install beautifulsoup4
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -221,8 +172,7 @@ pip install beautifulsoup4
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html" title="Previous: Cost effective blogging with Pelican and Github - The easy way.">Cost effective blogging with Pelican and Github <small>The easy way.</small></a></li>
-                <li class="next-article"><a href="http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html" title="Next: Pelican HelloWorld using pelican-quickstart - base configuration">Pelican HelloWorld using pelican-quickstart <small>base configuration</small></a> »</li>
+                <li class="previous-article">« <a href="http://archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" title="Previous: Home Page feature for Elegant Theme - Home Coming">Home Page feature for Elegant Theme <small>Home Coming</small></a></li>
             </ul>
             </nav>
             </aside>
@@ -230,10 +180,10 @@ pip install beautifulsoup4
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-26T22:39:03+05:30">Apr 26, 2017</time>
+            <time pubdate="pubdate" datetime="2017-05-10T22:47:22+05:30">May 10, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-07T00:03:25+05:30">May 7, 2017</time>
+<time datetime="2017-05-10T23:48:03+05:30">May 10, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
