@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2017-05-09T22:55:40+05:30" />
-<meta property="" content="2017-05-10T22:42:42+05:30" />
+<meta property="" content="2017-05-11T22:55:07+05:30" />
 <meta name="twitter:title" content="Problem Faced when integrating with Elegant Themes.  - Surprise. ">
 <meta name="twitter:description" content="Elegant was my theme choice, and while integrating this theme with my blog I found that a lot of things does not work out of the box, and some changes are required in the themes itself. I am listing these changes here, if this are still unresolved in the future.">
 
@@ -101,6 +101,7 @@
 <li><a href="#toc-integration-with-elegant">TOC Integration with Elegant</a></li>
 <li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
 <li><a href="#next-and-previous-articles">Next and Previous Articles.</a></li>
+<li><a href="#missing-icons-for-social-links">Missing icons for social links</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
@@ -176,6 +177,18 @@
 <p>We have to integrate the <code>neighbors</code> plugins and then it works. Now we will have these in our <code>pelicanconf.py</code></p>
 <div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sitemap'</span><span class="p">,</span> <span class="s1">'tipue_search'</span><span class="p">,</span> <span class="s1">'extract_toc'</span><span class="p">,</span> <span class="s1">'neighbors'</span><span class="p">]</span>
 </pre></div>
+<h2 id="missing-icons-for-social-links">Missing icons for social links<a class="headerlink" href="#missing-icons-for-social-links" title="Permanent link">¶</a></h2>
+<p>Pelican supports a way to integrate most of the social Website like <a href="https://twitter.com/" title="Twitter">Twitter </a>, <a href="https://www.facebook.com/">Facebook </a>, <a href="https://github.com/">Github </a> etc. This is done by the help of this settings in <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s1">'github'</span><span class="p">,</span> <span class="s1">'URL to your profile'</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">'linkedin-square'</span><span class="p">,</span> <span class="s1">'URL to your profile'</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">'facebook'</span><span class="p">,</span><span class="s1">'URL to your profile'</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">'quora'</span><span class="p">,</span> <span class="s1">'URL to your profile'</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">'reddit'</span><span class="p">,</span> <span class="s1">'URL to your profile'</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">'twitter'</span><span class="p">,</span> <span class="s1">'URL to your profile'</span><span class="p">)</span>
+          <span class="p">)</span>
+</pre></div>
+<p>This explains that we have a tuple of tuple in the settings name <code>SOCIAL</code>, if you see each website name is in a particular format, as explained in this <a href="https://github.com/talha131/pelican-elegant/issues/98" title=" Missing icons for social links ">link</a>, this format is taken from <a href="http://fontawesome.io/icons/#brand" title="Font Awesome Brands">Font Awesome icon for social links</a>.</p>
+<p>When naming the website name in <code>SOCIAL</code> configuration, keep in mind the way the website in named in Font Awesome and remove the <code>fa-</code> part of the name.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant theme">Elegant </a><ul>
@@ -190,6 +203,8 @@
 <li><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin ">Tipue Search plugin </a></li>
 <li><a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url">Tipue search return undefined url </a>.</li>
 <li><a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url">Tipue search return undefined url pull request</a></li>
+<li><a href="https://github.com/talha131/pelican-elegant/issues/98" title=" Missing icons for social links ">Missing icons for social links</a></li>
+<li><a href="http://fontawesome.io/icons/#brand" title="Font Awesome Brands">Font Awesome icon for social links</a></li>
 </ul>
             
             <section>
@@ -243,7 +258,7 @@
             <time pubdate="pubdate" datetime="2017-05-09T22:55:40+05:30">May 9, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-10T22:42:42+05:30">May 10, 2017</time>
+<time datetime="2017-05-11T22:55:07+05:30">May 11, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
