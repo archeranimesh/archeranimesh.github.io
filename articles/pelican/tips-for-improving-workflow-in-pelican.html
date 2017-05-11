@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, Elegant Theme, Pelican Themes, Pelican Plugins." />
+<meta name="keywords" content="pelican, Pelican, OUTPUT_RETENTION, FileHeader, Sublime Text" />
 
-<meta property="og:title" content="Expressing the content with Pelican Themes.  - Expand Horizon "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html" />
-<meta property="og:description" content="We will customize of the very popular themes, Elegant, and make it to suit our need and also integrate with the plugins required for Elegant to work." />
+<meta property="og:title" content="Tips to improve work flow in pelican blog.  - Cleaning Up "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" />
+<meta property="og:description" content="We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-05-07T22:35:15+05:30" />
-<meta property="" content="2017-05-09T23:38:17+05:30" />
-<meta name="twitter:title" content="Expressing the content with Pelican Themes.  - Expand Horizon ">
-<meta name="twitter:description" content="We will customize of the very popular themes, Elegant, and make it to suit our need and also integrate with the plugins required for Elegant to work.">
+<meta property="og:article:published_time" content="2017-05-11T23:05:38+05:30" />
+<meta property="" content="2017-05-12T00:10:48+05:30" />
+<meta name="twitter:title" content="Tips to improve work flow in pelican blog.  - Cleaning Up ">
+<meta name="twitter:description" content="We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.">
 
-        <title>Expressing the content with Pelican Themes.  - Expand Horizon  · Archer Imagine
+        <title>Tips to improve work flow in pelican blog.  - Cleaning Up  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html"> Expressing the content with Pelican Themes.  <small> Expand Horizon </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html"> Tips to improve work flow in pelican blog.  <small> Cleaning Up </small>  </a></h1>
     </header>
 </div>
 
@@ -91,9 +91,9 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#integrating-the-elegant-theme">Integrating the Elegant Theme</a></li>
-<li><a href="#integrating-a-plugin-into-pelican">Integrating A Plugin into Pelican</a></li>
-<li><a href="#references">References</a></li>
+<li><a href="#fileheader-to-write-meta-data-in-sublime-text">FileHeader to Write Meta-Data in Sublime Text</a></li>
+<li><a href="#clean-the-output-directory">Clean the Output Directory</a></li>
+<li><a href="#reference">Reference</a></li>
 </ul>
 </div>
         </nav>
@@ -102,33 +102,59 @@
 
             
             
-<p>We have already discussed about Pelican Themes and Plugins in this <a href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" title="Customizing Pelican Blog with plugin and themes">blog</a>. </p>
-<p>We have also seen the comparison between the various popular themes. <a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Comparison between different themes.">Elegant </a> is our choice of Themes because of search functionality which it provides along with the minimalist concepts.</p>
-<p>We will first focus on how we can integrate one particular themes and also one particular plugins which will give us a fair amount of idea on how to integrate different plugins.</p>
-<h2 id="integrating-the-elegant-theme">Integrating the Elegant Theme<a class="headerlink" href="#integrating-the-elegant-theme" title="Permanent link">¶</a></h2>
-<p>We have already created folder named <code>plugins</code> and <code>themes</code>, which are clone of the Pelican <a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins ">Plugins</a> and <a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes ">Themes</a> repository. If we see the directory listing inside <code>themes</code> folder we fill find different folders with distinguished names, these are the themes name. </p>
-<p>To use any of the themes in this folder we have to add this pelican settings in the <code>pelicanconf.py</code>.</p>
-<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s1">'themes/elegant'</span>
+<p>We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.</p>
+<h2 id="fileheader-to-write-meta-data-in-sublime-text">FileHeader to Write Meta-Data in Sublime Text<a class="headerlink" href="#fileheader-to-write-meta-data-in-sublime-text" title="Permanent link">¶</a></h2>
+<p><a href="https://www.sublimetext.com/," title=" Sublime Text ">Sublime Text</a> is a very nice Text editor for writing Markdown. There are already a lot of articles on how to configure Sublime text for Markdown.</p>
+<p>We will discuss about one specific package in Sublime Text called <a href="https://github.com/shiyanhui/FileHeader" title="FileHeader Package">FileHeader</a>, this package helps in writing custom File Header, so we can use this package to provide some Meta-Data to the pelican blog by default.</p>
+<p>FileHeader comes with predefined header template, if we want to change the content of these templates we can use a custom fileHeader template.</p>
+<p>Since we are writing our content in markdown, I have extended the default Markdown template. The modified Markdown Template have to saved in this path <code>/home/username/.config/sublime-text-2/Packages/User/fileHeaderTemplatesUser</code> named as <code>Markdown.tmpl</code>.</p>
+<p>FileHeader uses Jinja2 template, the Markdown template looks like <a href="https://gist.github.com/archeranimesh/dcd1773af0ad41e9e1572d293becaa87" title="Gist Markdown ">this</a>.</p>
+<div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> 
+<span class="n">Date</span><span class="o">:</span> <span class="o">{{</span><span class="n">create_time</span><span class="o">}}</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="o">{{</span><span class="n">last_modified_time</span><span class="o">}}</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Pelican</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="o">{{</span><span class="n">file_name_without_extension</span><span class="o">}}</span>
+<span class="n">Author</span><span class="o">:</span> <span class="o">{{</span><span class="n">author</span><span class="o">}}</span>
+<span class="n">subtitle</span><span class="o">:</span> 
+<span class="n">Summary</span><span class="o">:</span> 
+<span class="n">keywords</span><span class="o">:</span>
+
+<span class="o">[</span><span class="n">TOC</span><span class="o">]</span>
 </pre></div>
-<p>Follow the commands to generate the site and launch the site, and you have your new themes applied.</p>
-<div class="highlight"><pre><span></span>pelican content
-<span class="nb">cd</span> output/
-python -m pelican.server
+<p>We have to give some configuration for it to work. Kindly add this in the <code>FileHeader.sublime-settings</code>.</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">"custom_template_header_path"</span><span class="p">:</span> <span class="s2">"/home/username/.config/sublime-text-2/Packages/User/fileHeaderTemplatesUser"</span><span class="p">,</span>
+    <span class="nt">"Default"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"author"</span><span class="p">:</span> <span class="s2">"ABC"</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
-<h2 id="integrating-a-plugin-into-pelican">Integrating A Plugin into Pelican<a class="headerlink" href="#integrating-a-plugin-into-pelican" title="Permanent link">¶</a></h2>
-<p>The process to integrate any plugin is also similar to integrating Themes. If we see inside the <code>plugins</code> directory which we had cloned, we will find a lot of different folder name just like in <code>themes</code> directory. Each of these name is a <code>plugin</code> name.</p>
-<p>To integrate a plugin into Pelican we have to add these 2 configuration into the <code>pelicanconf.py</code> file.</p>
-<div class="highlight"><pre><span></span><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'plugin'</span><span class="p">]</span>   <span class="c1"># Name of the directory where plugin are kept.</span>
-<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sitemap'</span><span class="p">]</span>       <span class="c1"># Name of the particular plugin inside the directory.</span>
-</pre></div>
-<p>In the above code sample, we can see we have integrated the <code>sitemap</code> plugin, and as per the <a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap" title="Sitemap Plugin ">documentation</a>, this generates a Sitemap which we generally submit it to some Webmaster tools. </p>
-<p>Likewise, if we want to integrate any other <code>plugins</code>, we have just add it to the list variable <code>PLUGINS</code> along with the settings required for that plugins defined in its documentation.</p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<p>After this every time you create a new Markdown file, the above template will be automatically applied.</p>
+<h2 id="clean-the-output-directory">Clean the Output Directory<a class="headerlink" href="#clean-the-output-directory" title="Permanent link">¶</a></h2>
+<p>We are working with two git repositories when writing a pelican blog.</p>
 <ul>
-<li><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features" title="Elegant Themes">Elegant </a></li>
-<li><a href="https://github.com/getpelican/pelican-plugins" title="Pelican Plugins ">Pelican Plugins</a></li>
-<li><a href="https://github.com/getpelican/pelican-themes" title="Pelican Themes ">Pelican Themes</a></li>
-<li><a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap" title="Sitemap Documentation ">Sitemap Documentation</a>,</li>
+<li><code>root</code><ul>
+<li>This is the folder which has the <code>content</code> and all the setting file.</li>
+</ul>
+</li>
+<li><code>output</code><ul>
+<li>This is the actual HTML page generated by Pelican.</li>
+</ul>
+</li>
+</ul>
+<p>Most often than not we might want to generate the complete blog with a clean build with commands like this.</p>
+<div class="highlight"><pre><span></span>pelican content -ds publishconf.py  <span class="c1"># While Publishing</span>
+pelican content -d                  <span class="c1"># Local host.</span>
+</pre></div>
+<p>The problem with these above commands is they might delete the <code>.git</code> or even the <code>CNAME</code> directory inside <code>output</code> losing the link with version control. We can prevent this by adding this configuration into our <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">OUTPUT_RETENTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">".hg"</span><span class="p">,</span> <span class="s2">".git"</span><span class="p">,</span> <span class="s2">"CNAME"</span><span class="p">]</span>
+</pre></div>
+<p>This change will make sure that the above mentioned file are not deleted. Kindly keep in mind this works for only the above 2 version of the command, if you use <code>make clean</code> then this configuration is of no use.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://github.com/getpelican/pelican/issues/574" title="clean should not remove .git metadata #574">clean should not remove .git metadata #574 </a></li>
 </ul>
             
             <section>
@@ -137,7 +163,7 @@ python -m pelican.server
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -147,8 +173,8 @@ python -m pelican.server
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -170,8 +196,7 @@ python -m pelican.server
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" title="Previous: Customizing Pelican blog with the help of Plugin and themes - Eternal Customization">Customizing Pelican blog with the help of Plugin and themes <small>Eternal Customization</small></a></li>
-                <li class="next-article"><a href="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" title="Next: Problem Faced when integrating with Elegant Themes. - Surprise.">Problem Faced when integrating with Elegant Themes. <small>Surprise.</small></a> »</li>
+                <li class="previous-article">« <a href="http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html" title="Previous: Integrating 3rd party services with Pelican Blog. - Mix and Match.">Integrating 3rd party services with Pelican Blog. <small>Mix and Match.</small></a></li>
             </ul>
             </nav>
             </aside>
@@ -179,10 +204,10 @@ python -m pelican.server
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-05-07T22:35:15+05:30">May 7, 2017</time>
+            <time pubdate="pubdate" datetime="2017-05-11T23:05:38+05:30">May 11, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-09T23:38:17+05:30">May 9, 2017</time>
+<time datetime="2017-05-12T00:10:48+05:30">May 12, 2017</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>

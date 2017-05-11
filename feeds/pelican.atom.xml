@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-11T22:55:07+05:30</updated><entry><title>Integrating 3rd party services with Pelican Blog.</title><link href="http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html" rel="alternate"></link><published>2017-05-10T22:47:22+05:30</published><updated>2017-05-10T23:48:03+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-10:/articles/pelican/integrating-3rd-party-services-with-pelican.html</id><summary type="html">&lt;p&gt;Pelican with its themes and plugins provides lots of functionality, but it also integrates well with 3rd party services like, MailChimp, DISQUS, Google analytics, Google Adsense, RSS feeds etc.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-12T00:10:48+05:30</updated><entry><title>Tips to improve work flow in pelican blog.</title><link href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" rel="alternate"></link><published>2017-05-11T23:05:38+05:30</published><updated>2017-05-12T00:10:48+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-11:/articles/pelican/tips-for-improving-workflow-in-pelican.html</id><summary type="html">&lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;
+&lt;h2 id="fileheader-to-write-meta-data-in-sublime-text"&gt;FileHeader to Write Meta-Data in Sublime Text&lt;a class="headerlink" href="#fileheader-to-write-meta-data-in-sublime-text" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.sublimetext.com/," title=" Sublime Text "&gt;Sublime Text&lt;/a&gt; is a very nice Text editor for writing Markdown. There are already a lot of articles on how to configure Sublime text for Markdown.&lt;/p&gt;
+&lt;p&gt;We will discuss about one specific package in Sublime Text called &lt;a href="https://github.com/shiyanhui/FileHeader" title="FileHeader Package"&gt;FileHeader&lt;/a&gt;, this package helps in writing custom File Header, so we can use this package to provide some Meta-Data to the pelican blog by default.&lt;/p&gt;
+&lt;p&gt;FileHeader comes with predefined header template, if we want to change the content of these templates we can use a custom fileHeader template.&lt;/p&gt;
+&lt;p&gt;Since we are writing our content in markdown, I have extended the default Markdown template. The modified Markdown Template have to saved in this path &lt;code&gt;/home/username/.config/sublime-text-2/Packages/User/fileHeaderTemplatesUser&lt;/code&gt; named as &lt;code&gt;Markdown.tmpl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;FileHeader uses Jinja2 template, the Markdown template looks like &lt;a href="https://gist.github.com/archeranimesh/dcd1773af0ad41e9e1572d293becaa87" title="Gist Markdown "&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;create_time&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;last_modified_time&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;file_name_without_extension&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;span class="n"&gt;subtitle&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
+&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;TOC&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We have to give some configuration for it to work. Kindly add this in the &lt;code&gt;FileHeader.sublime-settings&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;"custom_template_header_path"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"/home/username/.config/sublime-text-2/Packages/User/fileHeaderTemplatesUser"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;"Default"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nt"&gt;"author"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"ABC"&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After this every time you create a new Markdown file, the above template will be automatically applied.&lt;/p&gt;
+&lt;h2 id="clean-the-output-directory"&gt;Clean the Output Directory&lt;a class="headerlink" href="#clean-the-output-directory" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We are working with two git repositories when writing a pelican blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;root&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is the folder which has the &lt;code&gt;content&lt;/code&gt; and all the setting file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;This is the actual HTML page generated by Pelican.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Most often than not we might want to generate the complete blog with a clean build with commands like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content -ds publishconf.py  &lt;span class="c1"&gt;# While Publishing&lt;/span&gt;
+pelican content -d                  &lt;span class="c1"&gt;# Local host.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The problem with these above commands is they might delete the &lt;code&gt;.git&lt;/code&gt; or even the &lt;code&gt;CNAME&lt;/code&gt; directory inside &lt;code&gt;output&lt;/code&gt; losing the link with version control. We can prevent this by adding this configuration into our &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;OUTPUT_RETENTION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;".hg"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;".git"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"CNAME"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This change will make sure that the above mentioned file are not deleted. Kindly keep in mind this works for only the above 2 version of the command, if you use &lt;code&gt;make clean&lt;/code&gt; then this configuration is of no use.&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican/issues/574" title="clean should not remove .git metadata #574"&gt;clean should not remove .git metadata #574 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Integrating 3rd party services with Pelican Blog.</title><link href="http://archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html" rel="alternate"></link><published>2017-05-10T22:47:22+05:30</published><updated>2017-05-10T23:48:03+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-10:/articles/pelican/integrating-3rd-party-services-with-pelican.html</id><summary type="html">&lt;p&gt;Pelican with its themes and plugins provides lots of functionality, but it also integrates well with 3rd party services like, MailChimp, DISQUS, Google analytics, Google Adsense, RSS feeds etc.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;We have already discussed two types of settings file in &lt;a href="http://archerimagine.com/articles/pelican/pelican-settings-files.html" title="Pelican Settings File."&gt;pelican&lt;/a&gt;, and we found that &lt;code&gt;publishconf.py&lt;/code&gt; is the file which is picked along with &lt;code&gt;pelicanconf.py&lt;/code&gt; when we are generating the blog for publishing.&lt;/p&gt;
 &lt;p&gt;These 3rd party service integration happen over this &lt;code&gt;publishconf.py&lt;/code&gt; file, because we do not want these services to be activated when running on &lt;a href="http://localhost:8000/"&gt;localhost &lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="google-analytics"&gt;Google Analytics.&lt;a class="headerlink" href="#google-analytics" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
