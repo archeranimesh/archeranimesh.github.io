@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, pelican, helloworld, pelican-quickstart" />
+<meta name="keywords" content="#100DaysOfCode, #100DaysOfX, #100DaysOfCode, #100DaysOfCode, #100DaysOfX" />
 
-<meta property="og:title" content="Pelican HelloWorld using pelican-quickstart  - base configuration "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html" />
-<meta property="og:description" content="We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box." />
+<meta property="og:title" content="100Days of Code Log File  - A New Beginning "/>
+<meta property="og:url" content="http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html" />
+<meta property="og:description" content="Hello World!, You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-27T23:26:43+05:30" />
-<meta property="" content="2017-05-06T23:49:40+05:30" />
-<meta name="twitter:title" content="Pelican HelloWorld using pelican-quickstart  - base configuration ">
-<meta name="twitter:description" content="We all want to hit the ground rolling, and what better way then to start with a Pelican HelloWorld. pelican-quickstart is a great command to start a basic pelican blogs with most of the defaults working out of the box.">
+<meta property="og:article:published_time" content="2017-12-24T00:03:34+05:30" />
+<meta property="" content="2017-12-24T00:27:38+05:30" />
+<meta name="twitter:title" content="100Days of Code Log File  - A New Beginning ">
+<meta name="twitter:description" content="Hello World!, You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies.">
 
-        <title>Pelican HelloWorld using pelican-quickstart  - base configuration  · Archer Imagine
+        <title>100Days of Code Log File  - A New Beginning  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html"> Pelican HelloWorld using pelican-quickstart  <small> base configuration </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html"> 100Days of Code Log File  <small> A New Beginning </small>  </a></h1>
     </header>
 </div>
 
@@ -90,14 +90,7 @@
         <nav>
         <h4>Contents</h4>
         <div class="toc">
-<ul>
-<li><a href="#activate-python-environment">Activate Python environment</a></li>
-<li><a href="#pelican-quickstart">pelican-quickstart</a><ul>
-<li><a href="#pelican-quickstart-options">pelican-quickstart options</a></li>
-</ul>
-</li>
-<li><a href="#references">References</a></li>
-</ul>
+<ul></ul>
 </div>
         </nav>
     </div>
@@ -105,116 +98,12 @@
 
             
             
-<p>Pelican makes it very easy to make the ground rolling ASAP. Pelican provides a great command <code>pelican-quickstart</code>, which asks a few questions to you and makes a boilerplate blog ready in a few seconds. We will go through the entire process explaining each option is details.</p>
-<h2 id="activate-python-environment">Activate Python environment<a class="headerlink" href="#activate-python-environment" title="Permanent link">¶</a></h2>
-<p>We had set up a separate python anaconda environment in our previous <a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html">post</a> now is the time to active the environment, we can do that by using a simple command.</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> activate pelican1
-</pre></div>
-<p>It will activate the <code>pelican1</code> environment, and we can identify it by check the terminal prompt which will change to <code>(pelican1)</code>.</p>
-<p>Once the work is done, we can deactivate the same with a simple command.</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> deactivate pelican1
-</pre></div>
-<p>All the above command will work for Linux and Mac, kindly check the windows equivalent of the same.</p>
-<h2 id="pelican-quickstart">pelican-quickstart<a class="headerlink" href="#pelican-quickstart" title="Permanent link">¶</a></h2>
-<p>Now we are ready to divulge in the world of pelican. Pelican has a ready to bake command to set up the basic boilerplate for the blog. The command is called</p>
-<p>Before executing the below commands, just create a directory where you want your blog files to be stored.</p>
-<div class="highlight"><pre><span></span>mkdir ~/myBlogDirectory
-<span class="nb">cd</span> ~/myBlogDirectory
-pelican-quickstart
-</pre></div>
-<p>Just execute this commands and it asks you these series of questions, which we will talk in details.</p>
-<h3 id="pelican-quickstart-options">pelican-quickstart options<a class="headerlink" href="#pelican-quickstart-options" title="Permanent link">¶</a></h3>
-<p>The options shown after executing the <code>pelican-quickstart</code> are as below.</p>
-<p><img alt="pelican quickstart options" src="http://archerimagine.com/images/pelicanQuickStart/pelicanQuickStartoptions.png" title="pelican quickstart options"/></p>
-<p>We will discuss each and every option and their usage, we can always choose the default shown in capital letter, <code>{Y|n}</code>.</p>
-<ul>
-<li>Where do you want to create your new Website ? [.]<ul>
-<li>Most probably we will keep the default as we are already in that directory, if not you can specify the path <code>/home/pathtomyblog</code></li>
-</ul>
-</li>
-<li>What will be the title of the blog?<ul>
-<li>Provide a suitable title to your blog, do not worry even if you want to change it latter we can change it. </li>
-</ul>
-</li>
-<li>Who will be the author of this Website ?<ul>
-<li>Just provide any name you want whose name should be present as an author on the blog post, it can be your name as well.</li>
-</ul>
-</li>
-<li>What will be the default language of this Website ? [en]<ul>
-<li>The default choice is <code>English</code>, else you can give any language format mentioned in ISO 639-1 Language Codes, the list can be found <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="ISO Language codes">ISO Language codes</a></li>
-</ul>
-</li>
-<li>Do you want to specify a URL prefix? e.g., http://example.com (Y/n)<ul>
-<li>If you already have purchased a domain give the domain name as shown in the example, else continue with <code>n</code>, we can later fill the domain name.</li>
-</ul>
-</li>
-<li>Do you want to enable article pagination? (Y/n)<ul>
-<li>We can go with the default of having pagination, which means how many posts of the blogs will be displayed in one page, the choice of this is in the next question.<ul>
-<li>How many articles per page do you want? [10] <ul>
-<li>The default choice is <code>10</code>, for the time being keep it that way.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>What is your time zone? [Europe/Paris]<ul>
-<li>To change the time zone, we should be aware that these are <strong>tz database</strong> time zone, to exactly get the time zone codes for your country visit <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones">List of tz database time zones</a>, give the code without the <code>[]</code>.</li>
-</ul>
-</li>
-<li>Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)<ul>
-<li>There are multiple ways to automate the blog publishing process, makefile and fabic comes to our help, just chose the default and we will decide on this later. This creates two files in the directory, <code>fabfile.py</code> and <code>Makefile</code></li>
-</ul>
-</li>
-<li>Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n)<ul>
-<li>We have the help of auto-reload commands to automatically generates the preview as soon as we change anything in the themes, we might not require it initially, so keep it false.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using FTP? (y/N)<ul>
-<li>If we had an FTP site where we could upload, just choose the default and say <code>n</code></li>
-</ul>
-</li>
-<li>Do you want to upload your website using SSH? (y/N)<ul>
-<li>If you are hosting uses SSH, for our use case we will choose <code>N</code>, which is the default.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using Dropbox? (y/N)<ul>
-<li>We can also use Dropbox to upload our static files, but for this, we will try some other time, for now choose the default which is <code>N</code>.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using S3? (y/N)<ul>
-<li>We also have the facility of choosing amazon S3 for our site hosting, for now not needed chose <code>N</code></li>
-</ul>
-</li>
-<li>Do you want to upload your website using Rackspace Cloud Files? (y/N) <ul>
-<li>Again the default <code>N</code>, we are not using Rackspace.</li>
-</ul>
-</li>
-<li>Do you want to upload your website using GitHub Pages? (y/N)<ul>
-<li>We can choose <code>y</code> here, but we will try another mechanism, for now choose the default <code>N</code></li>
-<li>If you had chosen <code>y</code> in this option you will get this sub option.<ul>
-<li>Is this your personal page (username.github.io)? (y/N)<ul>
-<li>Choose <code>y</code>, </li>
-</ul>
-</li>
-<li>After this we will get this message in either case.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span>Done. Your new project is available at /home/username/myWork/mySampleBlog
-</pre></div>
-<p>Our blogs boilerplate is available. Here is the folder structure.</p>
-<p><img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"/> </p>
-<p>We have still not seen how the blog will look like, we will divulge into this in the next post, with all the pelican commands which is extremely important to get the full juice out of pelican.</p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/" title="How did the command option help">How I setup Pelican </a></li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="List of tz database time zones">List of tz database time zones</a></li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" title="List of ISO 639-1 codes">List of ISO 639-1 codes</a></li>
-<li><a href="https://gist.github.com/almet/1140861">pelican-quickstart.py</a></li>
-</ul>
+<p><img alt="Sample Screen Shot" src="http://archerimagine.com/images/100DaysOfCode/pythonCode.jpg" title="Sample ScreenShot"/></p>
+<p>Hello World!, You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages
+will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
+unexpected epiphanies.</p>
+<p>Some moments, I will be the smartest man alive. Others moments, I will be a stupid idiot. But each day, I will be a valiat warrior, fighting to develop and perfect the skills necessary to evolve into a true beast with these keys.</p>
+<p>Ladies and gentleman, I present to you, #100DaysofCode with @ <a href="https://twitter.com/animeshkbhadra" title="Twitter Handle">animeshkbhadra </a></p>
             
             <section>
 <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
@@ -222,7 +111,7 @@ pelican-quickstart
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html#disqus_thread">
+                href="http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -232,8 +121,8 @@ pelican-quickstart
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html';
+    var disqus_url = 'http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -255,8 +144,7 @@ pelican-quickstart
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html" title="Previous: How to setup Anaconda Python environment for Pelican Blog. - Using Conda.">How to setup Anaconda Python environment for Pelican Blog. <small>Using Conda.</small></a></li>
-                <li class="next-article"><a href="http://archerimagine.com/articles/pelican/pelican-folder-structure.html" title="Next: Pelican Folder Structure - Creating Magic">Pelican Folder Structure <small>Creating Magic</small></a> »</li>
+                <li class="previous-article">« <a href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" title="Previous: Tips to improve work flow in pelican blog. - Cleaning Up">Tips to improve work flow in pelican blog. <small>Cleaning Up</small></a></li>
             </ul>
             </nav>
             </aside>
@@ -264,17 +152,20 @@ pelican-quickstart
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-27T23:26:43+05:30">Apr 27, 2017</time>
+            <time pubdate="pubdate" datetime="2017-12-24T00:03:34+05:30">Dec 24, 2017</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-06T23:49:40+05:30">May 6, 2017</time>
+<time datetime="2017-12-24T00:27:38+05:30">Dec 24, 2017</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
+            <a class="category-link" href="http://archerimagine.com/categories.html#100daysofcode-ref">#100DaysOfCode</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="http://archerimagine.com/tags.html#pelican-ref">pelican
-                    <span>14</span>
+                <li><a href="http://archerimagine.com/tags.html#100daysofcode-ref">#100DaysOfCode
+                    <span>1</span>
+</a></li>
+                <li><a href="http://archerimagine.com/tags.html#100daysofx-ref">#100DaysOfX
+                    <span>1</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>

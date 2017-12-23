@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-12T00:24:48+05:30</updated><entry><title>Tips to improve work flow in pelican blog.</title><link href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" rel="alternate"></link><published>2017-05-11T23:05:38+05:30</published><updated>2017-05-12T00:10:48+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-11:/articles/pelican/tips-for-improving-workflow-in-pelican.html</id><summary type="html">&lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-12-24T00:27:38+05:30</updated><entry><title>100Days of Code Log File</title><link href="http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html" rel="alternate"></link><published>2017-12-24T00:03:34+05:30</published><updated>2017-12-24T00:27:38+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-12-24:/articles/100daysofcode/100Days-of-code-log-file.html</id><summary type="html">&lt;p&gt;Hello World!, You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Sample Screen Shot" src="http://archerimagine.com/images/100DaysOfCode/pythonCode.jpg" title="Sample ScreenShot"/&gt;&lt;/p&gt;
+&lt;p&gt;Hello World!, You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages
+will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
+unexpected epiphanies.&lt;/p&gt;
+&lt;p&gt;Some moments, I will be the smartest man alive. Others moments, I will be a stupid idiot. But each day, I will be a valiat warrior, fighting to develop and perfect the skills necessary to evolve into a true beast with these keys.&lt;/p&gt;
+&lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;</content><category term="#100DaysOfCode"></category><category term="#100DaysOfX"></category></entry><entry><title>Tips to improve work flow in pelican blog.</title><link href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" rel="alternate"></link><published>2017-05-11T23:05:38+05:30</published><updated>2017-05-12T00:10:48+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-11:/articles/pelican/tips-for-improving-workflow-in-pelican.html</id><summary type="html">&lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;
 &lt;h2 id="fileheader-to-write-meta-data-in-sublime-text"&gt;FileHeader to Write Meta-Data in Sublime Text&lt;a class="headerlink" href="#fileheader-to-write-meta-data-in-sublime-text" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.sublimetext.com/," title=" Sublime Text "&gt;Sublime Text&lt;/a&gt; is a very nice Text editor for writing Markdown. There are already a lot of articles on how to configure Sublime text for Markdown.&lt;/p&gt;
@@ -349,8 +355,8 @@ python -m pelican.server
 &lt;li&gt;From the above option we have to add 3 entries.&lt;/li&gt;
 &lt;li&gt;This is how all the 3 would look like after adding.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="Godaddy A Options" src="http://archerimagine.com/images/launchSite/AOptions.png" title="Godaddy A Options"&gt;
-&lt;img alt="Godaddy www Options" src="http://archerimagine.com/images/launchSite/wwwOption.png" title="Godaddy www Options"/&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Godaddy A Options" src="http://archerimagine.com/images/launchSite/AOptions.png" title="Godaddy A Options"/&gt;
+&lt;img alt="Godaddy www Options" src="http://archerimagine.com/images/launchSite/wwwOption.png" title="Godaddy www Options"/&gt;&lt;/p&gt;
 &lt;p&gt;Now you can launch and check your desired domain. Kindly wait 48 hrs for these changes to reflect, do not try to configure multiple times, if it does not work even after 48 hours kindly search for help, till then take a coffee break and have a nice time out of this screen.&lt;/p&gt;
 &lt;h2 id="the-domain-xyx-is-no-longer-parked-by-godaddy"&gt;The domain XYX is no longer parked by Godaddy&lt;a class="headerlink" href="#the-domain-xyx-is-no-longer-parked-by-godaddy" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;When we are doing the above process, even after 24 hours, when you launch your website, we find one of these errors.&lt;/p&gt;
@@ -662,7 +668,7 @@ nothing added to commit but untracked files present &lt;span class="o"&gt;(&lt;/
 &lt;p&gt;We have our boilerplate pelican blog available, now we have still not seen the magic of pelican. In this post we will see our blog coming to life.&lt;/p&gt;
 &lt;h2 id="first-pelican-blog"&gt;First Pelican Blog&lt;a class="headerlink" href="#first-pelican-blog" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We have seen the folder structure here&lt;/p&gt;
-&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt; &lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"/&gt; &lt;/p&gt;
 &lt;p&gt;Now we will first execute some commands and see what happens with this boilerplate. Remember to be in the &lt;code&gt;pelican1&lt;/code&gt; environment. We can do this by.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate pelican1
 &lt;/pre&gt;&lt;/div&gt;
@@ -717,7 +723,7 @@ python -m pelican.server
 &lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>Pelican Folder Structure</title><link href="http://archerimagine.com/articles/pelican/pelican-folder-structure.html" rel="alternate"></link><published>2017-04-29T22:10:10+05:30</published><updated>2017-05-06T23:56:03+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-04-29:/articles/pelican/pelican-folder-structure.html</id><summary type="html">&lt;p&gt;In this post we will see some important files and folder structure of the pelican blog, and understand the significance of all these files in our blogs to come.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;We will be able to extract the full juice of pelican once we understand the building blocks of the pelican blog. Folder structure and some files forms the basic of this. We will understand some of these files and folder use in this post.&lt;/p&gt;
 &lt;p&gt;After the first blog post if we give &lt;code&gt;make clean&lt;/code&gt; command we will see a folder structure just like this. This will have an empty &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"&gt; &lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanFolder/PelicanFolderStructure.png" title="pelican folder structure"/&gt; &lt;/p&gt;
 &lt;p&gt;We will understand the use of these folder and a proper way of managing your content.&lt;/p&gt;
 &lt;h2 id="content-folder"&gt;content folder&lt;a class="headerlink" href="#content-folder" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;This is the folder where all the magic happens. This is the root folder for our all content, we can use this folder for these purposes.&lt;/p&gt;
@@ -910,7 +916,7 @@ pelican-quickstart
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Done. Your new project is available at /home/username/myWork/mySampleBlog
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Our blogs boilerplate is available. Here is the folder structure.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"&gt; &lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelicanFolderStructure" src="http://archerimagine.com/images/pelicanQuickStart/pelicanFolderStructure.png" title="pelican folder structure"/&gt; &lt;/p&gt;
 &lt;p&gt;We have still not seen how the blog will look like, we will divulge into this in the next post, with all the pelican commands which is extremely important to get the full juice out of pelican.&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
