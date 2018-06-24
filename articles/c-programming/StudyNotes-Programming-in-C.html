@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Animesh Bhadra" />
+        <meta name="copyright" content="Animesh Bhadra" />
+
+        <meta name="twitter:creator" content="@animeshkbhadra">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="C-Programming, Kernighan&Ritchie, KnR, The C Programming Language., C Programming, C-Programming, KnR, The C Programming Language, Study Notes" />
+
+<meta property="og:title" content="Study Notes for Programming in C  - Hello World "/>
+<meta property="og:url" content="http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html" />
+<meta property="og:description" content="Study Notes for learning C programming from the legendary book The C Programming Language by &#34;Brain W. Kenighan and Dennis M. Ritchie&#34;. This books is considered to be the bible for C Programming. This blog is my understanding&#39;s from the books and study notes, in case a reference is required in future." />
+<meta property="og:site_name" content="Archer Imagine" />
+<meta property="og:article:author" content="Animesh Bhadra" />
+<meta property="og:article:published_time" content="2018-06-23T18:50:35+05:30" />
+<meta property="" content="2018-06-24T17:15:17+05:30" />
+<meta name="twitter:title" content="Study Notes for Programming in C  - Hello World ">
+<meta name="twitter:description" content="Study Notes for learning C programming from the legendary book The C Programming Language by &#34;Brain W. Kenighan and Dennis M. Ritchie&#34;. This books is considered to be the bible for C Programming. This blog is my understanding&#39;s from the books and study notes, in case a reference is required in future.">
+
+        <title>Study Notes for Programming in C  - Hello World  · Archer Imagine
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://archerimagine.com/theme/css/custom.css" media="screen">
+        <link rel="shortcut icon" href="http://archerimagine.com/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://archerimagine.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://archerimagine.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://archerimagine.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://archerimagine.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://archerimagine.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="http://archerimagine.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Archer Imagine - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-97386090-1', 'auto');
+    ga('send', 'pageview');
+</script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://archerimagine.com/"><span class=site-name>Archer Imagine</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://archerimagine.com">Home</a></li>
+                            <li ><a href="http://archerimagine.com/categories.html">Categories</a></li>
+                            <li ><a href="http://archerimagine.com/tags.html">Tags</a></li>
+                            <li ><a href="http://archerimagine.com/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://archerimagine.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html"> Study Notes for Programming in C  <small> Hello World </small>  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#fundamental-data-types">Fundamental Data Types</a></li>
+<li><a href="#derived-data-types">Derived Data Types</a></li>
+<li><a href="#expressions">Expressions</a></li>
+<li><a href="#functions">Functions</a><ul>
+<li><a href="#variables">Variables</a></li>
+</ul>
+</li>
+<li><a href="#preprocessing">Preprocessing</a></li>
+<li><a href="#usecase-not-provided-in-c">UseCase not provided in C</a></li>
+<li><a href="#ansi-c-standard">ANSI C Standard</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            
+<p><img alt="Hello World Programming " src="http://archerimagine.com/images/CProgramming/helloWorld.png" title="Hello World Image"/></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>C is not only a "System programming language" but has a wide variety of use in other domain.</p>
+<h3 id="fundamental-data-types">Fundamental Data Types<a class="headerlink" href="#fundamental-data-types" title="Permanent link">¶</a></h3>
+<ul>
+<li>Characters <code>char</code></li>
+<li>Integers <code>int</code>, <code>short</code>, <code>long</code></li>
+<li>Floating point <code>double</code>, <code>float</code></li>
+</ul>
+<h3 id="derived-data-types">Derived Data Types<a class="headerlink" href="#derived-data-types" title="Permanent link">¶</a></h3>
+<ul>
+<li>Pointers<ul>
+<li><strong>Pointers</strong> provide for a machine-independent address arithmetic.</li>
+</ul>
+</li>
+<li>Arrays</li>
+<li>Structure</li>
+<li>Unions.</li>
+</ul>
+<h3 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h3>
+<p><strong>Expressions</strong> are formed from <strong>Operator</strong> and <strong>Operands</strong>. Any expression including an assignment or a function call can be a <strong>statement</strong>.</p>
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h3>
+<p><strong>Functions</strong> performs a single set of operation within a block of code.</p>
+<p><strong>Functions</strong> may return values of </p>
+<ul>
+<li>Fundamental data types.</li>
+<li>Derived Data types. except arrays<ul>
+<li>Pointers</li>
+<li>Structure</li>
+<li>Unions</li>
+</ul>
+</li>
+</ul>
+<h4 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">¶</a></h4>
+<ul>
+<li>Variables can be internal to a function.</li>
+<li>External but known only within a single source file.</li>
+<li>Visible to the entire program.<ul>
+<li>This is frowned upon and we should rarely use.</li>
+</ul>
+</li>
+</ul>
+<h3 id="preprocessing">Preprocessing<a class="headerlink" href="#preprocessing" title="Permanent link">¶</a></h3>
+<p>Preprocessing step performs macro substitution on program text, inclusion of other source file or conditional compilation.</p>
+<h3 id="usecase-not-provided-in-c">UseCase not provided in C<a class="headerlink" href="#usecase-not-provided-in-c" title="Permanent link">¶</a></h3>
+<ul>
+<li>Operations directly dealing with Composite Objects, like<ul>
+<li>Array,</li>
+<li>Structure, </li>
+<li>Unions</li>
+</ul>
+</li>
+<li>No Storage other than <code>static</code> and <code>auto</code>matic.</li>
+<li>No Input/Output facilities.</li>
+<li>No built in file Access.</li>
+</ul>
+<p>The above facilities are included by help of standard library defined by the <strong>ANSI C Standard</strong>.</p>
+<h3 id="ansi-c-standard">ANSI C Standard<a class="headerlink" href="#ansi-c-standard" title="Permanent link">¶</a></h3>
+<ul>
+<li>New syntax for declaring and defining functions.</li>
+<li>Definition of a standard library.</li>
+<li>C is not a strongly typed language.</li>
+<li>C frowns on but permits the interchange of pointer and integers which has been eliminated by ANSI.</li>
+<li>No Automatic conversion of incompatible data types.</li>
+</ul>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://excelwithbusiness.com/blog/say-hello-world-in-28-different-programming-languages/">Image Source </a></li>
+</ul>
+            
+            <section>
+<p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'archerimagine';
+        var disqus_identifier = 'http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html';
+    var disqus_url = 'http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="http://archerimagine.com/articles/100daysofvim/100Days-of-vim-log-file.html" title="Previous: 100Days of Vim Log File - Is It Worth the Time?">100Days of Vim Log File <small>Is It Worth the Time?</small></a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2018-06-23T18:50:35+05:30">Jun 23, 2018</time>
+
+<h4>Last Updated</h4>
+<time datetime="2018-06-24T17:15:17+05:30">Jun 24, 2018</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="http://archerimagine.com/categories.html#c-programming-ref">C Programming</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="http://archerimagine.com/tags.html#c-programming-ref">C-Programming
+                    <span>1</span>
+</a></li>
+                <li><a href="http://archerimagine.com/tags.html#kernighanritchie-ref">Kernighan&Ritchie
+                    <span>1</span>
+</a></li>
+                <li><a href="http://archerimagine.com/tags.html#knr-ref">KnR
+                    <span>1</span>
+</a></li>
+                <li><a href="http://archerimagine.com/tags.html#the-c-programming-language-ref">The C Programming Language.
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+    <a href="https://github.com/archeranimesh" title="My github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.linkedin.com/in/animeshkbhadra/" title="My linkedin-square Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin-square sidebar-social-links"></i></a>
+    <a href="https://www.facebook.com/animeshkbhadra" title="My facebook Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-facebook sidebar-social-links"></i></a>
+    <a href="https://www.quora.com/profile/Animesh-Bhadra" title="My quora Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-quora sidebar-social-links"></i></a>
+    <a href="https://www.reddit.com/user/archerimagine/" title="My reddit Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-reddit sidebar-social-links"></i></a>
+    <a href="https://twitter.com/animeshkbhadra" title="My twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Email Newsletter</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Archer Imagine</span> - Anyone can do my job, but no one can be me. Harvey</li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'archerimagine';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementsByClassName('accordion-toggle');
+    var old_innerHTML = link[0].innerHTML;
+    $(link[0]).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link[0]).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
