@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2017-05-12T00:24:48+05:30</updated><entry><title>Tips to improve work flow in pelican blog.</title><link href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" rel="alternate"></link><published>2017-05-11T23:05:38+05:30</published><updated>2017-05-12T00:10:48+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-11:/articles/pelican/tips-for-improving-workflow-in-pelican.html</id><summary type="html">&lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-02T20:39:51+05:30</updated><entry><title></title><link href="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" rel="alternate"></link><published>2019-02-02T19:25:57+05:30</published><updated>2019-02-02T20:39:51+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-02:/articles/pelican/Render-Maths-pelican-blog.html</id><summary type="html">&lt;p&gt;This is a blog which will help in rendering math equation in pelican blog using the render_math plugin.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Eculid's Quote" src="http://archerimagine.com/images/discreteMaths/eulid.png" title="Things which are equal to the same things are also equal to one another."/&gt;&lt;/p&gt;
+&lt;h2 id="de-morgans-law"&gt;De Morgan's Law&lt;a class="headerlink" href="#de-morgans-law" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;De Morgan’s Law (negation of conjunction)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ \neg(P \wedge Q) \equiv \neg P \vee \neg Q $$&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;De Morgan’s Law (negation of alternative)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ \neg(P \vee Q) \equiv \neg P \wedge \neg Q $$&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="pelican"></category><category term="maths"></category><category term="render_math"></category></entry><entry><title>Tips to improve work flow in pelican blog.</title><link href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" rel="alternate"></link><published>2017-05-11T23:05:38+05:30</published><updated>2017-05-12T00:10:48+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2017-05-11:/articles/pelican/tips-for-improving-workflow-in-pelican.html</id><summary type="html">&lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;We all know a lot of meta-data is required for writing a pelican blog, we can use Sublime Text to improve this meta-data collection, and also see some useful commands to improve the output.&lt;/p&gt;
 &lt;h2 id="fileheader-to-write-meta-data-in-sublime-text"&gt;FileHeader to Write Meta-Data in Sublime Text&lt;a class="headerlink" href="#fileheader-to-write-meta-data-in-sublime-text" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.sublimetext.com/," title=" Sublime Text "&gt;Sublime Text&lt;/a&gt; is a very nice Text editor for writing Markdown. There are already a lot of articles on how to configure Sublime text for Markdown.&lt;/p&gt;

@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2018-06-24T17:15:17+05:30</updated><entry><title>Study Notes for Programming in C</title><link href="http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html" rel="alternate"></link><published>2018-06-23T18:50:35+05:30</published><updated>2018-06-24T17:15:17+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2018-06-23:/articles/c-programming/StudyNotes-Programming-in-C.html</id><summary type="html">&lt;p&gt;Study Notes for learning C programming from the legendary book &lt;em&gt;The C Programming Language&lt;/em&gt; by "Brain W. Kenighan and Dennis M. Ritchie". This books is considered to be the bible for C Programming. This blog is my understanding's from the books and study notes, in case a reference is required in future.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-02T20:39:51+05:30</updated><entry><title></title><link href="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" rel="alternate"></link><published>2019-02-02T19:25:57+05:30</published><updated>2019-02-02T20:39:51+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-02:/articles/pelican/Render-Maths-pelican-blog.html</id><summary type="html">&lt;p&gt;This is a blog which will help in rendering math equation in pelican blog using the render_math plugin.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Eculid's Quote" src="http://archerimagine.com/images/discreteMaths/eulid.png" title="Things which are equal to the same things are also equal to one another."/&gt;&lt;/p&gt;
+&lt;h2 id="de-morgans-law"&gt;De Morgan's Law&lt;a class="headerlink" href="#de-morgans-law" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;De Morgan’s Law (negation of conjunction)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ \neg(P \wedge Q) \equiv \neg P \vee \neg Q $$&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;De Morgan’s Law (negation of alternative)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ \neg(P \vee Q) \equiv \neg P \wedge \neg Q $$&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="pelican"></category><category term="maths"></category><category term="render_math"></category></entry><entry><title>Study Notes for Programming in C</title><link href="http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html" rel="alternate"></link><published>2018-06-23T18:50:35+05:30</published><updated>2018-06-24T17:15:17+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2018-06-23:/articles/c-programming/StudyNotes-Programming-in-C.html</id><summary type="html">&lt;p&gt;Study Notes for learning C programming from the legendary book &lt;em&gt;The C Programming Language&lt;/em&gt; by "Brain W. Kenighan and Dennis M. Ritchie". This books is considered to be the bible for C Programming. This blog is my understanding's from the books and study notes, in case a reference is required in future.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Hello World Programming " src="http://archerimagine.com/images/CProgramming/helloWorld.png" title="Hello World Image"/&gt;&lt;/p&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;a class="headerlink" href="#introduction" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;C is not only a "System programming language" but has a wide variety of use in other domain.&lt;/p&gt;

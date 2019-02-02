@@ -11,19 +11,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="pelican, Pelican, pelican, Google Analytics, MailChimp, Disqus, Google Adsense, Github" />
+<meta name="keywords" content="pelican, maths, render_math, Pelican, pelican, maths, render_math" />
 
-<meta property="og:title" content="Cost effective blogging with Pelican and Github  - The easy way. "/>
-<meta property="og:url" content="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html" />
-<meta property="og:description" content="This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog." />
+<meta property="og:title" content="  - Making equation work with pelican "/>
+<meta property="og:url" content="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" />
+<meta property="og:description" content="This is a blog which will help in rendering math equation in pelican blog using the render_math plugin." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-04-25T23:20:03+05:30" />
-<meta property="" content="2017-05-12T00:24:48+05:30" />
-<meta name="twitter:title" content="Cost effective blogging with Pelican and Github  - The easy way. ">
-<meta name="twitter:description" content="This is a series of blog post to help set up a static blog at minimal cost and integrating with Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.">
+<meta property="og:article:published_time" content="2019-02-02T19:25:57+05:30" />
+<meta property="" content="2019-02-02T20:39:51+05:30" />
+<meta name="twitter:title" content="  - Making equation work with pelican ">
+<meta name="twitter:description" content="This is a blog which will help in rendering math equation in pelican blog using the render_math plugin.">
 
-        <title>Cost effective blogging with Pelican and Github  - The easy way.  · Archer Imagine
+        <title>  - Making equation work with pelican  · Archer Imagine
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html"> Cost effective blogging with Pelican and Github  <small> The easy way. </small>  </a></h1>
+    <h1><a href="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html">   <small> Making equation work with pelican </small>  </a></h1>
     </header>
 </div>
 
@@ -91,11 +91,7 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#why-static-blog">Why Static Blog?</a></li>
-<li><a href="#why-pelican">Why Pelican?</a></li>
-<li><a href="#why-github">Why Github?</a></li>
-<li><a href="#collated-blog-post">Collated Blog post.</a></li>
-<li><a href="#reference">Reference</a></li>
+<li><a href="#de-morgans-law">De Morgan's Law</a></li>
 </ul>
 </div>
         </nav>
@@ -104,60 +100,71 @@
 
             
             
-<p>This is a series of blog post to help set up a static blog at minimal cost and integrating with all the popular tools such as Google Analytics, MailChimp, Disqus, Google Adsense. This will be the one stop place to find all the details for setting up a beginner level blog.</p>
-<p>I am a novice blogger and this blog would act as a journal, which will document my approach towards blogging, software development. The idea is to generate some revenues out of this blog in the long run. We all might have read about so many blogs which are able to generate good amount of traffic but in none one of those we have never read how do they achieve it.</p>
-<p>I may fail in my attempt, which might work as a guidance for someone to not follow this path and try another path for the same goal. The background theme to support this is to minimize my cost to the bare minimum so that the failure does not hurt me financially.</p>
-<h2 id="why-static-blog">Why Static Blog?<a class="headerlink" href="#why-static-blog" title="Permanent link">¶</a></h2>
-<p>There are already a lot of literature present behind this, just wanted to summarize those:-</p>
+<p><img alt="Eculid's Quote" src="http://archerimagine.com/images/discreteMaths/eulid.png" title="Things which are equal to the same things are also equal to one another."/></p>
+<h2 id="de-morgans-law">De Morgan's Law<a class="headerlink" href="#de-morgans-law" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>Cost:-</strong> This was the deciding factor for me, because of using a static website, this complete website can be hosted and deployed by just registering a domain name with a provider. I do not have to go for any hosting services etc.</li>
-<li><strong>Easy of Writing Content:-</strong> I wanted to write my content using just <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, as i have grown comfortable writing in markdown. With using a static blog this was possible.</li>
-<li><strong>Hosting:-</strong> We can serve these static HTML pages practically from any place, be it <a href="https://github.com/">Github</a>, <a href="https://aws.amazon.com/s3/">Amazon S3</a>, <a href="https://www.dropbox.com/">Dropbox</a> or any other place which can serve static HTML pages. I have chosen Github just to save the cost.</li>
-<li><strong>Easy workflow:-</strong> The work flow is very simple when deploying with static blogs, just right you content in markdown, generate HTML, push your changes to github and that's it. Your content is not available online. You can even go crazy you cam automate the whole thing other than writing content.</li>
+<li>De Morgan’s Law (negation of conjunction)</li>
 </ul>
-<p>The above three are the main reason for choosing static blogs, but there could be many more valid reason for choosing static blogs. Most of the reason for me was personal in nature so you can also choose accordingly.</p>
-<h2 id="why-pelican">Why Pelican?<a class="headerlink" href="#why-pelican" title="Permanent link">¶</a></h2>
-<p>Once the approach to make this blog as static was finalized, the next big question came was which technology to choose, <a href="https://blog.getpelican.com/">Pelican </a> or <a href="https://jekyllrb.com/">Jekyll </a>. There as already many comparison already available among these, but the only reason for me to choose pelican was because it uses python and jinja. In some near future I want to fully customize my blog with the knowledge of these two.</p>
-<h2 id="why-github">Why Github?<a class="headerlink" href="#why-github" title="Permanent link">¶</a></h2>
-<p>The final decision to be taken before starting this blog was to finalize the hosting provider. We have already mentioned some popular choice are</p>
+<div class="math">$$ \neg(P \wedge Q) \equiv \neg P \vee \neg Q $$</div>
 <ul>
-<li><a href="https://github.com/">Github</a></li>
-<li><a href="https://aws.amazon.com/s3/">Amazon S3</a></li>
-<li><a href="https://www.dropbox.com/">Dropbox</a></li>
+<li>De Morgan’s Law (negation of alternative)</li>
 </ul>
-<p>I chose Github, for its near zero cost, it may cost you if you want to keep your repository private else it is completely free were as Amazon S3 would have required to shell out some money though less, with some extra benefits, but for the time being when I am just measuring the water it made sense to keep my cost down.</p>
-<p>Once all the above 3 moral questions were answered, setting up the blogs was easy and which will be documented in the future.</p>
-<h2 id="collated-blog-post">Collated Blog post.<a class="headerlink" href="#collated-blog-post" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html" title="How to set up Anaconda Python environment for Pelican Blog.">How to set up Anaconda Python environment for Pelican Blog.</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/helloworld-pelican-quickstart.html" title="Pelican HelloWorld using pelican-quickstart">Pelican HelloWorld using pelican-quickstart </a></li>
-<li><a href="http://archerimagine.com/articles/pelican/pelican-folder-structure.html" title="Pelican Folder Structure">Pelican Folder Structure </a></li>
-<li><a href="http://archerimagine.com/articles/pelican/pelican-commands-to-generate-first-pelican-blog-post.html" title="Pelican commands to generate the first blog.">Pelican commands to generate the first blog.</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/pelican-settings-files.html" title="Understanding the Pelican Settings files">Understanding the Pelican Settings files </a></li>
-<li><a href="http://archerimagine.com/articles/pelican/publishing-blog-github-pages.html" title="Publishing your blog to github pages">Publishing your blog to github pages</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/linking-domain-with-github-pages.html" title="Configuring Github pages with Custom Domain">Configuring Github pages with Custom Domain </a></li>
-<li><a href="http://archerimagine.com/articles/pelican/customizing-pelican-blog-with-plugin-and-themes.html" title="Customizing Pelican blog with the help of Plugin and themes">Customizing Pelican blog with the help of Plugin and themes</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/expressing-with-pelican-themes.html" title="Expressing the content with Pelican Themes">Expressing the content with Pelican Themes</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" title="Problem Faced when integrating with Elegant Themes">Problem Faced when integrating with Elegant Themes</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" title="Home Page feature for Elegant Theme">Home Page feature for Elegant Theme </a></li>
-<li><a href="http://archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" title="Integrating 3rd party services with Pelican Blog.">Integrating 3rd party services with Pelican Blog.</a></li>
-<li><a href="http://archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" title="Tips to improve work flow in pelican blog. ">Tips to improve work flow in pelican blog. </a></li>
-</ul>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html">Making a Static Blog with Pelican </a><ul>
-<li>This above blog explains why a static blog generator is good.</li>
-</ul>
-</li>
-<li><a href="http://arunrocks.com/moving-blogs-to-pelican/">Moving Blogs to Pelican </a><ul>
-<li>This blog has a terrific explanation for pelican vs jekyll.</li>
-</ul>
-</li>
-<li><a href="https://discuss.gohugo.io/t/hosting-amazon-s3-vs-github-gh-pages-vs/340">Amazon S3 Vs Github Pages</a><ul>
-<li>This explains the benefits of Amazon S3 over Github Pages, kindly check if you are affected because of this.</li>
-</ul>
-</li>
-</ul>
+<div class="math">$$ \neg(P \vee Q) \equiv \neg P \wedge \neg Q $$</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             
             <section>
 <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
@@ -165,7 +172,7 @@
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html#disqus_thread">
+                href="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -175,8 +182,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'archerimagine';
-        var disqus_identifier = 'http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html';
-    var disqus_url = 'http://archerimagine.com/articles/pelican/cost-effective-blogging-with-Pelican-and-Github.html';
+        var disqus_identifier = 'http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html';
+    var disqus_url = 'http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -198,7 +205,7 @@
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="next-article"><a href="http://archerimagine.com/articles/pelican/python-setup-for-pelican-blog.html" title="Next: How to setup Anaconda Python environment for Pelican Blog. - Using Conda.">How to setup Anaconda Python environment for Pelican Blog. <small>Using Conda.</small></a> »</li>
+                <li class="previous-article">« <a href="http://archerimagine.com/articles/c-programming/StudyNotes-Programming-in-C.html" title="Previous: Study Notes for Programming in C - Hello World">Study Notes for Programming in C <small>Hello World</small></a></li>
             </ul>
             </nav>
             </aside>
@@ -206,17 +213,23 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2017-04-25T23:20:03+05:30">Apr 25, 2017</time>
+            <time pubdate="pubdate" datetime="2019-02-02T19:25:57+05:30">Feb 2, 2019</time>
 
 <h4>Last Updated</h4>
-<time datetime="2017-05-12T00:24:48+05:30">May 12, 2017</time>
+<time datetime="2019-02-02T20:39:51+05:30">Feb 2, 2019</time>
 
             <h4>Category</h4>
             <a class="category-link" href="http://archerimagine.com/categories.html#pelican-ref">Pelican</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
+                <li><a href="http://archerimagine.com/tags.html#maths-ref">maths
+                    <span>1</span>
+</a></li>
                 <li><a href="http://archerimagine.com/tags.html#pelican-ref">pelican
                     <span>15</span>
+</a></li>
+                <li><a href="http://archerimagine.com/tags.html#render_math-ref">render_math
+                    <span>1</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>
