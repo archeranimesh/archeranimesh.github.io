@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-02T20:39:51+05:30</updated><entry><title></title><link href="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" rel="alternate"></link><published>2019-02-02T19:25:57+05:30</published><updated>2019-02-02T20:39:51+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-02:/articles/pelican/Render-Maths-pelican-blog.html</id><summary type="html">&lt;p&gt;This is a blog which will help in rendering math equation in pelican blog using the render_math plugin.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - Pelican</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/pelican.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-10T00:03:47+05:30</updated><entry><title>Render Maths Equation with Pelican Blog</title><link href="http://archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" rel="alternate"></link><published>2019-02-02T19:25:57+05:30</published><updated>2019-02-10T00:03:47+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-02:/articles/pelican/Render-Maths-pelican-blog.html</id><summary type="html">&lt;p&gt;This is a blog which will help in rendering math equation in pelican blog using the render_math plugin.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Eculid's Quote" src="http://archerimagine.com/images/discreteMaths/eulid.png" title="Things which are equal to the same things are also equal to one another."/&gt;&lt;/p&gt;
 &lt;h2 id="de-morgans-law"&gt;De Morgan's Law&lt;a class="headerlink" href="#de-morgans-law" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -10,6 +10,8 @@
 &lt;li&gt;De Morgan’s Law (negation of alternative)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="math"&gt;$$ \neg(P \vee Q) \equiv \neg P \wedge \neg Q $$&lt;/div&gt;
+&lt;p&gt;| Table   | Content |
+| Animesh | Bhadra  |&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
