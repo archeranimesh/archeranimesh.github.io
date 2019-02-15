@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-15T23:23:38+05:30</updated><entry><title>100Days of Code Log File 2nd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html" rel="alternate"></link><published>2019-02-15T22:42:30+05:30</published><updated>2019-02-15T23:23:38+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-15:/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html</id><summary type="html">&lt;p&gt;Hello World!, You are about the witness the second coming of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/100DaysOfCode/100DaysCode_Quotefancy.jpg" title="life always offers you a second chance. is called tomorrow, by Dylan Thomas"/&gt;&lt;/p&gt;
+&lt;p&gt;Hello World!, You are about the witness the beginning of an epic second coming of the 100-Day coding journey, A story that great sages
+will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
+unexpected epiphanies.&lt;/p&gt;
+&lt;p&gt;Some moments, I will be the smartest man alive. Others moments, I will be a stupid idiot. But each day, I will be a valiant warrior, fighting to develop and perfect the skills necessary to evolve into a true beast with these keys.&lt;/p&gt;
+&lt;p&gt;I have failed in my previous attempt for the challenge, which you can find &lt;a href="http://archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html" title="First attempt for 100Daysofcode"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are learning from the previous failure, here are the modification which was done to the challenge according to my handicap.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Selected the resource in advance, &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;Learn Python Track from Team TreeHouse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7"&gt;MIT 6.00SC Introduction to Computer Science and Programming &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Practice the 100Daysofcode for a month before committing fully.&lt;/li&gt;
+&lt;li&gt;Create a time table and sticking to it.&lt;/li&gt;
+&lt;li&gt;Studying at the same time everyday, brains craves for learning python in that hour of the day.&lt;/li&gt;
+&lt;li&gt;Missing few (~5) days is acceptable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="day-1-friday-15-february-2019"&gt;Day 1: Friday 15 February 2019&lt;a class="headerlink" href="#day-1-friday-15-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;hr/&gt;
+&lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="link"&gt;Link to Tweet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://quotefancy.com/quote/970132/Dylan-Thomas-Life-always-offers-you-a-second-chance-is-called-tomorrow"&gt;QuoteFancy | Image Source &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.100daysofcode.com/"&gt;100DaysOfCode Official Website &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;Learn Python Track from Team TreeHouse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7"&gt;MIT 6.00SC Introduction to Computer Science and Programming &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="#100DaysOfCode"></category><category term="#100DaysOfX"></category></entry></feed>
