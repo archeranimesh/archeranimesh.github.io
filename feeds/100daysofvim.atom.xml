@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfVim</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofvim.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-18T23:31:14+05:30</updated><entry><title>100Days of Vim Log File</title><link href="http://archerimagine.com/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html" rel="alternate"></link><published>2019-02-16T23:28:02+05:30</published><updated>2019-02-18T23:31:14+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-16:/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html</id><summary type="html">&lt;p&gt;Vim is really hard to learn, time and again I have failed to use it consistently. I understand the basics of vim and can get some work done with VIM. I am targeting to become efficient at this. Hopefully the 100DaysOfVim will help me to be consistent.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfVim</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofvim.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-19T23:34:32+05:30</updated><entry><title>100Days of Vim Log File</title><link href="http://archerimagine.com/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html" rel="alternate"></link><published>2019-02-16T23:28:02+05:30</published><updated>2019-02-19T23:34:32+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-16:/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html</id><summary type="html">&lt;p&gt;Vim is really hard to learn, time and again I have failed to use it consistently. I understand the basics of vim and can get some work done with VIM. I am targeting to become efficient at this. Hopefully the 100DaysOfVim will help me to be consistent.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Vim Help Screen " src="http://archerimagine.com/images/100DaysOfVim/vimHelp.png" title="Vim Help Screen"/&gt;&lt;/p&gt;
 &lt;p&gt;I am starting this new journey into the world of VIM, with a hope that this time the mistakes of my past attempts will be rectified. This journey's goal is pre-decided so that there is no deviation from the plan of learning VIM. &lt;/p&gt;
 &lt;p&gt;In the last attempt of learning VIM, I was doing the classic mistakes of learning vim as described by Mr. Bram Moolenaar in &lt;a href="https://www.youtube.com/watch?v=p6K4iIMlouI"&gt;this&lt;/a&gt; video, that is, &lt;strong&gt;Learn every feature the editor offers and use the most efficient command all the time.&lt;/strong&gt; &lt;/p&gt;
@@ -14,23 +14,49 @@
 &lt;li&gt;Read and understand the vim help system.&lt;/li&gt;
 &lt;li&gt;Integrate debugging with source code navigation in VIM.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="day-1-monday-18-february-2019"&gt;Day 1 - Monday 18 February 2019&lt;a class="headerlink" href="#day-1-monday-18-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="day-2-tuesday-19-february-2019"&gt;Day 2 | Tuesday 19 February 2019&lt;a class="headerlink" href="#day-2-tuesday-19-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="todays-progress"&gt;Today's Progress&lt;a class="headerlink" href="#todays-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Complete the &lt;code&gt;vimtutor&lt;/code&gt; exercise.&lt;/li&gt;
 &lt;li&gt;Studied the quick reference in vim help.&lt;/li&gt;
+&lt;li&gt;Saw 1 screen cast from &lt;a href="http://vimcasts.org/episodes/"&gt;VimCast | Episodes &lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Studied the &lt;strong&gt;Copying and Moving text.&lt;/strong&gt; section of vim help.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_&lt;/code&gt; behaves the same as &lt;code&gt;^&lt;/code&gt; without a count preceding it. When count is preceding it, this behaves as &lt;code&gt;j&lt;/code&gt;.&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://unix.stackexchange.com/questions/155926/what-does-the-underscore-motion-do-in-vim"&gt;What does the underscore motion do in vim?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;While learning about vim help file, I found that all the commands which are similar are generally kept together.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="link"&gt;Link To Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="day-1-monday-18-february-2019"&gt;Day 1 | Monday 18 February 2019&lt;a class="headerlink" href="#day-1-monday-18-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="todays-progress_1"&gt;Today's Progress&lt;a class="headerlink" href="#todays-progress_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Complete the &lt;code&gt;vimtutor&lt;/code&gt; exercise.&lt;/li&gt;
+&lt;li&gt;Studied the quick reference in vim help.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="thoughts_1"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Few commands which was very good.&lt;ul&gt;
 &lt;li&gt;Using &lt;code&gt;C&lt;/code&gt; to change the text from the cursor till end of line.&lt;/li&gt;
 &lt;li&gt;Using &lt;code&gt;D&lt;/code&gt; to delete the text from the cursor till end of line.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Few Insert Mode commands.&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Few Insert Mode commands.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;CTRL-T&lt;/code&gt; : insert one shiftwidth of indent in front of line.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;CTRL-D&lt;/code&gt; : deletes one shiftwidth of indent in front of line.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097560432850685954"&gt;Link to Tweet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;

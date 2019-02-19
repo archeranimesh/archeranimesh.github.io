@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfDiscreteMath</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofdiscretemath.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-18T23:26:13+05:30</updated><entry><title>100 Days of Discrete Maths.</title><link href="http://archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-02-18T23:26:13+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfDiscreteMath</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofdiscretemath.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-19T23:36:49+05:30</updated><entry><title>100 Days of Discrete Maths.</title><link href="http://archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-02-19T23:36:49+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/discreteMaths/100DaysDiscreteMaths.jpg" title="To the wise, life is a problem, to the fool, a solution."/&gt;&lt;/p&gt;
 &lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;
 &lt;p&gt;The plan is to follow the 3 lectures mentioned in the references and the Rosen book on Discrete math. &lt;/p&gt;
-&lt;h2 id="day-01-monday-18-february-2019"&gt;Day 01 | Monday 18 February 2019&lt;a class="headerlink" href="#day-01-monday-18-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="day-02-tuesday-19-february-2019"&gt;Day 02 | Tuesday 19 February 2019&lt;a class="headerlink" href="#day-02-tuesday-19-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Complete the First lecture of this YouTube play &lt;a href="https://www.youtube.com/watch?v=L3LMbpZIKhQ&amp;amp;list=PLB7540DEDD482705B&amp;amp;index=2&amp;amp;t=0s"&gt;list &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I have not taken any notes, but the lecture was mostly focused on methods of proof, propositions and connectives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="day-01-monday-18-february-2019"&gt;Day 01 | Monday 18 February 2019&lt;a class="headerlink" href="#day-01-monday-18-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_1"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Complete the First lecture of this YouTube play &lt;a href="https://www.youtube.com/watch?v=xlUFkMKSB3Y&amp;amp;list=PL0862D1A947252D20&amp;amp;index=2&amp;amp;t=0s"&gt;list &lt;/a&gt;. &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="thoughts_1"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This lecture covers these topics:-&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Logic&lt;/li&gt;
@@ -24,6 +33,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=LSm4P6ywxoA"&gt;Rachel's Discrete Math Course - Implications (Lecture 5)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=hICRgMz2LG8"&gt;Propositional logic | first order predicate logic| Propositional calculus | gate | net - part 5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097558663814893569"&gt;Link to Tweet&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
