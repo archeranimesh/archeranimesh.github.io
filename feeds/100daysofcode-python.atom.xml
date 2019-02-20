@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-19T23:38:07+05:30</updated><entry><title>100Days of Code Log File 2nd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html" rel="alternate"></link><published>2019-02-15T22:42:30+05:30</published><updated>2019-02-19T23:38:07+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-15:/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html</id><summary type="html">&lt;p&gt;Hello World!, You are about the witness the second coming of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-20T20:46:02+05:30</updated><entry><title>100Days of Code Log File 2nd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html" rel="alternate"></link><published>2019-02-15T22:42:30+05:30</published><updated>2019-02-20T20:46:02+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-15:/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html</id><summary type="html">&lt;p&gt;Hello World!, You are about the witness the second coming of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/100DaysOfCode/100DaysCode_Quotefancy.jpg" title="life always offers you a second chance. is called tomorrow, by Dylan Thomas"/&gt;&lt;/p&gt;
 &lt;p&gt;Hello World!, You are about the witness the beginning of an epic second coming of the 100-Day coding journey, A story that great sages
 will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
@@ -19,13 +19,38 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;li&gt;Missing few (~5) days is acceptable.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="day-1-tuesday-19-february-2019"&gt;Day 1: Tuesday 19 February 2019&lt;a class="headerlink" href="#day-1-tuesday-19-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;hr/&gt;
+&lt;h2 id="day-02-wednesday-20-february-2019"&gt;Day 02 | Wednesday 20 February 2019&lt;a class="headerlink" href="#day-02-wednesday-20-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Today I just watched the first lecture from MIT OCW's &lt;a href="https://www.youtube.com/watch?v=bX3jvD7XFPs&amp;amp;list=PLB2BE3D6CA77BB8F7&amp;amp;index=2&amp;amp;t=0s"&gt;MIT 6.00SC Introduction to Computer Science and Programming &lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is a great lecture by &lt;a href="https://people.csail.mit.edu/guttag/"&gt;John Guttag &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I am alternating between &lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;Learn Python Track from Team TreeHouse&lt;/a&gt; and &lt;a href="https://www.youtube.com/playlist?reload=9&amp;amp;list=PLB2BE3D6CA77BB8F7"&gt;MIT 6.00SC Introduction to Computer Science and Programming &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Lecture 1 of MIT 6.00SC Introduction to Computer Science and Programming taught me about:-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Declarative and Imperative Knowledge.&lt;/li&gt;
+&lt;li&gt;Algorithms&lt;/li&gt;
+&lt;li&gt;Fixed program and stored program computers&lt;/li&gt;
+&lt;li&gt;Programming Language&lt;ul&gt;
+&lt;li&gt;Syntax&lt;/li&gt;
+&lt;li&gt;Static Semantics&lt;/li&gt;
+&lt;li&gt;Semantics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Types of errors&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Compiled Vs Interpreted Language &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="link"&gt;Link To Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="day-01-tuesday-19-february-2019"&gt;Day 01 | Tuesday 19 February 2019&lt;a class="headerlink" href="#day-01-tuesday-19-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;hr/&gt;
+&lt;h3 id="days-progress_1"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I am learning Python from the learn python track of &lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;TreeHouse&lt;/a&gt;. I started this course, some days back, from now, will post regularly on behalf of #100DaysOfCode.&lt;/p&gt;
 &lt;p&gt;Today I have completed the Advanced Object Badge.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Advance Object TreeHouse Badge." src="http://archerimagine.com/images/100DaysOfCode/python.png" title="Advance Object TreeHouse Badge."/&gt;&lt;/p&gt;
-&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="thoughts_1"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Today I learned about:-&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;@property&lt;/code&gt; : This decorator is used to convert a class method into a class property.&lt;/li&gt;
@@ -34,7 +59,7 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;@classmethod&lt;/code&gt; : This is a decorator which takes a function as input works on it and returns another function as output.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="link"&gt;Link to Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097923646327345153"&gt;Link to Tweet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
