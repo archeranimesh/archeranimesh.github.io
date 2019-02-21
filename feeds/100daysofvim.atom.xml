@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfVim</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofvim.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-20T21:40:59+05:30</updated><entry><title>100Days of Vim Log File</title><link href="http://archerimagine.com/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html" rel="alternate"></link><published>2019-02-16T23:28:02+05:30</published><updated>2019-02-20T21:40:59+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-16:/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html</id><summary type="html">&lt;p&gt;Vim is really hard to learn, time and again I have failed to use it consistently. I understand the basics of vim and can get some work done with VIM. I am targeting to become efficient at this. Hopefully the 100DaysOfVim will help me to be consistent.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfVim</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofvim.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-21T22:35:27+05:30</updated><entry><title>100Days of Vim Log File</title><link href="http://archerimagine.com/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html" rel="alternate"></link><published>2019-02-16T23:28:02+05:30</published><updated>2019-02-21T22:35:27+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-16:/articles/100daysofvim/100Days-of-vim-log-file-V-2-0.html</id><summary type="html">&lt;p&gt;Vim is really hard to learn, time and again I have failed to use it consistently. I understand the basics of vim and can get some work done with VIM. I am targeting to become efficient at this. Hopefully the 100DaysOfVim will help me to be consistent.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Vim Help Screen " src="http://archerimagine.com/images/100DaysOfVim/vimHelp.png" title="Vim Help Screen"/&gt;&lt;/p&gt;
 &lt;p&gt;I am starting this new journey into the world of VIM, with a hope that this time the mistakes of my past attempts will be rectified. This journey's goal is pre-decided so that there is no deviation from the plan of learning VIM. &lt;/p&gt;
 &lt;p&gt;In the last attempt of learning VIM, I was doing the classic mistakes of learning vim as described by Mr. Bram Moolenaar in &lt;a href="https://www.youtube.com/watch?v=p6K4iIMlouI"&gt;this&lt;/a&gt; video, that is, &lt;strong&gt;Learn every feature the editor offers and use the most efficient command all the time.&lt;/strong&gt; &lt;/p&gt;
@@ -14,6 +14,39 @@
 &lt;li&gt;Read and understand the vim help system.&lt;/li&gt;
 &lt;li&gt;Integrate debugging with source code navigation in VIM.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-04-thursday-21-february-2019"&gt;Day 04 | Thursday 21 February 2019&lt;a class="headerlink" href="#day-04-thursday-21-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Complete the &lt;code&gt;vimtutor&lt;/code&gt; exercise.&lt;/li&gt;
+&lt;li&gt;Studied the quick reference in vim help.&lt;/li&gt;
+&lt;li&gt;Lecture on buffers from &lt;a href="https://www.udemy.com/vim-commands-cheat-sheet/"&gt;Udemy | Vim MasterClass | Jason Cannon &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Saw 1 screen cast from &lt;a href="http://vimcasts.org/episodes/working-with-windows/"&gt;VimCast | Episodes &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Learned about the various windows commands.&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CTRL +w s&lt;/code&gt; or :sp `: horizontal split&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL +w v&lt;/code&gt; &lt;code&gt;:vsp&lt;/code&gt;: vertical split&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:only&lt;/code&gt;: closes all window except the active one&lt;/li&gt;
+&lt;li&gt;Navigation is done by &lt;code&gt;CTRL + w w&lt;/code&gt;, &lt;code&gt;CTRL + w h&lt;/code&gt;, &lt;code&gt;CTRL + w j&lt;/code&gt;, &lt;code&gt;CTRL + w k&lt;/code&gt;, &lt;code&gt;CTRL + w l&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Resize windows&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CTRL + w +&lt;/code&gt;, &lt;code&gt;CTRL + w -&lt;/code&gt;, increase or decrease the size by 1 line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL + W _&lt;/code&gt;, &lt;code&gt;CTRL + w |&lt;/code&gt;, increase size of current window in height and width &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Moving window is done by &lt;code&gt;CTRL + w R&lt;/code&gt;, &lt;code&gt;CTRL + w H&lt;/code&gt;, &lt;code&gt;CTRL + w J&lt;/code&gt;, &lt;code&gt;CTRL + w K&lt;/code&gt;, &lt;code&gt;CTRL + w L&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;like &lt;code&gt;bufdo&lt;/code&gt; we have a command &lt;code&gt;windo&lt;/code&gt; which works only on opened window.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Studied the &lt;strong&gt;Complex Changes&lt;/strong&gt; from vim helps, did not understood much from this.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="link"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
 &lt;h2 id="day-03-wednesday-20-february-2019"&gt;Day 03 | Wednesday 20 February 2019&lt;a class="headerlink" href="#day-03-wednesday-20-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="todays-progress"&gt;Today's Progress&lt;a class="headerlink" href="#todays-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="Vim Help Screen for changing text " src="http://archerimagine.com/images/100DaysOfVim/vim_changingText.png" title="Vim Help Screen for changing text"/&gt;&lt;/p&gt;
@@ -22,7 +55,7 @@
 &lt;li&gt;Studied the quick reference in vim help.&lt;/li&gt;
 &lt;li&gt;Lecture on buffers from &lt;a href="https://www.udemy.com/vim-commands-cheat-sheet/"&gt;Udemy | Vim MasterClass | Jason Cannon &lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="thoughts_1"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Learned about these buffers commands.&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;:buffers&lt;/code&gt; or &lt;code&gt;:ls&lt;/code&gt;&lt;/li&gt;
@@ -49,10 +82,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="link"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1098270900154236928"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="thoughts_1"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;hr/&gt;
 &lt;h2 id="day-2-tuesday-19-february-2019"&gt;Day 2 | Tuesday 19 February 2019&lt;a class="headerlink" href="#day-2-tuesday-19-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="todays-progress_1"&gt;Today's Progress&lt;a class="headerlink" href="#todays-progress_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
@@ -74,6 +107,7 @@
 &lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097924386038915072"&gt;Link To Tweet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr/&gt;
 &lt;h2 id="day-1-monday-18-february-2019"&gt;Day 1 | Monday 18 February 2019&lt;a class="headerlink" href="#day-1-monday-18-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="todays-progress_2"&gt;Today's Progress&lt;a class="headerlink" href="#todays-progress_2" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
@@ -98,6 +132,7 @@
 &lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097560432850685954"&gt;Link to Tweet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr/&gt;
 &lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@peterxjang/how-to-learn-vim-a-four-week-plan-cd8b376a9b85"&gt;How To Learn Vim: A Four Week Plan &lt;/a&gt;&lt;/li&gt;
