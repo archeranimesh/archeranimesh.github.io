@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfDiscreteMath</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofdiscretemath.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-21T22:23:23+05:30</updated><entry><title>100 Days of Discrete Maths.</title><link href="http://archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-02-21T22:23:23+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfDiscreteMath</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofdiscretemath.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-02-22T22:30:14+05:30</updated><entry><title>100 Days of Discrete Maths.</title><link href="http://archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-02-22T22:30:14+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/discreteMaths/100DaysDiscreteMaths.jpg" title="To the wise, life is a problem, to the fool, a solution."/&gt;&lt;/p&gt;
 &lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;
 &lt;p&gt;The plan is to follow the 3 lectures mentioned in the references and the Rosen book on Discrete math. &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-05-friday-22-february-2019"&gt;Day 05 | Friday 22 February 2019&lt;a class="headerlink" href="#day-05-friday-22-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Today was a rest day for Discrete Maths.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2 id="day-04-thursday-21-february-2019"&gt;Day 04 | Thursday 21 February 2019&lt;a class="headerlink" href="#day-04-thursday-21-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
@@ -20,7 +23,7 @@
 &lt;p&gt;Today was focused on listening to the lecture, so have not taken detailed notes.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="link"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1098632243373924353"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
