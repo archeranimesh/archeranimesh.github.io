@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-03-21T22:52:00+05:30</updated><entry><title>100 Days of Discrete Maths.</title><link href="http://archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-03-21T22:52:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-06-05T22:47:44+05:30</updated><entry><title>100Days of Code Log File 3rd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html" rel="alternate"></link><published>2019-06-05T22:29:49+05:30</published><updated>2019-06-05T22:47:44+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-06-05:/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html</id><summary type="html">&lt;p&gt;This is 3rd attempt at completing the #100DaysOfCode. Hope to be consistent longer this time.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/100DaysOfCode/quote_fancy_01.jpg" title="If we fail, let us try again and again until we succeed, by Joseph Chamberlain"/&gt;&lt;/p&gt;
+&lt;p&gt;Hello World!, You are about the witness the beginning of an epic third coming of the 100-Day coding journey, A story that great sages
+will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
+unexpected epiphanies.&lt;/p&gt;
+&lt;p&gt;Some moments, I will be the smartest man alive. Others moments, I will be a stupid idiot. But each day, I will be a valiant warrior, fighting to develop and perfect the skills necessary to evolve into a true beast with these keys.&lt;/p&gt;
+&lt;p&gt;I have failed in my previous attempt for the challenge, which you can find &lt;a href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_2_0.html" title="Second attempt for 100Daysofcode"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are learning from the previous failure, here are the modification which was done to the challenge according to my handicap.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Selected the resource in advance, &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;Learn Python Track from Team TreeHouse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://frontendmasters.com/courses/python/"&gt;FrontEndMasters | Python Fundamentals | Nina Zakharenko &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Complete first 21 Days first.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="day-01"&gt;Day 01 |&lt;a class="headerlink" href="#day-01" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://quotefancy.com/quote/1733403/Joseph-Chamberlain-If-we-fail-let-us-try-again-and-again-until-we-succeed"&gt;QuoteFancy | Image Source &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.100daysofcode.com/"&gt;100DaysOfCode Official Website &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;Learn Python Track from Team TreeHouse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7"&gt;MIT 6.00SC Introduction to Computer Science and Programming &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nealschaffer.com/tweet-link-preview-image-twitter/"&gt;Create a Tweet With image Preview for Free &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://frontendmasters.com/courses/python/"&gt;FrontEndMasters | Python Fundamentals | Nina Zakharenko &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="#100DaysOfCode"></category><category term="#100DaysOfX"></category><category term="Python"></category></entry><entry><title>100 Days of Discrete Maths.</title><link href="http://archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-03-21T22:52:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/discreteMaths/100DaysDiscreteMaths.jpg" title="To the wise, life is a problem, to the fool, a solution."/&gt;&lt;/p&gt;
 &lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;
 &lt;p&gt;The plan is to follow the 3 lectures mentioned in the references and the Rosen book on Discrete math. &lt;/p&gt;
