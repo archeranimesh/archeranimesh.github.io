@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-06-05T22:47:44+05:30</updated><entry><title>100Days of Code Log File 3rd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html" rel="alternate"></link><published>2019-06-05T22:29:49+05:30</published><updated>2019-06-05T22:47:44+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-06-05:/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html</id><summary type="html">&lt;p&gt;This is 3rd attempt at completing the #100DaysOfCode. Hope to be consistent longer this time.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-06-07T22:46:08+05:30</updated><entry><title>100Days of Code Log File 3rd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html" rel="alternate"></link><published>2019-06-05T22:29:49+05:30</published><updated>2019-06-07T22:46:08+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-06-05:/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html</id><summary type="html">&lt;p&gt;This is 3rd attempt at completing the #100DaysOfCode. Hope to be consistent longer this time.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/100DaysOfCode/quote_fancy_01.jpg" title="If we fail, let us try again and again until we succeed, by Joseph Chamberlain"/&gt;&lt;/p&gt;
 &lt;p&gt;Hello World!, You are about the witness the beginning of an epic third coming of the 100-Day coding journey, A story that great sages
 will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
@@ -20,9 +20,34 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="day-01"&gt;Day 01 |&lt;a class="headerlink" href="#day-01" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="day-01-friday-june-72019"&gt;Day 01 |  Friday June 7,2019&lt;a class="headerlink" href="#day-01-friday-june-72019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Started the Python Fundamentals course by Nina Zakharenko.&lt;/li&gt;
+&lt;li&gt;Today's main focus was setting my these things.&lt;ul&gt;
+&lt;li&gt;Virtual environment.&lt;/li&gt;
+&lt;li&gt;VScode setup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Faced few issues, which &lt;a href="https://stackoverflow.com/questions/41687841/there-is-no-activate-when-i-am-trying-to-run-my-virtual-env"&gt;stackoverflow &lt;/a&gt; helped in solving&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="issues-and-solutions"&gt;Issues and Solutions&lt;a class="headerlink" href="#issues-and-solutions" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;There was no activate script when the virtual environment was created by using the command &lt;code&gt;python -m venv .env&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;On doing Google for the problem found that running the same command again solves the issue, so ran &lt;code&gt;python -m venv env&lt;/code&gt; again and viola the activate script appeared.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VScode was not recognizing the virtual environment created inside a sub folder in the project.&lt;ul&gt;
+&lt;li&gt;Deleted the pre-existing environment and created a new virtual environment at the project root.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Programming is just efficient Google technique.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/archeranimesh/pythonFundamentals"&gt;My Github Url&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;Link to tweet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://quotefancy.com/quote/1733403/Joseph-Chamberlain-If-we-fail-let-us-try-again-and-again-until-we-succeed"&gt;QuoteFancy | Image Source &lt;/a&gt;&lt;/li&gt;
