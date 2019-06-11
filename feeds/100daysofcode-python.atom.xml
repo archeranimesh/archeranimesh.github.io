@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-06-10T23:03:55+05:30</updated><entry><title>100Days of Code Log File 3rd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html" rel="alternate"></link><published>2019-06-05T22:29:49+05:30</published><updated>2019-06-10T23:03:55+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-06-05:/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html</id><summary type="html">&lt;p&gt;This is 3rd attempt at completing the #100DaysOfCode. Hope to be consistent longer this time.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfCode, python</title><link href="http://archerimagine.com/" rel="alternate"></link><link href="http://archerimagine.com/feeds/100daysofcode-python.atom.xml" rel="self"></link><id>http://archerimagine.com/</id><updated>2019-06-11T22:25:36+05:30</updated><entry><title>100Days of Code Log File 3rd Attempt</title><link href="http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html" rel="alternate"></link><published>2019-06-05T22:29:49+05:30</published><updated>2019-06-11T22:25:36+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:archerimagine.com,2019-06-05:/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html</id><summary type="html">&lt;p&gt;This is 3rd attempt at completing the #100DaysOfCode. Hope to be consistent longer this time.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Motivational Quotes" src="http://archerimagine.com/images/100DaysOfCode/quote_fancy_01.jpg" title="If we fail, let us try again and again until we succeed, by Joseph Chamberlain"/&gt;&lt;/p&gt;
 &lt;p&gt;Hello World!, You are about the witness the beginning of an epic third coming of the 100-Day coding journey, A story that great sages
 will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and 
@@ -21,9 +21,26 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;
 &lt;hr/&gt;
-&lt;h2 id="day-04-monday-june102019"&gt;Day 04 | Monday June10,2019&lt;a class="headerlink" href="#day-04-monday-june102019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="day-04-monday-june-102019"&gt;Day 04 | Monday June 10,2019&lt;a class="headerlink" href="#day-04-monday-june-102019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Functions" src="http://archerimagine.com/images/100DaysOfCode/functions_01.png" title="Different return type of functions."/&gt;&lt;/p&gt;
 &lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Started the &lt;code&gt;functions&lt;/code&gt; section of the lecture.&lt;/li&gt;
+&lt;li&gt;This lesson, teaches about different function type.&lt;ul&gt;
+&lt;li&gt;Function with no arguments and no return type&lt;/li&gt;
+&lt;li&gt;Function with no arguments and a return type&lt;/li&gt;
+&lt;li&gt;Function with 2 arguments and a return type&lt;/li&gt;
+&lt;li&gt;Function with multi-line function body.&lt;/li&gt;
+&lt;li&gt;return is always optional in function, it returns &lt;code&gt;&amp;lt;class 'NoneType'&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The function returning &lt;code&gt;&amp;lt;class 'NoneType'&amp;gt;&lt;/code&gt; was a eye opener.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/archeranimesh/pythonFundamentals"&gt;My Github Url&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;Link to tweet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr/&gt;
 &lt;h2 id="day-03-sunday-june-92019"&gt;Day 03 | Sunday June 9,2019&lt;a class="headerlink" href="#day-03-sunday-june-92019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="days-progress_1"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
@@ -42,7 +59,7 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Python Data types have lot of power inside them with very less ambiguity.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/archeranimesh/pythonFundamentals"&gt;My Github Url&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;Link to tweet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1137766857312616453"&gt;Link to tweet&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;h2 id="day-02-saturday-june-82019"&gt;Day 02 | Saturday June 8,2019&lt;a class="headerlink" href="#day-02-saturday-june-82019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
