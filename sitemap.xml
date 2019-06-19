@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/</loc>
-<lastmod>2019-06-18T22:41:12-00:00</lastmod>
+<lastmod>2019-06-19T22:50:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/archives.html</loc>
-<lastmod>2019-06-18T22:41:12-00:00</lastmod>
+<lastmod>2019-06-19T22:50:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/tags.html</loc>
-<lastmod>2019-06-18T22:41:12-00:00</lastmod>
+<lastmod>2019-06-19T22:50:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/categories.html</loc>
-<lastmod>2019-06-18T22:41:12-00:00</lastmod>
+<lastmod>2019-06-19T22:50:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_3_0.html</loc>
-<lastmod>2019-06-18T22:40:45+05:30</lastmod>
+<lastmod>2019-06-19T22:49:38+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -187,7 +187,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/author/animesh-bhadra.html</loc>
-<lastmod>2019-06-18T22:40:45+05:53</lastmod>
+<lastmod>2019-06-19T22:49:38+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
