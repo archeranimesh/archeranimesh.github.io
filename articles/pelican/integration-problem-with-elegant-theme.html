@@ -41,7 +41,6 @@
         <link rel="apple-touch-icon" sizes="120x120" href="http://archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
         <link rel="apple-touch-icon" sizes="144x144" href="http://archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
         <link rel="apple-touch-icon" sizes="152x152" href="http://archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
-        <link href="http://archerimagine.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Archer Imagine - Full Atom Feed" />
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -118,12 +117,12 @@
 <p>If you read the <a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#favicon-and-speed-dial-icon" title="Favicon Integration Elegant">documentation </a> on how to enable <code>favicon.ico</code> for Elegant themes, the process is pretty straight forward, just place the icons into this directory <code>content/theme/images</code>, and define <code>STATIC_PATHS</code> with <code>STATIC_PATHS = ['theme/images', 'images']</code>.</p>
 <p>If you follow the above process then most probably you will still not be getting the <code>favicon.ico</code>, the reason being there is one more configuration which needs to enabled in <code>pelicanconf.py</code> in addition to above two.</p>
 <div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'theme/images'</span><span class="p">,</span> <span class="s1">'images'</span><span class="p">]</span>
-<span class="n">USE_SHORTCUT_ICONS</span><span class="o">=</span><span class="bp">True</span>
+<span class="n">USE_SHORTCUT_ICONS</span><span class="o">=</span><span class="kc">True</span>
 </pre></div>
 <p>The reason for this is, the links for including <code>favicon</code> are generated in this template <code>themes/elegant/templates/_includes/favicon_links.html</code>, and the link generation is under a configuration named <code>USE_SHORTCUT_ICONS</code>, so until we make it <code>True</code> the links will not be generated.</p>
 <h2 id="issues-while-integrating-tipue-search">Issues while integrating Tipue Search<a class="headerlink" href="#issues-while-integrating-tipue-search" title="Permanent link">¶</a></h2>
 <h3 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">¶</a></h3>
-<p><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin ">Tipue Search plugin </a> integration is little different from other plugin.</p>
+<p><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin">Tipue Search plugin </a> integration is little different from other plugin.</p>
 <p>This plugin has an external dependency on <code>BeautifulSoup</code>, we have to install this python package first in our environment <code>pelican1</code></p>
 <div class="highlight"><pre><span></span>pip install beautifulsoup4
 </pre></div>
@@ -143,8 +142,8 @@
 <h3 id="tipue-search-return-undefined-url">Tipue search return undefined URL.<a class="headerlink" href="#tipue-search-return-undefined-url" title="Permanent link">¶</a></h3>
 <p>When we click on the Search result, we get the URL as undefined, this issues is still not solved, there is already a pull request pending on the Github.</p>
 <p>Kindly visit these two links for more details.
-<em> <a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url">Tipue search return undefined url </a>.
-</em> To solve the issue, we have to modify the plugin manually as mentioned in the <a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url">pull request</a>
+* <a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url">Tipue search return undefined url </a>.
+* To solve the issue, we have to modify the plugin manually as mentioned in the <a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url">pull request</a>
     - Change the file in <code>plugins/tipue_search/tipue_search.py</code>, line no 61 add this code <code>'loc': page_url</code></p>
 <h2 id="toc-integration-with-elegant">TOC Integration with Elegant<a class="headerlink" href="#toc-integration-with-elegant" title="Permanent link">¶</a></h2>
 <p>Elegant theme has a side bar with the Table of Content of the blog post displayed. This is also achieved based on a plugin named <code>extract_toc</code>.</p>
@@ -187,7 +186,7 @@
           <span class="p">(</span><span class="s1">'twitter'</span><span class="p">,</span> <span class="s1">'URL to your profile'</span><span class="p">)</span>
           <span class="p">)</span>
 </pre></div>
-<p>This explains that we have a tuple of tuple in the settings name <code>SOCIAL</code>, if you see each website name is in a particular format, as explained in this <a href="https://github.com/talha131/pelican-elegant/issues/98" title=" Missing icons for social links ">link</a>, this format is taken from <a href="http://fontawesome.io/icons/#brand" title="Font Awesome Brands">Font Awesome icon for social links</a>.</p>
+<p>This explains that we have a tuple of tuple in the settings name <code>SOCIAL</code>, if you see each website name is in a particular format, as explained in this <a href="https://github.com/talha131/pelican-elegant/issues/98" title="Missing icons for social links">link</a>, this format is taken from <a href="http://fontawesome.io/icons/#brand" title="Font Awesome Brands">Font Awesome icon for social links</a>.</p>
 <p>When naming the website name in <code>SOCIAL</code> configuration, keep in mind the way the website in named in Font Awesome and remove the <code>fa-</code> part of the name.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
@@ -200,10 +199,10 @@
 </ul>
 </li>
 <li><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features#favicon-and-speed-dial-icon" title="Favicon Integration Elegant">Favicon documentation </a></li>
-<li><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin ">Tipue Search plugin </a></li>
+<li><a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search." title="Tipue Search plugin">Tipue Search plugin </a></li>
 <li><a href="https://github.com/talha131/pelican-elegant/issues/147" title="Tipue search return undefined url">Tipue search return undefined url </a>.</li>
 <li><a href="https://github.com/getpelican/pelican-plugins/pull/873/files" title="Tipue search return undefined url">Tipue search return undefined url pull request</a></li>
-<li><a href="https://github.com/talha131/pelican-elegant/issues/98" title=" Missing icons for social links ">Missing icons for social links</a></li>
+<li><a href="https://github.com/talha131/pelican-elegant/issues/98" title="Missing icons for social links">Missing icons for social links</a></li>
 <li><a href="http://fontawesome.io/icons/#brand" title="Font Awesome Brands">Font Awesome icon for social links</a></li>
 </ul>
             
