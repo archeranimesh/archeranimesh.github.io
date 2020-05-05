@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/</loc>
-<lastmod>2020-05-04T01:26:39-00:00</lastmod>
+<lastmod>2020-05-06T00:48:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/archives.html</loc>
-<lastmod>2020-05-04T01:26:39-00:00</lastmod>
+<lastmod>2020-05-06T00:48:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/tags.html</loc>
-<lastmod>2020-05-04T01:26:39-00:00</lastmod>
+<lastmod>2020-05-06T00:48:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://archerimagine.com/categories.html</loc>
-<lastmod>2020-05-04T01:26:39-00:00</lastmod>
+<lastmod>2020-05-06T00:48:12-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://archerimagine.com/articles/100daysofcode-python/100Days-of-code-log-file_V_4_0.html</loc>
+<lastmod>2020-05-06T00:42:30+05:30</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -194,7 +201,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://archerimagine.com/author/animesh-bhadra.html</loc>
-<lastmod>2020-01-02T23:18:09+05:53</lastmod>
+<lastmod>2020-05-06T00:42:30+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
