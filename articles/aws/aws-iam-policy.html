@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="google-site-verification" content="6B1Foj8HxdrASteMuBQX7Hyu6PCLUQCX_u4USDQ9xi8" />        <meta name="msvalidate.01" content="7186CB4D245BAA0092329C7B5FD2C5CD" />        <meta name="author" content="Animesh Bhadra" />
+
+        <meta name="twitter:creator" content="@animeshkbhadra">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image">
+
+<meta name="keywords" content="aws, cloud, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, Explicit allow, explicit deny, Administrator Access, Power User Access, Read Only Access, Visual Policy editor, effect, action, resource." />
+
+<meta property="og:title" content="AWS Made Easy | IAM Policy  - The access type. "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" />
+<meta property="og:description" content="When we want to give access to various resources to AWS, how do we do it, how do we define the various ways a user can get access. These are parameters are defined in a JSON document called IAM Policy. We will learn about this in this blog." />
+<meta property="og:site_name" content="Archer Imagine" />
+<meta property="og:article:author" content="Animesh Bhadra" />
+<meta property="og:article:published_time" content="2021-03-03T10:31:40+05:30" />
+<meta property="og:article:modified_time" content="2021-03-05T20:31:52+05:30" />
+<meta name="twitter:title" content="AWS Made Easy | IAM Policy  - The access type. ">
+<meta name="twitter:description" content="When we want to give access to various resources to AWS, how do we do it, how do we define the various ways a user can get access. These are parameters are defined in a JSON document called IAM Policy. We will learn about this in this blog.">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/02-IAM-Policy.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/02-IAM-Policy.png" >
+
+        <title>AWS Made Easy | IAM Policy  - The access type.  · Archer Imagine
+</title>
+        <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.archerimagine.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.archerimagine.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.archerimagine.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.archerimagine.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-97386090-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://www.archerimagine.com/"><span class=site-name>Archer Imagine</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://www.archerimagine.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://www.archerimagine.com/categories">Categories</a></li>
+                                <li ><a href="https://www.archerimagine.com/tags">Tags</a></li>
+                                <li ><a href="https://www.archerimagine.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://www.archerimagine.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html">
+                AWS Made Easy | IAM Policy
+                <small class="subtitle">
+                    The access type.
+                </small>
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#iam-policy">IAM Policy</a><ul>
+<li><a href="#iam-policy-document">IAM Policy Document</a></li>
+<li><a href="#explicit-allow-explicit-deny">Explicit Allow &amp; Explicit deny</a></li>
+</ul>
+</li>
+<li><a href="#iam-policy-templates">IAM Policy Templates</a><ul>
+<li><a href="#pre-built-policy">Pre-Built Policy</a></li>
+<li><a href="#administrator-access">Administrator Access</a></li>
+<li><a href="#power-user-access">Power User Access</a></li>
+<li><a href="#read-only-access">Read-Only Access</a></li>
+<li><a href="#custom-policy">Custom Policy</a></li>
+</ul>
+</li>
+<li><a href="#custom-iam-policy-generation">Custom IAM Policy Generation</a><ul>
+<li><a href="#visual-editor">Visual Editor</a></li>
+<li><a href="#json-editor">JSON Editor</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p><img alt="AWS Made Easy | IAM Policy " src="https://www.archerimagine.com/images/aws/IAM/02-IAM-Policy.png" title="AWS Made Easy | IAM Policy"/></p>
+<h2 id="iam-policy">IAM Policy<a class="headerlink" href="#iam-policy" title="Permanent link">¶</a></h2>
+<p>A document which provides the details of the permission granted to access any AWS resources is called an <strong>IAM Policy.</strong> The default policy applied to all AWS users is <strong>non explicit deny</strong>. </p>
+<p>The IAM Policy takes effect as soon it is attached to a user or group, there is no delay in its application. 
+The User &amp; Groups can have more than 1 policy attached at any given time. 
+Roles are utilized because we cannot attach policy directly to AWS resources.</p>
+<h3 id="iam-policy-document">IAM Policy Document<a class="headerlink" href="#iam-policy-document" title="Permanent link">¶</a></h3>
+<p>How does an IAM Policy look like.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">"Version"</span><span class="p">:</span> <span class="s2">"2012-10-17"</span><span class="p">,</span>
+    <span class="nt">"Statement"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"*"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The above is an example of an IAM Policy</p>
+<p>If we observe closely, these are the various important points to note about the IAM Policy.</p>
+<ul>
+<li>Statement<ul>
+<li>Each IAM policy is composed of <strong>statements</strong>. Policy can have one or more statements. In the above example, there is only 1 statement, composed of</li>
+<li>Effect<ul>
+<li>It tells if the impact is allowed or deny. It takes these 2 values. In the above example, it is <strong>Allow</strong> for all.</li>
+</ul>
+</li>
+<li>Action<ul>
+<li>What type of action is allowed or denied. We can drill it down to single API also, which we will see later. In the above example, it is allowing all actions.</li>
+</ul>
+</li>
+<li>Resource<ul>
+<li>Which resource are being accessed using the policy. Like in case of S3, it can mention the resource is a S3 bucket, not the full S3. In the above example, all the resources are being granted access.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="explicit-allow-explicit-deny">Explicit Allow &amp; Explicit deny<a class="headerlink" href="#explicit-allow-explicit-deny" title="Permanent link">¶</a></h3>
+<p>When granting access explicitly we have 2 categories of IAM Policy</p>
+<ul>
+<li>Explicit Allow</li>
+<li>Explicit Deny</li>
+</ul>
+<p>When a user has both explicit allow and explicit deny, then the explicit deny always take precedence. In all cases just remember deny is the best way.</p>
+<ul>
+<li>Example of explicit allow</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">"Version"</span><span class="p">:</span> <span class="s2">"2012-10-17"</span><span class="p">,</span>
+    <span class="nt">"Statement"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"*"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Example of explicit deny</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">"Version"</span><span class="p">:</span> <span class="s2">"2012-10-17"</span><span class="p">,</span>
+    <span class="nt">"Statement"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Deny"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"*"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="iam-policy-templates">IAM Policy Templates<a class="headerlink" href="#iam-policy-templates" title="Permanent link">¶</a></h2>
+<p>We can have an IAM policy in two ways.</p>
+<ul>
+<li>Pre-Built Policy</li>
+<li>Custom Policy</li>
+</ul>
+<h3 id="pre-built-policy">Pre-Built Policy<a class="headerlink" href="#pre-built-policy" title="Permanent link">¶</a></h3>
+<ul>
+<li>These are the policies provided by AWS to all the users. We can just pick and use which ever we like.</li>
+<li>These policies are identified with an Amazon logo just next to them.
+<img alt="AWS Made Easy | AWS managed IAM Policy " src="https://www.archerimagine.com/images/aws/IAM/02-aws-managed-policy.png" title="AWS Made Easy | AWS managed IAM Policy"/><ul>
+<li>Most commonly used pre-build polices are  <ul>
+<li>Administrator Access</li>
+<li>Power User Access</li>
+<li>Read-Only Access</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="administrator-access">Administrator Access<a class="headerlink" href="#administrator-access" title="Permanent link">¶</a></h3>
+<p>Administrator Access: Full Access to all AWS resources.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">"Version"</span><span class="p">:</span> <span class="s2">"2012-10-17"</span><span class="p">,</span>
+    <span class="nt">"Statement"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"*"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="power-user-access">Power User Access<a class="headerlink" href="#power-user-access" title="Permanent link">¶</a></h3>
+<p>Admin Access, except it does not allow user-group management. </p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">"Version"</span><span class="p">:</span> <span class="s2">"2012-10-17"</span><span class="p">,</span>
+    <span class="nt">"Statement"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"NotAction"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"iam:*"</span><span class="p">,</span>
+                <span class="s2">"organizations:*"</span><span class="p">,</span>
+                <span class="s2">"account:*"</span>
+            <span class="p">],</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"*"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"iam:CreateServiceLinkedRole"</span><span class="p">,</span>
+                <span class="s2">"iam:DeleteServiceLinkedRole"</span><span class="p">,</span>
+                <span class="s2">"iam:ListRoles"</span><span class="p">,</span>
+                <span class="s2">"organizations:DescribeOrganization"</span><span class="p">,</span>
+                <span class="s2">"account:ListRegions"</span>
+            <span class="p">],</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"*"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="read-only-access">Read-Only Access<a class="headerlink" href="#read-only-access" title="Permanent link">¶</a></h3>
+<p>Only View AWS resources. This policy is very big, please search for it in AWS.
+    - The AWS managed policies cannot be edited, they are read only.</p>
+<h3 id="custom-policy">Custom Policy<a class="headerlink" href="#custom-policy" title="Permanent link">¶</a></h3>
+<ul>
+<li>Some time the requirements of a policy cannot be fulfilled from an AWS managed policy. We have to use a custom policy in those cases. </li>
+<li>We can import the pre-built policy into our own, and then modify them.</li>
+</ul>
+<h2 id="custom-iam-policy-generation">Custom IAM Policy Generation<a class="headerlink" href="#custom-iam-policy-generation" title="Permanent link">¶</a></h2>
+<p>In addition to AWS provided policy, user can also create custom policy. We have 2 methods to create custom policy.</p>
+<ul>
+<li>Visual Editor</li>
+<li>JSON Editor</li>
+</ul>
+<h3 id="visual-editor">Visual Editor<a class="headerlink" href="#visual-editor" title="Permanent link">¶</a></h3>
+<p>The are 4 selections, we have to do for creating a policy, as shown below.</p>
+<p><img alt="AWS Made Easy | AWS create IAM Policy " src="https://www.archerimagine.com/images/aws/IAM/02-create-policy.png" title="AWS Made Easy | AWS create IAM Policy"/></p>
+<ul>
+<li>Service<ul>
+<li>Choose a service like, IAM, S3, EC2 on which the policy is applicable.</li>
+</ul>
+</li>
+<li>Actions<ul>
+<li>Based on the service selected, we can choose the Actions, which can be associated with it.</li>
+<li>Primarily the actions are<ul>
+<li>List</li>
+<li>Read</li>
+<li>Tagging</li>
+<li>Write</li>
+</ul>
+</li>
+<li>Certain service have certain extra Actions associated with itself.</li>
+</ul>
+</li>
+<li>Resources<ul>
+<li>We can restrict the Actions allowed on Services selected to specific resources. </li>
+<li>We may not have to provide the full access.</li>
+<li>The access can be restricted to even a particular ARN.</li>
+</ul>
+</li>
+<li>Request Conditions<ul>
+<li>The policy can also specify if the <ul>
+<li>MFA is required for the access</li>
+<li>Only a particular public IP should be </li>
+</ul>
+</li>
+<li>We also restrict using the time or the day and various other parameters.</li>
+<li>All the conditions if selected is <strong>AND</strong>ed</li>
+</ul>
+</li>
+</ul>
+<p>We can also take a easy way out, by <strong>"Import Managed Policy"</strong> and then modifying it to our need.</p>
+<p>After selecting the above information we are only left with providing
+* Tags 
+* Review</p>
+<h3 id="json-editor">JSON Editor<a class="headerlink" href="#json-editor" title="Permanent link">¶</a></h3>
+<p>We can use JSON editor if we understand the JSON syntax, and the format in which AWS wants the KEY/Value pairs. We can also import an existing policy and then edit the JSON.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>To summarize, IAM policy is a document representing the permission encapsulated inside for a USER or a Role. </p>
+<p>The default policy on IAM is non explicit deny, but though IAM we can give either an explicit deny or an explicit allow. The explicit deny always takes precedence over any explicit allow.</p>
+<p>IAM policy are categorized into either managed by AWS, or user created. There are many AWS managed policy and the most useful once are Administrator policy, Power user policy and Read Only Policy.</p>
+<p>The IAM policy is a JSON statement, and having these 3 statement at the minimum
+* Effect
+* Action
+* Resource</p>
+<p>IAM policy can be created by using the custom visual editor or the IAM JSON editor. Generally for new users the visual editor is beneficial once the user becomes comfortable, we can change to JSON editor.</p>
+<p>Multiple policy can be applied to Groups and Users. Roles are used for AWS resources.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ul>
+<li>Photo by <a href="https://unsplash.com/@alesnesetril">Ales Nesetril </a> on <a href="https://unsplash.com/s/photos/technology">Unsplash</a></li>
+<li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-visual-editor">Creating IAM policies (console)</a></li>
+</ul>
+
+
+             
+
+
+<div class="applause_button">
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-iam-policy.html> </applause-button>
+</div>
+
+ 
+                <p id="post-share-links">
+    Spread the word....
+      <a href="https://twitter.com/intent/tweet?text=AWS%20Made%20Easy%20%7C%20IAM%20Policy%20The%20access%20type.&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=AWS%20Made%20Easy%20%7C%20IAM%20Policy%20The%20access%20type.&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-iam-policy.html"
+                   href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'archerimagine';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-iam-policy.html';
+    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-iam-policy.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small>The Cloud Entry</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small>Grant access</small></a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="Previous: AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small class="subtitle">Grant access</small></a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-03-03T10:31:40+05:30">Wed 03 March 2021</time>
+<h4>Last Updated</h4>
+<time datetime="2021-03-05T20:31:52+05:30">Mar 5, 2021</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://www.archerimagine.com/tags#aws-ref">aws
+                    <span class="superscript">3</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
+                    <span class="superscript">3</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/archeranimesh" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Facebook" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1877f2"/><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.reddit.com/user/archerimagine/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Reddit" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+    </a>
+    <a href="https://twitter.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+</div>
+            
+
+
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Email Newsletter</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Archer Imagine</span> - Anyone can do my job, but no one can be me. Harvey
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://www.archerimagine.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
