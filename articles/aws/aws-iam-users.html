@@ -16,21 +16,21 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image">
 
-<meta name="keywords" content="aws, cloud, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, root vs admin IAM user, principle of least privilege, root user best practice." />
+<meta name="keywords" content="aws, cloud, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, AWS ARN, IAM User Password policy, IAM user access." />
 
-<meta property="og:title" content="AWS Made Easy | IAM Introduction  - Grant access "/>
-<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" />
-<meta property="og:description" content="In this blog let us understand the basics of IAM, Identity and access Management. This is service which is used to control access to all the resource in AWS. The key component of IAM are User, Groups, Policy, Roles, API keys." />
+<meta property="og:title" content="AWS Made Easy | IAM Users  - Important actor "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-iam-users.html" />
+<meta property="og:description" content="We have learned about IAM policy and its basics. We will apply those to a specific user here. We will also learn the various way s IAM users can get access to the AWS resources and also how can an IAM user rotate password." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2021-02-17T00:25:36+05:30" />
-<meta property="og:article:modified_time" content="2021-03-02T10:13:09+05:30" />
-<meta name="twitter:title" content="AWS Made Easy | IAM Introduction  - Grant access ">
-<meta name="twitter:description" content="In this blog let us understand the basics of IAM, Identity and access Management. This is service which is used to control access to all the resource in AWS. The key component of IAM are User, Groups, Policy, Roles, API keys.">
-<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" />
-<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" >
+<meta property="og:article:published_time" content="2021-03-06T23:26:46+05:30" />
+<meta property="og:article:modified_time" content="2021-03-11T18:32:58+05:30" />
+<meta name="twitter:title" content="AWS Made Easy | IAM Users  - Important actor ">
+<meta name="twitter:description" content="We have learned about IAM policy and its basics. We will apply those to a specific user here. We will also learn the various way s IAM users can get access to the AWS resources and also how can an IAM user rotate password.">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/03-IAM-Users.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/03-IAM-Users.png" >
 
-        <title>AWS Made Easy | IAM Introduction  - Grant access  · Archer Imagine
+        <title>AWS Made Easy | IAM Users  - Important actor  · Archer Imagine
 </title>
         <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -89,10 +89,10 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html">
-                AWS Made Easy | IAM Introduction
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html">
+                AWS Made Easy | IAM Users
                 <small class="subtitle">
-                    Grant access
+                    Important actor
                 </small>
             </a>
         </h1>
@@ -105,14 +105,25 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#iam-introduction">IAM Introduction</a><ul>
-<li><a href="#iam-components">IAM Components</a></li>
-<li><a href="#iam-property">IAM property</a></li>
+<li><a href="#iam-users">IAM Users</a><ul>
+<li><a href="#iam-users-user-permission">IAM Users | User Permission</a></li>
+<li><a href="#iam-users-groups">IAM Users | Groups</a></li>
+<li><a href="#iam-users-arn">IAM Users | ARN</a></li>
 </ul>
 </li>
-<li><a href="#admin-vs-root-user">Admin Vs root User</a><ul>
-<li><a href="#root-user">root user</a></li>
-<li><a href="#admin-user">Admin user</a></li>
+<li><a href="#iam-users-create-a-new-user">IAM Users | Create a new user.</a><ul>
+<li><a href="#iam-users-creation-step-1-add-user">IAM Users | Creation | Step 1 | Add user</a></li>
+<li><a href="#iam-users-creation-step-2-set-permissions">IAM Users | Creation | Step 2 | Set Permissions</a></li>
+<li><a href="#iam-users-creation-step-3-add-tags">IAM Users | Creation | Step 3 | Add Tags</a></li>
+<li><a href="#iam-users-creation-step-4-review">IAM Users | Creation | Step 4 | Review</a></li>
+<li><a href="#iam-users-creation-step-5-success">IAM Users | Creation | Step 5 | Success</a></li>
+</ul>
+</li>
+<li><a href="#iam-user-properties">IAM User Properties</a><ul>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#groups-tags">Groups &amp; Tags</a></li>
+<li><a href="#access-advisor">Access Advisor</a></li>
+<li><a href="#security-credentials">Security Credentials</a></li>
 </ul>
 </li>
 <li><a href="#conclusion">Conclusion</a></li>
@@ -124,57 +135,176 @@
     <div class="span8 article-content">
             
             
-<p><img alt="AWS Made Easy | IAM Introduction " src="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" title="AWS Made Easy | IAM Introduction"/></p>
-<h2 id="iam-introduction">IAM Introduction<a class="headerlink" href="#iam-introduction" title="Permanent link">¶</a></h2>
-<p>IAM provides the interface to join the great world of AWS. Its major goal is to provide both human and computer, who are the consumers of AWS services a way to access them.</p>
-<h3 id="iam-components">IAM Components<a class="headerlink" href="#iam-components" title="Permanent link">¶</a></h3>
-<p>IAM service have five(5) components:- </p>
+<p><img alt="AWS Made Easy | IAM Users " src="https://www.archerimagine.com/images/aws/IAM/03-IAM-Users.png" title="AWS Made Easy | IAM Users"/></p>
+<h2 id="iam-users">IAM Users<a class="headerlink" href="#iam-users" title="Permanent link">¶</a></h2>
+<p>IAM users are an important AWS resources. This is the identity given to a physical user or application when he logs into AWS.</p>
+<p>AWS identifies an IAM user with these identifiers.</p>
 <ul>
-<li>User - The user of AWS resource, can be a person or a machine  </li>
-<li>Groups - The above user can be grouped together  </li>
-<li>Policy - It defines the permission of the IAM identity.  </li>
-<li>Roles - A roles are just a policy, but not associated with the Users directly.  </li>
-<li>API Keys - The keys used to programmatically accessing the AWS console.  </li>
+<li>Friendly user name: We provide an identifiable user name.</li>
+<li>ARN: An amazon resource name (ARN), </li>
+<li>Access ID: A unique identifier which is returned when working with SDKs or CLIs.</li>
 </ul>
-<h3 id="iam-property">IAM property<a class="headerlink" href="#iam-property" title="Permanent link">¶</a></h3>
-<p>AWS works on two very important principles.</p>
+<h3 id="iam-users-user-permission">IAM Users | User Permission<a class="headerlink" href="#iam-users-user-permission" title="Permanent link">¶</a></h3>
+<p>The default IAM User permission is <strong>non-explicit deny</strong> for all AWS services. To provide the user access we can be provided explicit permission in one of these ways.</p>
 <ul>
-<li>Principle of least privilege.  <ul>
-<li>Any user, group must be granted minimum permission to complete the activity.  </li>
+<li>Adding a user to a group.</li>
+<li>Copying permission from another user.</li>
+<li>Attaching a policy directly.</li>
+</ul>
+<h3 id="iam-users-groups">IAM Users | Groups<a class="headerlink" href="#iam-users-groups" title="Permanent link">¶</a></h3>
+<p>In an organization, it makes sense to group each department into a group and the assign users to these groups.</p>
+<h3 id="iam-users-arn">IAM Users | ARN<a class="headerlink" href="#iam-users-arn" title="Permanent link">¶</a></h3>
+<p>ARN (Amazon resource name), is specified in this format.</p>
+<div class="highlight"><pre><span></span><code><span class="err">arn:aws:iam:&lt;region&gt;:&lt;account_id&gt;:user/admin</span>
+</code></pre></div>
+<p>the IAM user ARN is like this</p>
+<div class="highlight"><pre><span></span><code><span class="err">arn:aws:iam::&lt;account_id&gt;:user/admin</span>
+</code></pre></div>
+<ul>
+<li>The <code>&lt;region&gt;</code> is missing in a IAM user ARN, as IAM is a global service.</li>
+<li>The <code>user/admin</code> defines the actual resource.</li>
+</ul>
+<h2 id="iam-users-create-a-new-user">IAM Users | Create a new user.<a class="headerlink" href="#iam-users-create-a-new-user" title="Permanent link">¶</a></h2>
+<p>IAM user creation is a 5 step process.</p>
+<p><img alt="AWS Made Easy | IAM Users creation steps" src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps.png" title="AWS Made Easy | IAM Users creation steps"/></p>
+<h3 id="iam-users-creation-step-1-add-user">IAM Users | Creation | Step 1 | Add user<a class="headerlink" href="#iam-users-creation-step-1-add-user" title="Permanent link">¶</a></h3>
+<p>The first step in the IAM User creation process is: Add user.</p>
+<p><img alt="AWS Made Easy | IAM Users creation steps, add user" src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-01-add-user.png" title="AWS Made Easy | IAM Users creation steps, add user"/></p>
+<p>We have to fill a few of the fields. Lets understand these fields.</p>
+<ul>
+<li>
+<p>Set user details </p>
+<ul>
+<li>We should provide the user name for the IAM user, mostly a friendly name.</li>
+<li>We can add multiple user in this step.</li>
 </ul>
 </li>
-<li>Non explicit deny rule.  <ul>
-<li>We are new user have no explicit allow rule for a resource, AWS assumes it to be access denied.  </li>
-<li>Only an explicit allow can override a non explicit deny rule.  </li>
+<li>
+<p>Select AWS access type: There are two ways for the user to access AWS resources</p>
+<ul>
+<li>Programmatic Access : This is to generate the access key ID and secret access key for AWS CLIs, SDKs and other development tools.</li>
+<li>AWS management console access : Creates a user who can log into the AWS console using a password.<ul>
+<li><img alt="AWS Made Easy | IAM Users creation steps, programmatic access" src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-02-console-access.png" title="AWS Made Easy | IAM Users creation steps, programmatic access"/></li>
+</ul>
+</li>
+<li>We can mix and match the programmatic access and also management console access.</li>
 </ul>
 </li>
 </ul>
-<h2 id="admin-vs-root-user">Admin Vs root User<a class="headerlink" href="#admin-vs-root-user" title="Permanent link">¶</a></h2>
-<h3 id="root-user">root user<a class="headerlink" href="#root-user" title="Permanent link">¶</a></h3>
-<p>This is the very first user which is created when we sign-up for AWS using our emailID. This user has god like access and is not under the control of IAM.</p>
-<p>This login must never be used for daily activities within AWS.</p>
-<p>These 5 steps should be done as soon as we login to AWS root account.</p>
-<ol>
-<li>Delete the root access keys.</li>
-<li>Enable MFA</li>
-<li>Create user</li>
-<li>Create groups and assign user to groups</li>
-<li>Apply an IAM password policy</li>
-</ol>
-<h3 id="admin-user">Admin user<a class="headerlink" href="#admin-user" title="Permanent link">¶</a></h3>
-<p>We can create a copy of the root user with complete admin access. This is the <em>Admin</em> user. This is user comes under the purview of IAM and should be used as a daily driver in AWS.</p>
+<h3 id="iam-users-creation-step-2-set-permissions">IAM Users | Creation | Step 2 | Set Permissions<a class="headerlink" href="#iam-users-creation-step-2-set-permissions" title="Permanent link">¶</a></h3>
+<p>The next step in user creation is to set permissions.</p>
+<p><img alt="AWS Made Easy | IAM Users creation steps, set permissions " src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-03-set-permissions.png" title="AWS Made Easy | IAM Users creation steps, set permissions"/></p>
+<p>There are 3 ways to add permissions to a user.  </p>
+<ul>
+<li>Add user to a group.<ul>
+<li>Add the new user to a group based on the job function.</li>
+</ul>
+</li>
+<li>Copy permission from existing users.<ul>
+<li>If we have existing user, we can copy policy for that user.</li>
+</ul>
+</li>
+<li>Attach existing policies directly.<ul>
+<li>We can singularly attach a multiple policy to a user directly, both AWS managed and customer managed. </li>
+</ul>
+</li>
+</ul>
+<p>The most efficient way to add permission to a group of user is to add the user to a group.</p>
+<h3 id="iam-users-creation-step-3-add-tags">IAM Users | Creation | Step 3 | Add Tags<a class="headerlink" href="#iam-users-creation-step-3-add-tags" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Users creation steps, add tags " src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-04-add-tags.png" title="AWS Made Easy | IAM Users creation steps, add tags"/></p>
+<p>Tags are an important component in all service creation. We can assign a key/value pair to manage user efficiently.</p>
+<h3 id="iam-users-creation-step-4-review">IAM Users | Creation | Step 4 | Review<a class="headerlink" href="#iam-users-creation-step-4-review" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Users creation steps, review " src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-05-review.png" title="AWS Made Easy | IAM Users creation steps, review"/></p>
+<p>The penultimate steps of user creation is to review the configuration we have provided. As show in the screen shot above, it displays all the configuration selected till now based on which the user will be created.</p>
+<h3 id="iam-users-creation-step-5-success">IAM Users | Creation | Step 5 | Success<a class="headerlink" href="#iam-users-creation-step-5-success" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Users creation steps, success " src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-06-success.png" title="AWS Made Easy | IAM Users creation steps, success"/></p>
+<p>In the last step of user creation it has given these options.</p>
+<ul>
+<li>Download csv<ul>
+<li><img alt="AWS Made Easy | IAM Users creation steps, download csv  " src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-07-download-csv.png" title="AWS Made Easy | IAM Users creation steps, download csv"/></li>
+<li>This CSV gives these details<ul>
+<li>User Name</li>
+<li>Password</li>
+<li>Access Key ID</li>
+<li>Secret access key<ul>
+<li>These two are provided when we have the programmatic access enabled.</li>
+</ul>
+</li>
+<li>Console login link</li>
+</ul>
+</li>
+<li>This is the only time we get the Secret access key along with the access key ID, there is no way to recreate the same secret access key again.</li>
+</ul>
+</li>
+<li>We also got the some of the above information displayed accordingly the way the user was created.</li>
+</ul>
+<h2 id="iam-user-properties">IAM User Properties<a class="headerlink" href="#iam-user-properties" title="Permanent link">¶</a></h2>
+<p>Lets see a few of the properties displayed for the user in the AWS IAM dashboard.</p>
+<p><img alt="AWS Made Easy | IAM Users summary  " src="https://www.archerimagine.com/images/aws/IAM/iam-user-summary-01.png" title="AWS Made Easy | IAM Users summary"/></p>
+<p>The above screen shot shows that the IAM user summary / property can be grouped into</p>
+<ul>
+<li>Permissions</li>
+<li>Groups</li>
+<li>Tags</li>
+<li>Security Credentials</li>
+<li>Access Advisor</li>
+</ul>
+<p>From the above group, the most important to consider is Security credentials.</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">¶</a></h3>
+<p>The above screen shot clearly depicts, this property displays the permission present to the user. In the above case, the user gets 2 IAM policy</p>
+<ul>
+<li>Attached directly.<ul>
+<li>The IAMUserChangePassword is the policy applied directly to the user.</li>
+</ul>
+</li>
+<li>Attached from group.<ul>
+<li>The Administrator access is attached via the Group.</li>
+</ul>
+</li>
+</ul>
+<h3 id="groups-tags">Groups &amp; Tags<a class="headerlink" href="#groups-tags" title="Permanent link">¶</a></h3>
+<p>This property depicts the groups and the tags associated with the user.</p>
+<h3 id="access-advisor">Access Advisor<a class="headerlink" href="#access-advisor" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Users Access Advisor " src="https://www.archerimagine.com/images/aws/IAM/iam-user-summary-02.png" title="AWS Made Easy | IAM Users Access Advisor"/></p>
+<p>There is always a need as an administrator to review user behavior in AWS like the number of services used, the frequency in which it is used. In the Access Advisor tab, IAM provides this information about the user, and helps in identifying the unused permissions.</p>
+<h3 id="security-credentials">Security Credentials<a class="headerlink" href="#security-credentials" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Users security credentials " src="https://www.archerimagine.com/images/aws/IAM/iam-user-summary-03.png" title="AWS Made Easy | IAM Users security credentials"/></p>
+<p>The major section of security credentials are</p>
+<ul>
+<li><strong>Sign-in credentials</strong><ul>
+<li>Provides with link to console sign-in link</li>
+<li>Console password: is it enabled or not</li>
+<li>Assigned MFA device: Is the device assigned or not</li>
+<li>Signing certificate: We can upload any specific X.509 certificate for use.</li>
+</ul>
+</li>
+<li><strong>Access Keys</strong><ul>
+<li>The keys to make programmatic calls to AWS by CLI, SDKs, API calls.</li>
+<li>We can even create an access key from here.</li>
+</ul>
+</li>
+<li><strong>SSH Keys for AWS code commit</strong><ul>
+<li>SSH public key to access AWS code commit.</li>
+</ul>
+</li>
+<li><strong>HTTPS Git credentials for AWS code commit</strong><ul>
+<li>User name and password to access AWS code commit</li>
+</ul>
+</li>
+<li><strong>Credentials for Amazon keyspaces.</strong><ul>
+<li>User name and password to access Amazon Keyspaces.</li>
+</ul>
+</li>
+</ul>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
-<p>When we login to the AWS console for the first time we create the <em>root</em> user, this is the god like user which has all the access and have no control via the IAM policies. This user is not supposed to be used for day to day activity, in place we should be using another user called <em>admin</em> which has all the policies similar to <em>root</em> user but is controlled via IAM.</p>
-<p>There are a few important steps to perform as soon as we login to the AWS console for the first time, which is to delete the programmatic access key for the root user followed by creation of users and groups. The policy to be attached to groups and user can be part of groups. There also should be a password policy specified for the users.</p>
-<p>AWS works on 2 important principle, </p>
-<ol>
-<li>Principle of least privilege </li>
-<li>Non explicit deny rule</li>
-</ol>
-<p>This means that, all the user should be provided the bare minimum of the access required to get the job done, and if not specified, by default the user does not have access to any resources on AWS.</p>
+<p>The AWS IAM user is anybody who will use the login credentials or the programmatic access to AWS. Each IAM user can easily be identified using a friendly name, or a unique ARN or an Access ID. The IAM user can get permission by getting itself attached to a group, or having the policy attached directly or copying from an existing user. Providing permission by adding them to a group is the best IAM policy.</p>
+<p>AWS IAM user creation is a 5 step process, but the important steps are only 2, the first one has given a user name to the user, along with the type of access it needs. This is followed by, adding permission to the user, which can be done by attaching it to a group or copying from an existing user or by attaching the policy directly.</p>
+<p>The AWS IAM user has specific properties like permission which it has and from where it got the permission, like attached directly or received it from a group. There is a specific property called Access Advisor, which an administrator can use to review if the user is regularly using the permissions or not and depending on that can review to keep the permission or remove it. AWS IAM users also have a property called security credentials, which tells if the user has a password or not and also if MFA is enabled or not, we can also see the access ID but not the key, and we can add the ssh keys for code commit.</p>
+<p>Each action done on AWS is done by some type of user. </p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
 <li>Photo by <a href="https://unsplash.com/@alesnesetril">Ales Nesetril </a> on <a href="https://unsplash.com/s/photos/technology">Unsplash</a></li>
+<li><a href="https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/introduction.html">AWS Docs | What is IAM? </a></li>
 </ul>
 
 
@@ -182,15 +312,15 @@
 
 
 <div class="applause_button">
-    <applause-button url=https://www.archerimagine.com/articles/aws/aws-iam-introduction.html> </applause-button>
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-iam-users.html> </applause-button>
 </div>
 
  
                 <p id="post-share-links">
     Spread the word....
-      <a href="https://twitter.com/intent/tweet?text=AWS%20Made%20Easy%20%7C%20IAM%20Introduction%20Grant%20access&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-introduction.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-iam-introduction.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=AWS%20Made%20Easy%20%7C%20IAM%20Introduction%20Grant%20access&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-iam-introduction.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=AWS%20Made%20Easy%20%7C%20IAM%20Users%20Important%20actor&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-users.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-iam-users.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=AWS%20Made%20Easy%20%7C%20IAM%20Users%20Important%20actor&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-iam-users.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -211,8 +341,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html"
-                   href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html#comment_thread"
+                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-iam-users.html"
+                   href="https://www.archerimagine.com/articles/aws/aws-iam-users.html#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -230,8 +360,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-iam-introduction.html';
-    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-iam-introduction.html';
+    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-iam-users.html';
+    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-iam-users.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -258,25 +388,24 @@
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
 <li><a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small>The Cloud Entry</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small>Grant access</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" title="AWS Made Easy | IAM Policy - The access type.">AWS Made Easy | IAM Policy <small>The access type.</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small>Important actor</small></a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="Previous: AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small class="subtitle">The Cloud Entry</small></a></li>
-                <li class="next-article"><a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" title="Next: AWS Made Easy | IAM Policy - The access type.">AWS Made Easy | IAM Policy <small class="subtitle">The access type.</small></a> »</li>
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" title="Previous: AWS Made Easy | IAM Policy - The access type.">AWS Made Easy | IAM Policy <small class="subtitle">The access type.</small></a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2021-02-17T00:25:36+05:30">Wed 17 February 2021</time>
+            <time itemprop="dateCreated" datetime="2021-03-06T23:26:46+05:30">Sat 06 March 2021</time>
 <h4>Last Updated</h4>
-<time datetime="2021-03-02T10:13:09+05:30">Mar 2, 2021</time>
+<time datetime="2021-03-11T18:32:58+05:30">Mar 11, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>

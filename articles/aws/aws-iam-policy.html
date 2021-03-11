@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2021-03-03T10:31:40+05:30" />
-<meta property="og:article:modified_time" content="2021-03-05T20:31:52+05:30" />
+<meta property="og:article:modified_time" content="2021-03-08T09:40:24+05:30" />
 <meta name="twitter:title" content="AWS Made Easy | IAM Policy  - The access type. ">
 <meta name="twitter:description" content="When we want to give access to various resources to AWS, how do we do it, how do we define the various ways a user can get access. These are parameters are defined in a JSON document called IAM Policy. We will learn about this in this blog.">
 <meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/02-IAM-Policy.png" />
@@ -319,19 +319,23 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
 </li>
 </ul>
 <p>We can also take a easy way out, by <strong>"Import Managed Policy"</strong> and then modifying it to our need.</p>
-<p>After selecting the above information we are only left with providing
-* Tags 
-* Review</p>
+<p>After selecting the above information we are only left with providing</p>
+<ul>
+<li>Tags </li>
+<li>Review</li>
+</ul>
 <h3 id="json-editor">JSON Editor<a class="headerlink" href="#json-editor" title="Permanent link">¶</a></h3>
 <p>We can use JSON editor if we understand the JSON syntax, and the format in which AWS wants the KEY/Value pairs. We can also import an existing policy and then edit the JSON.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
 <p>To summarize, IAM policy is a document representing the permission encapsulated inside for a USER or a Role. </p>
 <p>The default policy on IAM is non explicit deny, but though IAM we can give either an explicit deny or an explicit allow. The explicit deny always takes precedence over any explicit allow.</p>
 <p>IAM policy are categorized into either managed by AWS, or user created. There are many AWS managed policy and the most useful once are Administrator policy, Power user policy and Read Only Policy.</p>
-<p>The IAM policy is a JSON statement, and having these 3 statement at the minimum
-* Effect
-* Action
-* Resource</p>
+<p>The IAM policy is a JSON statement, and having these 3 statement at the minimum</p>
+<ul>
+<li>Effect</li>
+<li>Action</li>
+<li>Resource</li>
+</ul>
 <p>IAM policy can be created by using the custom visual editor or the IAM JSON editor. Generally for new users the visual editor is beneficial once the user becomes comfortable, we can change to JSON editor.</p>
 <p>Multiple policy can be applied to Groups and Users. Roles are used for AWS resources.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
@@ -422,6 +426,7 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
 <ul class="related-posts-list">
 <li><a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small>The Cloud Entry</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small>Grant access</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small>Important actor</small></a></li>
 </ul>
 <hr />
 </section>
@@ -429,6 +434,7 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="Previous: AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small class="subtitle">Grant access</small></a></li>
+                <li class="next-article"><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="Next: AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small class="subtitle">Important actor</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -437,17 +443,17 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2021-03-03T10:31:40+05:30">Wed 03 March 2021</time>
 <h4>Last Updated</h4>
-<time datetime="2021-03-05T20:31:52+05:30">Mar 5, 2021</time>
+<time datetime="2021-03-08T09:40:24+05:30">Mar 8, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://www.archerimagine.com/tags#aws-ref">aws
-                    <span class="superscript">3</span>
+                    <span class="superscript">4</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
-                    <span class="superscript">3</span>
+                    <span class="superscript">4</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>
