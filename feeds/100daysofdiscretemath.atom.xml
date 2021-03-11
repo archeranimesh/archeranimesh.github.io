@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine - #100DaysOfDiscreteMath</title><link href="https://www.archerimagine.com/" rel="alternate"></link><link href="https://www.archerimagine.com/feeds/100daysofdiscretemath.atom.xml" rel="self"></link><id>https://www.archerimagine.com/</id><updated>2019-03-21T22:52:00+05:30</updated><subtitle>Anyone can do my job, but no one can be me. Harvey</subtitle><entry><title>100 Days of Discrete Maths.</title><link href="https://www.archerimagine.com/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html" rel="alternate"></link><published>2019-02-17T22:46:40+05:30</published><updated>2019-03-21T22:52:00+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2019-02-17:/articles/100daysofdiscretemath/100Days-of-DiscreteMath-log-file.html</id><summary type="html">&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Motivational Quotes" src="https://www.archerimagine.com/images/discreteMaths/100DaysDiscreteMaths.jpg" title="To the wise, life is a problem, to the fool, a solution."/&gt;&lt;/p&gt;
+&lt;p&gt;Discrete Maths is a study of things which are discrete, which means things which can be counted. Discrete Maths forms the basis of a lot of concepts in algorithms and Computer science in general. I am starting this #100DaysOfX which Discrete Maths, to have a sufficient understanding of the concepts. I am using resources from NPTEL, MIT OCW, and ArsDigita University.&lt;/p&gt;
+&lt;p&gt;The plan is to follow the 3 lectures mentioned in the references and the Rosen book on Discrete math. &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-16-thursday-21-march-2019"&gt;Day 16 | Thursday 21 March 2019&lt;a class="headerlink" href="#day-16-thursday-21-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress"&gt;Days Progress&lt;a class="headerlink" href="#days-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Just a revision of implication, exclusive OR.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1108780407548530690"&gt;link to tweet&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-15-wednesday-20-march-2019"&gt;Day 15 | Wednesday 20 March 2019&lt;a class="headerlink" href="#day-15-wednesday-20-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_1"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Completed the logical inference lecture from NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=kZ6UqFm8lnw&amp;amp;list=PL0862D1A947252D20&amp;amp;index=5"&gt;Maths&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_1"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Learned about:-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;logical inference for propositional calculus&lt;ul&gt;
+&lt;li&gt;Fallacy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;logical inference for Quantifiers&lt;/li&gt;
+&lt;li&gt;Normal Forms&lt;ul&gt;
+&lt;li&gt;CNF&lt;/li&gt;
+&lt;li&gt;DNF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1108432148091076610"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-14-tuesday-19-march-2019"&gt;Day 14 | Tuesday 19 March 2019&lt;a class="headerlink" href="#day-14-tuesday-19-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_2"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_2" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Revision of Preposition calculus from Rosen Book. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_2"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_2" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Books are easier to understand once, the concept is understood.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1108063385629966336"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-13-monday-18-march-2019"&gt;Day 13 | Monday 18 March 2019&lt;a class="headerlink" href="#day-13-monday-18-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_3"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_3" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Revision of lecture 4 from NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=jNeISigUCo0&amp;amp;list=PL0862D1A947252D20&amp;amp;index=4"&gt;Maths&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_3"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_3" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Learned that Implication and Equivalence are not the same.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Understood about logical relationship involving quantifiers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1107683968730779649"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-12-wednesday-13-march-2019"&gt;Day 12 | Wednesday 13 March 2019&lt;a class="headerlink" href="#day-12-wednesday-13-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_4"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_4" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Revision of lecture 4 from NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=jNeISigUCo0&amp;amp;list=PL0862D1A947252D20&amp;amp;index=4"&gt;Maths&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_4"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_4" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Now learned properly about Predicates and Quantifiers.&lt;/li&gt;
+&lt;li&gt;Scope of Quantifiers.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Valid&lt;/code&gt;, &lt;code&gt;Satisfiable&lt;/code&gt; and &lt;code&gt;unsatisfiable&lt;/code&gt; predicates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1107298216075243521"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-11-tuesday-12-march-2019"&gt;Day 11 | Tuesday 12 March 2019&lt;a class="headerlink" href="#day-11-tuesday-12-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_5"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_5" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Again listened to the 4th lecture of NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=jNeISigUCo0&amp;amp;list=PL0862D1A947252D20&amp;amp;index=4"&gt;Maths&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_5"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_5" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Learned about Logical Inference.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1107298216075243521"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-10-monday-11-march-2019"&gt;Day 10 | Monday 11 March 2019&lt;a class="headerlink" href="#day-10-monday-11-march-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_6"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_6" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Listened to the 4th lecture of NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=jNeISigUCo0&amp;amp;list=PL0862D1A947252D20&amp;amp;index=4"&gt;Maths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Learned a little about logical inference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_6"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_6" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Still confusion over Predicate and Quantifiers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1105168631971889154"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-09-thursday-28-february-2019"&gt;Day 09 | Thursday 28 February 2019&lt;a class="headerlink" href="#day-09-thursday-28-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_7"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_7" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Reading and listening to explanation on how to negate a quantifiers.&lt;/li&gt;
+&lt;li&gt;Learning about scope of a quantifiers. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_7"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_7" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Still have doubts on these topics.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1101174243029590023"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-08-wednesday-27-february-2019"&gt;Day 08 | Wednesday 27 February 2019&lt;a class="headerlink" href="#day-08-wednesday-27-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_8"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_8" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In between the 4th Lecture of NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=jNeISigUCo0&amp;amp;list=PL0862D1A947252D20&amp;amp;index=4"&gt;Maths&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="thoughts_8"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_8" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Great lecture on predicate logic&lt;/li&gt;
+&lt;li&gt;Learned about:-&lt;ul&gt;
+&lt;li&gt;Valid Expression&lt;/li&gt;
+&lt;li&gt;Satisfiable Expression&lt;/li&gt;
+&lt;li&gt;Unsatisfiable Expression&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These addition video's also helped.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=GJpezCUMOxA"&gt;Universal and Existential Quantifiers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=gyoqX0W-NH4"&gt;[Discrete Math 1] Predicate Logic and Negating Quantifiers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1100803453591400448"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-07-tuesday-26-february-2019"&gt;Day 07 | Tuesday 26 February 2019&lt;a class="headerlink" href="#day-07-tuesday-26-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_9"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_9" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Listened to the 2nd lecture of MIT 6.042J YouTube &lt;a href="https://www.youtube.com/watch?v=z8HKWUWS-lA&amp;amp;index=2&amp;amp;list=PLB7540DEDD482705B"&gt;play-list&lt;/a&gt; &lt;/p&gt;
+&lt;h3 id="thoughts_9"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_9" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This lecture discusses about &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Proof by Contradiction&lt;/li&gt;
+&lt;li&gt;Introduces to the concept of Induction proof.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1100451208240734215"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-06-monday-25-february-2019"&gt;Day 06 | Monday 25 February 2019&lt;a class="headerlink" href="#day-06-monday-25-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_10"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_10" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Completed the 3rd Lecture of NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=DmCltf8ypks&amp;amp;list=PL0862D1A947252D20"&gt;Maths&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="thoughts_10"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_10" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Today I learned about:-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Predicate and Quantifiers.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Predicate&lt;ul&gt;
+&lt;li&gt;Predicate Logic&lt;/li&gt;
+&lt;li&gt;n-ary predicate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Quantifiers&lt;ul&gt;
+&lt;li&gt;Universal&lt;/li&gt;
+&lt;li&gt;Existential&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Binding Variables&lt;/li&gt;
+&lt;li&gt;Logical equivalence involving quantifiers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1100451208240734215"&gt;link to tweet&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-05-friday-22-february-2019"&gt;Day 05 | Friday 22 February 2019&lt;a class="headerlink" href="#day-05-friday-22-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Today was a rest day for Discrete Maths.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-04-thursday-21-february-2019"&gt;Day 04 | Thursday 21 February 2019&lt;a class="headerlink" href="#day-04-thursday-21-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_11"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_11" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Listened to the 2nd lecture of MIT 6.042J YouTube &lt;a href="https://www.youtube.com/watch?v=z8HKWUWS-lA&amp;amp;index=2&amp;amp;list=PLB7540DEDD482705B"&gt;play-list&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;This lecture discusses about &lt;ul&gt;
+&lt;li&gt;Proof by Contradiction&lt;/li&gt;
+&lt;li&gt;Introduces to the concept of Induction proof.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="thoughts_11"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_11" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Today was focused on listening to the lecture, so have not taken detailed notes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1098632243373924353"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-03-wednesday-20-february-2019"&gt;Day 03 | Wednesday 20 February 2019&lt;a class="headerlink" href="#day-03-wednesday-20-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_12"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_12" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Completed the 2nd Lecture of NPTEL's Discrete &lt;a href="https://www.youtube.com/watch?v=0uTE24o3q-o&amp;amp;list=PL0862D1A947252D20"&gt;Maths&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="thoughts_12"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_12" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Today I learned about:-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Proving implication without drawing all possible rows of truth table.&lt;/li&gt;
+&lt;li&gt;Proved that implication is not associative.&lt;/li&gt;
+&lt;li&gt;Learned about logical identities.&lt;/li&gt;
+&lt;li&gt;Simplified complex compound propositions.&lt;/li&gt;
+&lt;li&gt;Conversion between English to logic and vice versa.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rules of inference&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Modus Ponens&lt;/li&gt;
+&lt;li&gt;Modus Tollens&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1098270228784574466"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-02-tuesday-19-february-2019"&gt;Day 02 | Tuesday 19 February 2019&lt;a class="headerlink" href="#day-02-tuesday-19-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_13"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_13" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Complete the First lecture of MIT 6.042J YouTube play &lt;a href="https://www.youtube.com/watch?v=L3LMbpZIKhQ&amp;amp;list=PLB7540DEDD482705B&amp;amp;index=2&amp;amp;t=0s"&gt;list &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="thoughts_13"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_13" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I have not taken any notes, but the lecture was mostly focused on methods of proof, propositions and connectives.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097924977976844289"&gt;link to tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="day-01-monday-18-february-2019"&gt;Day 01 | Monday 18 February 2019&lt;a class="headerlink" href="#day-01-monday-18-february-2019" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="days-progress_14"&gt;Days Progress&lt;a class="headerlink" href="#days-progress_14" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Complete the First lecture of NPTEL's YouTube play &lt;a href="https://www.youtube.com/watch?v=xlUFkMKSB3Y&amp;amp;list=PL0862D1A947252D20&amp;amp;index=2&amp;amp;t=0s"&gt;list &lt;/a&gt;. &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="thoughts_14"&gt;Thoughts&lt;a class="headerlink" href="#thoughts_14" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This lecture covers these topics:-&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Logic&lt;/li&gt;
+&lt;li&gt;Propositions&lt;/li&gt;
+&lt;li&gt;Logical Connectives (&lt;span class="math"&gt;\(\&amp;amp;\)&lt;/span&gt;, &lt;span class="math"&gt;\(|\)&lt;/span&gt;, &lt;span class="math"&gt;\(\sim\)&lt;/span&gt;) and its truth tables&lt;/li&gt;
+&lt;li&gt;Implication. (&lt;span class="math"&gt;\(\Rightarrow\)&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Equivalence. (&lt;span class="math"&gt;\(\Leftrightarrow\)&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Tautology, Contradiction &amp;amp; Contingency.&lt;/li&gt;
+&lt;li&gt;Logical Identities&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Understanding Equivalence and Implication was little tough.&lt;/p&gt;
+&lt;p&gt;These 2 video's provided the additional help.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=LSm4P6ywxoA"&gt;Rachel's Discrete Math Course - Implications (Lecture 5)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=hICRgMz2LG8"&gt;Propositional logic | first order predicate logic| Propositional calculus | gate | net - part 5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/animeshkbhadra/status/1097558663814893569"&gt;Link to Tweet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PL0862D1A947252D20"&gt;NPTEL | Computer Sc - Discrete Mathematical Structures | Prof. Kamala Krithivasan &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLUpS0WwSvA3e7HtgzNHMivo0T8V0etX_Z"&gt;ArsDigita | Discrete Mathematics and Its Applications | Rosen | Shai Simonson &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLB7540DEDD482705B"&gt;MIT 6.042J | Mathematics for Computer Science, Fall 2010 | Tom Leighton, Marten van Dijk &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.in/Discrete-Mathematics-Its-Applications-SIE/dp/0070681880/"&gt;Amazon | Discrete Mathematics and Its Applications (SIE) | Kenneth Rosen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cs.put.poznan.pl/ksiek/latexmath.html"&gt;Latex | Math Symbols&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nosferalatu.com/Pelican.html"&gt;Pelican and Math Equations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="#100DaysOfDiscreteMath"></category><category term="#100DaysOfX"></category><category term="#100DaysOfDiscreteMath"></category></entry></feed>
