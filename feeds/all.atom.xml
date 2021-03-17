@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="https://www.archerimagine.com/" rel="alternate"></link><link href="https://www.archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>https://www.archerimagine.com/</id><updated>2021-03-15T00:13:49+05:30</updated><subtitle>Anyone can do my job, but no one can be me. Harvey</subtitle><entry><title>AWS Made Easy | IAM Users</title><link href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" rel="alternate"></link><published>2021-03-06T23:26:46+05:30</published><updated>2021-03-11T18:32:58+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2021-03-06:/articles/aws/aws-iam-users.html</id><summary type="html">&lt;p&gt;We have learned about IAM policy and its basics. We will apply those to a specific user here. We will also learn the various way s IAM users can get access to the AWS resources and also how can an IAM user rotate password.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="https://www.archerimagine.com/" rel="alternate"></link><link href="https://www.archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>https://www.archerimagine.com/</id><updated>2021-03-17T20:06:58+05:30</updated><subtitle>Anyone can do my job, but no one can be me. Harvey</subtitle><entry><title>Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020</title><link href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" rel="alternate"></link><published>2021-03-17T11:05:44+05:30</published><updated>2021-03-17T20:06:58+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2021-03-17:/articles/aws/aws-global-Infrastructure.html</id><summary type="html">&lt;p&gt;Azure, AWS, and GCP are the front runner in providing Cloud technologies. As per 2020 Gartner Magic Quadrant for Cloud Infrastructure and Platform Services, AWS is the leader from last 10 years. How much is the difference between these service providers. How big is the reach of these? Do they differ between each other drastically or the difference is minuscule?&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="Global Infrastructure |  AWS VS GCP VS Azure " src="https://www.archerimagine.com/images/aws/IAM/Global-Infrastructure-Comparision-01.png" title="Global Infrastructure"/&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;a class="headerlink" href="#introduction" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;AWS, Azure, GCP are the three largest cloud infrastructure providers. These three are already a big name within the technological space. These enterprises have a greater understanding of the technological space.&lt;/p&gt;
+&lt;p&gt;You may be wondering what is the difference between these companies that offer cloud infrastructure?, what really sets these player apart? Can they not simply replicate in order to provide similar infrastructure and services?&lt;/p&gt;
+&lt;p&gt;Let's us compare these Cloud Infrastructure provider with respect to just the infrastructure point of view, we will compare these on five broad terms.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Region&lt;/li&gt;
+&lt;li&gt;Availability Zone&lt;/li&gt;
+&lt;li&gt;Countries Served.&lt;/li&gt;
+&lt;li&gt;Connecting to On Premise&lt;/li&gt;
+&lt;li&gt;CDNs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The data used for these comparisons are collected from the individual cloud provider's documentation. AWS and GCP had their data presented in straightforward fashion, Azure was little indirect, but tried consolidating the data for you in the best possible manner.&lt;/p&gt;
+&lt;h2 id="region"&gt;Region&lt;a class="headerlink" href="#region" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;All the major Cloud Providers have their data centers, which host their core services across the planet to help you get the best reach. The region is a big differentiator for a lot of business to choose a Cloud Provider.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Global Infrastructure |  Region " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-Region.png" title="Global Infrastructure | Region"/&gt;&lt;/p&gt;
+&lt;p&gt;The above picture depicts that Azure is a clear winner with almost double the number of regions from both its competitors. This decision to make Azure a clear winner is little in the Grey area.&lt;/p&gt;
+&lt;p&gt;For example, if you have to run a dedicated cloud server out of China, you only have AWS and Azure as your option other than the local vendors. GCP won't be an option for you in China. &lt;/p&gt;
+&lt;p&gt;Similarly for cloud operation in South Africa again, you are out of luck with Google.&lt;/p&gt;
+&lt;p&gt;Azure has the highest density of the region among cloud providers, this helps in failover switching in case of a complete region going down, this is explained very beautifully for you in this &lt;a href="https://www.smikar.com/azure-vs-aws-iaas-resilience/"&gt;blog&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="availability-zone"&gt;Availability zone&lt;a class="headerlink" href="#availability-zone" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Once you are through the region, the number of actual physical data centers available in a region, called as Availability Zone, is your next decision making point.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Global Infrastructure |  Availability Zone " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-AZs.png" title="Global Infrastructure | Availability Zone"/&gt;&lt;/p&gt;
+&lt;p&gt;The above graphs, clearly depicts that AWS and GCP are head to head and Azure is lagging behind. This will be the truth if you consider the above graph individually. &lt;/p&gt;
+&lt;p&gt;When you see this data point along with the region data points, you can argue that all the cloud vendors are pretty tied up in these regards.&lt;/p&gt;
+&lt;p&gt;Azure did announce its beta of AZs only in 2017, with that in mind it still has to catch-up, but till this point you will agree that the decision to opt for a particular cloud vendor based on geography is still not decisive.  &lt;/p&gt;
+&lt;h2 id="countries-served"&gt;Countries Served&lt;a class="headerlink" href="#countries-served" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Counties served individually by the cloud vendors may not be a such great differentiator for the service, but if you reside or your customer resides in any such location then you are out of luck.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Global Infrastructure |  Countries " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-Countries.png" title="Global Infrastructure | Countries"/&gt;&lt;/p&gt;
+&lt;p&gt;The above graph, clearly shows AWS as the winner, but even the others will be catching up. AWS will not have any more countries left to expand and these other vendors can easily catch-up if their intent to do so.&lt;/p&gt;
+&lt;h2 id="direct-connect-vs-expressroute-vs-dedicated-interconnect"&gt;Direct Connect Vs ExpressRoute Vs Dedicated Interconnect&lt;a class="headerlink" href="#direct-connect-vs-expressroute-vs-dedicated-interconnect" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Direct Connect or Azure ExpressRoute or GCP's dedicated interconnect, is a way for you to connect your on-premise data center to AWS. This helps in reducing the cost to you and also avoids the open Internet for your private data. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Global Infrastructure |  Direct Connect " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-DirectConnect.png" title="Global Infrastructure | Direct Connect"/&gt;&lt;/p&gt;
+&lt;p&gt;The above graphs shows Google as the winner, but as discussed there is not much difference with the other vendors. &lt;/p&gt;
+&lt;p&gt;The above graphs also only considers the Direct Connect run by the vendors individually and not the partner data centers. When you consider the partners, then maybe the horizon may change.&lt;/p&gt;
+&lt;h2 id="edgelocation-vs-edgezone"&gt;EdgeLocation Vs EdgeZone&lt;a class="headerlink" href="#edgelocation-vs-edgezone" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The CDNs, for making the content available to the user as close to his point of contact is a very important decision to make while choosing a cloud vendor.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Global Infrastructure |  Edge Location " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-EdgeLocation.png" title="Global Infrastructure | Edge Location"/&gt;&lt;/p&gt;
+&lt;p&gt;AWS is the winner again and that too with a big difference. This graph again considers only the vendor owned CDNs, the number may vary greatly if you include the partner's location.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The above depiction of five key infrastructure variable may not pursue you to a particular cloud vendor. &lt;/p&gt;
+&lt;p&gt;Region and AZs can be a deciding factor, depending on where you want to run your data centers, but also you need to think that all regions are not created equals. As described in this &lt;a href="https://www.bmc.com/blogs/cloud-availability-regions-zones/"&gt;blog&lt;/a&gt;, there is a hardware difference between region. When you are deciding between vendors, check these parameters before deciding&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Geographic limitation for operations.&lt;/li&gt;
+&lt;li&gt;Hardware type as per the region.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Countries Served is not a very important parameter to differentiate between the cloud vendors, as in the near future these may not be very important factor.&lt;/p&gt;
+&lt;p&gt;Direct Connect and CDNs also cannot make an important factor if you consider the partner networks. &lt;/p&gt;
+&lt;p&gt;This way you can be sure that just infrastructure cannot be the differentiator while choosing a Cloud vendors, until it is not because of geographic location of the server.&lt;/p&gt;
+&lt;p&gt;There are other factors which come to play when you are deciding on a particular cloud provider, like the services provided, the pricing, ease of deployment, support provided and also expertise availability in your region. &lt;/p&gt;
+&lt;p&gt;You have to take the holistic view while deciding on a particular cloud provider, even nowadays where the difference between cloud providers' services also matches, you can also opt for a multi cloud solution, choosing what is best from a particular cloud provider. &lt;/p&gt;
+&lt;h2 id="info-graphics"&gt;Info graphics&lt;a class="headerlink" href="#info-graphics" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Global Infrastructure |  Info Graphics " src="https://www.archerimagine.com/images/aws/IAM/Global Infrastructure-01.png" title="Global Infrastructure | Info Graphics"/&gt;&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.bmc.com/blogs/cloud-availability-regions-zones/"&gt;Availability Regions and Zones for AWS, Azure &amp;amp; GCP &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tutorialsdojo.com/google-cloud-global-infrastructure/"&gt;Google Cloud Global Infrastructure &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://k21academy.com/microsoft-azure/az-104/az-104-region-availability-zone-availability-sets-and-fault-domainupdate-domain-in-microsoft-azure/"&gt;[AZ-104] Region, Availability Zone, Availability Sets and Fault Domain,Update Domain In Microsoft Azure &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://build5nines.com/map-azure-regions/"&gt;Azure Regions Interactive Map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.smikar.com/azure-vs-aws-iaas-resilience/"&gt;IaaS Resilience, which cloud platform is better? Azure or AWS?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/about-aws/global-infrastructure/"&gt;Global Infrastructure &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cloud.google.com/about/locations"&gt;Google Cloud locations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://azure.microsoft.com/en-us/blog/introducing-azure-availability-zones-for-resiliency-and-high-availability/"&gt;Introducing Azure Availability Zones for resiliency and high availability &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When we have discussion on the region, AZs, countries, direct connect and edge location above, what will you think is important factor when you are deciding on the cloud vendors, comment below and let me know? &lt;/p&gt;</content><category term="aws"></category><category term="aws"></category><category term="cloud"></category></entry><entry><title>AWS Made Easy | IAM Users</title><link href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" rel="alternate"></link><published>2021-03-06T23:26:46+05:30</published><updated>2021-03-11T18:32:58+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2021-03-06:/articles/aws/aws-iam-users.html</id><summary type="html">&lt;p&gt;We have learned about IAM policy and its basics. We will apply those to a specific user here. We will also learn the various way s IAM users can get access to the AWS resources and also how can an IAM user rotate password.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="AWS Made Easy | IAM Users " src="https://www.archerimagine.com/images/aws/IAM/03-IAM-Users.png" title="AWS Made Easy | IAM Users"/&gt;&lt;/p&gt;
 &lt;h2 id="iam-users"&gt;IAM Users&lt;a class="headerlink" href="#iam-users" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;IAM users are an important AWS resources. This is the identity given to a physical user or application when he logs into AWS.&lt;/p&gt;
@@ -3085,15 +3150,4 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@peterxjang/how-to-learn-vim-a-four-week-plan-cd8b376a9b85"&gt;How To Learn Vim: A Four Week Plan &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://100daysofx.com/"&gt;100daysofx&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://imgs.xkcd.com/comics/real_programmers.png"&gt;Real Programmers xkcd &lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="#100DaysOfVim"></category><category term="#100DaysOfVim"></category><category term="#100DaysOfX"></category></entry><entry><title>100Days of Code Log File</title><link href="https://www.archerimagine.com/articles/100daysofcode/100Days-of-code-log-file.html" rel="alternate"></link><published>2017-12-24T00:03:34+05:30</published><updated>2021-02-13T09:39:39+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2017-12-24:/articles/100daysofcode/100Days-of-code-log-file.html</id><summary type="html">&lt;p&gt;Hello World!, You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfiltered joy, unrivaled pain, and unexpected epiphanies.&lt;/p&gt;</summary><content type="html">
-&lt;p&gt;&lt;img alt="Sample Screen Shot" src="https://www.archerimagine.com/images/100DaysOfCode/pythonCode.jpg" title="Sample ScreenShot"/&gt;&lt;/p&gt;
-&lt;p&gt;Hello World! , You are about the witness the beginning of an epic 100-Day coding journey, A story that great sages will pass down from generation to generation. This quest will feature a potpourri of unfettered joy, unrivaled pain, and unexpected epiphanies.&lt;/p&gt;
-&lt;p&gt;Some moments, I will be the smartest man alive. Others moments, I will be a stupid idiot. But each day, I will be a valiant warrior, fighting to develop and perfect the skills necessary to evolve into a true beast with these keys.&lt;/p&gt;
-&lt;p&gt;Ladies and gentleman, I present to you, #100DaysofCode with @ &lt;a href="https://twitter.com/animeshkbhadra" title="Twitter Handle"&gt;animeshkbhadra &lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="day-8-wednesday-january-22018"&gt;Day -8: Wednesday January 2,2018&lt;a class="headerlink" href="#day-8-wednesday-january-22018" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="todays-progress"&gt;Today's Progress&lt;a class="headerlink" href="#todays-progress" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Completed the &lt;code&gt;vimtutor&lt;/code&gt; exercise in ~20 mins. The idea is to do this for next 7 days as suggested in one blog link. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="thoughts"&gt;Thoughts&lt;a class="headerlink" href="#thoughts" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;</content><category term="#100DaysOfCode"></category><category term="#100DaysOfCode"></category><category term="#100DaysOfX"></category></entry></feed>
+&lt;/ol&gt;</content><category term="#100DaysOfVim"></category><category term="#100DaysOfVim"></category><category term="#100DaysOfX"></category></entry></feed>

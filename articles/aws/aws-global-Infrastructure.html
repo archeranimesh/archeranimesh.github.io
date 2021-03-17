@@ -16,21 +16,21 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image">
 
-<meta name="keywords" content="aws, cloud, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, root vs admin IAM user, principle of least privilege, root user best practice." />
+<meta name="keywords" content="aws, cloud, aws, azure, aws, gcp, cloud, global infrastructure, Region, AZs, Countries served, direct connect, Edge location, Azure ExpressRoute, GCP Dedicated Interconnect, Azure Edge Zone." />
 
-<meta property="og:title" content="AWS Made Easy | IAM Introduction  - Grant access "/>
-<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" />
-<meta property="og:description" content="In this blog let us understand the basics of IAM, Identity and access Management. This is service which is used to control access to all the resource in AWS. The key component of IAM are User, Groups, Policy, Roles, API keys." />
+<meta property="og:title" content="Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020  - Who is ahead? "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" />
+<meta property="og:description" content="Azure, AWS, and GCP are the front runner in providing Cloud technologies. As per 2020 Gartner Magic Quadrant for Cloud Infrastructure and Platform Services, AWS is the leader from last 10 years. How much is the difference between these service providers. How big is the reach of these? Do they differ between each other drastically or the difference is minuscule?" />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2021-02-17T00:25:36+05:30" />
-<meta property="og:article:modified_time" content="2021-03-02T10:13:09+05:30" />
-<meta name="twitter:title" content="AWS Made Easy | IAM Introduction  - Grant access ">
-<meta name="twitter:description" content="In this blog let us understand the basics of IAM, Identity and access Management. This is service which is used to control access to all the resource in AWS. The key component of IAM are User, Groups, Policy, Roles, API keys.">
-<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" />
-<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" >
+<meta property="og:article:published_time" content="2021-03-17T11:05:44+05:30" />
+<meta property="og:article:modified_time" content="2021-03-17T20:06:58+05:30" />
+<meta name="twitter:title" content="Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020  - Who is ahead? ">
+<meta name="twitter:description" content="Azure, AWS, and GCP are the front runner in providing Cloud technologies. As per 2020 Gartner Magic Quadrant for Cloud Infrastructure and Platform Services, AWS is the leader from last 10 years. How much is the difference between these service providers. How big is the reach of these? Do they differ between each other drastically or the difference is minuscule?">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/Global-Infrastructure-Comparision-01.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/Global-Infrastructure-Comparision-01.png" >
 
-        <title>AWS Made Easy | IAM Introduction  - Grant access  · Archer Imagine
+        <title>Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020  - Who is ahead?  · Archer Imagine
 </title>
         <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -90,10 +90,10 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html">
-                AWS Made Easy | IAM Introduction
+            <a href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html">
+                Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020
                 <small class="subtitle">
-                    Grant access
+                    Who is ahead?
                 </small>
             </a>
         </h1>
@@ -106,17 +106,14 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#iam-introduction">IAM Introduction</a><ul>
-<li><a href="#iam-components">IAM Components</a></li>
-<li><a href="#iam-property">IAM property</a></li>
-</ul>
-</li>
-<li><a href="#admin-vs-root-user">Admin Vs root User</a><ul>
-<li><a href="#root-user">root user</a></li>
-<li><a href="#admin-user">Admin user</a></li>
-</ul>
-</li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#region">Region</a></li>
+<li><a href="#availability-zone">Availability zone</a></li>
+<li><a href="#countries-served">Countries Served</a></li>
+<li><a href="#direct-connect-vs-expressroute-vs-dedicated-interconnect">Direct Connect Vs ExpressRoute Vs Dedicated Interconnect</a></li>
+<li><a href="#edgelocation-vs-edgezone">EdgeLocation Vs EdgeZone</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#info-graphics">Info graphics</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -125,73 +122,86 @@
     <div class="span8 article-content">
             
             
-<p><img alt="AWS Made Easy | IAM Introduction " src="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" title="AWS Made Easy | IAM Introduction"/></p>
-<h2 id="iam-introduction">IAM Introduction<a class="headerlink" href="#iam-introduction" title="Permanent link">¶</a></h2>
-<p>IAM provides the interface to join the great world of AWS. Its major goal is to provide both human and computer, who are the consumers of AWS services a way to access them.</p>
-<h3 id="iam-components">IAM Components<a class="headerlink" href="#iam-components" title="Permanent link">¶</a></h3>
-<p>IAM service have five(5) components:- </p>
+<p><img alt="Global Infrastructure |  AWS VS GCP VS Azure " src="https://www.archerimagine.com/images/aws/IAM/Global-Infrastructure-Comparision-01.png" title="Global Infrastructure"/></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>AWS, Azure, GCP are the three largest cloud infrastructure providers. These three are already a big name within the technological space. These enterprises have a greater understanding of the technological space.</p>
+<p>You may be wondering what is the difference between these companies that offer cloud infrastructure?, what really sets these player apart? Can they not simply replicate in order to provide similar infrastructure and services?</p>
+<p>Let's us compare these Cloud Infrastructure provider with respect to just the infrastructure point of view, we will compare these on five broad terms.</p>
 <ul>
-<li>User - The user of AWS resource, can be a person or a machine  </li>
-<li>Groups - The above user can be grouped together  </li>
-<li>Policy - It defines the permission of the IAM identity.  </li>
-<li>Roles - A roles are just a policy, but not associated with the Users directly.  </li>
-<li>API Keys - The keys used to programmatically accessing the AWS console.  </li>
+<li>Region</li>
+<li>Availability Zone</li>
+<li>Countries Served.</li>
+<li>Connecting to On Premise</li>
+<li>CDNs</li>
 </ul>
-<h3 id="iam-property">IAM property<a class="headerlink" href="#iam-property" title="Permanent link">¶</a></h3>
-<p>AWS works on two very important principles.</p>
-<ul>
-<li>Principle of least privilege.  <ul>
-<li>Any user, group must be granted minimum permission to complete the activity.  </li>
-</ul>
-</li>
-<li>Non explicit deny rule.  <ul>
-<li>We are new user have no explicit allow rule for a resource, AWS assumes it to be access denied.  </li>
-<li>Only an explicit allow can override a non explicit deny rule.  </li>
-</ul>
-</li>
-</ul>
-<h2 id="admin-vs-root-user">Admin Vs root User<a class="headerlink" href="#admin-vs-root-user" title="Permanent link">¶</a></h2>
-<h3 id="root-user">root user<a class="headerlink" href="#root-user" title="Permanent link">¶</a></h3>
-<p>This is the very first user which is created when we sign-up for AWS using our emailID. This user has god like access and is not under the control of IAM.</p>
-<p>This login must never be used for daily activities within AWS.</p>
-<p>These 5 steps should be done as soon as we login to AWS root account.</p>
-<ol>
-<li>Delete the root access keys.</li>
-<li>Enable MFA</li>
-<li>Create user</li>
-<li>Create groups and assign user to groups</li>
-<li>Apply an IAM password policy</li>
-</ol>
-<h3 id="admin-user">Admin user<a class="headerlink" href="#admin-user" title="Permanent link">¶</a></h3>
-<p>We can create a copy of the root user with complete admin access. This is the <em>Admin</em> user. This is user comes under the purview of IAM and should be used as a daily driver in AWS.</p>
+<p>The data used for these comparisons are collected from the individual cloud provider's documentation. AWS and GCP had their data presented in straightforward fashion, Azure was little indirect, but tried consolidating the data for you in the best possible manner.</p>
+<h2 id="region">Region<a class="headerlink" href="#region" title="Permanent link">¶</a></h2>
+<p>All the major Cloud Providers have their data centers, which host their core services across the planet to help you get the best reach. The region is a big differentiator for a lot of business to choose a Cloud Provider.</p>
+<p><img alt="Global Infrastructure |  Region " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-Region.png" title="Global Infrastructure | Region"/></p>
+<p>The above picture depicts that Azure is a clear winner with almost double the number of regions from both its competitors. This decision to make Azure a clear winner is little in the Grey area.</p>
+<p>For example, if you have to run a dedicated cloud server out of China, you only have AWS and Azure as your option other than the local vendors. GCP won't be an option for you in China. </p>
+<p>Similarly for cloud operation in South Africa again, you are out of luck with Google.</p>
+<p>Azure has the highest density of the region among cloud providers, this helps in failover switching in case of a complete region going down, this is explained very beautifully for you in this <a href="https://www.smikar.com/azure-vs-aws-iaas-resilience/">blog</a>.</p>
+<h2 id="availability-zone">Availability zone<a class="headerlink" href="#availability-zone" title="Permanent link">¶</a></h2>
+<p>Once you are through the region, the number of actual physical data centers available in a region, called as Availability Zone, is your next decision making point.</p>
+<p><img alt="Global Infrastructure |  Availability Zone " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-AZs.png" title="Global Infrastructure | Availability Zone"/></p>
+<p>The above graphs, clearly depicts that AWS and GCP are head to head and Azure is lagging behind. This will be the truth if you consider the above graph individually. </p>
+<p>When you see this data point along with the region data points, you can argue that all the cloud vendors are pretty tied up in these regards.</p>
+<p>Azure did announce its beta of AZs only in 2017, with that in mind it still has to catch-up, but till this point you will agree that the decision to opt for a particular cloud vendor based on geography is still not decisive.  </p>
+<h2 id="countries-served">Countries Served<a class="headerlink" href="#countries-served" title="Permanent link">¶</a></h2>
+<p>Counties served individually by the cloud vendors may not be a such great differentiator for the service, but if you reside or your customer resides in any such location then you are out of luck.</p>
+<p><img alt="Global Infrastructure |  Countries " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-Countries.png" title="Global Infrastructure | Countries"/></p>
+<p>The above graph, clearly shows AWS as the winner, but even the others will be catching up. AWS will not have any more countries left to expand and these other vendors can easily catch-up if their intent to do so.</p>
+<h2 id="direct-connect-vs-expressroute-vs-dedicated-interconnect">Direct Connect Vs ExpressRoute Vs Dedicated Interconnect<a class="headerlink" href="#direct-connect-vs-expressroute-vs-dedicated-interconnect" title="Permanent link">¶</a></h2>
+<p>Direct Connect or Azure ExpressRoute or GCP's dedicated interconnect, is a way for you to connect your on-premise data center to AWS. This helps in reducing the cost to you and also avoids the open Internet for your private data. </p>
+<p><img alt="Global Infrastructure |  Direct Connect " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-DirectConnect.png" title="Global Infrastructure | Direct Connect"/></p>
+<p>The above graphs shows Google as the winner, but as discussed there is not much difference with the other vendors. </p>
+<p>The above graphs also only considers the Direct Connect run by the vendors individually and not the partner data centers. When you consider the partners, then maybe the horizon may change.</p>
+<h2 id="edgelocation-vs-edgezone">EdgeLocation Vs EdgeZone<a class="headerlink" href="#edgelocation-vs-edgezone" title="Permanent link">¶</a></h2>
+<p>The CDNs, for making the content available to the user as close to his point of contact is a very important decision to make while choosing a cloud vendor.</p>
+<p><img alt="Global Infrastructure |  Edge Location " src="https://www.archerimagine.com/images/aws/IAM/Global-Infra-EdgeLocation.png" title="Global Infrastructure | Edge Location"/></p>
+<p>AWS is the winner again and that too with a big difference. This graph again considers only the vendor owned CDNs, the number may vary greatly if you include the partner's location.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
-<p>When we login to the AWS console for the first time we create the <em>root</em> user, this is the god like user which has all the access and have no control via the IAM policies. This user is not supposed to be used for day to day activity, in place we should be using another user called <em>admin</em> which has all the policies similar to <em>root</em> user but is controlled via IAM.</p>
-<p>There are a few important steps to perform as soon as we login to the AWS console for the first time, which is to delete the programmatic access key for the root user followed by creation of users and groups. The policy to be attached to groups and user can be part of groups. There also should be a password policy specified for the users.</p>
-<p>AWS works on 2 important principle, </p>
-<ol>
-<li>Principle of least privilege </li>
-<li>Non explicit deny rule</li>
-</ol>
-<p>This means that, all the user should be provided the bare minimum of the access required to get the job done, and if not specified, by default the user does not have access to any resources on AWS.</p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<p>The above depiction of five key infrastructure variable may not pursue you to a particular cloud vendor. </p>
+<p>Region and AZs can be a deciding factor, depending on where you want to run your data centers, but also you need to think that all regions are not created equals. As described in this <a href="https://www.bmc.com/blogs/cloud-availability-regions-zones/">blog</a>, there is a hardware difference between region. When you are deciding between vendors, check these parameters before deciding</p>
 <ul>
-<li>Photo by <a href="https://unsplash.com/@alesnesetril">Ales Nesetril </a> on <a href="https://unsplash.com/s/photos/technology">Unsplash</a></li>
+<li>Geographic limitation for operations.</li>
+<li>Hardware type as per the region.</li>
 </ul>
+<p>Countries Served is not a very important parameter to differentiate between the cloud vendors, as in the near future these may not be very important factor.</p>
+<p>Direct Connect and CDNs also cannot make an important factor if you consider the partner networks. </p>
+<p>This way you can be sure that just infrastructure cannot be the differentiator while choosing a Cloud vendors, until it is not because of geographic location of the server.</p>
+<p>There are other factors which come to play when you are deciding on a particular cloud provider, like the services provided, the pricing, ease of deployment, support provided and also expertise availability in your region. </p>
+<p>You have to take the holistic view while deciding on a particular cloud provider, even nowadays where the difference between cloud providers' services also matches, you can also opt for a multi cloud solution, choosing what is best from a particular cloud provider. </p>
+<h2 id="info-graphics">Info graphics<a class="headerlink" href="#info-graphics" title="Permanent link">¶</a></h2>
+<p><img alt="Global Infrastructure |  Info Graphics " src="https://www.archerimagine.com/images/aws/IAM/Global Infrastructure-01.png" title="Global Infrastructure | Info Graphics"/></p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ol>
+<li><a href="https://www.bmc.com/blogs/cloud-availability-regions-zones/">Availability Regions and Zones for AWS, Azure &amp; GCP </a></li>
+<li><a href="https://tutorialsdojo.com/google-cloud-global-infrastructure/">Google Cloud Global Infrastructure </a></li>
+<li><a href="https://k21academy.com/microsoft-azure/az-104/az-104-region-availability-zone-availability-sets-and-fault-domainupdate-domain-in-microsoft-azure/">[AZ-104] Region, Availability Zone, Availability Sets and Fault Domain,Update Domain In Microsoft Azure </a></li>
+<li><a href="https://build5nines.com/map-azure-regions/">Azure Regions Interactive Map</a></li>
+<li><a href="https://www.smikar.com/azure-vs-aws-iaas-resilience/">IaaS Resilience, which cloud platform is better? Azure or AWS?</a></li>
+<li><a href="https://aws.amazon.com/about-aws/global-infrastructure/">Global Infrastructure </a></li>
+<li><a href="https://cloud.google.com/about/locations">Google Cloud locations</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/introducing-azure-availability-zones-for-resiliency-and-high-availability/">Introducing Azure Availability Zones for resiliency and high availability </a></li>
+</ol>
+<p>When we have discussion on the region, AZs, countries, direct connect and edge location above, what will you think is important factor when you are deciding on the cloud vendors, comment below and let me know? </p>
 
 
              
 
 
 <div class="applause_button">
-    <applause-button url=https://www.archerimagine.com/articles/aws/aws-iam-introduction.html> </applause-button>
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html> </applause-button>
 </div>
 
  
                 <p id="post-share-links">
     Spread the word....
-      <a href="https://twitter.com/intent/tweet?text=AWS%20Made%20Easy%20%7C%20IAM%20Introduction%20Grant%20access&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-introduction.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-iam-introduction.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=AWS%20Made%20Easy%20%7C%20IAM%20Introduction%20Grant%20access&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-iam-introduction.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Global%20Infrastructure%20comparison%20of%20AWS%2C%20GCP%20and%20Azure.%20Updated%202020%20Who%20is%20ahead%3F&url=https%3A//www.archerimagine.com/articles/aws/aws-global-Infrastructure.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Global%20Infrastructure%20comparison%20of%20AWS%2C%20GCP%20and%20Azure.%20Updated%202020%20Who%20is%20ahead%3F&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -212,8 +222,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html"
-                   href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html#comment_thread"
+                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html"
+                   href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -231,8 +241,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-iam-introduction.html';
-    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-iam-introduction.html';
+    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html';
+    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -259,26 +269,23 @@
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
 <li><a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small>The Cloud Entry</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small>Grant access</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" title="AWS Made Easy | IAM Policy - The access type.">AWS Made Easy | IAM Policy <small>The access type.</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small>Important actor</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" title="Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 - Who is ahead?">Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 <small>Who is ahead?</small></a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="Previous: AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small class="subtitle">The Cloud Entry</small></a></li>
-                <li class="next-article"><a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" title="Next: AWS Made Easy | IAM Policy - The access type.">AWS Made Easy | IAM Policy <small class="subtitle">The access type.</small></a> »</li>
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="Previous: AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small class="subtitle">Important actor</small></a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2021-02-17T00:25:36+05:30">Wed 17 February 2021</time>
-<h4>Last Updated</h4>
-<time datetime="2021-03-02T10:13:09+05:30">Mar 2, 2021</time>
+            <time itemprop="dateCreated" datetime="2021-03-17T11:05:44+05:30">Wed 17 March 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
