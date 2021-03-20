@@ -16,21 +16,21 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image">
 
-<meta name="keywords" content="aws, cloud, aws, AWS, Shared responsibility model, Global Infrastructure." />
+<meta name="keywords" content="aws, cloud, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, IAM Roles Vs IAM User," />
 
-<meta property="og:title" content="AWS - Shared Responsibility &amp; Global Infrastructure.  - The Cloud Entry "/>
-<meta property="og:url" content="https://www.archerimagine.com/articles/aws/general-aws.html" />
-<meta property="og:description" content="AWS is very vast in its present form, understanding it would be very challenging. We will being this journey at the epicenter of AWS, the Shared responsibility model and its global infrastructure." />
+<meta property="og:title" content="A foolproof guide to AWS IAM Roles  - A Hat to wear!! "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-iam-roles.html" />
+<meta property="og:description" content="When to create a IAM role and when to use a IAM User is always a confusing topic to master. You will learn through this piece the answer to this dilemma. You will learn when to create a IAM Roles, how to use the IAM Role, Uses of IAM roles. After learning this you will never be scratching your head for using IAM Roles." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2021-02-12T21:19:02+05:30" />
-<meta property="og:article:modified_time" content="2021-03-15T00:13:49+05:30" />
-<meta name="twitter:title" content="AWS - Shared Responsibility &amp; Global Infrastructure.  - The Cloud Entry ">
-<meta name="twitter:description" content="AWS is very vast in its present form, understanding it would be very challenging. We will being this journey at the epicenter of AWS, the Shared responsibility model and its global infrastructure.">
-<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" />
-<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" >
+<meta property="og:article:published_time" content="2021-03-18T09:49:34+05:30" />
+<meta property="og:article:modified_time" content="2021-03-20T08:29:38+05:30" />
+<meta name="twitter:title" content="A foolproof guide to AWS IAM Roles  - A Hat to wear!! ">
+<meta name="twitter:description" content="When to create a IAM role and when to use a IAM User is always a confusing topic to master. You will learn through this piece the answer to this dilemma. You will learn when to create a IAM Roles, how to use the IAM Role, Uses of IAM roles. After learning this you will never be scratching your head for using IAM Roles.">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/04-IAM-Roles.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/04-IAM-Roles.png" >
 
-        <title>AWS - Shared Responsibility &amp; Global Infrastructure.  - The Cloud Entry  · Archer Imagine
+        <title>A foolproof guide to AWS IAM Roles  - A Hat to wear!!  · Archer Imagine
 </title>
         <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -90,10 +90,10 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.archerimagine.com/articles/aws/general-aws.html">
-                AWS - Shared Responsibility & Global Infrastructure.
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html">
+                A foolproof guide to AWS IAM Roles
                 <small class="subtitle">
-                    The Cloud Entry
+                    A Hat to wear!!
                 </small>
             </a>
         </h1>
@@ -106,26 +106,25 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#aws-global-infrastructure">AWS - Global Infrastructure</a><ul>
-<li><a href="#user-type">User Type</a><ul>
-<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#iam-roles">IAM Roles</a><ul>
+<li><a href="#iam-roles-for-user">IAM Roles for user</a></li>
+<li><a href="#iam-roles-for-aws-services">IAM Roles for AWS Services</a></li>
+<li><a href="#iam-roles-to-the-rescue">IAM Roles to the rescue</a></li>
+<li><a href="#benefits-of-iam-role">Benefits of IAM Role</a></li>
 </ul>
 </li>
-<li><a href="#connection-type">Connection Type</a></li>
-<li><a href="#service-location">Service Location</a></li>
+<li><a href="#how-to-create-an-aws-iam-role">How to create an AWS IAM Role</a><ul>
+<li><a href="#step-1-select-the-trusted-entity">Step 1 | Select the trusted entity</a></li>
+<li><a href="#step-2-attach-permission-policy">Step 2 | Attach permission policy</a></li>
+<li><a href="#step-3-review">Step 3 |  Review</a></li>
+<li><a href="#how-does-the-iam-roles-looks-after-creation">How does the IAM roles looks after creation?</a></li>
 </ul>
 </li>
-<li><a href="#aws-shared-responsibility-model">AWS - Shared Responsibility Model</a><ul>
-<li><a href="#compute-services">Compute Services</a></li>
-<li><a href="#storage-service">Storage Service</a></li>
-</ul>
-</li>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#what-is-the-difference-between-the-aws-region-and-aws-edge-location">What is the difference between the AWS Region and AWS Edge Location?</a></li>
-<li><a href="#reference">Reference</a><ul>
-<li><a href="#info-graphics">Info-graphics</a></li>
-</ul>
-</li>
+<li><a href="#iam-roles-vs-iam-users">IAM Roles Vs IAM Users</a></li>
+<li><a href="#iam-roles-vs-iam-policy">IAM Roles Vs IAM Policy</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#reference">Reference</a></li>
 </ul>
 </div>
         </nav>
@@ -133,150 +132,157 @@
     <div class="span8 article-content">
             
             
-<p><img alt="AWS made easy | IAM " src="https://www.archerimagine.com/images/aws/IAM/AWS-made-easy-iam.png" title="AWS made easy | IAM"/></p>
-<h2 id="aws-global-infrastructure">AWS - Global Infrastructure<a class="headerlink" href="#aws-global-infrastructure" title="Permanent link">¶</a></h2>
-<p>AWS is a cloud infrastructure provider, it's a pioneer in this field. Cloud and AWS have become synonyms, it would be difficult for a developer today to be unaware of AWS or cloud in general. This blog is an effort of mine to present this vast and ever expanding concept into very easy and fun method.</p>
-<p>Learning new concepts in their 40's is very difficult, would try to make it as easy as possible for anyone want to embark on this journey.</p>
-<p>AWS/Cloud has become an indispensable part of the Software industry due to a few of these important properties.</p>
+<p><img alt="AWS Made Easy | IAM Roles " src="https://www.archerimagine.com/images/aws/IAM/04-IAM-Roles.png" title="AWS Made Easy | IAM Roles"/></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>The FaceLess Men in GoT (Games of Thrones), hope you remember this character, or Raven/Mystique in X-Men. They both share a common power, what would that be? </p>
+<p>The power to change identity as they wish to accomplish the task at hand. This is what IAM Roles do in a very broad sense.</p>
+<p>You can also think of IAM roles as the Invisibility Cloak in Harry Potter, who ever acquires it becomes invisible. </p>
+<p>IAM Roles are just like a hat, which anyone within AWS can wear, and get the powers presented by the hat, and loses the powers as soon as the hat is removed. The hat does not discriminate between real users or hardware like EC2, anyone can wear this hat.</p>
+<p><img alt="AWS Made Easy | A Magical Hat " src="https://www.archerimagine.com/images/aws/IAM/laura-thonne-unsplash.jpg" title="AWS Made Easy | A Magical Hat"/></p>
+<p>You will also see how IAM Roles can be used, how it is created and attached. You will also see how IAM user is a different concept than IAM Role.</p>
+<h2 id="iam-roles">IAM Roles<a class="headerlink" href="#iam-roles" title="Permanent link">¶</a></h2>
+<p>An IAM role is an identity that you can create having very specific permissions. The only difference being you are not associating this policy to any particular user or services at the time of creation. This IAM role can be assumed by anyone who needs it, be it a user or an AWS resource.</p>
+<p>You might be thinking, which problem does IAM role solve which a normal IAM user or a new IAM policy cannot solve. So lets understand why we need the use of IAM Role.</p>
+<h3 id="iam-roles-for-user">IAM Roles for user<a class="headerlink" href="#iam-roles-for-user" title="Permanent link">¶</a></h3>
+<p>When you are creating a user in your own account, you cannot give them all the permission as explained in <a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html">IAM Introduction </a>, the principle of least privileges. You cannot have one or multiple users will super user permissions, you cannot have Batman in every city, only Gotham. </p>
+<p><img alt="AWS Made Easy | Batman " src="https://www.archerimagine.com/images/aws/IAM/ali-kokab-unsplash.jpg" title="AWS Made Easy | BatMan"/></p>
+<p>In addition, we can also have non AWS accounts, like cross account want to access your AWS services, or the federated user, who may also need access to the AWS services in case of Hybrid Cloud.</p>
+<p>You have to consider many other use-case along with the above two, for understanding we cannot keep on creating IAM Users to address such diverse range of permission request.</p>
+<h3 id="iam-roles-for-aws-services">IAM Roles for AWS Services<a class="headerlink" href="#iam-roles-for-aws-services" title="Permanent link">¶</a></h3>
+<p>You might have already read about <a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html">IAM Policy</a>, AWS resources cannot have IAM policy attach directly. There is another good policy, AWS credentials should not be stored on EC2 instances.</p>
+<p>If you consider the above two guidelines, it will not be possible for any AWS services to communicate with other AWS services / resources to complete the work.</p>
+<h3 id="iam-roles-to-the-rescue">IAM Roles to the rescue<a class="headerlink" href="#iam-roles-to-the-rescue" title="Permanent link">¶</a></h3>
+<p>When you consider both the limitation of IAM User and AWS services, you can think we need some type of magic hat, which gives the sufficient power to both User or Service to execute the task it is elevated for. This is where magic happens with IAM Roles. </p>
+<p><img alt="AWS Made Easy | Magic " src="https://www.archerimagine.com/images/aws/IAM/almos-bechtold-unsplash.jpg" title="AWS Made Easy | Magic"/></p>
+<p>You can use IAM Roles for:- </p>
 <ul>
-<li>Global Deployment</li>
-<li>Millisecond Latency </li>
-<li>Commission and decommission at will</li>
-<li>Pay as you use.</li>
-</ul>
-<p>Even if core AWS services are not available in certain location, it still uses different non AWS services to enable developer to relax and focus on developing great software.</p>
-<h3 id="user-type">User Type<a class="headerlink" href="#user-type" title="Permanent link">¶</a></h3>
-<p>There are 2 types of AWS users.</p>
-<ul>
-<li>root user<ul>
-<li>The user which is created when we first become an AWS consumer by signing in.</li>
-<li>This user has God like permission, and is not governed by IAM rules.</li>
-<li>It is not safe to use this user for day to day activity.</li>
+<li>One AWS service have to access another AWS service.<ul>
+<li>Example: Application running on EC2 may need to access S3.</li>
 </ul>
 </li>
-<li>Administrator user <ul>
-<li>This is the user which is created though the IAM.</li>
-<li>This controls the management of other user.</li>
-<li>This is the user which should be used for daily activity.</li>
-<li>It has all the access just like root user.</li>
-</ul>
-</li>
-</ul>
-<h4 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">¶</a></h4>
-<ul>
-<li>Always enable MFA for all users.</li>
-<li>Have an explicit password policy. i.e. expiry of password.</li>
-</ul>
-<h3 id="connection-type">Connection Type<a class="headerlink" href="#connection-type" title="Permanent link">¶</a></h3>
-<p>There are 3 ways to connect to AWS</p>
-<ul>
-<li>AWS Console<ul>
-<li>The default mode, which we all use.</li>
-<li>This is the website for AWS, which can do pretty much all the stuff possible.</li>
-</ul>
-</li>
-<li>AWS SDKs <ul>
-<li>These are  developers to make use of all the AWS resources while developing the application.</li>
-<li>Major programming languages are supported.</li>
-</ul>
-</li>
-<li>AWS CLIs<ul>
-<li>This use command line interface to control the AWS infrastructure.</li>
+<li>When you have a Hybrid Cloud implementation<ul>
+<li>User from On Premise may want to access AWS Cloud infrastructure.</li>
 </ul>
 </li>
 </ul>
-<h3 id="service-location">Service Location<a class="headerlink" href="#service-location" title="Permanent link">¶</a></h3>
-<p>AWS hosts its service in two types of location</p>
+<p>EC2 can assume a role only at the time of creation, but once it has a role attached, you can modify it using APIs, CLIs or console at any time. You can attach only 1 role to EC2 at any given time.</p>
+<h3 id="benefits-of-iam-role">Benefits of IAM Role<a class="headerlink" href="#benefits-of-iam-role" title="Permanent link">¶</a></h3>
 <ul>
-<li>AWS Edge Location<ul>
-<li>These does not host any specific AWS service.</li>
-<li>These hosts only CDN or CloudFront.</li>
+<li>You may need people from Hybrid cloud implementation to access the AWS account, you may need IAM Roles to be attached once these users are authorized to use SAML or Active directory.</li>
+<li>You may have production and development account in AWS, and your development team may be required to be elevated to access a production account to fix a bug. This can be done using IAM Roles.</li>
+<li>You have an application running on an EC2 instance, It needs access to S3, this can be achieved using IAM Role.</li>
+</ul>
+<h2 id="how-to-create-an-aws-iam-role">How to create an AWS IAM Role<a class="headerlink" href="#how-to-create-an-aws-iam-role" title="Permanent link">¶</a></h2>
+<p>AWS IAM Role creation is a three step process.</p>
+<h3 id="step-1-select-the-trusted-entity">Step 1 | Select the trusted entity<a class="headerlink" href="#step-1-select-the-trusted-entity" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Role Creation | Step 1" src="https://www.archerimagine.com/images/aws/IAM/IAM-Role-Creation-01.png" title="AWS Made Easy | IAM Roles Creation | Step 1"/></p>
+<p>The first step guides you choose which services or identities can assume the role, your options are</p>
+<ul>
+<li>AWS Services<ul>
+<li>The EC2 instance, lambda etc which needs access to other services.</li>
 </ul>
 </li>
-<li>AWS region<ul>
-<li>These are the real AWS data centers, which host all AWS services.</li>
-<li>Each region is further divided into an Availability Zone (AZs).</li>
-<li>AZs are created to provide fault tolerance and high availability.</li>
-<li>Most services are region specific, which means all the AZs will have that service.</li>
+<li>Another AWS account<ul>
+<li>This is a cross account access, like a developer taking a production access etc.</li>
+</ul>
+</li>
+<li>Web Identity<ul>
+<li>Using OIDC to validate user, like the mobile phone apps.</li>
+</ul>
+</li>
+<li>SAML 2.0 Federation<ul>
+<li>Using office resources as authentication parameters, like using service Active Directory.</li>
 </ul>
 </li>
 </ul>
-<h2 id="aws-shared-responsibility-model">AWS - Shared Responsibility Model<a class="headerlink" href="#aws-shared-responsibility-model" title="Permanent link">¶</a></h2>
-<p>AWS provides us with the bare metal infrastructure for running our application on their server. This does not imply that outside our application code, we can rely only on AWS.</p>
-<p>AWS and us as a user work in a shared responsibility model, wherein, we have a certain responsibility and AWS has certain, and AWS is willing to shoulder certain responsibility with increased cost.</p>
-<p>AWS's responsibility is broadly related to the physical server's like, physical security, personnel security, discarding the storage devices, DDoS protection, and hyper visor isolation.</p>
-<p>User's responsibility is mostly towards their application like, proper security groups, IAM, MFA, OS patches and VPCs.</p>
-<p><img alt="AWS Shared Responsibility Model " src="https://www.archerimagine.com/images/aws/IAM/Shared_Responsibility_Model_V2.jpg" title="AWS Shared Responsibility Model"/></p>
-<h3 id="compute-services">Compute Services<a class="headerlink" href="#compute-services" title="Permanent link">¶</a></h3>
-<p>The major compute services provided by AWS are.</p>
-<ol>
-<li>Elastic Compute Cloud (EC2)</li>
-<li>Elastic Container service (ECS)</li>
-<li>AWS Lambda</li>
-<li>Elastic BeanStalk</li>
-</ol>
-<p>In the above 4, the user has the maximum control of configuration on EC2 as its bare metal server, with some services running. Lambda and Beanstalk provide the minimum configuration  user and most of them are managed by AWS.</p>
-<h3 id="storage-service">Storage Service<a class="headerlink" href="#storage-service" title="Permanent link">¶</a></h3>
-<p>Just like computer the major storage service provided by AWS are
-* RDS
-    - SQL database.
-* DynamoDB
-    - No SQL database
-* RedShift
-    - Data Warehousing
-* ElastiCache
-    - In memory Cache.</p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
-<p>AWS is a global infrastructure, it has to serve both its developer and consumer with great efficiency and low latency. This is the reason the AWS has its core services spread across the globe called the AWS region. It also has its edge location spread across the globe to serve the consumer.</p>
-<p>AWS region is subdivided into availability zones (AZs), which helps to provide high reliability and are connected to each other via a very low latency fiber optic. When an AWS service is mentioned to be region specific, it implies that it is available in all the AZs.</p>
-<p>There are two types of an Administrator user of AWS service. The first is the <em>root</em> user which has infinite God like permission and is not controlled via the IAM. There is also a <em>admin</em> user which we create from IAM. The <em>admin</em> user have all the permission like the <em>root</em> user, its is just that it was created by IAM.</p>
-<p>The user <em>admin</em> or <em>root</em> both should have MFA enabled and also have a password policy associated with it.</p>
-<p>The AWS services can be accessed using 3 methods.</p>
+<p>You can select <strong>AWS Services</strong> for this experimentation, You can attach this to an EC2 instance, so that it can access the S3.</p>
+<h3 id="step-2-attach-permission-policy">Step 2 | Attach permission policy<a class="headerlink" href="#step-2-attach-permission-policy" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Role Creation | Step 2" src="https://www.archerimagine.com/images/aws/IAM/IAM-Role-Creation-02.png" title="AWS Made Easy | IAM Roles Creation | Step 2"/> </p>
+<p>You can now select policy required to be attached, this step is same as the explained in <a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html">IAM Policy</a>. You have basically chosen from one of these 2 type</p>
 <ul>
-<li>AWS Console</li>
-<li>AWS SDKs</li>
-<li>AWS CLIs</li>
+<li>Custom policy, created using the visual editor or JSON editor.</li>
+<li>AWS managed Policy.</li>
 </ul>
-<p>All of the above will use the AWS APIs to connect with the core services. AWS Console is what every start using first and once becoming comfortable they rely on only SDKs or the CLIs.</p>
-<p>AWS has a shared responsibility with the users, where AWS manages most of the physical security and the server management like DDoS protection and HyperVisor isolation, the user is entrusted with the responsibility of managing the software securities like IAM, MFA, OS Patches, Security groups etc.</p>
-<h2 id="what-is-the-difference-between-the-aws-region-and-aws-edge-location">What is the difference between the AWS Region and AWS Edge Location?<a class="headerlink" href="#what-is-the-difference-between-the-aws-region-and-aws-edge-location" title="Permanent link">¶</a></h2>
-<p>When explaining the AWS Global Infrastructure these 3 Keywords are often used.</p>
+<p>You can select the <strong>AmazonS3ReadOnlyAccess</strong> for attaching to EC2 instance as agreed in Step 1.</p>
+<h3 id="step-3-review">Step 3 |  Review<a class="headerlink" href="#step-3-review" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Role Creation | Step 3" src="https://www.archerimagine.com/images/aws/IAM/IAM-Role-Creation-03.png" title="AWS Made Easy | IAM Roles Creation | Step 3"/> </p>
+<p>You have to provide these details to complete the IAM Role Creation process.</p>
 <ul>
-<li>Region</li>
-<li>Availability Zone (AZs)</li>
-<li>Edge Location</li>
+<li>Role Name<ul>
+<li>An explicit name, which can be used to attached to the EC2 instance.</li>
 </ul>
-<p>Each of the above are key pieces of the AWS Infrastructure, but to understand the fundamental difference we have seen these with a different perspective.</p>
-<p>The above are divided based on</p>
+</li>
+<li>Role description<ul>
+<li>A description about the role.</li>
+</ul>
+</li>
+<li>Trusted Entities<ul>
+<li>This is the service selected from <strong>Step 1</strong>.</li>
+</ul>
+</li>
+<li>Policies<ul>
+<li>The policies attached, in this case <strong>AmazonS3ReadOnlyAccess</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="how-does-the-iam-roles-looks-after-creation">How does the IAM roles looks after creation?<a class="headerlink" href="#how-does-the-iam-roles-looks-after-creation" title="Permanent link">¶</a></h3>
+<p><img alt="AWS Made Easy | IAM Role Creation | Step 4" src="https://www.archerimagine.com/images/aws/IAM/IAM-Role-Creation-04.png" title="AWS Made Easy | IAM Roles Creation | Step 4"/> </p>
+<p>You can see above, this is how an IAM Role looks like after creation. The policy document looks exactly same as an <a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html">IAM Policy</a>. This you can also assume as a baton in a relay race, the service or the user can run with the permission as soon as it gets the policy in the form of an IAM Role.</p>
+<h2 id="iam-roles-vs-iam-users">IAM Roles Vs IAM Users<a class="headerlink" href="#iam-roles-vs-iam-users" title="Permanent link">¶</a></h2>
+<p><img alt="AWS Made Easy | IAM Roles Vs User " src="https://www.archerimagine.com/images/aws/IAM/IAM-User-Vs-Role.png" title="AWS Made Easy | IAM Roles Vs User"/></p>
+<p>You should see <a href="https://www.youtube.com/watch?v=VclOgMtBXN4">this </a> video tutorial on YouTube. This video explains much better, also the flow chart shown above should also clear your doubts</p>
+<p>You can see the logic is elementary,</p>
 <ul>
-<li>User of the content present <strong>on</strong> AWS (End User)</li>
-<li>User of the content provider <strong>to</strong> AWS (Developer)</li>
+<li>If you have a non living things, like EC2 etc., it gets an IAM Roles. No question asked.</li>
+<li>If it is a living thing, like a person, we have to ask two questions.<ul>
+<li>If the permission is temporary then he gets an IAM Roles, else he is an IAM User.</li>
 </ul>
-<p>Region and AZs as already explained are Developer focused, as a result, they are very few and have to adhere to the highest standard of scrutiny.
-Edge Location on the other hand, are User focused, Like CDN, Global Accelerator etc., their job is to make the content reach to and fro from the user faster, reduce the latency. As a result are far too many and spread across the world where it can serve its user better.</p>
+</li>
+</ul>
+<p>Hope this clears your mind about the difference between two confusing terms.</p>
+<h2 id="iam-roles-vs-iam-policy">IAM Roles Vs IAM Policy<a class="headerlink" href="#iam-roles-vs-iam-policy" title="Permanent link">¶</a></h2>
+<p>IAM Roles and IAM Policy both have a JSON document identifying the rule. The only difference is the mention of <strong>Trusted Entities</strong>.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>You might now be relieved by understanding the concept of IAM roles, as discussed we use IAM Roles for mainly three purposes.</p>
+<ul>
+<li>One AWS service using another service, like EC2 instance, wants to read from S3.</li>
+<li>In the hybrid environment, a non AWS user might need access to AWS resources temporarily.</li>
+<li>Cross account access, where a developer may need access to production account.</li>
+</ul>
+<p>You should also think of an IAM Roles as a hat, which a person or services wears and it magically gets the permission and when it drops the hat, it comes back to original state.</p>
+<p>You also should think about EC2 instance, it should not store the IAM User credentials, they should be using the IAM Roles instead. The IAM Roles can be attached to an EC2 instance, during creation, and can be changed afterwards, but not attached after creation. You can attach only one IAM role to an EC2 instance and not multiple.</p>
+<p>You learned that IAM Role creation is a 3 step process.</p>
+<ul>
+<li>Select the trusted entity</li>
+<li>Attach permission policy</li>
+<li>Review</li>
+</ul>
+<p>The IAM Role has been just like IAM Policy document, a JSON document having statements.</p>
+<p>You can be confused with IAM Role and IAM User, we can simplify it, saying, if it is a resource we use an IAM Roles. If a physical user needs temporary access, it uses IAM Roles, otherwise it is an IAM User.</p>
+<p>You can comment and let me know if the IAM user is different than IAM Role.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
-<li>Photo by <a href="https://unsplash.com/@eberhardgross">Eberhard Grossgasteiger </a> on <a href="https://unsplash.com/s/photos/cloud-technology">Unsplash</a></li>
-<li><a href="https://aws.amazon.com/about-aws/global-infrastructure/"> Global Infrastructure </a></li>
-<li><a href="https://aws.amazon.com/compliance/shared-responsibility-model/">Shared Responsibility Model</a></li>
+<li>Photo by <a href="https://unsplash.com/@alesnesetril">Ales Nesetril </a> on <a href="https://unsplash.com/s/photos/technology">Unsplash</a></li>
+<li>Photo by <a href="https://unsplash.com/@alesnesetril">Laura Thonne </a> on <a href="https://unsplash.com/">Unsplash</a></li>
+<li>Photo by <a href="https://unsplash.com/@_alikokab_">Ali Kokab </a> on <a href="https://unsplash.com/">Unsplash</a></li>
+<li>Photo by <a href="https://unsplash.com/@almosbech">Almos Bechtold </a> on <a href="https://unsplash.com/">Unsplash</a></li>
+<li><a href="https://www.youtube.com/watch?v=VclOgMtBXN4">AWS IAM Overview - It’s Surprisingly Simple - Users vs Roles </a></li>
 </ul>
-<h3 id="info-graphics">Info-graphics<a class="headerlink" href="#info-graphics" title="Permanent link">¶</a></h3>
-<p><img alt="AWS Global Infrastructure " src="https://www.archerimagine.com/images/aws/IAM/AWS-Global-Infra-01.png" title="AWS Global Infrastructure"/></p>
 
 
              
 
 
 <div class="applause_button">
-    <applause-button url=https://www.archerimagine.com/articles/aws/general-aws.html> </applause-button>
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-iam-roles.html> </applause-button>
 </div>
 
  
                 <p id="post-share-links">
     Spread the word....
-      <a href="https://twitter.com/intent/tweet?text=AWS%20-%20Shared%20Responsibility%20%26%20Global%20Infrastructure.%20The%20Cloud%20Entry&url=https%3A//www.archerimagine.com/articles/aws/general-aws.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/general-aws.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=AWS%20-%20Shared%20Responsibility%20%26%20Global%20Infrastructure.%20The%20Cloud%20Entry&amp;body=https%3A//www.archerimagine.com/articles/aws/general-aws.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=A%20foolproof%20guide%20to%20AWS%20IAM%20Roles%20A%20Hat%20to%20wear%21%21&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-roles.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-iam-roles.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=A%20foolproof%20guide%20to%20AWS%20IAM%20Roles%20A%20Hat%20to%20wear%21%21&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-iam-roles.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -297,8 +303,8 @@ Edge Location on the other hand, are User focused, Like CDN, Global Accelerator 
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/general-aws.html"
-                   href="https://www.archerimagine.com/articles/aws/general-aws.html#comment_thread"
+                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-iam-roles.html"
+                   href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -316,8 +322,8 @@ Edge Location on the other hand, are User focused, Like CDN, Global Accelerator 
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/general-aws.html';
-    var disqus_url = 'https://www.archerimagine.com/articles/aws/general-aws.html';
+    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-iam-roles.html';
+    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-iam-roles.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -343,28 +349,27 @@ Edge Location on the other hand, are User focused, Like CDN, Global Accelerator 
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
+<li><a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="AWS - Shared Responsibility &amp; Global Infrastructure. - The Cloud Entry">AWS - Shared Responsibility & Global Infrastructure. <small>The Cloud Entry</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small>Grant access</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" title="AWS Made Easy | IAM Policy - The access type.">AWS Made Easy | IAM Policy <small>The access type.</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small>Important actor</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" title="Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 - Who is ahead?">Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 <small>Who is ahead?</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html" title="A foolproof guide to AWS IAM Roles - A Hat to wear!!">A foolproof guide to AWS IAM Roles <small>A Hat to wear!!</small></a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/python/cost-of-len-function-in-python.html" title="Previous: What is the cost of len() function in python? - The ease of constant time.">What is the cost of len() function in python? <small class="subtitle">The ease of constant time.</small></a></li>
-                <li class="next-article"><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="Next: AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small class="subtitle">Grant access</small></a> »</li>
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" title="Previous: Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 - Who is ahead?">Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 <small class="subtitle">Who is ahead?</small></a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2021-02-12T21:19:02+05:30">Fri 12 February 2021</time>
+            <time itemprop="dateCreated" datetime="2021-03-18T09:49:34+05:30">Thu 18 March 2021</time>
 <h4>Last Updated</h4>
-<time datetime="2021-03-15T00:13:49+05:30">Mar 15, 2021</time>
+<time datetime="2021-03-20T08:29:38+05:30">Mar 20, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
