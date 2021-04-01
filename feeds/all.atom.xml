@@ -1,5 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="https://www.archerimagine.com/" rel="alternate"></link><link href="https://www.archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>https://www.archerimagine.com/</id><updated>2021-03-27T10:12:42+05:30</updated><subtitle>Anyone can do my job, but no one can be me. Harvey</subtitle><entry><title>Doing AWS STS the right way.</title><link href="https://www.archerimagine.com/articles/aws/aws-sts.html" rel="alternate"></link><published>2021-03-20T16:20:58+05:30</published><updated>2021-03-27T10:12:42+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2021-03-20:/articles/aws/aws-sts.html</id><summary type="html">&lt;p&gt;AWS STS or Security Token Service, provides temporary access credentials to access any AWS resource. This temporary access can be requested by other AWS account, or a federated user in case of hybrid cloud environment who can be authenticated using SAML 2.0, Web identity provider. AWS STS works very closely with IAM Roles.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Archer Imagine</title><link href="https://www.archerimagine.com/" rel="alternate"></link><link href="https://www.archerimagine.com/feeds/all.atom.xml" rel="self"></link><id>https://www.archerimagine.com/</id><updated>2021-04-01T18:36:30+05:30</updated><subtitle>Anyone can do my job, but no one can be me. Harvey</subtitle><entry><title>Who really uses AWS IAM API keys?</title><link href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html" rel="alternate"></link><published>2021-03-29T10:49:58+05:30</published><updated>2021-04-01T18:36:30+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2021-03-29:/articles/aws/aws-iam-api-keys.html</id><summary type="html">&lt;p&gt;Cloud technology is a tool for the developers, creating sophisticated softwares. How does developer access the cloud? Does AWS Console is the only way to access the cloud? Developers love code, CLIs and SDKs, AWS provides access to its cloud resources using AWS IAM API Keys.&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="AWS Made Easy | AWS IAM API Keys " src="https://www.archerimagine.com/images/aws/IAM/06-IAM-API-Keys.png" title="AWS Made Easy | AWS IAM API Keys"/&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;a class="headerlink" href="#introduction" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Developer community uses the cloud technologies the most. In your conquest to learn about AWS, you have been focusing on configuring thing using the AWS console. As a developer, you may not find the use of AWS console efficient to do the tasks.&lt;/p&gt;
+&lt;p&gt;Sounds like Neo's trapped in the matrix. It's you, but you didn't find Morphaeus. You have no knowledge of the existence of the RED pill to show you the truth.&lt;/p&gt;
+&lt;p&gt;Soon you can access AWS Cloud with tools like CLIs, SDKs or HTTP APIs. These are the tools you completely understand. Even if you don't, sit tight we will make it easy to flow along.&lt;/p&gt;
+&lt;p&gt;You will first create a user with programmatic access, then progress to configure the developer's machine to connect to the cloud. After this, you will get information from the cloud using programmatic access.&lt;/p&gt;
+&lt;p&gt;Stay seated and enjoy this journey of programmatic access to the promised Earth of the Cloud.&lt;/p&gt;
+&lt;h2 id="iam-api-keys"&gt;IAM API Keys&lt;a class="headerlink" href="#iam-api-keys" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You have already found out that there are &lt;a href="https://www.archerimagine.com/articles/aws/general-aws.html#connection-type"&gt;three ways to connect to AWS &lt;/a&gt;. The AWS console is the most basic way to access. AWS CLIs and SDKs provide a much better way to access, as this can be controlled programmatically. &lt;/p&gt;
+&lt;p&gt;To revise we will list does the various ways to access AWS.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS Console&lt;/li&gt;
+&lt;li&gt;AWS SDKs&lt;/li&gt;
+&lt;li&gt;AWS CLIs&lt;ul&gt;
+&lt;li&gt;Windows PowerShell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can use any of the above methods to access AWS, all of them use the AWS APIs in the back-end. The way of access to AWS does not change the features of AWS.&lt;/p&gt;
+&lt;p&gt;You might think, AWS Console is easy to use, there is a web interface, you type in the username and password, which allows access to AWS.&lt;/p&gt;
+&lt;p&gt;How will you use the AWS using these programmatic ways.&lt;/p&gt;
+&lt;h3 id="iam-api-keys-to-the-rescue"&gt;IAM API Keys to the rescue&lt;a class="headerlink" href="#iam-api-keys-to-the-rescue" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;You need to have access to IAM API keys to enable programmatic access to AWS. This API Keys is tied up with an IAM user, so you have to create an IAM user and enable the IAM API Keys.&lt;/p&gt;
+&lt;p&gt;So let's dive into the world of creating and using the IAM API Keys.&lt;/p&gt;
+&lt;h2 id="how-to-create-iam-api-keys"&gt;How to create IAM API Keys?&lt;a class="headerlink" href="#how-to-create-iam-api-keys" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The first step is to build an IAM user. You have already &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html#iam-users-create-a-new-user"&gt;learned the creation of IAM User here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;IAM User creation is a five step process. We have to follow all the steps with a minor change in &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html#iam-users-creation-step-1-add-user"&gt;Step 1&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can see below, we have to just select the option, &lt;strong&gt;Programmatic Access&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AWS Made Easy | AWS IAM User with API Keys " src="https://www.archerimagine.com/images/aws/IAM/IAM-User-programmatic-access.png" title="AWS Made Easy | AWS IAM User with API Keys"/&gt; &lt;/p&gt;
+&lt;p&gt;You can also enable this user to have an AWS Console access by enabling the option &lt;strong&gt;AWS Management console access&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You have to follow the remaining steps from the IAM user creation &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html#iam-users-create-a-new-user"&gt;article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the step five, &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html#iam-users-creation-step-5-success"&gt;Success&lt;/a&gt;, you have to take some specific action.&lt;/p&gt;
+&lt;p&gt;You might see in step five, your screen will look little different than the last time you created the user. We have two new field &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access Key ID&lt;/li&gt;
+&lt;li&gt;Secret access key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You will get these two fields only when you enable the IAM user with programmatic access.&lt;/p&gt;
+&lt;p&gt;Please download the security credentials in CSV format, and keep it safe.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AWS Made Easy | AWS IAM User Success screen " src="https://www.archerimagine.com/images/aws/IAM/IAM-User-API-Keys-Success.png" title="AWS Made Easy | AWS IAM User Success screen"/&gt; &lt;/p&gt;
+&lt;p&gt;Previous time you may have seen this screen. In this the user did not have the programmatic access.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AWS Made Easy | IAM Users creation steps, success " src="https://www.archerimagine.com/images/aws/IAM/iam-user-creation-steps-06-success.png" title="AWS Made Easy | IAM Users creation steps, success"/&gt;&lt;/p&gt;
+&lt;p&gt;Now you have a user with IAM API keys enabled.&lt;/p&gt;
+&lt;h3 id="properties-of-iam-api-keys"&gt;Properties of IAM API Keys&lt;a class="headerlink" href="#properties-of-iam-api-keys" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;You should keep in mind few important points about IAM API Keys.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The above user creation step is the only time you will see both &lt;strong&gt;Access Key ID&lt;/strong&gt; and &lt;strong&gt;Secret access key&lt;/strong&gt; together.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Access Key ID&lt;/strong&gt; is only visible in IAM User's security credentials.&lt;/li&gt;
+&lt;li&gt;It is advised to key the security credentials downloaded in CSV format.&lt;/li&gt;
+&lt;li&gt;Once lost, you cannot recreate the &lt;strong&gt;Secret access key&lt;/strong&gt; corresponding to the &lt;strong&gt;Access Key ID&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;You have to deactivate the old &lt;strong&gt;Access Key ID&lt;/strong&gt; and create a new pair of &lt;strong&gt;Access Key ID&lt;/strong&gt; &amp;amp; &lt;strong&gt;Secret access key&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;You might have already figured this out, since the IAM API keys are tied to an IAM User, we cannot have it associated with &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html"&gt;IAM Roles&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The above combination should never be stored in an AWS EC2 instance, you should use &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html"&gt;IAM Roles&lt;/a&gt; for this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="how-to-use-the-iam-api-keys"&gt;How to use the IAM API Keys?&lt;a class="headerlink" href="#how-to-use-the-iam-api-keys" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can use these IAM API Keys in two major ways.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS SDKs&lt;/li&gt;
+&lt;li&gt;AWS CLIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will go through both these steps.&lt;/p&gt;
+&lt;h3 id="using-iam-api-keys-with-aws-cli"&gt;Using IAM API Keys with AWS CLI.&lt;a class="headerlink" href="#using-iam-api-keys-with-aws-cli" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We can install the Python based AWS CLI with a simple command if you have &lt;code&gt;pip&lt;/code&gt; package manager.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install awscli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To use the AWS CLI you need to configure the AWS environment by running this command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;aws configure
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you get four questions as an output than it proves that the AWS CLI is installed.&lt;/p&gt;
+&lt;p&gt;The above command will ask four questions which you can provide the details from the above &lt;strong&gt;Access Key ID&lt;/strong&gt; &amp;amp; &lt;strong&gt;Secret access key&lt;/strong&gt; you created for the new IAM user.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;AWS Access Key ID &lt;span class="o"&gt;[&lt;/span&gt;None&lt;span class="o"&gt;]&lt;/span&gt;: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key &lt;span class="o"&gt;[&lt;/span&gt;None&lt;span class="o"&gt;]&lt;/span&gt;: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name &lt;span class="o"&gt;[&lt;/span&gt;None&lt;span class="o"&gt;]&lt;/span&gt;: us-west-2
+Default output format &lt;span class="o"&gt;[&lt;/span&gt;None&lt;span class="o"&gt;]&lt;/span&gt;: json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let me try to explain you the details about these 4 options.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS Access Key ID [None] : fill the value you got for &lt;strong&gt;Access Key ID&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;AWS Secret Access Key [None]: fill the value you got for the &lt;strong&gt;Secret access key&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Default region name [None]: You should provide the region on which the AWS CLIs or SDKs should execute. &lt;/li&gt;
+&lt;li&gt;Default output format [None]: JSON is generally the preferred option.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The above execution creates 2 file in &lt;code&gt;~/.aws&lt;/code&gt; folder.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-rw-------   &lt;span class="m"&gt;1&lt;/span&gt; user  staff   116B Dec &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt;:43 credentials
+-rw-------   &lt;span class="m"&gt;1&lt;/span&gt; user  staff    44B Dec &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt;:43 config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;credentials&lt;/code&gt; file contains this, you gave the &lt;strong&gt;Access Key ID&lt;/strong&gt; &amp;amp; the &lt;strong&gt;Secret access key&lt;/strong&gt; above.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;default&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;aws_access_key_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; AKIAIOSFODNN7EXAMPLE
+&lt;span class="nv"&gt;aws_secret_access_key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;config&lt;/code&gt; file has this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;default&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;region&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; us-west-2
+&lt;span class="nv"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With this you can execute AWS CLI specific commands. Here is a reference of such &lt;a href="https://docs.aws.amazon.com/cli/latest/reference/"&gt;commands&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once you have the CLI installed and configured, using the SDK is much easier.&lt;/p&gt;
+&lt;h3 id="using-iam-api-keys-with-aws-sdks"&gt;Using IAM API Keys with AWS SDKs.&lt;a class="headerlink" href="#using-iam-api-keys-with-aws-sdks" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;AWS support SDKs in many languages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Go&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;.NET&lt;/li&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;Python &lt;/li&gt;
+&lt;li&gt;Ruby&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You will use the Python SDK for this example. The Python3 AWS SDK is called &lt;a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"&gt;Boto3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You should complete the AWS CLI installation before proceeding.&lt;/p&gt;
+&lt;h3 id="boto3-installation-quickstart"&gt;Boto3 installation | QuickStart&lt;a class="headerlink" href="#boto3-installation-quickstart" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Python has a very good package manager called &lt;code&gt;pip&lt;/code&gt;, and we can install &lt;code&gt;boto3&lt;/code&gt; with a simple command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install boto3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Post this you need to add a few details to some configuration files if you have still not installed the AWS CLI. Create the &lt;code&gt;credentials&lt;/code&gt; and &lt;code&gt;config&lt;/code&gt; file in the &lt;code&gt;aws&lt;/code&gt; directory as shown above.&lt;/p&gt;
+&lt;p&gt;Here is a sample code, which just list all the buckets on AWS S3. Even if you do not understand AWS S3 no worries. The below code will not give any errors if you do not have any S3 buckets. No error in the below code signifies that the AWS SDKs and CLIs are working in conjunction with each other.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;boto3&lt;/span&gt;
+
+&lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;boto3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resource&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"s3"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;bucket&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;buckets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;AWS Console if a great way to use AWS, but it becomes difficult to use only AWS Console for all the tasks. There are times when you may need to do the job more than once. Manually performing these repeated tasks is very difficult and subject to errors.&lt;/p&gt;
+&lt;p&gt;AWS offers two additional access channels, AWS CLIs and SDK. These accesses require a user enabled with programmatic access. The same user can also have the console access with programmatic access.&lt;/p&gt;
+&lt;p&gt;After you have created the user, you should note that you receive an Access Key ID and a Secret Access Key. These pairs of key are only available during user creation. This is the reason we should download this information in the CSV format, as this information is required multiple time for access.&lt;/p&gt;
+&lt;p&gt;You now have all the raw materials to connect to AWS programmatically. The next step is to download the Python AWS CLI package and configure it. Once configured, you will see a folder in the home directory &lt;code&gt;~/.aws&lt;/code&gt;. This folder now has all the sufficient information to connect to AWS.&lt;/p&gt;
+&lt;p&gt;The CLI is a powerful tool to use, if you still want the SDK, you can download the &lt;strong&gt;BOTO3&lt;/strong&gt; Python SDKs and use the sample code to access all the bucket in the S3 if you have created. If the above code executes without any error you should assume that the SDKs is installed.&lt;/p&gt;
+&lt;p&gt;You can now use any of the methods to access AWS. Let me know your experience of accessing the AWS using CLIs or SDKS, was it easy or hard.&lt;/p&gt;
+&lt;h2 id="info-graphics"&gt;Info Graphics&lt;a class="headerlink" href="#info-graphics" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="AWS Made Easy | IAM API Key Properties " src="https://www.archerimagine.com/images/aws/IAM/IAM-API-Properties.jpg" title="AWS Made Easy | API Key Properties"/&gt;&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;a class="headerlink" href="#reference" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/tools/"&gt;AWS SDKs Browse by Programming Language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"&gt;Boto3 | Python SDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/cli/latest/reference/"&gt;AWS CLI Command Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="aws"></category><category term="aws"></category><category term="cloud"></category></entry><entry><title>Doing AWS STS the right way.</title><link href="https://www.archerimagine.com/articles/aws/aws-sts.html" rel="alternate"></link><published>2021-03-20T16:20:58+05:30</published><updated>2021-03-27T10:12:42+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2021-03-20:/articles/aws/aws-sts.html</id><summary type="html">&lt;p&gt;AWS STS or Security Token Service, provides temporary access credentials to access any AWS resource. This temporary access can be requested by other AWS account, or a federated user in case of hybrid cloud environment who can be authenticated using SAML 2.0, Web identity provider. AWS STS works very closely with IAM Roles.&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="AWS Made Easy | AWS STS, Security Token Service " src="https://www.archerimagine.com/images/aws/IAM/05-AWS-STS.png" title="AWS Made Easy | AWS STS, Security Token Service"/&gt;&lt;/p&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;a class="headerlink" href="#introduction" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You have seen in the previous topic on &lt;a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html"&gt;IAM Roles&lt;/a&gt;, some users and resource can assume a role, moreover an IAM Roles are like a hat which anyone can wear and gets its power. One important part of this should bother you, how does AWS authenticate such users, if the user is a genuine or not.&lt;/p&gt;
@@ -3224,94 +3364,4 @@ unexpected epiphanies.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://teamtreehouse.com/tracks/learn-python"&gt;Learn Python Track from Team TreeHouse&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7"&gt;MIT 6.00SC Introduction to Computer Science and Programming &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nealschaffer.com/tweet-link-preview-image-twitter/"&gt;Create a Tweet With image Preview for Free &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="#100DaysOfCode, python"></category><category term="#100DaysOfCode"></category><category term="#100DaysOfX"></category><category term="Python"></category></entry><entry><title>Render Maths Equation with Pelican Blog</title><link href="https://www.archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" rel="alternate"></link><published>2019-02-02T19:25:57+05:30</published><updated>2019-02-10T00:13:23+05:30</updated><author><name>Animesh Bhadra</name></author><id>tag:www.archerimagine.com,2019-02-02:/articles/pelican/Render-Maths-pelican-blog.html</id><summary type="html">&lt;p&gt;This is a blog which will help in rendering math equation in pelican blog using the render_math plugin.&lt;/p&gt;</summary><content type="html">
-&lt;p&gt;&lt;img alt="Eculid's Quote" src="https://www.archerimagine.com/images/discreteMaths/eulid.png" title="Things which are equal to the same things are also equal to one another."/&gt;&lt;/p&gt;
-&lt;h2 id="de-morgans-law"&gt;De Morgan's Law&lt;a class="headerlink" href="#de-morgans-law" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;De Morgan’s Law (negation of conjunction)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="math"&gt;$$ \neg(P \wedge Q) \equiv \neg P \vee \neg Q $$&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;De Morgan’s Law (negation of alternative)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="math"&gt;$$ \neg(P \vee Q) \equiv \neg P \wedge \neg Q $$&lt;/div&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Pelican"></category><category term="pelican"></category><category term="maths"></category><category term="render_math"></category></entry></feed>
+&lt;/ul&gt;</content><category term="#100DaysOfCode, python"></category><category term="#100DaysOfCode"></category><category term="#100DaysOfX"></category><category term="Python"></category></entry></feed>
