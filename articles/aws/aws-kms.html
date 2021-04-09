@@ -19,12 +19,12 @@
 <meta name="keywords" content="aws, cloud, aws, AWS KMS, CMKs, Customer managed CMKs, AWS managed CMKs, Data keys, Envelope encryption, Generate, encrypt, decrypt, KEK, Key encryption key, GenerateDataKey." />
 
 <meta property="og:title" content="The Dummies Guide to AWS KMS.  - AWS KMS is sexy. "/>
-<meta property="og:url" content="https://www.archerimagine.com/drafts/aws-kms.html" />
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-kms.html" />
 <meta property="og:description" content="When you are storing your data on a physical server which is not owned by you. The concern of data security is paramount. AWS KMS or key management service helps in this regards to safeguard data by encrypting it. You can use keys provided by you or by AWS to encrypt the data. AWS KMS makes sure that the data and the keys are not stored together, restricting the extent of data theft." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2021-04-02T12:41:48+05:30" />
-<meta property="og:article:modified_time" content="2021-04-08T13:22:28+05:30" />
+<meta property="og:article:modified_time" content="2021-04-10T01:30:47+05:30" />
 <meta name="twitter:title" content="The Dummies Guide to AWS KMS.  - AWS KMS is sexy. ">
 <meta name="twitter:description" content="When you are storing your data on a physical server which is not owned by you. The concern of data security is paramount. AWS KMS or key management service helps in this regards to safeguard data by encrypting it. You can use keys provided by you or by AWS to encrypt the data. AWS KMS makes sure that the data and the keys are not stored together, restricting the extent of data theft.">
 <meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/07-AWS-KMS.png" />
@@ -90,7 +90,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.archerimagine.com/drafts/aws-kms.html">
+            <a href="https://www.archerimagine.com/articles/aws/aws-kms.html">
                 The Dummies Guide to AWS KMS.
                 <small class="subtitle">
                     AWS KMS is sexy.
@@ -151,38 +151,43 @@
             
 <p><img alt="AWS Made Easy | AWS KMS | Key Management Service " src="https://www.archerimagine.com/images/aws/IAM/07-AWS-KMS.png" title="AWS Made Easy | AWS KMS | Key Management Service"/></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
-<p>Security is a topic which puts a scare in a lot of us. You may not well versed in this topic and always think if someone else can handle it for you. You should just do the bare minimum required and magically the application you are making becomes secure. This is your prayer when you are making that application.</p>
-<p>On the other spectrum we have people who are experts in this domain, they are the people who define standards for us mortals. We can only dream of becoming a 1% of what these people can do and understand.</p>
-<p>AWS provides a managed service which does a lot of this job for a novice like us. This service is like Rubeus Hagrid, to guide the novice Harry porter though the woods of The Forbidden Forest.</p>
-<p>This service provides mechanism to encrypt and decrypt data, 2 of the most important task in encryption. It also helps us with envelope encryption. It can also generate the data keys for you.</p>
-<p>This service is everything you wished for when you wanted to make your application secure and your data encrypted. This service also automatically integrates with lot of other AWS service making it easier to encrypt the data. </p>
+<p>This is the article you have been waiting for to gain knowledge on security, encryption, cipher text. All these topics puts a scare in a lot of us. You have always wished if somehow these topics just don't cross your road. Just like the black cat. </p>
+<p>I am going to explain you these topics with interesting visuals, charts and info graphics. This will help you to hold a conversation with your colleague when such scary topics are being discussed.   </p>
+<p>In Short, if you want to score few marks of these topics in AWS Certification exams. If you want to have a conversation with your team mates next time, when these topics come up. This is the article you have been waiting for.</p>
+<p>AWS provides a managed service which does a lot of heavy lifting for us. This service is like Rubeus Hagrid, the guide to novice Harry porter, though the woods of The Forbidden Forest.</p>
+<p>This service provides a mechanism to encrypt and decrypt data, 2 of the most important task in encryption. It also helps us with envelope encryption. It can also generate the data keys for you.</p>
+<p>This service is everything you wished for when you wanted to make your application secure and your data encrypted. This service also automatically integrates with lots of other AWS service, making it easier to encrypt the data.</p>
+<p>Lets jump right in.. to the mystical world of AWS KMS.</p>
 <h2 id="what-is-encryption">What is encryption?<a class="headerlink" href="#what-is-encryption" title="Permanent link">¶</a></h2>
-<p>Before you get into the journey for understanding the AWS provided service. You should understand what is encryption in its simplest form. </p>
+<p>Before you get into the journey to understanding the AWS provided service. You should understand what is encryption in its simplest form. </p>
 <p>As mentioned by Wikipedia, Encryption is</p>
 <blockquote>
 <p>Encryption is the process of encoding information. This process converts the original representation of the information, known as <strong>plaintext</strong>, into an alternative form known as <strong>ciphertext</strong>.</p>
 </blockquote>
-<p>You can consider it like this, there is a black box, into which we pass a plain text and get a encrypted text, which no one can understand. This helps in keeping the data secure, if we delete the plain text now, no one can decode the encrypted text back.</p>
-<p>The process to get back the original plaintext differ on the basis of the encryption used.</p>
+<p>You can consider it like this, there is a black box, into which we pass a plain text and get an encrypted text, which no one can understand. This helps in keeping the data secure, if we delete the plain text now, no one can decode the encrypted text back.</p>
+<p>The process to get back the original plaintext differs on the basis of the encryption used.</p>
 <p>There are two types of encryption used.</p>
 <ul>
 <li>Symmetric Encryption</li>
 <li>Asymmetric Encryption </li>
 </ul>
-<p>The name derives for the fact that if they are using the same key to encrypt or decrypt the data.</p>
+<p>The name derives from the fact that if they are using the same key to encrypt or decrypt the data.</p>
+<p><img alt="AWS Made Easy | Encryption type " src="https://www.archerimagine.com/images/aws/IAM/Encryption-Comparision.png" title="AWS Made Easy | Encryption type"/></p>
 <h3 id="symmetric-encryption">Symmetric Encryption<a class="headerlink" href="#symmetric-encryption" title="Permanent link">¶</a></h3>
-<p>In Symmetric encryption, we use the same key to encrypt and decrypt the data.</p>
+<p>In symmetric encryption, we use the same key to encrypt and decrypt the data. </p>
+<p>Consider your home lock, it opens and closes with the same key. This is same as symmetric encryption.</p>
 <h3 id="asymmetric-encryption">Asymmetric Encryption<a class="headerlink" href="#asymmetric-encryption" title="Permanent link">¶</a></h3>
-<p>In Asymmetric Encryption, we have to encrypt the data with a public key which is known to everyone, but the decrypt happens with a specific private key known only the authorized person. In this case both the keys are different.</p>
+<p>In Asymmetric Encryption, we have to encrypt the data with a public key which is known to everyone, but the decrypt happens with a specific private key known only the authorized person. In this case, both the keys are different.</p>
+<p>Consider the bank locker, to open the locker, you need your key, and the bankers key. You cannot open with just one key. Asymmetric encryption is like the bank locker.</p>
 <h2 id="aws-kms-definition">AWS KMS Definition<a class="headerlink" href="#aws-kms-definition" title="Permanent link">¶</a></h2>
 <p>As per AWS, a KMS is</p>
 <blockquote>
 <p>AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and control customer master keys (CMKs), the encryption keys used to encrypt your data. </p>
 </blockquote>
-<p>This is the most apt definition for AWS KMS you will ever find. Trust me I have searched. AWS KMS creates and controls the customer master keys (CMKs) only. For you to understand this is the master key which you have, and it can open any lock for you. This is the skeleton key for you.</p>
-<p>If you notice carefully in the definition, there is no mention of storing of the keys, it just mentioned create and control. As you go further in this article you will understand why is that the case.</p>
-<p>You might be getting an inkling on why is AWS KMS important after reading about the definition, encryption and its type. You can store a lot of data on AWS, using various service, namely AWS S3, RDS, EBS, etc. To keep the enterprise data on public platform in an plain text form is not advisable. </p>
-<p>So lets jump into the world of AWS KMS, by learning about some key concepts.</p>
+<p>This is the most apt definition for AWS KMS you will ever find. Trust me, I have searched. AWS KMS creates and controls the customer master keys (CMKs) only. For you to understand this is the master key which you have, and it can open any lock for you. This is the skeleton key for you.</p>
+<p>If you notice carefully in the definition, it does not mention about the storing of keys, it just mentioned create and control. As you go further in this article you will understand why is that the case.</p>
+<p>You might be getting an inkling, why is AWS KMS important after reading about the definition, encryption and its type. You can store a lot of data on AWS, using various services, namely AWS S3, RDS, EBS, etc. To keep the enterprise data on public platforms in a plain text form is not advisable.</p>
+<p>So let's jump into the world of AWS KMS, by learning about some key concepts.</p>
 <h2 id="customer-master-keys-cmks">Customer Master Keys (CMKs)<a class="headerlink" href="#customer-master-keys-cmks" title="Permanent link">¶</a></h2>
 <p>Customer Master Keys (CMKs) are the core of AWS KMS. This is a logical representation of a master key. It is assumed that a CMKs have these metadata.</p>
 <ul>
@@ -192,7 +197,7 @@
 <li>Key State</li>
 <li>Key Materials</li>
 </ul>
-<p>You cannot see all these metadata upfront. CMKs are user to encrypt or decrypt upto 4Kb of data. As there are different type of encryption, we have corresponding types of CMKs.</p>
+<p>You cannot see all these metadata upfront. CMKs are used to encrypt or decrypt up to 4KB of data. As there are different types of encryption, we have corresponding types of CMKs.</p>
 <ul>
 <li>Symmetric CMKs<ul>
 <li>A 256 byte key, which is used for both encryption and decryption.</li>
@@ -204,15 +209,16 @@
 </li>
 </ul>
 <p>The Symmetric CMKs keys, and the private key of Asymmetric CMKs never leave the AWS KMS unencrypted.</p>
-<p>The CMKs provide APIs for various programming languages, like Boto3 for Python, which can use the AWS KMS Api's to get the task done, inplace of the actual physical key materials which is not visible in AWS KMS.</p>
-<p>As a user we only have to option to delete the CMKs but not modify any of the key meta data.</p>
+<p>The CMKs provide APIs for various programming languages, like Boto3 for Python, which can use the AWS KMS Api's to get the task done, in place of the actual physical key materials which is not visible in AWS KMS.</p>
+<p>As a user we only have to option to delete the CMKs but not modify any of the key metadata.</p>
 <p>AWS KMS supports 3 different type of CMKs.</p>
 <ul>
 <li>Customer Managed CMKs</li>
 <li>AWS Managed CMKs</li>
 <li>AWS Owned CMKs</li>
 </ul>
-<p>AWS services manages to use the above 3 type of CMKs in different manner, some use only the Customer Managed CMKs, some use only AWS Managed CMKs or AWS Owned CMKs, and some gives the flexibility of all 3.</p>
+<p>AWS services manage to use the above 3 types of CMKs in different manner, some use only the Customer Managed CMKs, some use only AWS Managed CMKs or AWS Owned CMKs, and some gives the flexibility of all 3.</p>
+<p><img alt="AWS Made Easy | CMK Types " src="https://www.archerimagine.com/images/aws/IAM/CMKS-Types.png" title="AWS Made Easy | CMK Types"/></p>
 <h3 id="customer-managed-cmks">Customer Managed CMKs<a class="headerlink" href="#customer-managed-cmks" title="Permanent link">¶</a></h3>
 <p>These are the CMKs which are created, owned and managed by you. These are under your full control. </p>
 <p>You can find the customer managed CMKs in the AWS Console. Just remember that Customer Managed CMKs has a monthly fee even in the free tier. A word of advice, after learning about customer managed CMKs, please delete the keys, not disable it.</p>
@@ -224,33 +230,37 @@
 <p>AWS KMS does not take the responsibility of storing, managing or tracking your data keys.</p>
 <h3 id="create-a-data-key">Create a data key<a class="headerlink" href="#create-a-data-key" title="Permanent link">¶</a></h3>
 <p>When you use the AWS KMS APIs, for encryption, the generation of data keys happens automatically. You can explicitly create a data key by calling the API, <code>GenerateDataKey</code>.</p>
+<p><img alt="AWS Made Easy | Generate a data key " src="https://docs.aws.amazon.com/kms/latest/developerguide/images/generate-data-key.png" title="AWS Made Easy | Generate a data key"/></p>
 <p>The API returns 2 things.</p>
 <ul>
 <li>Plain Text copy of the data key.</li>
 <li>The data Key encrypted with the CMKs.</li>
 </ul>
 <h3 id="encrypt-a-data-key">Encrypt a data key<a class="headerlink" href="#encrypt-a-data-key" title="Permanent link">¶</a></h3>
-<p>AWS KMS does not have a mechanism for you to encrypt the data key, You can use OpenSSL library to encrypt the data with Data key, or use the AWS <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html">Encryption SDKs</a>.</p>
+<p>AWS KMS does not have a mechanism for you to encrypt the data key, You can use the OpenSSL library to encrypt the data with Data key, or use the AWS <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html">Encryption SDKs</a>.</p>
+<p><img alt="AWS Made Easy | encrypt a data key " src="https://docs.aws.amazon.com/kms/latest/developerguide/images/encrypt-with-data-key.png" title="AWS Made Easy | encrypt a data key"/></p>
 <p>The plain text data key generated above, can be used to encrypt the data using the OpenSSL Library or the encryption SDKs. The encrypted data can now be stored safely, but delete the plain text data key as soon as possible.</p>
 <h3 id="decrypt-a-data-key">Decrypt a data key<a class="headerlink" href="#decrypt-a-data-key" title="Permanent link">¶</a></h3>
 <p>Now you have stored the encrypted data, at some point you want to decrypt the data, You can use the <code>decrypt</code> API, which will decrypt the data key, and returns the plain text data key. This plain text data key can now be used to decrypt the data.</p>
+<p><img alt="AWS Made Easy | decrypt a data key " src="https://docs.aws.amazon.com/kms/latest/developerguide/images/decrypt.png" title="AWS Made Easy | decrypt a data key"/></p>
 <h2 id="envelope-encryption">Envelope encryption<a class="headerlink" href="#envelope-encryption" title="Permanent link">¶</a></h2>
 <p>By definition, Envelope Encryption is,</p>
 <blockquote>
 <p>Envelope Encryption is a practice where the data is encrypted with a key (data key), and then the key (data key) in turn is again encrypted.</p>
 </blockquote>
-<p>To understand the above statement more clearly, you can take the analogy of when you leave you house for a long time, you lock your important document and valuable in a safety lockers. You then keep the keys to this safety lockers inside another room or lock. Finally you lock the front of your door and leave. </p>
-<p>In above case the data (your valuable) &amp; your key (safety lockers) are in the same place (your home), but you have the master key to the house (CMKs). This helps you in leaving your house in peace.</p>
+<p>To understand the above statement more clearly, you can take the analogy of when you leave your house for a long time, you lock your important document and valuable in a safety lock. You then keep the keys to this safety lockers inside another room or lock. Finally, you lock the front of your door and leave.</p>
+<p>In above case the data (your valuable) &amp; your key (safety lockers) are in the same place (your home), but you have the master key to the house (CMKs). This helps you leaving your house in peace.</p>
 <p>In AWS KMS, Customer Master Keys (CMKs) are the master keys, which never leave AWS KMS unencrypted.</p>
-<p>You can create a chain of such encryption cycle, and the reason why envelope encryption works is for these reason.</p>
+<p>You can create a chain of such encryption cycle, and the reason why envelope encryption works is for this reason.</p>
 <ul>
 <li>Encrypting Data is a slow process, but encrypting just the data key is a fast process.</li>
-<li>Encryption of data keys, gives a added layer of security for you, and it helps you storing the encrypted data keys along with the data.</li>
-<li>Different encryption algorithms can be used to encrypt multiple keys in each layer of envelop.</li>
+<li>Encryption of data keys, gives an added layer of security for you, and it helps you storing the encrypted data keys along with the data.</li>
+<li>Different encryption algorithms can be used to encrypt multiple keys in each layer of the envelop.</li>
 </ul>
+<p><img alt="AWS Made Easy | Envelope Encryption " src="https://www.archerimagine.com/images/aws/IAM/Envelope-Encryption.png" title="AWS Made Easy | Envelope Encryption"/></p>
 <h2 id="create-a-cmks-on-aws">Create A CMKs on AWS<a class="headerlink" href="#create-a-cmks-on-aws" title="Permanent link">¶</a></h2>
 <p>You are now well versed with the major concepts in AWS, now lets dive into how to create a CMKs and its usage.</p>
-<p>One thing you should note that lot of old blogs mentions the AWS KMS as a option under AWS IAM, it is not the case now. AWS KMS is an independent service.</p>
+<p>One thing you should note that a lot of old blogs mentions the AWS KMS as an option under AWS IAM, it is not the case now. AWS KMS is an independent service.</p>
 <p>The first step in AWS KMS is to create a CMKs. Creation of CMKs is a five step process. </p>
 <ol>
 <li>Configure Key ⚙️</li>
@@ -263,29 +273,29 @@
 <h3 id="create-cmks-step-01-configure-key">Create CMKs | Step 01 | Configure Key ⚙️<a class="headerlink" href="#create-cmks-step-01-configure-key" title="Permanent link">¶</a></h3>
 <p>Here is the screen for your reference.</p>
 <p><img alt="AWS Made Easy | AWS KMS | Create CMKs | Configure Key Step " src="https://www.archerimagine.com/images/aws/IAM/AWS-KMS-01-Configure-Key.png" title="AWS Made Easy | AWS KMS | Create CMKs | Configure Key Step"/></p>
-<p>You learned about Symmetric encryption &amp; Asymmetric encryption, in the topic above <a href="https://www.archerimagine.com/drafts/aws-kms.html#what-is-encryption">What is encryption?</a>. </p>
-<p>You have choose one of those option for you own CMKs, lets keep is simple and choose Symmetric encryption, as you will use the same key to encrypt and decrypt data.</p>
+<p>You learned about Symmetric encryption &amp; Asymmetric encryption, in the topic above <a href="https://www.archerimagine.com/articles/aws/aws-kms.html#what-is-encryption">What is encryption?</a>. </p>
+<p>You have chosen one of those options for your own CMKs, lets keep is simple and choose Symmetric encryption, as you will use the same key to encrypt and decrypt data.</p>
 <p>The default <strong>Advanced Option</strong> is selected as KMS, you can keep the same. The other 2 option are for giving your own Keys to encrypt the data or take it from CloudHSM.</p>
 <h3 id="create-cmks-step-02-add-label">Create CMKs | Step 02 | Add Label 🏷️<a class="headerlink" href="#create-cmks-step-02-add-label" title="Permanent link">¶</a></h3>
 <p><img alt="AWS Made Easy | AWS KMS | Create CMKs | Add label Step " src="https://www.archerimagine.com/images/aws/IAM/AWS-KMS-02-labels.png" title="AWS Made Easy | AWS KMS | Create CMKs | Add label step"/></p>
-<p>Let me take you thorough this option one at a time.</p>
-<p>You have to give a <strong>Alias</strong> first, this is the name you will use to reference this key in your code, or for any other service. Give a good name and description to the Key. You cannot go to the next step without giving the <strong>Alias</strong> name.</p>
+<p>Let me take you through this option one at a time.</p>
+<p>You have to give an <strong>Alias</strong> first, this is the name you will use to reference this key in your code, or for any other service. Give a good name and a description of the Key. You cannot go to the next step without giving the <strong>Alias</strong> name.</p>
 <p>The next option is to give a <strong>Tag</strong> name, you can provide a key/value pair which you can easily reference in code or in service to identify the key in addition to the name you provided.</p>
 <h3 id="create-cmks-step-03-define-key-administrative">Create CMKs | Step 03 | Define key administrative 🚶<a class="headerlink" href="#create-cmks-step-03-define-key-administrative" title="Permanent link">¶</a></h3>
 <p><img alt="AWS Made Easy | AWS KMS | Create CMKs | Admin Step " src="https://www.archerimagine.com/images/aws/IAM/AWS-KMS-03-admin.png" title="AWS Made Easy | AWS KMS | Create CMKs | Admin step"/></p>
-<p>Once you are done with naming you keys, you have to find out off all the IAM user's or Roles who can be the Admin of this keys.</p>
+<p>Once you are done with naming your keys, you have to find out off all the IAM user's or Roles who can be the Admin of these keys.</p>
 <p>AWS KMS CMKs administrators are those people who can administer the keys, but they cannot use the key for cryptographic operation, which make it important for the next step.</p>
 <p>Select the Administrator User or role, who will not be using it for cryptographic operation, and lets go to the next step.   </p>
 <h3 id="create-cmks-step-04-define-key-usage-permissions">Create CMKs | Step 04 | Define Key usage permissions 👨‍💻<a class="headerlink" href="#create-cmks-step-04-define-key-usage-permissions" title="Permanent link">¶</a></h3>
 <p><img alt="AWS Made Easy | AWS KMS | Create CMKs | User Step " src="https://www.archerimagine.com/images/aws/IAM/AWS-KMS-04-user.png" title="AWS Made Easy | AWS KMS | Create CMKs | User step"/></p>
-<p>You have the administrators of your AWS KMS CMKs, now lets get one of the IAM role or user be selected as the user of the key. These selection enable this user with two extra policy.</p>
+<p>You have the administrators of your AWS KMS CMKs, now lets get one of the IAM role or user be selected as the user of the key. These selections enable this user with two extra policies.</p>
 <ol>
 <li>Policy to use the CMK directly.</li>
 <li>Use the CMKs with the AWS Services.</li>
 </ol>
 <h3 id="create-cmks-step-05-review">Create CMKs | Step 05 | Review 🔍<a class="headerlink" href="#create-cmks-step-05-review" title="Permanent link">¶</a></h3>
 <p><img alt="AWS Made Easy | AWS KMS | Create CMKs | Review Step " src="https://www.archerimagine.com/images/aws/IAM/AWS-KMS-05-review.png" title="AWS Made Easy | AWS KMS | Create CMKs | Review step"/></p>
-<p>The final step for you in most of the AWS configuration is Review. Check all the details, and see the key policy document.  What ever we discussed in the last two step will now make sense to you.</p>
+<p>The final step for you in most of the AWS configuration is Review. Check all the details, and see the key policy document.  What ever we discussed in the last two steps will now make sense to you.</p>
 <p>You analyze the key policy mentioned below, and understand what are the special permission given to the administrators and the user.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">"Id"</span><span class="p">:</span> <span class="s2">"key-consolepolicy-3"</span><span class="p">,</span>
@@ -363,21 +373,22 @@
 <ul>
 <li>administrators<ul>
 <li>The administrators is <code>XYZ</code> in the above policy, check carefully what you see.</li>
-<li>This administrators is give the Actions to most of the AWS KMS administrators an allow effect.</li>
-<li>This administrators does not have any encryption, decryption or generate key action associated with it.</li>
+<li>These administrators are given the Actions to most of the AWS KMS administrators an allow effect.</li>
+<li>This administrators do not have any encryption, decryption or generate key action associated with it.</li>
 </ul>
 </li>
 <li>user.<ul>
 <li>The user is <code>ABC</code> in the above policy, </li>
 <li>The user as you see is granted the Action of encrypt, decrypt, generate and other key related uses with an allow effect.</li>
-<li>The user also have an addition allow effect on the AWS KMS Grants, which is mostly used by AWS Services when encrypting data at rest.</li>
+<li>The user also has an addition allow effective on the AWS KMS Grants, which is mostly used by AWS Services when encrypting data at rest.</li>
 </ul>
 </li>
 </ul>
 <p>This makes you the owner of a CMK. Please keep this in mind, the AWS KMS CMKs are charged, so if you are finished learning delete the key immediately, and I would like to remind you, <strong>do not disable the key, delete the key</strong>.</p>
+<p><img alt="AWS Made Easy | AWS CMK Creation Steps " src="https://www.archerimagine.com/images/aws/IAM/AWS-CMK-Creation.png" title="AWS Made Easy | AWS CMK Creation Steps"/></p>
 <h2 id="aws-kms-api">AWS KMS API<a class="headerlink" href="#aws-kms-api" title="Permanent link">¶</a></h2>
-<p>When you have your CMKs configured, you obviously want to use it. You should wait a bit before using it. Let me explain to you few of the AWS KMS APIs.</p>
-<p>There are many APIs in AWS KMS, the full list of AWS KMS apis are mentioned <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Operations.html">here.</a> We will not go through all of them but the three most important once, which you can use in a fun manner in the next section.</p>
+<p>When you have your CMKs configured, you obviously want to use it. You should wait a bit before using it. Let me explain to you a few of the AWS KMS APIs.</p>
+<p>There are many APIs in AWS KMS, the full list of AWS KMS api's are mentioned <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Operations.html">here.</a> We will not go through all of them, but the three most important once, which you can use in a fun manner in the next section.</p>
 <ul>
 <li><code>GenerateDataKey</code> - Returns a plain text and a cipher text version of a data key.</li>
 <li><code>Encrypt</code> - Encrypt the plain text using a CMKs</li>
@@ -385,7 +396,7 @@
 </ul>
 <p>The name is self describing but still let me explain you the little fundamental about the APIs.</p>
 <h3 id="generatedatakey">GenerateDataKey<a class="headerlink" href="#generatedatakey" title="Permanent link">¶</a></h3>
-<p>When you are using an SDKs, you generally do not need to use the <code>GenerateDataKey</code>, because you can use the Key Id generated <a href="https://www.archerimagine.com/drafts/aws-kms.html#create-cmks-step-02-add-label">above.</a></p>
+<p>When you are using an SDKs, you generally do not need to use the <code>GenerateDataKey</code>, because you can use the Key Id generated <a href="https://www.archerimagine.com/articles/aws/aws-kms.html#create-cmks-step-02-add-label">above.</a></p>
 <p>This API generates a symmetric data key for you, which you can use for client side encryption. </p>
 <p>It generates two keys for you.</p>
 <ul>
@@ -394,33 +405,68 @@
 </ul>
 <p>Once the client side encryption of data is done and stored, the plain text copy of the data key can be deleted and the encrypted copy of the data key can be kept along with the encrypted data.</p>
 <p><code>GenerateDataKey</code> always returns a unique data key on each call. </p>
-<p>There are different variant of the same API, which you can consider to use.</p>
+<p>There are different variations of the same API, which you can consider to use.</p>
 <ul>
 <li><code>GenerateDataKeyWithoutPlaintext</code> - Which will only generate the encrypted copy of the data key.</li>
 <li><code>GenerateDataKeyPair</code> - Generates the Asymmetric data key.</li>
 </ul>
 <h3 id="encrypt">Encrypt<a class="headerlink" href="#encrypt" title="Permanent link">¶</a></h3>
-<p>Once you have the <a href="https://www.archerimagine.com/drafts/aws-kms.html#create-cmks-step-02-add-label">Key id generated</a>, you can use the <code>encrypt</code> API to encrypt your data. This API just encrypts the plain text data into ciphertext using the CMKs we generated.</p>
-<p>This API has two primary use case handled.</p>
+<p>Once you have the <a href="https://www.archerimagine.com/articles/aws/aws-kms.html#create-cmks-step-02-add-label">Key id generated</a>, you can use the <code>encrypt</code> API to encrypt your data. This API just encrypts the plain text data into ciphertext using the CMKs we generated.</p>
+<p>This API has two primary use cases handled.</p>
 <ul>
 <li>Encrypt small amount of data, like a database password.</li>
 <li>It can be used to move encrypted data from one Region to another.</li>
 </ul>
 <h3 id="decrypt">Decrypt<a class="headerlink" href="#decrypt" title="Permanent link">¶</a></h3>
 <p>The name itself tells you, it will decrypt the data we have encrypted till now. We do not need to pass the Key Id in the API, if we are symmetric encryption, which is our case anyway.</p>
+<p><img alt="AWS Made Easy | AWS KMS APIs " src="https://www.archerimagine.com/images/aws/IAM/AWS-KMS-API.png" title="AWS Made Easy | AWS KMS APIs"/></p>
 <h3 id="aws-kms-api-in-action-with-boto3">AWS KMS API in action with Boto3<a class="headerlink" href="#aws-kms-api-in-action-with-boto3" title="Permanent link">¶</a></h3>
-<p>Finally the code which use the <strong>Boto3</strong> SDK to do all the good things for you.</p>
+<p>Finally the code which uses the <strong>Boto3</strong> SDK to do all the good things for you.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 <span class="n">kms</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'kms'</span><span class="p">)</span>
-<span class="n">key_id</span> <span class="o">=</span> <span class="s1">'alias/tempKey'</span> <span class="c1"># this should be present in the KMS</span>
-<span class="n">database_password</span> <span class="o">=</span> <span class="s1">'flagship-player-dispatch-agile-agenda-flanking-karma'</span>
+<span class="n">key_id</span> <span class="o">=</span> <span class="s1">'alias/test'</span> <span class="c1"># this should be present in the KMS</span>
+<span class="n">database_password</span> <span class="o">=</span> <span class="s1">'Lorem-ipsum-dolor-sit-amet.'</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">kms</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">KeyId</span><span class="o">=</span><span class="n">key_id</span><span class="p">,</span> <span class="n">Plaintext</span><span class="o">=</span><span class="n">database_password</span><span class="p">)</span> <span class="c1"># result will now have these fields</span>
 <span class="c1"># ChiphertextBlob - encrypted data</span>
 <span class="n">encrypted_password</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">'ChiphertextBlob'</span><span class="p">]</span>
 <span class="n">decrypt_result</span> <span class="o">=</span> <span class="n">kms</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ChiphertextBlob</span><span class="o">=</span><span class="n">encrypted_password</span><span class="p">)</span> <span class="c1"># will have the password decrypted</span>
 <span class="n">decrypt_result</span><span class="p">[</span><span class="s1">'Plaintext'</span><span class="p">]</span>
 </code></pre></div>
+<ul>
+<li><code>key_id = 'alias/test'</code> <ul>
+<li>this is the key id you created <a href="https://www.archerimagine.com/articles/aws/aws-kms.html#create-cmks-step-02-add-label">the label.</a>, you have to add <code>alias/</code> before the actual label.</li>
+</ul>
+</li>
+<li><code>result = kms.encrypt(KeyId=key_id, Plaintext=database_password)</code> <ul>
+<li>You will call the <code>encrypt()</code> API, passing the key id, and the text which has to be encrypted.</li>
+<li>This API is only used to encrypt small amount of data.</li>
+</ul>
+</li>
+<li><code>encrypted_password = result['ChiphertextBlob']</code><ul>
+<li>You can retrieve the encrypted password which is mapped with a key value of <code>ChiphertextBlob</code> in the result.</li>
+</ul>
+</li>
+<li><code>decrypt_result = kms.decrypt(ChiphertextBlob=encrypted_password)</code><ul>
+<li>You can decrypt, the <code>encrypted_password</code> using the <code>decrypt</code> api.</li>
+<li>You were using symmetric encryption, this is the reason you are not passing the key id.</li>
+</ul>
+</li>
+<li><code>decrypt_result['Plaintext']</code><ul>
+<li>You can retrieve the plain text password back from the key value of <code>Plaintext</code></li>
+</ul>
+</li>
+</ul>
+<p>The above is a very simplistic example of the use of Boto3 for <code>encrypt</code> &amp; <code>decrypt</code> APIs. You can explore further once you have completed the AWS certification. For now the understanding of these three important APIs is enough.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>You might have always wondered about cloud computing, How does the data in the cloud is secured? Though there are multiple service are involved in AWS to provide that data security.</p>
+<p>You came to know about one of the building blocks in that data security infrastructure.</p>
+<p>You understood that encryption is the way of encoding information with a key so that you can transmit data securely. You also found that you can use the same or a different key for encrypting and decrypting.</p>
+<p>AWS KMS is a service which provides a way to create Customer master Keys (CMKs), which can be made by you, or AWS or owned by AWS. This key is the master keys, which you can use the data key or small plain text data.</p>
+<p>When encrypting large chunks of data, we cannot use the CMKs, but we need something called data keys, which can be generated using the CMKs we created. You can use these data keys to encrypt the data, and deleted the plain text data key. You can store the encrypted data keys with the data.</p>
+<p>AWS KMS provide different APIs to for you to generate the data key. AWS KMS does not give the option to encrypt and decrypt the data, You have to use the OpenSSL library, or the AWS Encryption SDKs. AWS KMS does not own the responsibility of storing the data key, you are the owner to store it.</p>
+<p>In encryption you also understood envelope encryption, where you can use multiple keys to encrypt the data. You can use the combination of symmetric and asymmetric encryption to encrypt the data.</p>
+<p>You followed the 5 step process to create an AWS KMS CMKs, You also found out about the three AWS KMS API, <code>GenerateDatakey</code>, <code>Encrypt</code> and <code>Decrypt</code>. You also used the AWS Boto3 SDK for Python to create a sample understanding of the process to encrypt and decrypt data.</p>
+<p>Overall you have now a fair understanding of the AWS KMS. You can further enhance the reading of AWS KMS, by following the various articles provided in <a href="https://www.archerimagine.com/articles/aws/aws-kms.html#reference">reference.</a></p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
 <li>Photo by <a href="https://unsplash.com/@alesnesetril">Ales Nesetril </a> on <a href="https://unsplash.com/s/photos/technology">Unsplash</a></li>
@@ -433,25 +479,83 @@
 <li><a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using grants</a></li>
 <li><a href="https://stackoverflow.com/questions/58850216/what-is-the-purpose-of-kmsgeneratedatakey-in-aws">What is the purpose of kms:GenerateDataKey in AWS?</a></li>
 </ul>
+<p>Let me know if you used the AWS Boto3 SDK to encrypt and decrypt data. How was your experience, if you could not encrypt or decrypt the data, please give the error in the comment and I will try to help you.</p>
 
 
              
 
 
 <div class="applause_button">
-    <applause-button url=https://www.archerimagine.com/drafts/aws-kms.html> </applause-button>
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-kms.html> </applause-button>
 </div>
 
  
+                <p id="post-share-links">
+    Spread the word....
+      <a href="https://twitter.com/intent/tweet?text=The%20Dummies%20Guide%20to%20AWS%20KMS.%20AWS%20KMS%20is%20sexy.&url=https%3A//www.archerimagine.com/articles/aws/aws-kms.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-kms.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=The%20Dummies%20Guide%20to%20AWS%20KMS.%20AWS%20KMS%20is%20sexy.&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-kms.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
             
             
-            
 
 
 
 
 
 
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-kms.html"
+                   href="https://www.archerimagine.com/articles/aws/aws-kms.html#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'archerimagine';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-kms.html';
+    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-kms.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
             <hr/>
 <section>
@@ -465,22 +569,29 @@
 </ul>
 <hr />
 </section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html" title="Previous: Who really uses AWS IAM API keys? - Developers Delight">Who really uses AWS IAM API keys? <small class="subtitle">Developers Delight</small></a></li>
+            </ul>
+            </nav>
+            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2021-04-02T12:41:48+05:30">Fri 02 April 2021</time>
 <h4>Last Updated</h4>
-<time datetime="2021-04-08T13:22:28+05:30">Apr 8, 2021</time>
+<time datetime="2021-04-10T01:30:47+05:30">Apr 10, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://www.archerimagine.com/tags#aws-ref">aws
-                    <span class="superscript">8</span>
+                    <span class="superscript">9</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
-                    <span class="superscript">8</span>
+                    <span class="superscript">9</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>
@@ -640,7 +751,9 @@
     })
 </script>
 
+        
         <script src="https://my.hellobar.com/0b8d4f8c5d8236e3cfef139b484c76d42822714a.js" type="text/javascript" charset="utf-8" async="async"></script>
+        
     </body>
     <!-- Theme: Elegant built for Pelican
         License : MIT -->
