@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="google-site-verification" content="6B1Foj8HxdrASteMuBQX7Hyu6PCLUQCX_u4USDQ9xi8" />        <meta name="msvalidate.01" content="7186CB4D245BAA0092329C7B5FD2C5CD" />        <meta name="author" content="Animesh Bhadra" />
+
+        <meta name="twitter:creator" content="@animeshkbhadra">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image">
+
+<meta name="keywords" content="aws, cloud, aws-inspector, aws, aws inspector agent, aws inspector certification, Network Assessments, Host Assessments, aws inspector pricing, aws trusted advisor vs inspector, aws inspector vs guardduty, aws inspector tutorials." />
+
+<meta property="og:title" content="The AWS Inspector Blog of your dreams  - The secret agent in cloud [2021]. "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" />
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="Archer Imagine" />
+<meta property="og:article:author" content="Animesh Bhadra" />
+<meta property="og:article:published_time" content="2021-04-11T12:17:36+05:30" />
+<meta property="og:article:modified_time" content="2021-04-13T09:22:38+05:30" />
+<meta name="twitter:title" content="The AWS Inspector Blog of your dreams  - The secret agent in cloud [2021]. ">
+<meta name="twitter:description" content="">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/08-AWS-Inspector.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/IAM/08-AWS-Inspector.png" >
+
+        <title>The AWS Inspector Blog of your dreams  - The secret agent in cloud [2021].  · Archer Imagine
+</title>
+        <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.archerimagine.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.archerimagine.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.archerimagine.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.archerimagine.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+        <link href="https://www.archerimagine.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Archer Imagine - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-97386090-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://www.archerimagine.com/"><span class=site-name>Archer Imagine</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://www.archerimagine.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://www.archerimagine.com/categories">Categories</a></li>
+                                <li ><a href="https://www.archerimagine.com/tags">Tags</a></li>
+                                <li ><a href="https://www.archerimagine.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://www.archerimagine.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html">
+                The AWS Inspector Blog of your dreams
+                <small class="subtitle">
+                    The secret agent in cloud [2021].
+                </small>
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#what-is-aws-inspector">What is AWS Inspector?</a><ul>
+<li><a href="#aws-inspector-agent">AWS Inspector Agent</a></li>
+</ul>
+</li>
+<li><a href="#benefits-of-aws-inspector">Benefits of AWS Inspector</a></li>
+<li><a href="#caution-while-using-aws-inspector">Caution while using AWS Inspector.</a></li>
+<li><a href="#aws-inspector-pricing">AWS Inspector Pricing</a><ul>
+<li><a href="#free-tier">Free tier</a></li>
+</ul>
+</li>
+<li><a href="#aws-inspector-service-limits">AWS Inspector service limits</a></li>
+<li><a href="#getting-started-with-amazon-inspector">Getting started with Amazon Inspector</a><ul>
+<li><a href="#prerequisite-for-aws-inspector">Prerequisite for AWS Inspector</a></li>
+<li><a href="#network-assessment">Network Assessment</a></li>
+<li><a href="#host-assessment">Host Assessment</a></li>
+</ul>
+</li>
+<li><a href="#aws-inspector-advanced-setup">AWS Inspector | Advanced Setup</a><ul>
+<li><a href="#advance-setup-define-an-assessment-target">Advance Setup | Define an assessment target</a></li>
+<li><a href="#advanced-setup-define-an-assessment-template">Advanced Setup | Define an assessment template</a></li>
+<li><a href="#advanced-setup-review">Advanced Setup | Review</a></li>
+</ul>
+</li>
+<li><a href="#aws-inspector-findings">AWS Inspector Findings</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#info-graphics">Info graphics</a><ul>
+<li><a href="#aws-inspector-vs-aws-guardduty">AWS Inspector Vs AWS GuardDuty</a></li>
+<li><a href="#aws-inspector-vs-aws-trusted-advisor">AWS Inspector Vs AWS Trusted Advisor</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p><img alt="AWS Made Easy | AWS Inspector " src="https://www.archerimagine.com/images/aws/IAM/08-AWS-Inspector.png" title="AWS Made Easy | AWS Inspector"/></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>You have learned about the <a href="https://www.archerimagine.com/articles/aws/general-aws.html#aws-shared-responsibility-model">AWS Shared responsibility model,</a> Have you stopped and thought, how do you check if your VPC is accessible from outside network? Does my application compromises the EC2 in any regards?</p>
+<p>You should remember that <strong>network accessibility</strong> and <strong>software security</strong> is the <strong>user's responsibility</strong> in <a href="https://www.archerimagine.com/articles/aws/general-aws.html#aws-shared-responsibility-model">AWS Shared responsibility model.</a></p>
+<p>Being a beginner using the AWS, this responsibility may seem daunting. No worries, when AWS gives you a challenge, it also shows you the path.</p>
+<p>You will learn how can we use an AWS Service to check the security vulnerability of your software. You will also learn how this service helps in checking the network accessibility of the VPC.</p>
+<p>Let's dive into the inspected world of AWS Inspector. </p>
+<h2 id="what-is-aws-inspector">What is AWS Inspector?<a class="headerlink" href="#what-is-aws-inspector" title="Permanent link">¶</a></h2>
+<p><strong>AWS inspector</strong> is a service provided by AWS, which helps you in two ways</p>
+<ul>
+<li>Finding security vulnerabilities in your software.</li>
+<li>Checking the network accessibility of the VPCs.</li>
+</ul>
+<p>AWS inspector gives findings for the checks done, on which you can act on. You can use the findings and corrects the weakness in your application or the network.</p>
+<h3 id="aws-inspector-agent">AWS Inspector Agent<a class="headerlink" href="#aws-inspector-agent" title="Permanent link">¶</a></h3>
+<p>You should be thinking by now, okay, network assessment can be done via some external tools or service given sufficient permission via the IAM Roles.</p>
+<p>How does AWS inspector do a security vulnerability test on an EC2 instance? Is some application is running beyond your knowledge in your own EC2 instance.</p>
+<p>The answer to this is, When you enable the AWS Inspector to do a security vulnerability test on your application running on the EC2 instance, it asks permission to install an <strong>AWS inspector agent</strong> on the EC2 instance.</p>
+<p>The AWS inspector agent does <strong>software telemetry</strong> for application and the OS running on the EC2 instance.</p>
+<p>It provides various information about EC2 instance and the application running on it. Installation of this AWS inspector agent is <strong>optional</strong>.</p>
+<p>If installed, AWS inspector agent monitors</p>
+<ul>
+<li>Behavior of the EC2 instance.</li>
+<li>checks the network file system</li>
+<li>process activity </li>
+<li>collects a lot of behavior and configuration data</li>
+</ul>
+<h2 id="benefits-of-aws-inspector">Benefits of AWS Inspector<a class="headerlink" href="#benefits-of-aws-inspector" title="Permanent link">¶</a></h2>
+<p>You have learned that AWS inspector does network assessments and security vulnerability checks on the EC2 instance, is this the only use of the AWS inspector?</p>
+<p>No, you do get the other benefits of using the AWS inspector including</p>
+<ul>
+<li><strong>Automation</strong><ul>
+<li>You can integrate the security vulnerability, and network assessments automatically in your <strong>CI/CD pipeline</strong>.</li>
+<li>This gives your findings if any security or network related check are broken in the upgrade and could be corrected.</li>
+</ul>
+</li>
+<li><strong>Application security</strong><ul>
+<li>The application security checks also can be automated, providing you with valuable information.</li>
+<li>AWS inspector vulnerability scanning when automated, helps in finding issues which can lead to hacking of your application.</li>
+</ul>
+</li>
+</ul>
+<h2 id="caution-while-using-aws-inspector">Caution while using AWS Inspector.<a class="headerlink" href="#caution-while-using-aws-inspector" title="Permanent link">¶</a></h2>
+<p>You shouldn't relax knowing that AWS inspector does both network assessments and security vulnerability test. This should not give you a false sense of security that you will find all types of vulnerability by just running the AWS inspector.</p>
+<p>AWS inspector helps in finding some of the security issues with your EC2 instance and application running on it. </p>
+<p>AWS Inspector <strong>does not</strong> find issues in real time by log analysis like an AWS GuardDuty, or AWS Trusted Advisor, which even provides optimization techniques for your architecture.</p>
+<p>The application running on the EC2 instance, and it's instance configuration itself poses complexity, which AWS inspector may not be configured for.</p>
+<p>We as a user have a responsibility, which we should fulfill by running some complementary test like the AWS GuardDuty or AWS Trusted Advisor.</p>
+<p>AWS inspector is part of the security and network monitoring not the heart of it.</p>
+<h2 id="aws-inspector-pricing">AWS Inspector Pricing<a class="headerlink" href="#aws-inspector-pricing" title="Permanent link">¶</a></h2>
+<p>Pricing is an important parameters while choosing a particular AWS Service, especially when we have <strong>3rd party</strong> tools also competing  </p>
+<ul>
+<li><a href="https://www.tenable.com/products/nessus">Tenable Nessus.</a>.</li>
+<li><a href="https://www.qualys.com/cloud-platform/">Qualys Cloud Platform</a></li>
+</ul>
+<p>The AWS inspector pricing is based on these two dimensions.</p>
+<ul>
+<li><strong>Number of EC2 instance</strong> included in each assessment.</li>
+<li><strong>Number of rules</strong> invoked in each run.<ul>
+<li>Host assessment<ul>
+<li>Common vulnerability and exposures (<strong>CVE</strong>)<ul>
+<li><a href="https://cve.mitre.org/">CVE</a> is a mission which identify, define and catalogs publicly disclosed CyberSecurity vulnerabilities.</li>
+</ul>
+</li>
+<li>Center for Internet security (<strong>CIS</strong>) benchmarks<ul>
+<li><a href="https://www.cisecurity.org/cis-benchmarks/">CIS</a> provides more than 100 configuration guidelines across 25+ vendor product families to safeguard systems against today’s evolving cyber threats.</li>
+</ul>
+</li>
+<li>Security best practices</li>
+<li>Runtime behavior analysis.</li>
+</ul>
+</li>
+<li>Network assessment</li>
+</ul>
+</li>
+</ul>
+<p>For more detailed pricing report, visit the <a href="https://aws.amazon.com/inspector/pricing/">AWS official pricing page.</a> The pricing on Free Tier is very easy, read along to find out.</p>
+<h3 id="free-tier">Free tier<a class="headerlink" href="#free-tier" title="Permanent link">¶</a></h3>
+<p>You do not have to bother about all the above complexities, accounts which have never run AWS inspector once, are eligible for </p>
+<ul>
+<li><strong>250 agent assessments</strong> with host rules package</li>
+<li><strong>250 instance assessments</strong> with the network reachability.</li>
+</ul>
+<p>In the first <strong>90 days.</strong> Other assessments will be billed at the normal price.</p>
+<h2 id="aws-inspector-service-limits">AWS Inspector service limits<a class="headerlink" href="#aws-inspector-service-limits" title="Permanent link">¶</a></h2>
+<p>AWS Inspector has a predefined service limits for different resource you can use. AWS inspector provides these four major categories for resources.</p>
+<ul>
+<li>Number of instance running assessment.</li>
+<li>Number of assessment running.</li>
+<li>Number of various assessment template in every assessment.</li>
+<li>Number of assessment targets</li>
+</ul>
+<p><img alt="AWS Made Easy | AWS Inspector service limits.." src="https://www.archerimagine.com/images/aws/IAM/AWS-inspector-service-limits.png" title="AWS Made Easy | AWS Inspector service limits."/></p>
+<h2 id="getting-started-with-amazon-inspector">Getting started with Amazon Inspector<a class="headerlink" href="#getting-started-with-amazon-inspector" title="Permanent link">¶</a></h2>
+<p>Let's dive into configuring AWS inspector, and how it can be used. </p>
+<p>There are certain prerequisite for starting AWS inspector configuration.</p>
+<h3 id="prerequisite-for-aws-inspector">Prerequisite for AWS Inspector<a class="headerlink" href="#prerequisite-for-aws-inspector" title="Permanent link">¶</a></h3>
+<ul>
+<li>You much have at least <strong>one EC2 instance running</strong>. <em>What will AWS inspector check if there is no EC2 instance running?</em></li>
+<li>For Host assessment, you may need to <strong>install</strong> the <strong>AWS inspector agent</strong> on the EC2 instance.</li>
+</ul>
+<p>Lets first see how to configure AWS Inspector.</p>
+<p><img alt="AWS Made Easy | AWS Inspector welcome page." src="https://www.archerimagine.com/images/aws/IAM/welcome-aws-inspector.png" title="AWS Made Easy | AWS Inspector welcome page"/></p>
+<p>You can see that AWS inspector uses a <strong>service-linked role</strong>, to describe the EC2 instance and network configuration.</p>
+<p>You can see there are two types of AWS inspector setup we can do.</p>
+<ul>
+<li>Network Assessment (Inspector Agent is not required.)</li>
+<li>Host Assessment (Inspector Agent is required.)</li>
+</ul>
+<p>The default option is the most easiest configuration to trigger AWS Inspector. Let us understand <strong>Network Assessment</strong> and <strong>Host Assessment</strong>.</p>
+<h3 id="network-assessment">Network Assessment<a class="headerlink" href="#network-assessment" title="Permanent link">¶</a></h3>
+<p>The checks performed by AWS inspector <strong>without</strong> the installation of an agents are</p>
+<ul>
+<li>Network configuration analysis to checks which ports are reachable from outside of the VPC.</li>
+</ul>
+<p>If you have the AWS inspector agents <strong>installed</strong>, it can provide you with additional information like,</p>
+<ul>
+<li>The process whose ports are reachable from outside of the VPC.</li>
+</ul>
+<h3 id="host-assessment">Host Assessment<a class="headerlink" href="#host-assessment" title="Permanent link">¶</a></h3>
+<p>Host assessment requires the installation of the AWS inspector agent, so once it is installed we get this information</p>
+<ul>
+<li>Common vulnerability and exposures (CVE)<ul>
+<li>The host is checked towards the know CyberSecurity vulnerabilities.</li>
+</ul>
+</li>
+<li>Center for Internet security (CIS) benchmarks</li>
+<li>Security best practices</li>
+</ul>
+<p>Once you click on <strong>Run Once</strong>, the confirmation screen is displayed like this.</p>
+<p><img alt="AWS Made Easy | AWS Inspector confirmation page." src="https://www.archerimagine.com/images/aws/IAM/aws-inspector-confirmation.png" title="AWS Made Easy | AWS Inspector confirmation page"/></p>
+<p>When we complete the test, we will receive a <strong>findings</strong> from the test. Before looking into findings, lets see there is an <strong>Advanced setup.</strong></p>
+<h2 id="aws-inspector-advanced-setup">AWS Inspector | Advanced Setup<a class="headerlink" href="#aws-inspector-advanced-setup" title="Permanent link">¶</a></h2>
+<p>As shown in this screen, advance setup is a <strong>three</strong> step process.</p>
+<p><img alt="AWS Made Easy | AWS Inspector assessment page." src="https://www.archerimagine.com/images/aws/IAM/aws-inspector-assessment.png" title="AWS Made Easy | AWS Inspector assessment page"/></p>
+<ul>
+<li>Define an assessment target</li>
+<li>Define an assessment template</li>
+<li>Review.</li>
+</ul>
+<h3 id="advance-setup-define-an-assessment-target">Advance Setup | Define an assessment target<a class="headerlink" href="#advance-setup-define-an-assessment-target" title="Permanent link">¶</a></h3>
+<p>You might have guessed by now, an assessment, target is the <strong>AWS resources</strong> on which you can run the AWS inspector. As of now it is restricted by the operating system and region.</p>
+<p><strong>Network reachability test</strong> can be run on any EC2 instance without using the AWS inspector agent.</p>
+<p>For running the assessment with an AWS inspector agent let us first check the <strong>supported Linux based operating systems</strong>.</p>
+<ul>
+<li>64-bit x86 instance<ul>
+<li>Amazon Linux 2</li>
+<li>Ubuntu</li>
+<li>Debian</li>
+<li>Red Hat Enterprise Linux</li>
+<li>CentOs</li>
+</ul>
+</li>
+<li>ARM instance<ul>
+<li>Amazon Linux 2</li>
+<li>Red Hat Enterprise Linux</li>
+<li>Ubuntu</li>
+</ul>
+</li>
+</ul>
+<p>The supported <strong>Windows operating systems</strong> are</p>
+<ul>
+<li>Windows Server 2019 Base</li>
+<li>Windows Server 2016 Base</li>
+<li>Windows Server 2012 R2</li>
+<li>Windows Server 2012</li>
+<li>Windows Server 2008 R2</li>
+</ul>
+<p>The supported <strong>AWS regions</strong> are</p>
+<ul>
+<li>US East (Ohio) us-east-2</li>
+<li>US East (N. Virginia) us-east-1</li>
+<li>US West (N. California) us-west-1</li>
+<li>US West (Oregon) us-west-2</li>
+<li>Asia Pacific (Mumbai) ap-south-1</li>
+<li>Asia Pacific (Seoul) ap-northeast-2</li>
+<li>Asia Pacific (Sydney) ap-southeast-2</li>
+<li>Asia Pacific (Tokyo) ap-northeast-1</li>
+<li>Europe (Frankfurt) eu-central-1</li>
+<li>Europe (Ireland) eu-west-1</li>
+<li>Europe (London) eu-west-2</li>
+<li>Europe (Stockholm) eu-north-1</li>
+<li>AWS GovCloud (US-East) gov-us-east-1</li>
+<li>AWS GovCloud (US-West) gov-us-east-2</li>
+</ul>
+<p>The first task of defining the assessment, target is to give it a <strong>name</strong>.</p>
+<p>Then you have an option to run it on all EC2 instances in your account, or you can run it based on certain tags on the EC2 instance. Generally, we can run these assessments only on the production tagged system.</p>
+<p><img alt="AWS Made Easy | AWS Inspector assessment tag option." src="https://www.archerimagine.com/images/aws/IAM/aws-inspector-assessment-tag.png" title="AWS Made Easy | AWS Inspector assessment tag option"/></p>
+<p>The AWS inspector agent is pre-installed on Amazon Linux AMIs. If you want to install on other AMIs manually you may have to uses AWS System Manager service. Best option is to use the install the agent automatically.</p>
+<h3 id="advanced-setup-define-an-assessment-template">Advanced Setup | Define an assessment template<a class="headerlink" href="#advanced-setup-define-an-assessment-template" title="Permanent link">¶</a></h3>
+<p>As shown below, </p>
+<p><img alt="AWS Made Easy | AWS Inspector assessment template." src="https://www.archerimagine.com/images/aws/IAM/aws-inspector-assessment-template.png" title="AWS Made Easy | AWS Inspector assessment template"/></p>
+<p>The first task is to Name the assessment templates. Once done, we have to define the rules packages to use. By default, there are 4 rules packages to select.</p>
+<ul>
+<li>Common Vulnerabilities and Exposures-1.1</li>
+<li>CIS Operating System Security Configuration Benchmarks-1.0</li>
+<li>Network Reachability-1.1</li>
+<li>Security Best Practices-1.0</li>
+</ul>
+<p>Once you select which of these 4 rules you want to run, next selection to be done is the <strong>duration</strong> of the test. </p>
+<p>In addition, you also also schedule the assessment to be recurring. </p>
+<p>The findings of these assessments can also be fed to an SNS topic.</p>
+<h3 id="advanced-setup-review">Advanced Setup | Review<a class="headerlink" href="#advanced-setup-review" title="Permanent link">¶</a></h3>
+<p>As you might have seen many a times, the final step is the Review step.</p>
+<p><img alt="AWS Made Easy | AWS Inspector assessment review." src="https://www.archerimagine.com/images/aws/IAM/aws-inspector-assessment-review.png" title="AWS Made Easy | AWS Inspector assessment review"/></p>
+<p>Post all this you can just run the inspector assessment.</p>
+<h2 id="aws-inspector-findings">AWS Inspector Findings<a class="headerlink" href="#aws-inspector-findings" title="Permanent link">¶</a></h2>
+<p>Once you run any AWS inspector assessment, the result is called <strong>Findings</strong>. These are the potential security issues that AWS inspector has found during its assessment. Findings is not generated while the assessment is on going, it is only generated after the assessment is completed.</p>
+<p>Individual findings from AWS Inspector cannot be deleted. You have to delete the completed assessment run.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>AWS works in <a href="https://www.archerimagine.com/articles/aws/general-aws.html#aws-shared-responsibility-model">Shared responsibility model.</a> In this model, as a user of AWS services you have certain responsibility. Two of them primarily are.</p>
+<ul>
+<li>Check the network reachability of the VPCs.</li>
+<li>Check the application's security running on the VPCs.</li>
+</ul>
+<p>It would have been very difficult for you to accomplish this on your own. Just like for many other services, AWS has provided a managed service for this called the <strong>AWS Inspector</strong>.</p>
+<p>AWS Inspector is a managed service which helps in finding security vulnerabilities in the application running on your EC2 instance and also checks if the instance's VPC is reachable from outside. </p>
+<p>If we install an AWS inspector agent using the AWS system manager service, then we get additional telemetry about the application running on the EC2 instance.</p>
+<p>You should not get a false sense of security thinking that AWS inspector will find all types of security vulnerabilities, It finds some, but it still does not find all the different possible vulnerabilities, it will be in your best interest to find some other alternatives to test complete security vulnerabilities.</p>
+<p>AWS inspector has a limitation today on the type of resources it can evaluate, like it can evaluate the security vulnerabilities of an application on an EC2 instance running selective Linux and windows operating system. Though you can use its network reachability test for any type of hardware.</p>
+<p>AWS inspector provides 250 agent and instance, assessment for the free tier, and then normal pricing.</p>
+<p>Before running AWS inspector you should at least have 1 instance running and the agent should be installed. </p>
+<p>You can use the most basic configuration to trigger the assessment which does both types of checks. The report or findings of the test, inform you about the vulnerabilities in different form.</p>
+<p>AWS inspector is a great tool for doing the self evaluation of the application running on the EC2 instance, and also check the network reachability.</p>
+<h2 id="info-graphics">Info graphics<a class="headerlink" href="#info-graphics" title="Permanent link">¶</a></h2>
+<h3 id="aws-inspector-vs-aws-guardduty">AWS Inspector Vs AWS GuardDuty<a class="headerlink" href="#aws-inspector-vs-aws-guardduty" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">AWS Inspector</th>
+<th align="center">AWS GuardDuty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Finds if known threat exists.</td>
+<td align="center">Finds threat from different log source.</td>
+</tr>
+<tr>
+<td align="center">Static analysis from configuration and settings.</td>
+<td align="center">Dynamic analysis from multiple log source.</td>
+</tr>
+<tr>
+<td align="center">Scheduled timings.</td>
+<td align="center">Continuous monitoring</td>
+</tr>
+<tr>
+<td align="center">EC2 and VPC is monitored</td>
+<td align="center">Multiple services are monitored.. even S3</td>
+</tr>
+<tr>
+<td align="center">Available in 14 region</td>
+<td align="center">Available in 24 region</td>
+</tr>
+<tr>
+<td align="center">Free tier use of 90 days</td>
+<td align="center">Free tier use of 30 days</td>
+</tr>
+<tr>
+<td align="center">Pricing based on number of assessment.</td>
+<td align="center">Pricing based on volume of logs analysed.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><img alt="AWS Made Easy | AWS Inspector Vs AWS GuardDuty " src="https://www.archerimagine.com/images/aws/IAM/AWS-Inspector-Vs-GuardDuty.png" title="AWS Made Easy | AWS Inspector Vs AWS GuardDuty"/></p>
+<h3 id="aws-inspector-vs-aws-trusted-advisor">AWS Inspector Vs AWS Trusted Advisor<a class="headerlink" href="#aws-inspector-vs-aws-trusted-advisor" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">AWS Inspector</th>
+<th align="center">AWS Trusted Advisor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Agent-based</td>
+<td align="center">Agent-less</td>
+</tr>
+<tr>
+<td align="center">No impact on performance</td>
+<td align="center">Improves performance by checking service limit</td>
+</tr>
+<tr>
+<td align="center">Free tier</td>
+<td align="center">Premium support</td>
+</tr>
+<tr>
+<td align="center">EC2 configuration</td>
+<td align="center">AWS account &amp; administrations</td>
+</tr>
+<tr>
+<td align="center">No cost recommendations</td>
+<td align="center">Recommendations to optimize cost</td>
+</tr>
+<tr>
+<td align="center">Scheduled</td>
+<td align="center">Real time guidance</td>
+</tr>
+<tr>
+<td align="center">No impact on performance</td>
+<td align="center">Improves performance by checking service limit</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><img alt="AWS Made Easy | AWS Inspector Vs AWS Trusted Advisor " src="https://www.archerimagine.com/images/aws/IAM/AWS-Inspector-Vs-Trusted-Advisor.png" title="AWS Made Easy | AWS Inspector Vs AWS Trusted Advisor"/></p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=PMsMGoeuLG0">How do I set up Amazon Inspector to run security assessments on my Amazon EC2 instances?</a></li>
+<li><a href="https://www.youtube.com/watch?v=HjuEtMrWc_w">AWS re:Invent 2015 | (SEC324) New! Introducing Amazon Inspector.</a></li>
+<li><a href="https://www.youtube.com/watch?v=RLBE4Tv7OJE">AWS Hands on Lab - Amazon Inspector.</a></li>
+<li><a href="https://www.youtube.com/watch?v=b5SFJhYl0lk">AWS Tutorial - Amazon Inspector - Overview.</a></li>
+<li><a href="https://stackify.com/telemetry-tutorial/">What Is Telemetry? How Telemetry Works, Benefits of Telemetry, Challenges, Tutorial, and More.</a></li>
+<li><a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_supported_os_regions.html">Amazon Inspector supported operating systems and Regions </a></li>
+<li><a href="https://aws.amazon.com/about-aws/whats-new/2016/04/amazon-inspector-security-vulnerability-assessment-service-now-generally-available/">Amazon Inspector, Security Vulnerability Assessment Service Now Generally Available.</a></li>
+<li><a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">What is Amazon Inspector?</a></li>
+<li><a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_getting-started.html">Getting started with Amazon Inspector.</a></li>
+<li><a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html">Amazon Inspector assessment templates and assessment runs</a></li>
+<li><a href="https://blog.runpanther.io/aws-security-services/">6 AWS Services for Cloud Security Detection.</a></li>
+<li><a href="https://www.wafcharm.com/en/blog/amazon-inspector-for-beginners/">Amazon Inspector for beginners</a></li>
+<li><a href="https://stackoverflow.com/questions/48136254/aws-trusted-adviser-vs-inspector/48136996">AWS trusted adviser vs Inspector </a></li>
+<li><a href="https://juliabellmer.medium.com/aws-trusted-advisor-vs-aws-config-vs-aws-inspector-4a952bac38ec">AWS Trusted Advisor vs. AWS Config vs. AWS Inspector </a></li>
+<li><a href="https://www.janbasktraining.com/blog/aws-inspector-vs-aws-trusted-advisor/">Difference between AWS Inspector and AWS Trusted Advisor </a></li>
+</ul>
+<p>Let me know if you run the AWS inspector assessment on your EC2 instance, and what are its findings 👇.</p>
+
+
+             
+
+
+<div class="applause_button">
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html> </applause-button>
+</div>
+
+ 
+                <p id="post-share-links">
+    Spread the word....
+      <a href="https://twitter.com/intent/tweet?text=The%20AWS%20Inspector%20Blog%20of%20your%20dreams%20The%20secret%20agent%20in%20cloud%20%5B2021%5D.&url=https%3A//www.archerimagine.com/articles/aws/aws-inspector-tutorials.html&via=animeshkbhadra&hashtags=aws,cloud,aws-inspector" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=The%20AWS%20Inspector%20Blog%20of%20your%20dreams%20The%20secret%20agent%20in%20cloud%20%5B2021%5D.&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html"
+                   href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'archerimagine';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html';
+    var disqus_url = 'https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" title="Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 - Who is ahead?">Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020 <small>Who is ahead?</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html" title="A foolproof guide to AWS IAM Roles - A Hat to wear!!">A foolproof guide to AWS IAM Roles <small>A Hat to wear!!</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-sts.html" title="Doing AWS STS the right way. - Short Term Security">Doing AWS STS the right way. <small>Short Term Security</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html" title="Who really uses AWS IAM API keys? - Developers Delight">Who really uses AWS IAM API keys? <small>Developers Delight</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-kms.html" title="The Dummies Guide to AWS KMS. - AWS KMS is sexy.">The Dummies Guide to AWS KMS. <small>AWS KMS is sexy.</small></a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-kms.html" title="Previous: The Dummies Guide to AWS KMS. - AWS KMS is sexy.">The Dummies Guide to AWS KMS. <small class="subtitle">AWS KMS is sexy.</small></a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-04-11T12:17:36+05:30">Sun 11 April 2021</time>
+<h4>Last Updated</h4>
+<time datetime="2021-04-13T09:22:38+05:30">Apr 13, 2021</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://www.archerimagine.com/tags#aws-ref">aws
+                    <span class="superscript">10</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#aws-inspector-ref">aws-inspector
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
+                    <span class="superscript">10</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/archeranimesh" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Facebook" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1877f2"/><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.reddit.com/user/archerimagine/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Reddit" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+    </a>
+    <a href="https://twitter.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+</div>
+            
+
+
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Email Newsletter</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Archer Imagine</span> - Anyone can do my job, but no one can be me. Harvey
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://www.archerimagine.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+        <script src="https://my.hellobar.com/0b8d4f8c5d8236e3cfef139b484c76d42822714a.js" type="text/javascript" charset="utf-8" async="async"></script>
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
