@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
         <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/custom.css" media="screen">
-
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <link rel="alternate" type="application/rss+xml" title="Archer Imagine" href="https://www.archerimagine.com/feeds/all.atom.xml" />
@@ -17,19 +16,21 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image">
 
-<meta name="keywords" content="pelican, Pelican, Home Pages, About Me." />
+<meta name="keywords" content="aws certification, aws certification solution architect, aws certification path, aws certification developer, aws certification blog" />
 
-<meta property="og:title" content="Home Page feature for Elegant Theme  - Home Coming "/>
-<meta property="og:url" content="https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" />
-<meta property="og:description" content="Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working." />
+<meta property="og:title" content="Tutorials  - Darth Vader&#39;s Guide [updated 2021] "/>
+<meta property="og:url" content="https://www.archerimagine.com/pages/aws-certification.html" />
+<meta property="og:description" content="Cloud certification provided by AWS, Azure or GCP exemplifies your expertise. These are industry-recognized credential that demonstrates your ability to design, deploy and operate applications and infrastructure on these. Multi Cloud certification will be a reality soon, as one cloud cannot fit all." />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
-<meta property="og:article:published_time" content="2017-05-09T23:53:05+05:30" />
-<meta property="og:article:modified_time" content="2017-05-10T00:15:37+05:30" />
-<meta name="twitter:title" content="Home Page feature for Elegant Theme  - Home Coming ">
-<meta name="twitter:description" content="Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working.">
+<meta property="og:article:published_time" content="2021-04-14T07:20:53+05:30" />
+<meta property="og:article:modified_time" content="2021-04-15T21:28:02+05:30" />
+<meta name="twitter:title" content="Tutorials  - Darth Vader&#39;s Guide [updated 2021] ">
+<meta name="twitter:description" content="Cloud certification provided by AWS, Azure or GCP exemplifies your expertise. These are industry-recognized credential that demonstrates your ability to design, deploy and operate applications and infrastructure on these. Multi Cloud certification will be a reality soon, as one cloud cannot fit all.">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/multi-cloud.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/multi-cloud.png" >
 
-        <title>Home Page feature for Elegant Theme  - Home Coming  · Archer Imagine
+        <title>Tutorials  - Darth Vader&#39;s Guide [updated 2021]  · Archer Imagine
 </title>
         <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -72,7 +73,7 @@
                                        https://www.archerimagine.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://www.archerimagine.com/pages/aws-certification.html">Tutorials</a></li>
+                                <li  class="active"><a href="https://www.archerimagine.com/pages/aws-certification.html">Tutorials</a></li>
                                 <li ><a href="https://www.archerimagine.com/categories">Categories</a></li>
                                 <li ><a href="https://www.archerimagine.com/tags">Tags</a></li>
                                 <li ><a href="https://www.archerimagine.com/archives">Archives</a></li>
@@ -86,17 +87,10 @@
                 <div class="row-fluid">
                     <div class="span1"></div>
                     <div class="span10">
-<article itemscope>
+<article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-        <h1>
-            <a href="https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html">
-                Home Page feature for Elegant Theme
-                <small class="subtitle">
-                    Home Coming
-                </small>
-            </a>
-        </h1>
+    <h1><a href="https://www.archerimagine.com/pages/aws-certification.html"> Tutorials  <small> Darth Vader's Guide [updated 2021] </small>  </a></h1>
     </header>
 </div>
 
@@ -106,61 +100,115 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#landing_page_about">LANDING_PAGE_ABOUT</a></li>
-<li><a href="#projects">PROJECTS</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#aws-certification-aws-certified-developer-associate-dva-c01">AWS Certification | AWS Certified Developer - Associate ( DVA-C01 )</a><ul>
+<li><a href="#aws-iam">AWS IAM</a></li>
+</ul>
+</li>
+<li><a href="#azure-certification">Azure Certification</a></li>
+<li><a href="#gcp-certification">GCP Certification</a></li>
 </ul>
 </div>
         </nav>
     </div>
     <div class="span8 article-content">
+
             
-            
-<p>Elegant has a nice feature called the Home Page, which provides a About Me combined with information from GitHub on the project someone is working. These feature are again controlled by a configuration.</p>
-<p>In place of adding this configuration into <code>pelicanconf.py</code> we will create a new file called <code>elegantconfig.py</code>, and import this file into <code>pelicanconf.py</code> by calling <code>from elegantConfig import *</code>. This will make sure all the configuration from <code>elegantconfig.py</code> is available while generating the blog.</p>
-<p>There are two configuration for the Home Page.</p>
-<h2 id="landing_page_about"><code>LANDING_PAGE_ABOUT</code><a class="headerlink" href="#landing_page_about" title="Permanent link">¶</a></h2>
+<p><img alt="Multi Cloud | Azure | GCP | AWS" src="https://www.archerimagine.com/images/aws/multi-cloud.png" title="A Multi Cloud | Azure | GCP | AWS"/></p>
+<hr/>
+<blockquote>
+<p>Be careful not to choke on your aspirations.</p>
+</blockquote>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>Open any AWS certification <strong>job description</strong>, an excerpt is posted below.</p>
 <ul>
-<li><code>LANDING_PAGE_ABOUT</code><ul>
-<li>This is a Dictionary with two field <code>"title"</code> and <code>"details"</code><ul>
-<li><code>"title"</code> : This gives a heading Home Page.</li>
-<li><code>"details"</code> : It is the content in HTML which mostly contains the <code>About Me</code> description which one wants to provide.<ul>
-<li>One clever way of writing this HTML is, write a about page in markdown, generate the pelican blog with this about page and then right click on the page and select view source, copy the relevant text with the HTML code in it.</li>
+<li>Excellent working knowledge of key AWS services such as <strong>EC2, ECS, Lambda, S3, ELB, CloudFront, RDS Aurora, API Gateway,</strong> etc.</li>
+<li>Expertise in creating cloud <strong>migration</strong> strategies; <strong>defining delivery architecture</strong>, <strong>creating the migration plans</strong> and <strong>designing the orchestration plans</strong>.</li>
+<li>Experience in defining new architectures and ability to drive project from architecture standpoint</li>
+<li>Experience with Leveraging appropriate AWS services to execute <strong>migration</strong> plan</li>
+<li>Experience writing <strong>Infrastructure-as-Code (IaC)</strong>, using tools like <strong>CloudFormation</strong>.</li>
+<li>Experience with <strong>CI/CD</strong> systems.</li>
+<li><strong>AWS certifications</strong> preferred. </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="projects"><code>PROJECTS</code><a class="headerlink" href="#projects" title="Permanent link">¶</a></h2>
+<p>If you started your career at the dawn of this new century, this list of requirements can be overwhelming. This is just a sample, if you go on searching, we will have different other technologies involved. </p>
+<p>This is not the age of <strong>Master of one</strong>. You have to become <strong>Jack of all trades</strong>.</p>
+<p>A Certification is just the beginning of the journey and not the destination. </p>
+<p>If you have to target for next 5 years, I believe multi cloud is the future, as every cloud provider has something unique to provide for the customer.</p>
+<p>When we combine multi cloud into the above job description, we cannot imagine what it will look.</p>
+<blockquote>
+<p>The journey of a thousand miles begins with one step. Lao Tzu </p>
+</blockquote>
+<p>You should start today, and we all should target one cloud certification first. A simple search on <a href="https://www.linkedin.com">LinkedIn</a> reveals we have 31,806 AWS jobs, 22,470 Azure jobs, and a very minimal 6,578 GCP jobs. We can target AWS or Azure as the first certification choice.</p>
+<p>Now we have selected the cloud provider for certification, the next step is to choose from where to study. The internet is filled with options. </p>
 <ul>
-<li><code>PROJECTS</code><ul>
-<li>This is also a list of Dictionary with these field in each dictionary, and the value of each of these field is a <code>string</code> and not <code>HTML</code> in case of <code>LANDING_PAGE_ABOUT</code>'s <code>"details"</code><ul>
-<li><code>"name"</code> : The project name which you want to be displayed.</li>
-<li><code>"url"</code> : The link to the project.</li>
-<li><code>"description"</code> : The description you want to provide for the project.</li>
+<li><a href="https://www.udemy.com/">Udemy</a><ul>
+<li>Neal Davis </li>
+<li>Stephane Maarek</li>
+<li>DolfinED</li>
+<li>Tutorials Dojo</li>
+</ul>
+</li>
+<li><a href="https://acloudguru.com/">A Cloud Guru</a></li>
+<li><a href="https://linuxacademy.com/">LinuxAcademy</a> which is now acquired by <a href="https://acloudguru.com/">A Cloud Guru.</a></li>
+<li><a href="https://cloudacademy.com/">CloudAcademy</a></li>
+</ul>
+<p>Even here you can be overwhelmed with option. Just pick any one from the list. </p>
+<p>Finally, and the most important problem. How do you recollect everything on the exam day and beyond?</p>
+<p>There are lots of techniques which can help, especially if you are mid career, with kids, family and job you have limited amount of time for study. Your only approach can be the approach which saves time per day. You have to increase your efficiency because now you cannot sit like in your younger days and complete syllabus after syllabus in hours.</p>
+<p>The 3 main techniques which help increase efficiency are.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Spaced_repetition">Spaced repetition.</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Active_recall">Active recall </a></li>
+<li><a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman's</a> study technique.</li>
+</ul>
+<p>Please read about the first 2 on Wikipedia, if you want me to write about it comment below.</p>
+<p>Finally the important part is the <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman's</a> study technique. This Blog is essentially my effort of teaching others the concept of cloud, AWS so that it sticks in my brain also. When you study for yourself, you tend to ignore a lot of concepts.</p>
+<p>When you think of teaching other or helping others, it gives a purpose for learning, and that helps in the extra effort required to understand a vary tough or boring topic.</p>
+<p>I am writing about my journey as it happens to that it can help you tomorrow to avoid any pitfalls which I have faced. When you Blog retrospectively you tend to forget very small details which could have created an impact on the long run.</p>
+<p>Here I am updating all the learning as it happens. I am starting with AWS Developer Associate certification (DVA-C01), which will be followed by AWS Architect Associate. </p>
+<p>Let me know in the comments below, How do you like the progression of Blogs.</p>
+<h2 id="aws-certification-aws-certified-developer-associate-dva-c01">AWS Certification | AWS Certified Developer - Associate ( DVA-C01 )<a class="headerlink" href="#aws-certification-aws-certified-developer-associate-dva-c01" title="Permanent link">¶</a></h2>
+<h3 id="aws-iam">AWS IAM<a class="headerlink" href="#aws-iam" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="https://www.archerimagine.com/articles/aws/general-aws.html">AWS Global Infrastructure &amp; shared responsibility model </a><ul>
+<li>AWS is very vast in its present form, understanding it would be very challenging. We will begin this journey at the epicenter of AWS, the Shared responsibility model and its global infrastructure.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html">AWS IAM Introduction.</a><ul>
+<li>In this Blog let us understand the basics of IAM, Identity and access Management. This is service which is used to control access to all the resources in AWS. The key component of IAM are User, Groups, Policy, Roles, API keys.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-policy.html">AWS IAM Policy.</a><ul>
+<li>When we want to give access to various resources to AWS, how do we do it, how do we define the various ways a user can get access. These are parameters are defined in a JSON document called IAM Policy. We will learn about this in this blog.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html">AWS IAM Users.</a><ul>
+<li>We have learned about IAM policy and its basics. We will apply those to a specific user here. We will also learn the various ways IAM users can get access to the AWS resources and also how can an IAM user rotate password.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html">AWS IAM Roles</a><ul>
+<li>When to create an IAM role and when to use an IAM User is always a confusing topic to master. You will learn through this piece the answer to this dilemma. You will learn when to create an IAM Roles, how to use the IAM Role, Uses of IAM roles. After learning this you will never be scratching your head using IAM Roles.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-sts.html">AWS STS</a><ul>
+<li>AWS STS or Security Token Service, provides temporary access credentials to access any AWS resource. This temporary access can be requested by the other AWS account, or a federated user in case of hybrid cloud environment who can be authenticated using SAML 2.0, Web identity provider. AWS STS works very closely with IAM Roles.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-sts.html">AWS IAM API Keys</a><ul>
+<li>Cloud technology is a tool for the developers, creating sophisticated softwares. How does developer access the cloud? Does AWS Console is the only way to access the cloud? Developers love code, CLIs and SDKs, AWS provides access to its cloud resources using AWS IAM API Keys.</li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-kms.html">AWS KMS Blog</a><ul>
+<li>When you are storing your data on a physical server, which is not owned by you. The concern of data security is paramount. AWS KMS or key management service helps in this regards to safeguard data by encrypting it. You can use the keys provided by you or by AWS to encrypt the data. AWS KMS makes sure that the data and the keys are not stored together, restricting the extent of data theft. </li>
+</ul>
+</li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html">AWS Inspector Blog</a><ul>
+<li>As part of the Shared responsibility of cloud between users and AWS, as a user we have to manage the application security and VPC security. This may be difficult to do for a lot of independent developers. AWS has a managed service called AWS inspector. Lets study about it.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
-
-             
-
-
-<div class="applause_button">
-    <applause-button url=https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html> </applause-button>
-</div>
-
- 
-                <p id="post-share-links">
-    Spread the word....
-      <a href="https://twitter.com/intent/tweet?text=Home%20Page%20feature%20for%20Elegant%20Theme%20Home%20Coming&url=https%3A//www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html&via=animeshkbhadra&hashtags=pelican" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Home%20Page%20feature%20for%20Elegant%20Theme%20Home%20Coming&amp;body=https%3A//www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
-            
+<h2 id="azure-certification">Azure Certification<a class="headerlink" href="#azure-certification" title="Permanent link">¶</a></h2>
+<h2 id="gcp-certification">GCP Certification<a class="headerlink" href="#gcp-certification" title="Permanent link">¶</a></h2>
             
 
 
@@ -179,8 +227,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html"
-                   href="https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html#comment_thread"
+                   data-disqus-identifier="https://www.archerimagine.com/pages/aws-certification.html"
+                   href="https://www.archerimagine.com/pages/aws-certification.html#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -198,8 +246,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html';
-    var disqus_url = 'https://www.archerimagine.com/articles/pelican/home-page-features-elegant-theme.html';
+    var disqus_identifier = 'https://www.archerimagine.com/pages/aws-certification.html';
+    var disqus_url = 'https://www.archerimagine.com/pages/aws-certification.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -221,80 +269,9 @@
     </div>
 </section>
 
-            <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="https://www.archerimagine.com/articles/pelican/expressing-with-pelican-themes.html" title="Expressing the content with Pelican Themes. - Expand Horizon">Expressing the content with Pelican Themes. <small>Expand Horizon</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" title="Problem Faced when integrating with Elegant Themes. - Surprise.">Problem Faced when integrating with Elegant Themes. <small>Surprise.</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html" title="Integrating 3rd party services with Pelican Blog. - Mix and Match.">Integrating 3rd party services with Pelican Blog. <small>Mix and Match.</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/pelican/tips-for-improving-workflow-in-pelican.html" title="Tips to improve work flow in pelican blog. - Cleaning Up">Tips to improve work flow in pelican blog. <small>Cleaning Up</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/pelican/Render-Maths-pelican-blog.html" title="Render Maths Equation with Pelican Blog - Making equation work with pelican">Render Maths Equation with Pelican Blog <small>Making equation work with pelican</small></a></li>
-</ul>
-<hr />
-</section>
-            <aside>
-            <nav>
-            <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/pelican/integration-problem-with-elegant-theme.html" title="Previous: Problem Faced when integrating with Elegant Themes. - Surprise.">Problem Faced when integrating with Elegant Themes. <small class="subtitle">Surprise.</small></a></li>
-                <li class="next-article"><a href="https://www.archerimagine.com/articles/pelican/integrating-3rd-party-services-with-pelican.html" title="Next: Integrating 3rd party services with Pelican Blog. - Mix and Match.">Integrating 3rd party services with Pelican Blog. <small class="subtitle">Mix and Match.</small></a> »</li>
-            </ul>
-            </nav>
-            </aside>
         </div>
-        <section id="article-sidebar" class="span2">
-            <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2017-05-09T23:53:05+05:30">Tue 09 May 2017</time>
-
-            <h4>Category</h4>
-            <a class="category-link" href="https://www.archerimagine.com/categories#pelican-ref">Pelican</a>
-            <h4>Tags</h4>
-            <ul class="list-of-tags tags-in-article">
-                <li><a href="https://www.archerimagine.com/tags#pelican-ref">pelican
-                    <span class="superscript">15</span>
-</a></li>
-            </ul>
-<h4>Stay in Touch</h4>
-<div id="sidebar-social-link">
-    <a href="https://github.com/archeranimesh" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
-    </a>
-    <a href="https://www.facebook.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Facebook" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1877f2"/><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"/></svg>
-    </a>
-    <a href="https://www.reddit.com/user/archerimagine/" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Reddit" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
-    </a>
-    <a href="https://twitter.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
-    </a>
-</div>
-            
-
-
-
-<!-- Begin MailChimp Signup Form -->
-<div id="mc-embed-signup">
-<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-<h4>Email Newsletter</h4>
-<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
-<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
-<!--End mc_embed_signup-->
-
-
-
-
-            
-
-
-
-
-
-        </section>
-</div>
-</article>
+    </div>
+    </article>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
