@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: 
-Disallow: /search
 Disallow: *?q=*
 Disallow: /api/*
 Disallow: /practice/*
