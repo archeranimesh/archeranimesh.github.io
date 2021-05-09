@@ -22,12 +22,12 @@
 <meta name="keywords" content="cli, sdk, ec2, python, boto3, awscli, aws, aws cli install, aws cli download, aws cli configure, aws cli v2, aws cli install mac, aws cli install ubuntu, aws cli install windows, postman, http rest api" />
 
 <meta property="og:title" content="How not knowing AWS CLI and SDKs makes you a Rookie.  - Install, Configure, Execute. "/>
-<meta property="og:url" content="https://www.archerimagine.com/drafts/aws-cli-and-sdk-installation-tutorial.html" />
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html" />
 <meta property="og:description" content="TBD" />
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2021-05-01T17:09:47+05:30" />
-<meta property="og:article:modified_time" content="2021-05-09T02:22:22+05:30" />
+<meta property="og:article:modified_time" content="2021-05-09T19:23:45+05:30" />
 <meta name="twitter:title" content="How not knowing AWS CLI and SDKs makes you a Rookie.  - Install, Configure, Execute. ">
 <meta name="twitter:description" content="TBD">
 <meta property="og:image" content="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-SDK.png" />
@@ -94,7 +94,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.archerimagine.com/drafts/aws-cli-and-sdk-installation-tutorial.html">
+            <a href="https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html">
                 How not knowing AWS CLI and SDKs makes you a Rookie.
                 <small class="subtitle">
                     Install, Configure, Execute.
@@ -127,7 +127,13 @@
 <li><a href="#describe_images-api-using-python-boto3">describe_images API using Python Boto3</a></li>
 </ul>
 </li>
-<li><a href="#using-postman-to-execute-aws-rest-api">Using Postman to execute AWS REST API</a></li>
+<li><a href="#using-postman-to-execute-aws-rest-api">Using Postman to execute AWS REST API</a><ul>
+<li><a href="#configure-postman-environment-for-aws">Configure Postman environment for AWS</a></li>
+<li><a href="#create-postman-environment-for-aws">Create Postman environment for AWS</a></li>
+<li><a href="#create-postman-collection-for-aws">Create Postman collection for AWS</a></li>
+<li><a href="#describeimages-api-using-postman">describeimages api using Postman</a></li>
+</ul>
+</li>
 <li><a href="#conclusion">Conclusion</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
@@ -139,53 +145,56 @@
             
 <p><img alt="AWS Made Easy | AWS CLI &amp; SDKs " src="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-SDK.png" title="AWS Made Easy | AWS CLI &amp; SDKs"/></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
-<p>AWS provides multiple ways to control its resources. One of the fastest and the most effective way is the AWS CLIs and SDKs. The best benefit of using CLI or SDKs it that you can automate complex work flow.</p>
-<p>Depending you expertise, you can use bash script to control the AWS resources. You can use multiple programming languages, like .NET, Python, Go, etc to control the AWS resources. If you are not aware of both bash script or programming language you can still you Postman client to make HTTP API Calls.</p>
-<p>This article will make you comfortable using the command line, programming or the Postman client to control AWS resource. This simple knowledge will save you a large amount of time in the future as you can automate the mundane activity.</p>
+<p>AWS provides many ways to control its resources. One of the  fastest and the most effective way is the AWS CLIs and SDKs. The best  benefit of using CLI or SDKs it that you can automate complex workflow.</p>
+<p>Depending on your expertise, you can use a bash script to control the  AWS resources. You can use many programming languages, like .NET,  Python, Go, etc. to control the AWS resources. You can use the Postman client to make HTTP API calls. </p>
+<p>This article will provide an introduction to use the AWS CLI, SDKs and the HTTP APIs provided by AWS. Using these techniques, to control the AWS resources can save a lot of time.</p>
 <p>Come and explore the work of AWS CLIs, SDKs and Postman Client.</p>
 <h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">¶</a></h2>
-<p>If you are a aware of Python, then installation of CLI and SDK become very easy using the <code>pip</code> module and <code>venv</code> what is virtual environment. This also is cross platform. If you use Python, then the process becomes easier for Windows, Linux and MacOS.</p>
-<p>There is a new version of AWS CLI V 2.x which do not support installation via <code>pip</code>. You will install only AWS CLI V 2.x via the package installer method mentioned below by AWS.</p>
+<p>You can use <code>pip</code> and <code>venv</code> modules of Python for installing CLI and SDKs. <code>pip</code> is the Python package manager. <code>venv</code> is the virtual environment.</p>
+<p>Python is cross platform. If you use  Python, then the process becomes easier for Windows, Linux and MacOS.</p>
+<p>There is a new version of AWS CLI V 2.x which do not support installation via pip. You will install only AWS CLI V 2.x via the package installer method mentioned below by AWS.</p>
 <h3 id="install-python-on-windows-linux-or-macos">Install Python on Windows, Linux or macOS<a class="headerlink" href="#install-python-on-windows-linux-or-macos" title="Permanent link">¶</a></h3>
-<p>There are numerous resource out there to install Python on these platform. I cannot do any improvement over these installation instruction.</p>
-<p>Please follow this <a href="https://realpython.com/installing-python/">RealPython</a> to install Python on your respective operating system.</p>
-<p>Once you have followed the instruction mentioned above, please execute the below command to check the installation.</p>
+<p>There are many resources out there to install Python on these  platforms. I cannot make any improvement over these installation  instructions.</p>
+<p>Please follow this <a href="https://realpython.com/installing-python/">RealPython</a> article, to install Python on your respective operating system.</p>
+<p>Execute the below command to confirm the installation is complete.</p>
 <div class="highlight"><pre><span></span><code>python --version
 </code></pre></div>
-<p>If you get any version information in return then you have successfully installed Python. </p>
+<p>If you get any version information in return, you have installed Python.</p>
 <p>You should now proceed to install the next important package called <code>pip</code>.</p>
 <h3 id="install-pip-on-window-linux-or-macos">Install PiP on Window, Linux or macOS<a class="headerlink" href="#install-pip-on-window-linux-or-macos" title="Permanent link">¶</a></h3>
-<p>Once you have Python installed, the next step would be to install the package manager called <code>pip</code>. For Python 2 version &gt;= 2.7.9 and Python 3 version &gt;= 3.4 <code>pip</code> should be installed by default. You can check the installation by executing this command.</p>
+<p>Once you have Python installed, the next step would be to install the package manager called <code>pip</code>. It is the default installation on Python 2 version &gt;= 2.7.9 and Python 3 version &gt;= 3.4. You can check the installation by executing this command.</p>
 <div class="highlight"><pre><span></span><code>python -m pip --version
 </code></pre></div>
-<p>If you get any response like the version information understand that <code>pip</code> is already present. If not present you can use this documentation to install <code>pip</code>.</p>
-<p><a href="https://pip.pypa.io/en/stable/installing/">Installing PiP for Windows, Linux and macOS</a></p>
-<p>Once you have <code>pip</code> installed, the next step is to create virtual environment using the package <code>venv</code>.</p>
+<p><code>pip</code> is already present, if you get the version information in response to the command. If not present you can use this documentation to install <code>pip</code>.</p>
+<ul>
+<li><a href="https://pip.pypa.io/en/stable/installing/">Installing PiP for Windows, Linux and macOS</a></li>
+</ul>
+<p>Once you have <code>pip</code> installed, the next step is to create a virtual environment using the package <code>venv</code>.</p>
 <h3 id="create-virtual-environment">Create Virtual Environment<a class="headerlink" href="#create-virtual-environment" title="Permanent link">¶</a></h3>
-<p>You can have separate environment for your Python installation. This helps in not polluting the global package installation.</p>
-<p>Create a directory name <code>aws-cli</code> in you local machine and follow along. Change to this <code>aws-cli</code> directory.</p>
+<p>You can have separate environments for your Python installation. This helps in not polluting the global package installation.</p>
+<p>Create a directory name <code>aws-cli</code> in your local machine and follow along. Change to this <code>aws-cli</code> directory.</p>
 <p>Create a virtual environment</p>
 <div class="highlight"><pre><span></span><code>python -m venv .env
 </code></pre></div>
-<p>If no error comes then there will be a <code>.env</code> inside <code>aws-cli</code>. If we get an error of package not found, please install virtual environment package, using <code>pip</code>.</p>
+<p>If no error comes then there will be a <code>.env</code> inside <code>aws-cli</code>. If we get an error of package not found, please install the virtual environment package, using <code>pip</code>.</p>
 <p>The <code>.env</code> is generally used to identify an environment folder, but you are free to use any name. </p>
 <div class="highlight"><pre><span></span><code>python -m pip install --user virtualenv
 </code></pre></div>
 <p>Once you have your <code>.env</code> folder created now we can proceed with the AWS CLI and SDK installation.</p>
 <p>You are all set to install AWS CLI and SDK.</p>
 <h2 id="aws-cli">AWS CLI<a class="headerlink" href="#aws-cli" title="Permanent link">¶</a></h2>
-<p>AWS CLI is a tool to manage multiple services. If you choose the Amazon Linux AMI, the AWS CLI is pre-installed.</p>
-<p>AWS CLI is an open source tool. It helps to provide the same functionality which we achieve via the AWS Management Console. All AWS IaaS (Infrastructure as a Service) administration feature available via AWS Management Console should be available on AWS CLI in <em>180 days</em>.</p>
-<p>You get access to only the public APIs. While using AWS CLI, you do not have any secrete APIs to use, all the APIs are available in public.</p>
-<p>AWS CLI comes in two version, the most recent version is 2.x, it can be used in production environment. The biggest difference between version 1.x and 2.x is that 2.x is not available as a Python package for installation through <code>pip</code>.</p>
+<p>AWS CLI is a tool to manage many services. If you choose the Amazon Linux AMI, the AWS CLI is pre-installed.</p>
+<p>AWS CLI is an open source tool. AWS Management console provides the same functionality as AWS CLI. AWS CLI should have the new AWS IaaS administration features available. <em>180 days</em> is the time limit for AWS CLI to have these new AWS IaaS features.</p>
+<p>You get access to only the public APIs. While using AWS CLI, you do not have any special APIs to use, all the APIs are available in public.</p>
+<p>AWS CLI comes in two versions, the most recent version is 2.x, it can be used in a production environment. 2.x version is not available as a Python package for installation through <code>pip</code>.</p>
 <p>You have to use a separate installer to install the version 2.x. The support for AWS ClI v1 is still available.</p>
 <p>There is an unofficial port of AWS ClI v2 on pypi <a href="https://pypi.org/project/awscliv2/">called awscliv2.</a></p>
-<p>If you want to install v2 directly jump to <a href="#install-aws-cli-v2">Install AWS CLI v2.</a></p>
+<p>If you want to install v2, jump to <a href="#install-aws-cli-v2">Install AWS CLI v2.</a></p>
 <h3 id="install-aws-cli-v1">Install AWS CLI v1<a class="headerlink" href="#install-aws-cli-v1" title="Permanent link">¶</a></h3>
-<p>You can install the AWS CLI v1 simply by activating the virtual environment inside <code>aws-cli</code> folder. The below command works on Linux/macOS. It may be little different on Windows.</p>
+<p>Activate the virtual environment inside <code>aws-cli</code> folder. The below command works on Linux/macOS. It may be little different on Windows.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> .env/bin/activate
 </code></pre></div>
-<p>Once the virtual environment is activated, you can execute this below command.</p>
+<p>After activating the virtual environment, execute this command.</p>
 <div class="highlight"><pre><span></span><code>python -m pip install awscli
 </code></pre></div>
 <p>Once you have installed, it will show this at the end.</p>
@@ -195,13 +204,13 @@
 <p>You can verify the installation by running the command.</p>
 <div class="highlight"><pre><span></span><code>aws --version
 </code></pre></div>
-<p>If the version is successfully installed you will get an output as <code>aws-cli/1.19.62 Python/3.7.5 Darwin/18.6.0 botocore/1.20.62</code>.</p>
+<p>If the version is successfully installed, you will get an output as <code>aws-cli/1.19.62 Python/3.7.5 Darwin/18.6.0 botocore/1.20.62</code>.</p>
 <p>You have <code>awscli</code> v1 installed.</p>
 <h3 id="install-aws-cli-v2">Install AWS CLI v2<a class="headerlink" href="#install-aws-cli-v2" title="Permanent link">¶</a></h3>
 <p>For macOS:-</p>
 <p>Download the latest AWS CLI v2 packages from <a href="https://awscli.amazonaws.com/AWSCLIV2.pkg">AWS CLI pkg Download.</a></p>
-<p>Once downloaded, right click on the package file and open it using installer application, select the default options. At the end <code>aws</code> would be installed.</p>
-<p>If you have both AWS CLI v1 and v2 installed then it will pick the executable which is first in the <code>PATH</code> variable. Confirm the installation by opening a new terminal and executing.</p>
+<p>Install the package, by following the instructions. At the end, <code>aws</code> would be installed.</p>
+<p>If you have both AWS CLI v1 and v2 installed, then it will pick the executable which is first in the <code>PATH</code> variable. Confirm the installation by opening a new terminal and executing.</p>
 <div class="highlight"><pre><span></span><code>aws --version
 </code></pre></div>
 <p>You should get an output as </p>
@@ -209,9 +218,9 @@
 </code></pre></div>
 <p>The above output proves that we have the AWS CLI v2 installed. Now you should execute a sample command to see <code>aws</code> cli in action.</p>
 <h3 id="describeimages-api-using-cli">describeimages api using cli<a class="headerlink" href="#describeimages-api-using-cli" title="Permanent link">¶</a></h3>
-<p>Before you execute any <code>aws</code> command we should configure the aws environment, please follow the instruction already mentioned. see <a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html#using-iam-api-keys-with-aws-cli">AWS CLI configure AWS environment.</a></p>
-<p>Once you have your AWS environment configured, you should try running some operation on the AWS CLI. </p>
-<p>You can try the same command which was mentioned in <a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html#what-is-ami">What is AMI?</a> We will execute the <code>describe-images</code> command on an <code>ec2</code>.</p>
+<p>Before you execute any <code>aws</code> command we should configure the aws environment. Please follow the instruction already mentioned. See <a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html#using-iam-api-keys-with-aws-cli">AWS CLI configure AWS environment.</a></p>
+<p>Once you have your AWS environment configured. Try running some operation on the AWS CLI. </p>
+<p>Try the command mentioned in <a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html#what-is-ami">What is AMI?</a> We will execute the <code>describe-images</code> command on an <code>ec2</code>.</p>
 <div class="highlight"><pre><span></span><code>aws ec2 describe-images --image-ids ami-0d758c1134823146a
 </code></pre></div>
 <p>If executed successfully we will get an output as </p>
@@ -263,7 +272,7 @@
 <p>The above command and output is same in v1 and v2. Congratulations on executing your first AWS CLI command successfully.</p>
 <p>You should continue your command line journey with a little knowledge on AWS SDKs. </p>
 <h2 id="aws-sdk-python-boto3">AWS SDK | Python | Boto3<a class="headerlink" href="#aws-sdk-python-boto3" title="Permanent link">¶</a></h2>
-<p>SDKs take the complexity out of coding by providing language specific APIs for AWS service. AWS SDK is available in these various languages.</p>
+<p>SDKs take the complexity out of coding.  They provide language specific APIs for AWS service. AWS SDK is available in these various languages.</p>
 <ul>
 <li>JavaScript</li>
 <li>Python</li>
@@ -281,7 +290,7 @@
 <li>Botocore - Library providing low-level functionality shared with Python SDK and the AWS CLI</li>
 <li>Boto3 - The Python SDK.</li>
 </ol>
-<p>Installation of Boto3 is very easy, activate the Python virtual environment, which we already did <a href="#nstall-aws-cli-v1">Install AWS CLI v1</a></p>
+<p>Installation of Boto3 is very easy. Activate the Python virtual environment, which we already did <a href="#nstall-aws-cli-v1">Install AWS CLI v1</a></p>
 <p>Once you have activated the virtual environment, just execute this command.</p>
 <div class="highlight"><pre><span></span><code>python -m pip install boto3
 </code></pre></div>
@@ -290,7 +299,7 @@
 </code></pre></div>
 <p>You can again execute the configure option, if not done as explained in <a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html#using-iam-api-keys-with-aws-cli">AWS CLI configure AWS environment.</a></p>
 <h3 id="describe_images-api-using-python-boto3">describe_images API using Python Boto3<a class="headerlink" href="#describe_images-api-using-python-boto3" title="Permanent link">¶</a></h3>
-<p>Once installation is complete we can execute the same <code>describe_images</code> to get the details of the AMI.</p>
+<p>Once installation is complete, we can execute the same <code>describe_images</code> to get the details of the AMI.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 
@@ -364,7 +373,120 @@
 </code></pre></div>
 <p>If you see the output, it is almost similar to the output when we executed the AWS CLI command for the same describe_images. see <a href="#describeimages-api-using-cli">describeimages api using cli</a></p>
 <h2 id="using-postman-to-execute-aws-rest-api">Using Postman to execute AWS REST API<a class="headerlink" href="#using-postman-to-execute-aws-rest-api" title="Permanent link">¶</a></h2>
+<p><em>What is Postman?</em></p>
+<p>As described by the company <a href="https://www.postman.com/">itself.</a> </p>
+<blockquote>
+<p>Postman is a collaboration platform for API development.</p>
+</blockquote>
+<p>This tells us that we can use <a href="https://www.postman.com/">Postman,</a> to test the following.</p>
+<ul>
+<li>APIs</li>
+<li>Automated testing on the APIs etc. </li>
+</ul>
+<p>If you do not want to write code for getting some tasks done, we can use <a href="https://www.postman.com/">Postman,</a> for that. Configuring Postman to achieve it is little complicated so please keep the focus.</p>
+<p>You have understood about these 2 concepts in Postman to use it with AWS.</p>
+<ul>
+<li>Environment</li>
+<li>Collections</li>
+</ul>
+<h3 id="configure-postman-environment-for-aws">Configure Postman environment for AWS<a class="headerlink" href="#configure-postman-environment-for-aws" title="Permanent link">¶</a></h3>
+<p>As mentioned in Postman documentation, <a href="https://learning.postman.com/docs/sending-requests/managing-environments/">an environment is</a></p>
+<blockquote>
+<p>A Postman environment is a set of variables, which you can use in Postman request.</p>
+</blockquote>
+<p>You can use Postman environment to create a production or a staging environment. In our case we will create these 4 variables in the environment.</p>
+<ul>
+<li>region - providing the AWS region, where to execute the Action</li>
+<li>accountId - the 12 digit account ID</li>
+<li>accessKey - The accessKey which is present when IAM console</li>
+<li>secretAccessKey - The secret Access Key which we get once creating a new user, see <a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html#using-iam-api-keys-with-aws-cli">AWS CLI configure AWS environment.</a></li>
+</ul>
+<h3 id="create-postman-environment-for-aws">Create Postman environment for AWS<a class="headerlink" href="#create-postman-environment-for-aws" title="Permanent link">¶</a></h3>
+<p>Let first create a Postman environment for AWS</p>
+<p><img alt="AWS Made Easy | AWS CLI | Postman Environment " src="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-Postman-environment.png" title="AWS Made Easy | AWS CLI | Postman Environment"/></p>
+<p>You can see above you have to provide these 4 information in the environment, you can name your environment anything, I have named it <code>aws-environment</code>.</p>
+<p>Once you have the environment, it's time for collection.</p>
+<h3 id="create-postman-collection-for-aws">Create Postman collection for AWS<a class="headerlink" href="#create-postman-collection-for-aws" title="Permanent link">¶</a></h3>
+<p>As mentioned in Postman documentation, <a href="https://learning.postman.com/docs/getting-started/creating-the-first-collection/">a collection is</a> </p>
+<blockquote>
+<p>A Group of saved request which is organized into folders.</p>
+</blockquote>
+<p>Create a new collection as shown below.</p>
+<p><img alt="AWS Made Easy | AWS CLI | Postman Collection " src="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-Postman-collection.png" title="AWS Made Easy | AWS CLI | Postman Collection"/></p>
+<p>When you create a new collection, you should provide the Authorization details. Select AWS Signature as shown above.</p>
+<p>You should provide all the <a href="#create-postman-environment-for-aws">AWS environment variable,</a> we created in this collection.</p>
+<p>You can reference all the AWS environment variables inside the Authorization panel of Postman collection by using <code>{{accessKey}}</code>, i.e. surrounding it inside <code>{{ }}</code>.</p>
+<p>To verify if your variable are set properly, hover over the <code>{{accessKey}}</code>, if you get an <code>Unresolved variable</code> error like this,</p>
+<p><img alt="AWS Made Easy | AWS CLI | Postman Collection Unresolved Variables" src="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-Postman-unresolved-variables.png" title="AWS Made Easy | AWS CLI | Postman Collection Unresolved Variables"/></p>
+<p>This can happen, because the environment, we set is not accessible to this collection. Please check this drop down and choose the appropriate environment.</p>
+<p><img alt="AWS Made Easy | AWS CLI | Postman Collection set environment " src="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-Postman-collection-select-environment.png" title="AWS Made Easy | AWS CLI | Postman Collection set environment"/></p>
+<p>Once the environment is properly set, we can use the PostMan Collection to fire our request.</p>
+<h3 id="describeimages-api-using-postman">describeimages api using Postman<a class="headerlink" href="#describeimages-api-using-postman" title="Permanent link">¶</a></h3>
+<p>Once your Postman environment and collection is set, you can fire the same <code>DescribeImages</code> API to if the Postman is working.</p>
+<p><img alt="AWS Made Easy | AWS CLI | Postman Send Request " src="https://www.archerimagine.com/images/aws/ec2/03-AWS-CLI-Postman-AWS-request.png" title="AWS Made Easy | AWS CLI | Postman Send Request"/></p>
+<p>As shown above, create a new request inside your existing collection which we create in the previous step.</p>
+<p>You have to provide these Query Params.</p>
+<ul>
+<li>Action - The <code>DescribeImages</code></li>
+<li>Version -  This version should be <code>2016-11-15</code>, which is the last document version, do not change it.</li>
+<li>ImageId.1 - The AMI id you want to search.</li>
+</ul>
+<p>If everything goes right, you should get a response in XML like below.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;DescribeImagesResponse</span> <span class="na">xmlns=</span><span class="s">"http://ec2.amazonaws.com/doc/2016-11-15/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;requestId&gt;</span>961658cb-8af7-4d49-85d6-9012ac662616<span class="nt">&lt;/requestId&gt;</span>
+    <span class="nt">&lt;imagesSet&gt;</span>
+        <span class="nt">&lt;item&gt;</span>
+            <span class="nt">&lt;imageId&gt;</span>ami-0d758c1134823146a<span class="nt">&lt;/imageId&gt;</span>
+            <span class="nt">&lt;imageLocation&gt;</span>099720109477/ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20210223<span class="nt">&lt;/imageLocation&gt;</span>
+            <span class="nt">&lt;imageState&gt;</span>available<span class="nt">&lt;/imageState&gt;</span>
+            <span class="nt">&lt;imageOwnerId&gt;</span>099720109477<span class="nt">&lt;/imageOwnerId&gt;</span>
+            <span class="nt">&lt;creationDate&gt;</span>2021-02-24T18:24:50.000Z<span class="nt">&lt;/creationDate&gt;</span>
+            <span class="nt">&lt;isPublic&gt;</span>true<span class="nt">&lt;/isPublic&gt;</span>
+            <span class="nt">&lt;architecture&gt;</span>x86_64<span class="nt">&lt;/architecture&gt;</span>
+            <span class="nt">&lt;imageType&gt;</span>machine<span class="nt">&lt;/imageType&gt;</span>
+            <span class="nt">&lt;sriovNetSupport&gt;</span>simple<span class="nt">&lt;/sriovNetSupport&gt;</span>
+            <span class="nt">&lt;name&gt;</span>ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20210223<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Canonical, Ubuntu, 20.04 LTS, amd64 focal image build on 2021-02-23<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;rootDeviceType&gt;</span>ebs<span class="nt">&lt;/rootDeviceType&gt;</span>
+            <span class="nt">&lt;rootDeviceName&gt;</span>/dev/sda1<span class="nt">&lt;/rootDeviceName&gt;</span>
+            <span class="nt">&lt;blockDeviceMapping&gt;</span>
+                <span class="nt">&lt;item&gt;</span>
+                    <span class="nt">&lt;deviceName&gt;</span>/dev/sda1<span class="nt">&lt;/deviceName&gt;</span>
+                    <span class="nt">&lt;ebs&gt;</span>
+                        <span class="nt">&lt;snapshotId&gt;</span>snap-072d11ffd95664698<span class="nt">&lt;/snapshotId&gt;</span>
+                        <span class="nt">&lt;volumeSize&gt;</span>8<span class="nt">&lt;/volumeSize&gt;</span>
+                        <span class="nt">&lt;deleteOnTermination&gt;</span>true<span class="nt">&lt;/deleteOnTermination&gt;</span>
+                        <span class="nt">&lt;volumeType&gt;</span>gp2<span class="nt">&lt;/volumeType&gt;</span>
+                        <span class="nt">&lt;encrypted&gt;</span>false<span class="nt">&lt;/encrypted&gt;</span>
+                    <span class="nt">&lt;/ebs&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item&gt;</span>
+                    <span class="nt">&lt;deviceName&gt;</span>/dev/sdb<span class="nt">&lt;/deviceName&gt;</span>
+                    <span class="nt">&lt;virtualName&gt;</span>ephemeral0<span class="nt">&lt;/virtualName&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item&gt;</span>
+                    <span class="nt">&lt;deviceName&gt;</span>/dev/sdc<span class="nt">&lt;/deviceName&gt;</span>
+                    <span class="nt">&lt;virtualName&gt;</span>ephemeral1<span class="nt">&lt;/virtualName&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/blockDeviceMapping&gt;</span>
+            <span class="nt">&lt;virtualizationType&gt;</span>hvm<span class="nt">&lt;/virtualizationType&gt;</span>
+            <span class="nt">&lt;hypervisor&gt;</span>xen<span class="nt">&lt;/hypervisor&gt;</span>
+            <span class="nt">&lt;enaSupport&gt;</span>true<span class="nt">&lt;/enaSupport&gt;</span>
+            <span class="nt">&lt;platformDetails&gt;</span>Linux/UNIX<span class="nt">&lt;/platformDetails&gt;</span>
+            <span class="nt">&lt;usageOperation&gt;</span>RunInstances<span class="nt">&lt;/usageOperation&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/imagesSet&gt;</span>
+<span class="nt">&lt;/DescribeImagesResponse&gt;</span>
+</code></pre></div>
+<p>You can now experiment with the different HTTP APIs provided by AWS. Create an instance, destroy instance, everything which is possible  using the public API.</p>
+<p>From here on, the more you practice the more you can enhance the APIs. AWS provides multiple ways to control its resources. One of the fastest and the most effective way is the AWS CLIs and SDKs. The best benefit of using CLI or SDKs it that you can automate complex work flow.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>AWS CLI, SDKs and HTTP APIs are three alternate ways to access and configure the AWS resources. AWS CLIs and SDKs requires a little bit of programming knowledge. It can be shell scripting or any programming language. HTTP Clients like Postman can use the HTTP APIs to provide the same result.</p>
+<p>Python is a preferred choice when it comes to choosing the the AWS SDKs. The AWS CLIs core is also made with a Python Package. AWS has  changed the way of installing AWS CLIs from <code>pip</code> to independent packages in Version 2.x.</p>
+<p>In this article we have used the <code>describeimage</code> API to execute AWS CLIs, SDKs and HTTP CLient and get the same result in all the three possible ways.</p>
+<p>You can proceed with any one of the technique from here on. It may  depend on your previous experience. If you are knowledgeable in Shell  scripting choose AWS CLI. If you are good in programming, choose the AWS  SDKs. You can use the HTTP Client called Postman to fire the HTTP APIs if you have no programming experience.</p>
+<p>Knowing AWS CLI, SDKs or HTTP API is one important step in the AWS Configuration. Checkout, the free tier EC2 instance launch article. see <a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html">Step by Step guide to create an EC2 instance </a>. </p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://blog.scottlowe.org/2020/04/10/using-postman-to-launch-ec2-instance-via-api-calls/">Using Postman to Launch an EC2 Instance via API Calls</a></li>
@@ -381,6 +503,7 @@
 <li><a href="https://github.com/aws/aws-cli/issues/4947">publish v2 to PyPI</a></li>
 <li><a href="https://youtu.be/U5y7JI_mHk8?t=701">Introduction to AWS CLI V2</a></li>
 <li><a href="https://aws.amazon.com/blogs/developer/aws-cli-v2-is-now-generally-available/">AWS CLI v2 is now generally available</a></li>
+<li><a href="https://learning.postman.com/docs/sending-requests/managing-environments/">Managing Postman environment.</a></li>
 </ul>
 
 
@@ -388,11 +511,16 @@
 
 
 <div class="applause_button">
-    <applause-button url=https://www.archerimagine.com/drafts/aws-cli-and-sdk-installation-tutorial.html> </applause-button>
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html> </applause-button>
 </div>
 
  
-            
+                <p id="post-share-links">
+    Spread the word....
+      <a href="https://twitter.com/intent/tweet?text=How%20not%20knowing%20AWS%20CLI%20and%20SDKs%20makes%20you%20a%20Rookie.%20Install%2C%20Configure%2C%20Execute.&url=https%3A//www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html&via=animeshkbhadra&hashtags=cli,sdk,ec2,python,boto3,awscli" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=How%20not%20knowing%20AWS%20CLI%20and%20SDKs%20makes%20you%20a%20Rookie.%20Install%2C%20Configure%2C%20Execute.&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
             
             
 
@@ -414,30 +542,41 @@
 </ul>
 <hr />
 </section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html" title="Previous: The complete beginner&#39;s guide to AWS AMIs - Amazon Machine Image [2021]">The complete beginner's guide to AWS AMIs <small class="subtitle">Amazon Machine Image [2021]</small></a></li>
+            </ul>
+            </nav>
+            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2021-05-01T17:09:47+05:30">Sat 01 May 2021</time>
 <h4>Last Updated</h4>
-<time datetime="2021-05-09T02:22:22+05:30">May 9, 2021</time>
+<time datetime="2021-05-09T19:23:45+05:30">May 9, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://www.archerimagine.com/tags#awscli-ref">awscli
+                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#boto3-ref">boto3
+                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#cli-ref">cli
+                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#ec2-ref">ec2
-                    <span class="superscript">2</span>
+                    <span class="superscript">3</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#python-ref">python
-                    <span class="superscript">4</span>
+                    <span class="superscript">5</span>
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#sdk-ref">sdk
+                    <span class="superscript">1</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>
