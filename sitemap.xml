@@ -5,56 +5,56 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.archerimagine.com/</loc>
-<lastmod>2021-05-09T19:24:36-00:00</lastmod>
+<lastmod>2021-05-09T19:39:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/tags</loc>
-<lastmod>2021-05-09T19:24:36-00:00</lastmod>
+<lastmod>2021-05-09T19:39:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/categories</loc>
-<lastmod>2021-05-09T19:24:36-00:00</lastmod>
+<lastmod>2021-05-09T19:39:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/archives</loc>
-<lastmod>2021-05-09T19:24:36-00:00</lastmod>
+<lastmod>2021-05-09T19:39:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/search</loc>
-<lastmod>2021-05-09T19:24:36-00:00</lastmod>
+<lastmod>2021-05-09T19:39:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/404.html</loc>
-<lastmod>2021-05-09T19:24:36-00:00</lastmod>
+<lastmod>2021-05-09T19:39:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/pages/aws-certification.html</loc>
-<lastmod>2021-04-30T01:25:34+05:30</lastmod>
+<lastmod>2021-05-09T19:38:36+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html</loc>
-<lastmod>2021-05-09T19:23:45+05:30</lastmod>
+<lastmod>2021-05-09T19:36:31+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
