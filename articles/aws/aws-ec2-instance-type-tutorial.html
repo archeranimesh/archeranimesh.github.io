@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="alternate" type="application/rss+xml" title="Archer Imagine" href="https://www.archerimagine.com/feeds/all.atom.xml" />
+
+        <meta name="google-site-verification" content="6B1Foj8HxdrASteMuBQX7Hyu6PCLUQCX_u4USDQ9xi8" />        <meta name="msvalidate.01" content="7186CB4D245BAA0092329C7B5FD2C5CD" />        <meta name="author" content="Animesh Bhadra" />
+
+        <meta name="description" content="AWS EC2 is the heart of AWS. This is the server which is running. AWS provides 350 instance choices. This will become a difficult choice to pick a particular instance from a vast pool of servers. You have General propose instance, Compute Optimize, Memory Optimize, Storage Optimize &amp; Accelerated Computing (Instance with GPUs) category of the instance. You have to decide based on Cost, hardware requirement and your use case. You can even use Instance Explorer to choose your perfect AWS EC2 instance.
+" />
+        <meta name="twitter:creator" content="@animeshkbhadra">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image">
+
+<meta name="keywords" content="aws, cloud, aws-ec2, ec2, instance-type, aws, aws instance types pricing, aws instance types list, aws instance types cheat sheet, aws instance types info, aws instance types m5, aws instance types for sap, aws instance types spot reserved, aws instance types c5, aws instance types t2" />
+
+<meta property="og:title" content="The unconventional guide to AWS EC2 instance types. "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" />
+<meta property="og:description" content="AWS EC2 is the heart of AWS. This is the server which is running. AWS provides 350 instance choices. This will become a difficult choice to pick a particular instance from a vast pool of servers. You have General propose instance, Compute Optimize, Memory Optimize, Storage Optimize &amp; Accelerated Computing (Instance with GPUs) category of the instance. You have to decide based on Cost, hardware requirement and your use case. You can even use Instance Explorer to choose your perfect AWS EC2 instance." />
+<meta property="og:site_name" content="Archer Imagine" />
+<meta property="og:article:author" content="Animesh Bhadra" />
+<meta property="og:article:published_time" content="2021-05-10T17:16:09+05:30" />
+<meta property="og:article:modified_time" content="2021-05-20T23:39:03+05:30" />
+<meta name="twitter:title" content="The unconventional guide to AWS EC2 instance types. ">
+<meta name="twitter:description" content="AWS EC2 is the heart of AWS. This is the server which is running. AWS provides 350 instance choices. This will become a difficult choice to pick a particular instance from a vast pool of servers. You have General propose instance, Compute Optimize, Memory Optimize, Storage Optimize &amp; Accelerated Computing (Instance with GPUs) category of the instance. You have to decide based on Cost, hardware requirement and your use case. You can even use Instance Explorer to choose your perfect AWS EC2 instance.">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type.png" >
+
+        <title>The unconventional guide to AWS EC2 instance types.  · Archer Imagine
+</title>
+        <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.archerimagine.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.archerimagine.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.archerimagine.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.archerimagine.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+        <link href="https://www.archerimagine.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Archer Imagine - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-97386090-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://www.archerimagine.com/"><span class=site-name>Archer Imagine</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://www.archerimagine.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://www.archerimagine.com/pages/aws-certification.html">Tutorials</a></li>
+                                <li ><a href="https://www.archerimagine.com/categories">Categories</a></li>
+                                <li ><a href="https://www.archerimagine.com/tags">Tags</a></li>
+                                <li ><a href="https://www.archerimagine.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://www.archerimagine.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html">
+                The unconventional guide to AWS EC2 instance types.
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#aws-ec2-naming-convention">AWS EC2 Naming Convention.</a><ul>
+<li><a href="#aws-ec2-instance-size">AWS EC2 Instance Size</a></li>
+<li><a href="#aws-ec2-instance-family">AWS EC2 Instance Family</a></li>
+<li><a href="#aws-ec2-instance-generation">AWS EC2 Instance Generation</a></li>
+<li><a href="#aws-ec2-additional-capability">AWS EC2 Additional capability</a></li>
+</ul>
+</li>
+<li><a href="#instance-sizing">Instance Sizing</a></li>
+<li><a href="#instance-classification">Instance Classification</a></li>
+<li><a href="#general-purpose-instance">General Purpose Instance</a><ul>
+<li><a href="#general-purpose-t3t4g-instance">General Purpose - T3/T4g Instance</a></li>
+<li><a href="#general-purpose-m5-instance">General Purpose - M5 Instance</a></li>
+<li><a href="#general-purpose-mac-instance">General Purpose - Mac Instance</a></li>
+<li><a href="#general-purpose-arm-instance-a1">General Purpose - Arm Instance (A1)</a></li>
+</ul>
+</li>
+<li><a href="#compute-optimized-instance">Compute Optimized Instance</a></li>
+<li><a href="#memory-optimized-instance">Memory Optimized Instance</a><ul>
+<li><a href="#memory-optimized-r-instance">Memory Optimized - R Instance</a></li>
+<li><a href="#memory-optimized-x-instance">Memory Optimized - X Instance</a></li>
+<li><a href="#memory-optimized-z-instance">Memory Optimized - Z Instance</a></li>
+</ul>
+</li>
+<li><a href="#storage-optimized-instance">Storage Optimized Instance</a><ul>
+<li><a href="#storage-optimized-d-instance">Storage Optimized - D Instance</a></li>
+<li><a href="#storage-optimized-i-instance">Storage Optimized - I Instance</a></li>
+<li><a href="#storage-optimized-h-instance">Storage Optimized - H Instance</a></li>
+</ul>
+</li>
+<li><a href="#accelerated-computing-instance">Accelerated Computing Instance</a><ul>
+<li><a href="#accelerated-computing-p-instance">Accelerated Computing - P Instance</a></li>
+<li><a href="#accelerated-computing-g-instance">Accelerated Computing - G Instance</a></li>
+<li><a href="#accelerated-computing-f-instance">Accelerated Computing - F Instance</a></li>
+<li><a href="#accelerated-computing-inf1-instance">Accelerated Computing - Inf1 Instance</a></li>
+</ul>
+</li>
+<li><a href="#how-to-choose-an-instance-type">How to choose an instance type</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p><img alt="AWS Made Easy | AWS EC2 Instance Type " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type.png" title="AWS Made Easy | AWS EC2 Instance Type"/></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>AWS EC2 instance is the heart of AWS. They are the real server. </p>
+<p>An  AWS EC2 instance, has to support workload all across the boards, right  from a web server, to FPGA and even HPC. </p>
+<p>AWS EC2 instance supports all  forms of computing needs. The hardware choice is diverse for such needs.</p>
+<p>You have 350 types of different AWS EC2 instance, in the year 2021.  Selecting the right AWS EC2 instance from these big piles will be  difficult.</p>
+<p>In this article you will learn how can you choose the correct AWS EC2  instance without breaking the bank. You will also learn about the  various types of the AWS EC2 instance. </p>
+<p>If you are studying for AWS Certification. You will also learn about  the AWS EC2 instance naming convention. What does the AWS decides on the  instance sizing. It will also help you with understanding the various  instance type, and make its home in your memory. This is by far the best  technique to remember the various names of the AWS EC2 instance.</p>
+<p>Let's jump right in.</p>
+<h2 id="aws-ec2-naming-convention">AWS EC2 Naming Convention.<a class="headerlink" href="#aws-ec2-naming-convention" title="Permanent link">¶</a></h2>
+<p>The first thing you should learn is </p>
+<p><em>How is the AWS EC2 instance, getting their name?</em> </p>
+<p><em>What does a name like <code>M5d.xlarge</code> means?</em></p>
+<p>The below image may help you understand that.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Instance Naming Convention " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Naming-Convention.png" title="AWS Made Easy | AWS EC2 | Instance Naming Convention"/></p>
+<p>If you look, these four component form the Instance Type.</p>
+<ul>
+<li>Instance Size</li>
+<li>Instance Family</li>
+<li>Instance Generation</li>
+<li>Additional Capability</li>
+</ul>
+<h3 id="aws-ec2-instance-size">AWS EC2 Instance Size<a class="headerlink" href="#aws-ec2-instance-size" title="Permanent link">¶</a></h3>
+<p>First, you should know the easy stuff, what does the <code>xlarge</code> means in the AWS EC2 naming convention? </p>
+<p>The <code>xlarge</code> denotes the T-shirt size representation of the AWS EC2 instance. It defines the amount of </p>
+<ul>
+<li>CPU</li>
+<li>Memory</li>
+<li>Storage</li>
+<li>Network Performance.</li>
+</ul>
+<p>An AWS EC2 instance possesses.</p>
+<p>Now lets explore the <code>M5d</code>.</p>
+<h3 id="aws-ec2-instance-family">AWS EC2 Instance Family<a class="headerlink" href="#aws-ec2-instance-family" title="Permanent link">¶</a></h3>
+<p>The <code>M</code> means that AWS EC2 instance belongs to General purpose computing instance type. This is the <code>M</code>ain Computing AWS EC2 instance. </p>
+<p>You have five main categories of instance types.</p>
+<ul>
+<li>General Purpose</li>
+<li>Compute Optimized</li>
+<li>Memory Optimized</li>
+<li>Storage Optimized</li>
+<li>Accelerated Computing</li>
+</ul>
+<p>You also have sub classification with-in the five classifications.</p>
+<h3 id="aws-ec2-instance-generation">AWS EC2 Instance Generation<a class="headerlink" href="#aws-ec2-instance-generation" title="Permanent link">¶</a></h3>
+<p>The <code>5</code> in <code>M5d</code> represents the generation of the AWS EC2 instance. <code>5</code> is the current generation. The latest (current) generation of AWS EC2 instance is always better than a previous generation. </p>
+<p>If you use the <a href="https://calculator.aws/#/createCalculator/EC2">EC2 pricing calculator,</a> you will find the pricing between an <code>m4.large</code> and <code>m5.large</code> is as below.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for m5.large in the US East (Ohio) for 1 Year term and No Upfront is 0.06 USD </p>
+<p>EC2 Instance Savings Plans rate for m4.large in the US East (Ohio) for 1 Year term and No Upfront is 0.062 USD  </p>
+</blockquote>
+<p>If you take the percentage, you have to pay <code>3.33%</code> more for using an older generation AWS EC2. With this in mind, always choose the latest generation of hardware. </p>
+<p>If the need is for a specific hardware, then choose the previous generation hardware.</p>
+<h3 id="aws-ec2-additional-capability">AWS EC2 Additional capability<a class="headerlink" href="#aws-ec2-additional-capability" title="Permanent link">¶</a></h3>
+<p>The <code>d</code> in <code>M5d</code> represents an additional capability. </p>
+<p>Here is a table of additional capabilities.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Property</th>
+<th align="center">Representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">AMD</td>
+<td align="center">a</td>
+</tr>
+<tr>
+<td align="center">Graviton2</td>
+<td align="center">g</td>
+</tr>
+<tr>
+<td align="center">Local NVMe SSD</td>
+<td align="center">d</td>
+</tr>
+<tr>
+<td align="center">High networking(100Gbps)</td>
+<td align="center">n</td>
+</tr>
+<tr>
+<td align="center">Extra capacity</td>
+<td align="center">e</td>
+</tr>
+</tbody>
+</table>
+<p>Now you are aware of the different component of the AWS EC2 name.</p>
+<p>Every Instance size(xLarge) will have twice the number or CPU and Memory and storage resource from the previous size(large). How does this happen, jump forward to find it out.</p>
+<h2 id="instance-sizing">Instance Sizing<a class="headerlink" href="#instance-sizing" title="Permanent link">¶</a></h2>
+<p>The below image, helps you understand this concept. Each instance  size (xlarge) will have twice the number of CPU and memory than previous size (large).</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Instance Type Sizing " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Sizing.png" title="AWS Made Easy | AWS EC2 | Instance Type Sizing"/></p>
+<p>You should not believe the above image, lets talk data, use the <a href="(https://calculator.aws/#/createCalculator/EC2)">AWS EC2 pricing calculator.</a> It helped in creating the below table.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Instance Size</th>
+<th align="center">vCPUs</th>
+<th align="center">Memory (GiB)</th>
+<th align="center">Network Performance</th>
+<th align="center">1yr Std reserved hourly cost</th>
+<th align="center">Price increase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">.large</td>
+<td align="center">2</td>
+<td align="center">8</td>
+<td align="center">upto 10 Gbps</td>
+<td align="center">0.06</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">.xlarge</td>
+<td align="center">4</td>
+<td align="center">16</td>
+<td align="center">upto 10 Gbps</td>
+<td align="center">0.121</td>
+<td align="center">101.67 %</td>
+</tr>
+<tr>
+<td align="center">.2xlarge</td>
+<td align="center">8</td>
+<td align="center">32</td>
+<td align="center">upto 10 Gbps</td>
+<td align="center">0.242</td>
+<td align="center">100.00%</td>
+</tr>
+<tr>
+<td align="center">.4xlarge</td>
+<td align="center">16</td>
+<td align="center">64</td>
+<td align="center">upto  10 Gbps</td>
+<td align="center">0.484</td>
+<td align="center">100.00%</td>
+</tr>
+<tr>
+<td align="center">.8xlarge</td>
+<td align="center">32</td>
+<td align="center">128</td>
+<td align="center">10 Gbps</td>
+<td align="center">0.968</td>
+<td align="center">100.00%</td>
+</tr>
+</tbody>
+</table>
+<p>The table and the image representation completely match. <code>xlarge</code> has twice the number of vCPU and the memory compared to <code>large</code>. The pricing for 1 yr reserved hourly cost, is twice.</p>
+<p>This poses an important question, while choosing the size. Will one go for 1 <code>8xlarge</code> instance or 8 <code>xlarge</code> instance. </p>
+<p>Multiplying <code>0.121 * 8 = 0.968</code> tells that there is no difference between the two. You can pick any of the combinations.</p>
+<p>The load on the service is not  linear, it is a curve. This is not considered in the above multiplication.</p>
+<p>If you remember the <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line drawing algorithm. </a>It tells us, how to draw a line using square pixels.</p>
+<p>The line can only be smooth if you have many dense pixels. The AWS EC2 instance, can match the uneven load if you have much granular AWS EC2 instance size.</p>
+<p>It is always better to use a lower instance size. Use a Higher instance size if you have a specific need for it.</p>
+<p>There are far to many instance classifications of AWS EC2, lets learn about them.</p>
+<h2 id="instance-classification">Instance Classification<a class="headerlink" href="#instance-classification" title="Permanent link">¶</a></h2>
+<p>The below image represent the relations of different AWS Instance Type. It has an alphabet written on a Green background. It will tell you the value of <a href="#aws-ec2-instance-family">Instance Family </a>in <a href="#instance-naming-convention">AWS EC2 Naming Convention.</a></p>
+<p><img alt="AWS Made Easy | AWS EC2 | Instance Classification " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Instance-Classification.png" title="AWS Made Easy | AWS EC2 | Instance Classification"/></p>
+<p>You will only focus on the naming of the classification and sub classification. The details of these classifications will come later.</p>
+<p>There are five main categories of the AWS EC2 instance.</p>
+<ul>
+<li>General Purpose<ul>
+<li>General Purpose - T3/T4g Instance<ul>
+<li>Development environment for application can use the T3/T4g instance. </li>
+<li>Transient or Temporary are a nice way to remember this sub classification. </li>
+<li>The short burst of CPU power which it will need is available. </li>
+</ul>
+</li>
+<li>General Purpose - M5 Instance<ul>
+<li>This is the main general purpose compute  choice in AWS EC2. </li>
+<li>It is better to  use this instance in place of the Brustable instance. </li>
+<li>These instances  have predictable performance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Compute Optimized -  Optimized CPU<ul>
+<li>The C Instance<ul>
+<li>These instances are good for high compute power.</li>
+<li>These instances can serve high traffic web servers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Memory Optimized - Optimized RAM<ul>
+<li>Memory Optimized - R Instance<ul>
+<li>They have higher capacity RAM, Like in case of <code>r5.large</code>, the base memory is 16 GiB, but in <code>c4.large</code> it is only 4 GiB.</li>
+</ul>
+</li>
+<li>Memory Optimized - X Instance <ul>
+<li>These are <strong>X</strong>tream RAM instance, the base <code>x1.16xlarge</code> is an instance with 976 GiB RAM.</li>
+</ul>
+</li>
+<li>Memory Optimized - Z Instance <ul>
+<li>The best CPU, with more memory. </li>
+<li>The <code>z1d.large</code> has a 4.0 GHz processor, with a memory starting at 16 GiB and going till 384 GiB. </li>
+<li>It even has a NVMe SSD attached, that is the reason of the <code>d</code> in the name. </li>
+<li>This is a complete instance for high performance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Storage Optimized - Optimized HDD/SSD<ul>
+<li>Storage Optimized - D Instance<ul>
+<li>The application with use high I/O performance.</li>
+</ul>
+</li>
+<li>Storage Optimized - I Instance<ul>
+<li>The instance has NVMe SSD with low latency.</li>
+</ul>
+</li>
+<li>Storage Optimized - H Instance <ul>
+<li>These are HDD based local storage, so higher throughput for operation. </li>
+<li>These are good for Big data operation. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Accelerated Computing - These are GPU and FPGA related<ul>
+<li>Accelerated Computing - P Instance<ul>
+<li>Parallel processing using the GPUs. </li>
+</ul>
+</li>
+<li>Accelerated Computing - G Instance<ul>
+<li>Graphics Rendering using the GPUs</li>
+</ul>
+</li>
+<li>Accelerated Computing - F Instance<ul>
+<li>The instance for programmable gate arrays.</li>
+</ul>
+</li>
+<li>Accelerated Computing - Inf1 Instance<ul>
+<li>The instance for AI/ML work load.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The instance body of work provides the root of above classification. Web Server can use the General Purpose instance. These instance are good for day to day computing.</p>
+<h2 id="general-purpose-instance">General Purpose Instance<a class="headerlink" href="#general-purpose-instance" title="Permanent link">¶</a></h2>
+<p>The most basic and all rounder AWS EC2 instances are the General Purpose Instances. They provide a perfect balance of computing, memory and networking resource. The below image shows the important points of both the sub class of the General Purpose Instance.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | General Purpose Instance Property " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-General-Purpose.png" title="AWS Made Easy | AWS EC2 | General Purpose Instance Property"/></p>
+<p>The four sub classification of the General Purpose Instance are.</p>
+<ul>
+<li>General purpose - T3/T4g Instance</li>
+<li>General purpose - M5 Instance</li>
+<li>General Purpose - Mac</li>
+<li>General purpose - Arm Instance</li>
+</ul>
+<h3 id="general-purpose-t3t4g-instance">General Purpose - T3/T4g Instance<a class="headerlink" href="#general-purpose-t3t4g-instance" title="Permanent link">¶</a></h3>
+<p>The T3/T4g have a baseline CPU performance of 2.5 GHz. These instance can burst to higher performance for shorter duration. The T3/T4g are burstable instance for this reason.</p>
+<p>This burst is  paid with CPU credits. When the instance is idle it leads to accumulation of CPU Credits.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for t3.large in the US East (Ohio) for 1 Year term and No Upfront is 0.0522 USD </p>
+</blockquote>
+<p>The T4g is the AWS Graviton2 Processor.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for t4g.large in the US East (Ohio) for 1 Year term and No Upfront is 0.0421 USD</p>
+</blockquote>
+<p>The ideal use case for these instances are micro-service, low-latency application, development environment.</p>
+<p>You should be safe to not rely on the burstable CPU performance.</p>
+<h3 id="general-purpose-m5-instance">General Purpose - M5 Instance<a class="headerlink" href="#general-purpose-m5-instance" title="Permanent link">¶</a></h3>
+<p>These are, the more stable instance, in comparison to the T2/T4a Instance. They use a 3.1 GHz Intel Processor. These should be the first choice for anyone starting out on AWS. These instances provide a better baseline performance.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for m5.large in the US East (Ohio) for 1 Year term and No Upfront is 0.06 USD </p>
+</blockquote>
+<p>The best use case for M5 Instance are small and midsize databases, data processing tasks.</p>
+<h3 id="general-purpose-mac-instance">General Purpose - Mac Instance<a class="headerlink" href="#general-purpose-mac-instance" title="Permanent link">¶</a></h3>
+<p>AWS EC2 now provides macOS as an option for development. These are based on the Apple Mac Mini computer. It uses the Intel core I7 processor with 3.2 GHz (4.6 GHz Turbo) performance. There is only the <code>mac1.metal</code> option.</p>
+<p>macOS products can use these instance for development, testing.</p>
+<h3 id="general-purpose-arm-instance-a1">General Purpose - Arm Instance (A1)<a class="headerlink" href="#general-purpose-arm-instance-a1" title="Permanent link">¶</a></h3>
+<p>The ARM based processor for AWS EC2 instance. It fully supports the ARM based development environment.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for a1.large in the US East (Ohio) for 1 Year term and No Upfront is 0.0321 USD </p>
+</blockquote>
+<p>Web server, micro-services, are some of the workload example for these instance.</p>
+<p>If you have to pick one instance, then pick the <code>M5</code> instance in this general category. </p>
+<p>Use a <code>T3/T4g</code> only if you want to use the free tier service. </p>
+<p>The other ARM and Mac instance, are very specific. You should use them till you do not have a specific need for these instance.</p>
+<p>Lets move on the some very specific AWS EC2 computes instance.</p>
+<h2 id="compute-optimized-instance">Compute Optimized Instance<a class="headerlink" href="#compute-optimized-instance" title="Permanent link">¶</a></h2>
+<p>The server you need to use for higher compute power. They support 3.6 GHz to 3.9 GHz compute power.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Compute Optimized Instance Property " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Compute-Optimized.png" title="AWS Made Easy | AWS EC2 | Compute Optimized Instance Property"/></p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for c5.large in the US East (Ohio) for 1 Year term and No Upfront is 0.054 USD </p>
+</blockquote>
+<p>The cost of a <code>C5.large</code> is cheaper than then General Purpose M instance. You need little higher compute power than use the <code>C5</code> instance.</p>
+<p>The general use case for Compute Optimized Instance are </p>
+<ul>
+<li>high performance web servers</li>
+<li>scientific modeling </li>
+<li>gaming server.</li>
+</ul>
+<h2 id="memory-optimized-instance">Memory Optimized Instance<a class="headerlink" href="#memory-optimized-instance" title="Permanent link">¶</a></h2>
+<p>RAM has a direct impact on any compute operation. If you need higher RAM, then these are the instance you should use. They support 4.0 GHz compute frequency. The baseline instance, has 16 GiB RAM in them. This is more than the Compute Optimized and General Purpose Instance.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Memory Optimized Instance Property " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Memory-Optimized.png" title="AWS Made Easy | AWS EC2 | Memory Optimized Instance Property"/></p>
+<p>There are 3 types of sub classification in these memory optimized instances.</p>
+<ul>
+<li>Memory Optimized - R instance</li>
+<li>Memory Optimized - X instance</li>
+<li>Memory Optimized - Z instance</li>
+</ul>
+<h3 id="memory-optimized-r-instance">Memory Optimized - R Instance<a class="headerlink" href="#memory-optimized-r-instance" title="Permanent link">¶</a></h3>
+<p>These are the generic higher RAM instance. They give more RAM per vCPU. 768 GiB being the highest RAM available. </p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for r5.large in the US East (Ohio) for 1 Year term and No Upfront is 0.079 USD </p>
+</blockquote>
+<p>Memory intensive applications can use the R instance to perfection.</p>
+<h3 id="memory-optimized-x-instance">Memory Optimized - X Instance<a class="headerlink" href="#memory-optimized-x-instance" title="Permanent link">¶</a></h3>
+<p>These instances support the large scale, enterprise class, in-memory application.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for x1.16xlarge in the US East (Ohio) for 1 Year term and No Upfront is 4.11 USD </p>
+</blockquote>
+<p>SAP HANA application can use the X Instance to perfection.</p>
+<h3 id="memory-optimized-z-instance">Memory Optimized - Z Instance<a class="headerlink" href="#memory-optimized-z-instance" title="Permanent link">¶</a></h3>
+<p>These are the instance which supports high compute capacity and high memory. The compute power is 4.0 GHz. They also support the NVMe SSD for low latency IO and higher RAM starting from 16 GiB to 384 GiB</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for z1d.large in the US East (Ohio) for 1 Year term and No Upfront is 0.117 USD </p>
+</blockquote>
+<p>Relational databases can use the Z instance to perfection.</p>
+<h2 id="storage-optimized-instance">Storage Optimized Instance<a class="headerlink" href="#storage-optimized-instance" title="Permanent link">¶</a></h2>
+<p>These instance provides the variety in the Hard Disk or local storage option.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Storage Optimized Instance Property " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Storage-Optimized.png" title="AWS Made Easy | AWS EC2 | Storage Optimized Instance Property"/></p>
+<p>There are 3 sub classification of these instances.</p>
+<ul>
+<li>Storage Optimized - D Instance</li>
+<li>Storage Optimized - I Instance</li>
+<li>Storage Optimized - H Instance</li>
+</ul>
+<h3 id="storage-optimized-d-instance">Storage Optimized - D Instance<a class="headerlink" href="#storage-optimized-d-instance" title="Permanent link">¶</a></h3>
+<p>These are the D or Dense instance. They provide 48 TB HDD instance storage.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for d3.xlarge in the US East (Ohio) for 1 Year term and No Upfront is 0.315 USD </p>
+</blockquote>
+<p>These instances are good for <strong>D</strong>istributed file systems like HDFS.</p>
+<h3 id="storage-optimized-i-instance">Storage Optimized - I Instance<a class="headerlink" href="#storage-optimized-i-instance" title="Permanent link">¶</a></h3>
+<p>High IO need the power of NVMe SSD.  Since  these instances are supporting NVMe SSD. You can get very low latency  performance.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for i3.large in the US East (Ohio) for 1 Year term and No Upfront is 0.107 USD </p>
+</blockquote>
+<p>These instances are ideal for NoSQL databases like Cassandra, MongoDB, Redis.</p>
+<h3 id="storage-optimized-h-instance">Storage Optimized - H Instance<a class="headerlink" href="#storage-optimized-h-instance" title="Permanent link">¶</a></h3>
+<p>These instance support 16 TB of HDD based local storage. Since the storage is local, the latency is very low in these.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for h1.2xlarge in the US East (Ohio) for 1 Year term and No Upfront is 0.318 USD </p>
+</blockquote>
+<p>These instances are ideal for MapReduce work loads.</p>
+<h2 id="accelerated-computing-instance">Accelerated Computing Instance<a class="headerlink" href="#accelerated-computing-instance" title="Permanent link">¶</a></h2>
+<p>Till now all the instance type was using similar hardware. There was no special hardware used to improve performance. The Accelerated Computing instance changes that. It uses specific hardware for specific tasks. Like a GPU for both GPU intensive work or parallel processing.</p>
+<p>It even uses hardware accelerators for FPGA and AWS Inferentia for AWS AI/ML work load.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Accelerated Computing Instance Property " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Accelerated-Computing.png" title="AWS Made Easy | AWS EC2 | Accelerated Computing Instance Property"/></p>
+<p>There is four sub classification of the Accelerated Computing Instance.</p>
+<ul>
+<li>Accelerated Computing - P Instance</li>
+<li>Accelerated Computing - G Instance</li>
+<li>Accelerated Computing - F Instance</li>
+<li>Accelerated Computing - Inf1 Instance</li>
+</ul>
+<p>Lets dig deeper into these.</p>
+<h3 id="accelerated-computing-p-instance">Accelerated Computing - P Instance<a class="headerlink" href="#accelerated-computing-p-instance" title="Permanent link">¶</a></h3>
+<p>The P instances are also referred to as Parallel Instance. These instances are best for Machine Learning and HPC. These instances have many network cards.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for p4d.24xlarge in the US East (Ohio) for 1 Year term and No Upfront is 20.1754983 USD </p>
+</blockquote>
+<p>The use case of these P Instances are Machine Learning, HPC, Computational Finance etc.</p>
+<h3 id="accelerated-computing-g-instance">Accelerated Computing - G Instance<a class="headerlink" href="#accelerated-computing-g-instance" title="Permanent link">¶</a></h3>
+<p>These instances are best used for Graphics Intensive workloads. </p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for g3s.xlarge in the US East (Ohio) for 1 Year term and No Upfront is 0.551 USD </p>
+</blockquote>
+<p>The use case of these instances are 3D Visualization, graphics-intensive remote workstation.</p>
+<h3 id="accelerated-computing-f-instance">Accelerated Computing - F Instance<a class="headerlink" href="#accelerated-computing-f-instance" title="Permanent link">¶</a></h3>
+<p>These instances are the equipped with field programmable gate arrays (FPGAs).</p>
+<p>These instances are best for genomics research, financial analysis.</p>
+<h3 id="accelerated-computing-inf1-instance">Accelerated Computing - Inf1 Instance<a class="headerlink" href="#accelerated-computing-inf1-instance" title="Permanent link">¶</a></h3>
+<p>The Inf1 instance are best used for Machine learning inference application.</p>
+<blockquote>
+<p>EC2 Instance Savings Plans rate for inf1.xlarge in the US East (Ohio) for 1 Year term and No Upfront is 0.232 USD </p>
+</blockquote>
+<p>These instances are useful for Recommendation engine, forecasting etc.</p>
+<h2 id="how-to-choose-an-instance-type">How to choose an instance type<a class="headerlink" href="#how-to-choose-an-instance-type" title="Permanent link">¶</a></h2>
+<p>AWS provides a very good tool called <a href="https://aws.amazon.com/ec2/instance-explorer">AWS Instance Type Explorer</a>. It helps to choose your required instance type. </p>
+<p>You can select one of these four options.</p>
+<ul>
+<li>Instance category</li>
+<li>Hardware  configuration</li>
+<li>Accelerators</li>
+<li>Additional Capabilities</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><img alt="AWS Made Easy - AWS EC2 - Instance Category Selection " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Category.png" title="AWS Made Easy - AWS EC2 - Instance Category Selection"/></td>
+<td align="left"><img alt="AWS Made Easy - AWS EC2 - Hardware configuration " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Hardware-Configuration.png" title="AWS Made Easy - AWS EC2 - Hardware configuration"/></td>
+<td align="left"><img alt="AWS Made Easy - AWS EC2 - Accelerators " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Accelerators.png" title="AWS Made Easy - AWS EC2 - Accelerators"/></td>
+<td align="left"><img alt="AWS Made Easy - AWS EC2 - Additional Capabilities " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Addtional-Capability.png" title="AWS Made Easy - AWS EC2 - Additional Capabilities"/>      .</td>
+</tr>
+</tbody>
+</table>
+<p>When you provide the requirement through these four options. This tool will suggest you some of the instance type which you can use. Like for the above combination the suggestion came as.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Instance Explorer Results " src="https://www.archerimagine.com/images/aws/ec2/04-EC2-Instance-Type-Instance Explorer.png" title="AWS Made Easy | AWS EC2 | Instance Explorer Results"/></p>
+<p>As you can see, it suggests <code>M5d</code> and <code>M5dn</code> but it did not suggest a size. If you get the category of the instance  type like you have now. It is always better to start with the lowest  size. Perform some testing with the on-demand instance and then decide on  the size.</p>
+<p>To reduce cost always go with the lower sized instance.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>AWS EC2 has a great naming convention. Though this is not well document. The above naming convention comes from a few of the re-invent video and common sense. The more you look at the naming, the more confusing it looks at first. If you can separate the noise then you can observe the hidden pattern in the name of an AWS EC2 instance.</p>
+<p>Once you have the grasp of the name. </p>
+<p>The most important thing is to understand the four main classifications. Like, the various use of a server are.</p>
+<ul>
+<li>Do memory heavy work</li>
+<li>Do Compute heavy work</li>
+<li>Do high IO work</li>
+<li>Do GPU related work</li>
+<li>Do generic work</li>
+</ul>
+<p>The above five reasons, are the classification of the instance type. Be it Memory Optimized or Compute Optimized. Like I said you have to  remove the noise to find the pattern.</p>
+<p>Once you have the understanding of the main classification. The sub  classification can come naturally. Like in Memory optimized instance, you may need </p>
+<ul>
+<li>higher ram</li>
+<li>higher optimized memory</li>
+<li>finally a better CPU and memory work synchronization. </li>
+</ul>
+<p>The AWS instance classification and sub classification are for a reason. Try your own understanding in finding the pattern. This will help you in remembering the details.</p>
+<p>Finally, once you have decided on the instance. You should always  choose the lower size instance to run experimentation. Based on the  experimentation, decide on the actual instance size. As a rule of thumb  always chose a lower instance size, it saves money.</p>
+<p>Hope you are clear with the concept of AMI. If you want to launch an  EC2 instance. Checkout, the free tier EC2 instance launch article. see <a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html">Step by Step guide to create an EC2 instance </a>. </p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.logicata.com/blog/aws-ec2-everything-you-need-to-know-about-ec2-instances/">AWS EC2 – Everything You Need to Know About EC2 Instances</a></li>
+<li><a href="https://www.parkmycloud.com/blog/ec2-instance-types/">EC2 Instance Types Comparison (and how to remember them)</a></li>
+<li><a href="https://cloudacademy.com/blog/aws-ec2-instance-types-explained/">AWS EC2 Instance Types Explained.</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a></li>
+<li><a href="https://stackoverflow.com/questions/48235393/meaning-of-the-number-in-aws-instance-type-name">Meaning of the number in AWS instance type name.</a></li>
+<li><a href="https://www.qa.com/about-qa/our-thinking/aws-virtual-machine-sizes-what-does-m5d2xlarge-mean/">AWS virtual machine sizes: What does m5d.2xlarge mean?</a></li>
+<li><a href="https://www.youtube.com/watch?v=W0PKclqP3U0">AWS re:Invent 2018: Amazon EC2 Instances &amp; Performance Optimization Best Practices (CMP307-R1)</a></li>
+<li><a href="https://www.youtube.com/watch?v=q5Dn9gcmpJg">AWS re:Invent 2020: Selecting the right Amazon EC2 instance for your workloads</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recommendations.html">Get recommendations for an instance type | AWS Compute Optimizer </a></li>
+<li><a href="https://www.apptio.com/blog/aws-ec2-c4-vs-c5/">Amazon EC2 Comparisons: C4 vs. C5</a></li>
+<li><a href="https://www.youtube.com/watch?v=29QZPttiKJA">Deep Dive on Amazon EC2 Instances - January 2017 Online Tech Talks</a></li>
+<li><a href="https://aws.amazon.com/ec2/instance-explorer">Instance Type Explorer</a></li>
+<li><a href="https://calculator.aws/#/createCalculator/EC2">AWS EC2 Calculator </a></li>
+</ul>
+
+
+             
+
+
+<div class="applause_button">
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html> </applause-button>
+</div>
+
+ 
+                <p id="post-share-links">
+    Spread the word....
+      <a href="https://twitter.com/intent/tweet?text=The%20unconventional%20guide%20to%20AWS%20EC2%20instance%20types.%20&url=https%3A//www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html&via=animeshkbhadra&hashtags=aws,cloud,aws-ec2,ec2,instance-type" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=The%20unconventional%20guide%20to%20AWS%20EC2%20instance%20types.%20&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://www.archerimagine.com/articles/aws/aws-kms.html" title="The Dummies Guide to AWS KMS. - AWS KMS is sexy.">The Dummies Guide to AWS KMS. <small>AWS KMS is sexy.</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" title="The AWS Inspector Blog of your dreams - The secret agent in cloud [2021].">The AWS Inspector Blog of your dreams <small>The secret agent in cloud [2021].</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-cognito-tutorials.html" title="How to start using AWS Cognito - Authorize, Authenticate and Federate user in [2021]">How to start using AWS Cognito <small>Authorize, Authenticate and Federate user in [2021]</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html" title="The Insider&#39;s Guide to AWS EC2 - Create first EC2 Instance in [2021]">The Insider's Guide to AWS EC2 <small>Create first EC2 Instance in [2021]</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html" title="The complete beginner&#39;s guide to AWS AMIs - Amazon Machine Image [2021]">The complete beginner's guide to AWS AMIs <small>Amazon Machine Image [2021]</small></a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html" title="Previous: How not knowing AWS CLI and SDKs makes you a Rookie. - Install, Configure, Execute.">How not knowing AWS CLI and SDKs makes you a Rookie. <small class="subtitle">Install, Configure, Execute.</small></a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-05-10T17:16:09+05:30">Mon 10 May 2021</time>
+<h4>Last Updated</h4>
+<time datetime="2021-05-20T23:39:03+05:30">May 20, 2021</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://www.archerimagine.com/tags#aws-ref">aws
+                    <span class="superscript">14</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#aws-ec2-ref">aws-ec2
+                    <span class="superscript">3</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
+                    <span class="superscript">14</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#ec2-ref">ec2
+                    <span class="superscript">4</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#instance-type-ref">instance-type
+                    <span class="superscript">1</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/archeranimesh" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Facebook" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1877f2"/><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.reddit.com/user/archerimagine/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Reddit" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+    </a>
+    <a href="https://twitter.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+</div>
+            
+
+
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Email Newsletter</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Archer Imagine</span> - Anyone can do my job, but no one can be me. Harvey
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        
+        <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+        <script src="https://www.archerimagine.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    <!--
+        <script defer src="https://my.hellobar.com/0b8d4f8c5d8236e3cfef139b484c76d42822714a.js" type="text/javascript" charset="utf-8" async="async"></script>
+    -->
+    <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='3bce642f377979511f2addc6af908c7b854c74137d5a52ca3f2b996bb51bfa0c';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
