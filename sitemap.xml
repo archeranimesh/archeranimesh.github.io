@@ -5,154 +5,154 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.archerimagine.com/</loc>
-<lastmod>2021-05-23T13:25:20-00:00</lastmod>
+<lastmod>2021-05-28T17:07:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/tags</loc>
-<lastmod>2021-05-23T13:25:20-00:00</lastmod>
+<lastmod>2021-05-28T17:07:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/categories</loc>
-<lastmod>2021-05-23T13:25:20-00:00</lastmod>
+<lastmod>2021-05-28T17:07:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/archives</loc>
-<lastmod>2021-05-23T13:25:20-00:00</lastmod>
+<lastmod>2021-05-28T17:07:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/search</loc>
-<lastmod>2021-05-23T13:25:20-00:00</lastmod>
+<lastmod>2021-05-28T17:07:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/404.html</loc>
-<lastmod>2021-05-23T13:25:20-00:00</lastmod>
+<lastmod>2021-05-28T17:07:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/pages/aws-certification.html</loc>
-<lastmod>2021-05-20T23:40:30+05:30</lastmod>
+<lastmod>2021-05-28T17:05:43+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html</loc>
-<lastmod>2021-05-20T23:39:03+05:30</lastmod>
+<lastmod>2021-05-28T16:53:10+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html</loc>
-<lastmod>2021-05-09T19:36:31+05:30</lastmod>
+<lastmod>2021-05-28T16:53:15+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html</loc>
-<lastmod>2021-04-30T01:24:37+05:30</lastmod>
+<lastmod>2021-05-28T16:53:18+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html</loc>
-<lastmod>2021-05-21T20:34:45+05:30</lastmod>
+<lastmod>2021-05-28T16:53:04+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-cognito-tutorials.html</loc>
-<lastmod>2021-04-20T19:23:33+05:30</lastmod>
+<lastmod>2021-05-28T16:54:39+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html</loc>
-<lastmod>2021-04-15T15:16:53+05:30</lastmod>
+<lastmod>2021-05-28T16:54:14+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-kms.html</loc>
-<lastmod>2021-04-10T01:30:47+05:30</lastmod>
+<lastmod>2021-05-28T17:03:02+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html</loc>
-<lastmod>2021-04-03T23:37:13+05:30</lastmod>
+<lastmod>2021-05-28T17:02:51+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-sts.html</loc>
-<lastmod>2021-03-27T10:12:42+05:30</lastmod>
+<lastmod>2021-05-28T17:03:07+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-iam-roles.html</loc>
-<lastmod>2021-03-20T08:29:38+05:30</lastmod>
+<lastmod>2021-05-28T17:02:35+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html</loc>
-<lastmod>2021-03-17T20:06:58+05:30</lastmod>
+<lastmod>2021-05-28T16:54:34+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-iam-users.html</loc>
-<lastmod>2021-03-11T18:32:58+05:30</lastmod>
+<lastmod>2021-05-28T17:02:31+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-iam-policy.html</loc>
-<lastmod>2021-03-08T09:40:24+05:30</lastmod>
+<lastmod>2021-05-28T17:02:41+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/aws-iam-introduction.html</loc>
-<lastmod>2021-03-02T10:13:09+05:30</lastmod>
+<lastmod>2021-05-28T17:02:46+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/articles/aws/general-aws.html</loc>
-<lastmod>2021-03-15T00:13:49+05:30</lastmod>
+<lastmod>2021-05-28T16:54:00+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

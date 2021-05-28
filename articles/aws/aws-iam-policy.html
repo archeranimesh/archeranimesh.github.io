@@ -19,7 +19,7 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image">
 
-<meta name="keywords" content="aws, cloud, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, Explicit allow, explicit deny, Administrator Access, Power User Access, Read Only Access, Visual Policy editor, effect, action, resource." />
+<meta name="keywords" content="aws, cloud, iam, aws, IAM user, IAM groups, IAM roles, IAM policy, API Keys, Explicit allow, explicit deny, Administrator Access, Power User Access, Read Only Access, Visual Policy editor, effect, action, resource." />
 
 <meta property="og:title" content="AWS Made Easy | IAM Policy  - The access type. "/>
 <meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-iam-policy.html" />
@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Archer Imagine" />
 <meta property="og:article:author" content="Animesh Bhadra" />
 <meta property="og:article:published_time" content="2021-03-03T10:31:40+05:30" />
-<meta property="og:article:modified_time" content="2021-03-08T09:40:24+05:30" />
+<meta property="og:article:modified_time" content="2021-05-28T17:02:41+05:30" />
 <meta name="twitter:title" content="AWS Made Easy | IAM Policy  - The access type. ">
 <meta name="twitter:description" content="When we want to give access to various resources to AWS, how do we do it, how do we define the various ways a user can get access. These are parameters are defined in a JSON document called IAM Policy. We will learn about this in this blog.">
 <meta property="og:image" content="https://www.archerimagine.com/images/aws/IAM/02-IAM-Policy.png" />
@@ -348,7 +348,8 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
 <li>Photo by <a href="https://unsplash.com/@alesnesetril">Ales Nesetril </a> on <a href="https://unsplash.com/s/photos/technology">Unsplash</a></li>
 <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-visual-editor">Creating IAM policies (console)</a></li>
 </ul>
-
+<hr/>
+<p><a href="https://bit.ly/3f9SUH4"><img alt="Subscribe To NewsLetter" src="https://www.archerimagine.com/images/Email-Subscribers.png"/></a></p>
 
              
 
@@ -360,7 +361,7 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
  
                 <p id="post-share-links">
     Spread the word....
-      <a href="https://twitter.com/intent/tweet?text=AWS%20Made%20Easy%20%7C%20IAM%20Policy%20The%20access%20type.&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html&via=animeshkbhadra&hashtags=aws,cloud" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=AWS%20Made%20Easy%20%7C%20IAM%20Policy%20The%20access%20type.&url=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html&via=animeshkbhadra&hashtags=aws,cloud,iam" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
  ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
  ❄       <a href="mailto:?subject=AWS%20Made%20Easy%20%7C%20IAM%20Policy%20The%20access%20type.&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-iam-policy.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
@@ -377,10 +378,10 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" title="The AWS Inspector Blog of your dreams - The secret agent in cloud [2021].">The AWS Inspector Blog of your dreams <small>The secret agent in cloud [2021].</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/aws/aws-cognito-tutorials.html" title="How to start using AWS Cognito - Authorize, Authenticate and Federate user in [2021]">How to start using AWS Cognito <small>Authorize, Authenticate and Federate user in [2021]</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html" title="The Insider&#39;s Guide to AWS EC2 - Create first EC2 Instance in [2021]">The Insider's Guide to AWS EC2 <small>Create first EC2 Instance in [2021]</small></a></li>
-<li><a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html" title="The complete beginner&#39;s guide to AWS AMIs - Amazon Machine Image [2021]">The complete beginner's guide to AWS AMIs <small>Amazon Machine Image [2021]</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction - Grant access">AWS Made Easy | IAM Introduction <small>Grant access</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="AWS Made Easy | IAM Users - Important actor">AWS Made Easy | IAM Users <small>Important actor</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html" title="A foolproof guide to AWS IAM Roles - A Hat to wear!!">A foolproof guide to AWS IAM Roles <small>A Hat to wear!!</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html" title="Who really uses AWS IAM API keys? - Developers Delight">Who really uses AWS IAM API keys? <small>Developers Delight</small></a></li>
 <li><a href="https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" title="The unconventional guide to AWS EC2 instance types.">The unconventional guide to AWS EC2 instance types.</a></li>
 </ul>
 <hr />
@@ -398,8 +399,44 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2021-03-03T10:31:40+05:30">Wed 03 March 2021</time>
 <h4>Last Updated</h4>
-<time datetime="2021-03-08T09:40:24+05:30">Mar 8, 2021</time>
+<time datetime="2021-05-28T17:02:41+05:30">May 28, 2021</time>
 
+        <h4>AWS IAM Tutorials</h4>
+    <ul class="multi-parts-list">
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/general-aws.html" title="AWS - Shared Responsibility & Global Infrastructure.">Part 1: AWS - Shared Responsibility & Global Infrastructure.</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-introduction.html" title="AWS Made Easy | IAM Introduction">Part 2: AWS Made Easy | IAM Introduction</a>
+            </li>
+            <li  class="active-part">
+            Part 3: AWS Made Easy | IAM Policy
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-users.html" title="AWS Made Easy | IAM Users">Part 4: AWS Made Easy | IAM Users</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-global-Infrastructure.html" title="Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020">Part 5: Global Infrastructure comparison of AWS, GCP and Azure. Updated 2020</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-roles.html" title="A foolproof guide to AWS IAM Roles">Part 6: A foolproof guide to AWS IAM Roles</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-sts.html" title="Doing AWS STS the right way.">Part 7: Doing AWS STS the right way.</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-iam-api-keys.html" title="Who really uses AWS IAM API keys?">Part 8: Who really uses AWS IAM API keys?</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-kms.html" title="The Dummies Guide to AWS KMS.">Part 9: The Dummies Guide to AWS KMS.</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" title="The AWS Inspector Blog of your dreams">Part 10: The AWS Inspector Blog of your dreams</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-cognito-tutorials.html" title="How to start using AWS Cognito">Part 11: How to start using AWS Cognito</a>
+            </li>
+    </ul>
             <h4>Category</h4>
             <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
             <h4>Tags</h4>
@@ -409,6 +446,9 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
 </a></li>
                 <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
                     <span class="superscript">14</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#iam-ref">iam
+                    <span class="superscript">5</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>
@@ -572,12 +612,21 @@ Roles are utilized because we cannot attach policy directly to AWS resources.</p
     })
 </script>
 
-        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e95cf93fc00f17a742b9480eb/16be0e7e213bab86a6795bec4.js");</script>
+        
     <!--
         <script defer src="https://my.hellobar.com/0b8d4f8c5d8236e3cfef139b484c76d42822714a.js" type="text/javascript" charset="utf-8" async="async"></script>
-    -->
-    <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='3bce642f377979511f2addc6af908c7b854c74137d5a52ca3f2b996bb51bfa0c';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e95cf93fc00f17a742b9480eb/16be0e7e213bab86a6795bec4.js");</script>
+        <script>
+            !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+            },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+            a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+            // Insert Twitter Pixel ID and Standard Event data below
+            twq('init','o648l');
+            twq('track','PageView');
+        </script>
     
+    <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='3bce642f377979511f2addc6af908c7b854c74137d5a52ca3f2b996bb51bfa0c';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+    -->
     </body>
     <!-- Theme: Elegant built for Pelican
         License : MIT -->
