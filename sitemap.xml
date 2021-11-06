@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.archerimagine.com/</loc>
-<lastmod>2021-05-28T22:24:21-00:00</lastmod>
+<lastmod>2021-11-06T22:12:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/tags</loc>
-<lastmod>2021-05-28T22:24:21-00:00</lastmod>
+<lastmod>2021-11-06T22:12:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/categories</loc>
-<lastmod>2021-05-28T22:24:21-00:00</lastmod>
+<lastmod>2021-11-06T22:12:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/archives</loc>
-<lastmod>2021-05-28T22:24:21-00:00</lastmod>
+<lastmod>2021-11-06T22:12:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/search</loc>
-<lastmod>2021-05-28T22:24:21-00:00</lastmod>
+<lastmod>2021-11-06T22:12:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.archerimagine.com/404.html</loc>
-<lastmod>2021-05-28T22:24:21-00:00</lastmod>
+<lastmod>2021-11-06T22:12:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -48,6 +48,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.archerimagine.com/pages/aws-certification.html</loc>
 <lastmod>2021-05-28T17:05:43+05:30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html</loc>
+<lastmod>2021-11-01T23:48:17+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -173,7 +180,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.archerimagine.com/articles/sublimetext/how-to-use-sublime-text-2-as-markdown-editor.html</loc>
-<lastmod>2020-01-02T23:18:09+05:30</lastmod>
+<lastmod>2021-10-29T21:58:23+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

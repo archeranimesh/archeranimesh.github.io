@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://www.archerimagine.com/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="alternate" type="application/rss+xml" title="Archer Imagine" href="https://www.archerimagine.com/feeds/all.atom.xml" />
+
+        <meta name="google-site-verification" content="6B1Foj8HxdrASteMuBQX7Hyu6PCLUQCX_u4USDQ9xi8" />        <meta name="msvalidate.01" content="7186CB4D245BAA0092329C7B5FD2C5CD" />        <meta name="author" content="Animesh Bhadra" />
+
+        <meta name="description" content="AWS is always on the look out for saving cost for you. It has also evolved the pricing model from having just one type of On-Demand to Reserved instance to the latest Savings Plans. AWS has also thought about the tenancy of the machine, be it shared, dedicated instance or dedicated host. Understanding the AWS Pricing and Tenancy can be little difficult. This blog tries to simplify the jargons and just bring the crux of the pricing and tenancy models. You can save up 99% over on demand pricing if you are clear on your compute usage and AWS pricing.
+" />
+        <meta name="twitter:creator" content="@animeshkbhadra">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image">
+
+<meta name="keywords" content="aws, cloud, aws-ec2, ec2, compute, aws, aws ec2 pricing, aws ec2 tenancy, amazon ec2 pricing on demand, aws on-demand pricing model, aws on-demand pricing model benefits, aws savings plan vs reserved instances, savings plans, aws savings plan example, aws savings plan rds, aws reserved instances vs savings plan, aws rds reserved instances, aws dedicated hosts vs reserved instances, AWS EC2 On Demand Pricing, AWS EC2 Spot instance Pricing, AWS EC2 Savings Plans Pricing, AWS EC2 Reserved Instance Pricing, AWS EC2 Capacity Reservation, AWS EC2 Shared Host, AWS EC2 Dedicated Instance, AWS EC2 Dedicated Host, Regional Vs Zonal Reserved Instance, Standard Vs Convertible Reserved Instance, Compute Vs EC2 Savings Plans, Compute Savings Plans Vs Convertible Reserved Instance, EC2 Savings Plans Vs Standard Reserved Instance, AWS Reserved Instances vs Savings Plan, AWS Dedicated Instances vs Dedicated Host, AWS On Demand Instance Vs AWS EC2 Spot instance" />
+
+<meta property="og:title" content="Save 72% of AWS EC2 cost with these pricing and tenancy options. "/>
+<meta property="og:url" content="https://www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html" />
+<meta property="og:description" content="AWS is always on the look out for saving cost for you. It has also evolved the pricing model from having just one type of On-Demand to Reserved instance to the latest Savings Plans. AWS has also thought about the tenancy of the machine, be it shared, dedicated instance or dedicated host. Understanding the AWS Pricing and Tenancy can be little difficult. This blog tries to simplify the jargons and just bring the crux of the pricing and tenancy models. You can save up 99% over on demand pricing if you are clear on your compute usage and AWS pricing." />
+<meta property="og:site_name" content="Archer Imagine" />
+<meta property="og:article:author" content="Animesh Bhadra" />
+<meta property="og:article:published_time" content="2021-06-06T11:05:22+05:30" />
+<meta property="og:article:modified_time" content="2021-11-01T23:48:17+05:30" />
+<meta name="twitter:title" content="Save 72% of AWS EC2 cost with these pricing and tenancy options. ">
+<meta name="twitter:description" content="AWS is always on the look out for saving cost for you. It has also evolved the pricing model from having just one type of On-Demand to Reserved instance to the latest Savings Plans. AWS has also thought about the tenancy of the machine, be it shared, dedicated instance or dedicated host. Understanding the AWS Pricing and Tenancy can be little difficult. This blog tries to simplify the jargons and just bring the crux of the pricing and tenancy models. You can save up 99% over on demand pricing if you are clear on your compute usage and AWS pricing.">
+<meta property="og:image" content="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy.png" />
+<meta name="twitter:image" content="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy.png" >
+
+        <title>Save 72% of AWS EC2 cost with these pricing and tenancy options.  · Archer Imagine
+</title>
+        <link rel="shortcut icon" href="https://www.archerimagine.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://www.archerimagine.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.archerimagine.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.archerimagine.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.archerimagine.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.archerimagine.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.archerimagine.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.archerimagine.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.archerimagine.com/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+        <link href="https://www.archerimagine.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Archer Imagine - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-97386090-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://www.archerimagine.com/"><span class=site-name>Archer Imagine</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://www.archerimagine.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://www.archerimagine.com/pages/aws-certification.html">Tutorials</a></li>
+                                <li ><a href="https://www.archerimagine.com/categories">Categories</a></li>
+                                <li ><a href="https://www.archerimagine.com/tags">Tags</a></li>
+                                <li ><a href="https://www.archerimagine.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://www.archerimagine.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html">
+                Save 72% of AWS EC2 cost with these pricing and tenancy options.
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#aws-ec2-pricing">AWS EC2 Pricing</a><ul>
+<li><a href="#aws-ec2-on-demand-pricing">AWS EC2 On Demand Pricing</a></li>
+<li><a href="#aws-ec2-spot-instance-pricing">AWS EC2 Spot instance Pricing</a></li>
+<li><a href="#aws-ec2-savings-plans-pricing">AWS EC2 Savings Plans Pricing</a></li>
+<li><a href="#aws-ec2-reserved-instance-pricing">AWS EC2 Reserved Instance Pricing</a></li>
+<li><a href="#aws-ec2-capacity-reservation">AWS EC2 Capacity Reservation</a></li>
+</ul>
+</li>
+<li><a href="#aws-ec2-tenancy">AWS EC2 Tenancy</a><ul>
+<li><a href="#aws-ec2-shared-host">AWS EC2 Shared Host</a></li>
+<li><a href="#aws-ec2-dedicated-instance">AWS EC2 Dedicated Instance</a></li>
+<li><a href="#aws-ec2-dedicated-host">AWS EC2 Dedicated Host</a></li>
+</ul>
+</li>
+<li><a href="#comparison">Comparison</a><ul>
+<li><a href="#regional-vs-zonal-reserved-instance">Regional Vs Zonal Reserved Instance</a></li>
+<li><a href="#standard-vs-convertible-reserved-instance">Standard Vs Convertible Reserved Instance</a></li>
+<li><a href="#compute-vs-ec2-savings-plans">Compute Vs EC2 Savings Plans</a></li>
+<li><a href="#compute-savings-plans-vs-convertible-reserved-instance">Compute Savings Plans Vs Convertible Reserved Instance</a></li>
+<li><a href="#ec2-savings-plans-vs-standard-reserved-instance">EC2 Savings Plans Vs Standard Reserved Instance</a></li>
+<li><a href="#aws-reserved-instances-vs-savings-plan">AWS Reserved Instances vs Savings Plan</a></li>
+<li><a href="#aws-dedicated-instances-vs-dedicated-host">AWS Dedicated Instances vs Dedicated Host</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p><img alt="AWS Made Easy | AWS EC2 | Pricing and Tenancy " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy.png" title="AWS Made Easy | AWS EC2 | Pricing and Tenancy"/></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>AWS as we know is pay as you go model. We pay for the amount of computing services we use. It is very good when we have limited requirement to compute. In a production environment, we need ways to reduce this cost. Pay as you go model does not always work in a production system. AWS provides 5 different pricing options for AWS EC2.</p>
+<ul>
+<li>On-Demand</li>
+<li>Savings Plans</li>
+<li>Reserved Instance</li>
+<li>Spot Instance.</li>
+</ul>
+<p>You might be thinking where is the 5th? The 5th is called a <strong>Dedicated Host</strong>. You can run your above instance except Spot instance on these dedicated host. Dedicated Host is not actually a pricing model, but more of a Tenancy option.</p>
+<p>You might already be getting confused. You had come to read this blog for saving some cost on your EC2 bills, but the different pricing and tenancy option is making it more confusing.</p>
+<p>Do not worry, we will peel each layer of this pricing onion and figure out the best pricing solution for your requirement. Just to know a rough hierarchy if you are not interested in reading the whole blog.</p>
+<ol>
+<li>On Demand pricing is the default and the costliest option.</li>
+<li>Spot Instance is the cheapest option, almost 90% cheaper,  but not suitable for production, dedicated instance requirement.</li>
+<li>Reserved Instance and Savings Plans provide the maximum costing benefits if you commit to a certain period of usage.</li>
+<li>Dedicated host is mostly used when you have existing licenses which you want to use on the cloud.</li>
+</ol>
+<p>If you the above 4 lines have solved your initial pricing problem than thanks for reading. If you still have the patience to read more about the different pricing options and how it can save your cost by 72% compared to an on demand pricing read along. </p>
+<h2 id="aws-ec2-pricing">AWS EC2 Pricing<a class="headerlink" href="#aws-ec2-pricing" title="Permanent link">¶</a></h2>
+<p>You are already aware of the 5 different pricing options of AWS. There is also a free tier, which gives 750 hours of t2.micro on Linux or windows. This is a great way to test the water in the cloud world. </p>
+<p>AWS EC2 pricing is also impacted by the amount of use an individual has on the cloud. There is no meaning of 72% reduced cost if you are learning AWS, and free tier will full fill your requirement. Let us first divide the type of user who will need these different options to save cost.</p>
+<ul>
+<li>Hobby User.<ul>
+<li>These users are like us, learning or trying AWS to see the services. These users should be happy with the free tier.</li>
+</ul>
+</li>
+<li>Amateur User<ul>
+<li>These users are the intermediate user, who have graduated from the free tier. These users can use a lot of the services on AWS and can also have little complicated requirements.</li>
+<li>These users can mostly run On Demand EC2 instance.</li>
+</ul>
+</li>
+<li>Professional <ul>
+<li>The professional is the real users of AWS, which includes companies, small start-up etc.</li>
+<li>These are people whose business rely on AWS. </li>
+<li>These people often need 2-3 types of AWS environment.<ul>
+<li>Development - This is the AWS account which developer uses to develop the application.</li>
+<li>Staging - This is the AWS account which is almost similar to production environment, but lower scale.</li>
+<li>Production - The real user facing application runs on Production system.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can understand with the above classification that AWS EC2 pricing impacts the 3rd type of user. If you fall into the first two categories the choice is pretty simple. </p>
+<p>Now let's solve the pricing problem of the Professionals and also give insight to the Amateur User on On Demand pricing.</p>
+<h3 id="aws-ec2-on-demand-pricing">AWS EC2 On Demand Pricing<a class="headerlink" href="#aws-ec2-on-demand-pricing" title="Permanent link">¶</a></h3>
+<p>On-demand pricing is the default pricing model in AWS. This is the most easiest pricing model. You pay for the duration you use the EC2 instance. This is just like paying our electricity bills every month. The usage is broken into seconds.</p>
+<p>On Demand pricing includes the cost of running AMIs on the EC2 instance. The lowest priced EC2 instance is t4g.nano with 1 vCPU, with On-Demand hourly rate at $0.0042. The max priced Ec2 instance is u-6tb1.112xlarge with 448 vCPUs, and On-Demand hourly rate of $54.60.</p>
+<p>The usage duration is calculated between the time of termination or Stopping the instance. The partial hours are charged on per second basis, else charge on the full hourly basis.</p>
+<p>Kindly remember the data transfer in and out of the AWS EC2 instance is also charged. </p>
+<p>You might be thinking that there is no choice in AWS On-Demand pricing. There is no way to reduce the cost. There is one way. Generally the AWS Graviton is cheaper than the Intel Based EC2 and even the AMD based EC2 is cheaper than them. Pair a Linux AMI on these AWS Graviton or AMD based EC2 instance and you get you a significant cost savings.</p>
+<p>If you use a m6g.large, which is an AWS Graviton based EC2 instance, you are charged $0.077. If you use a m6i.large in its place which is charged $0.096 per hour. This is 24% more.   </p>
+<p><em>What is an advantage of using the aws on-demand pricing model?</em></p>
+<p>The major advantage of using AWS On-Demand pricing are these.</p>
+<ul>
+<li>Off the shelf pricing, you do not have to use a lot of brain to figure out which is best for you.</li>
+<li>Highly flexible, it ranges from $0.0042 to $54.60 hourly. </li>
+<li>On-Demand pricing is the reason we have cloud computing today.</li>
+</ul>
+<h3 id="aws-ec2-spot-instance-pricing">AWS EC2 Spot instance Pricing<a class="headerlink" href="#aws-ec2-spot-instance-pricing" title="Permanent link">¶</a></h3>
+<p>You have seen the default pricing option on AWS. The AWS EC2 spot instance is another pricing model which will suit an individual developer the most. These Instances are available at 90% discount to On Demand pricing.</p>
+<p>You might be already thinking, what is the gotcha for this drastically reduced pricing. There is no gotcha for this pricing. AWS has already dedicated data centers with huge computing power siting idle if not used. It is using EC2 Spot pricing to get some revenue of from idle instance. </p>
+<p>Think of AWS EC2 Spot instance, as an End of Season Sale. You can use all the instances, with all the configurations of On demand, but at a 90 % lower price.</p>
+<p>Little things might be bothering you right now, let's try to answer those questions.</p>
+<p><em>What is the disadvantage of using an EC2 Spot instance?</em></p>
+<p>There is no disadvantage, just remember that when AWS needs this capacity back, it will give a 2 minutes notice to wind up the current work being performed on the instances.</p>
+<p><em>When would you use Spot Instances?</em></p>
+<p>If you have a highly containerized application which can handle the 2 minutes notice for taking away the compute capacity, then you can use AWS EC2 Spot instance for production grade application.</p>
+<p>Generally AWS EC2 Spot instance is used when you need more compute capacity, but at a lower price. These instances are very good for non mission critical application.</p>
+<p><em>How can we save data for use once we lose the current pool of AWS EC2 spot instance?</em> </p>
+<p>We can just hibernate the AWS EC2 Spot instance and it will save the local data on the EC2 instance. Once the pricing or the capacity for AWS EC2 Spot instance is available, we can reactivate these hibernated instances.</p>
+<p><em>How do you tell if an instance is a spot instance?</em></p>
+<p>We can find the type of instance by selecting the Show/Hide Column on the AWS EC2 instance dashboard. Then we need to select the <strong>lifestyle</strong> option.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Enable EC2 Spot instance " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Enable-Spot.png" title="AWS Made Easy | AWS EC2 | Enable EC2 Spot instance"/></p>
+<p>You should note that, once an AWS EC2 spot instance is available, there is not difference between it and an On demand instance. We can have all the ASG (Auto Scaling Groups) for these instances. </p>
+<p>We can create an AWS EC2 instance, in two ways, the first is by selecting the below step AWS EC2 instance creation process.</p>
+<ul>
+<li>Select the check box for requesting Spot instance.</li>
+<li>Provide the maximum price you are willing to pay for a Spot Instance.</li>
+<li>Lastly, mention if the request is persistent or not, if it is a persistent request, it will keep on trying to create the spot instance even after the request is full filled.</li>
+</ul>
+<p><img alt="AWS Made Easy | AWS EC2 | Pricing and Tenancy " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Spot-Instance.png" title="AWS Made Easy | AWS EC2 | Pricing and Tenancy"/></p>
+<p>You can also check the current pricing of the AWS EC2 Spot instance <a href="https://aws.amazon.com/ec2/spot/pricing/">here</a>. As shown in the screen shot below.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Spot Pricing " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Spot-Pricing.png" title="AWS Made Easy | AWS EC2 | Spot Pricing"/></p>
+<p>You have now understood of two pricing mode, OnDemand and Spot instance, the issue is OnDemand is the instance you can rely on but Spot instance is something where you can run your non mission critical workloads. These workloads can survive a termination of the instance. </p>
+<p>Though you can save 90% of the cost by using AWS EC2 Spot Instance, it may not be a perfect solution for mission critical jobs. Lets show you other pricing option which will save you cost for mission critical application.</p>
+<h3 id="aws-ec2-savings-plans-pricing">AWS EC2 Savings Plans Pricing<a class="headerlink" href="#aws-ec2-savings-plans-pricing" title="Permanent link">¶</a></h3>
+<p>You have learned about 2 flexible AWS pricing option, On demand and Spot. AWS provides deep discounts if you commit to a regular usage of compute power for a predefined usage period. There are two pricing options in this.</p>
+<ul>
+<li>Savings Plans</li>
+<li>Reserved Instance</li>
+</ul>
+<p>Savings Plans is a newer edition of Reserved Instance so first learn this. We won't have any additional baggage of learning reserved instance. We can just learn what is the use of Reserved Instance. Saving Plans provide almost the same savings as reserved instance with an additional benefit of flexibility.</p>
+<p>The flexibility offered by Savings plans is based on</p>
+<ul>
+<li>Instance Family</li>
+<li>Instance Size</li>
+<li>Tenancy</li>
+<li>or Region.</li>
+</ul>
+<p>In savings plans you have to commit to a usage of predefined compute power, calculated on $/per hour basis for a fixed duration of 1 or 3 years.</p>
+<p>Savings plans also offer you the option of paying in 3 modes.</p>
+<ul>
+<li>All Upfront</li>
+<li>Partial Upfront</li>
+<li>No Upfront.</li>
+</ul>
+<p>There are three AWS Savings Plan type.</p>
+<ul>
+<li>Compute pricing plans<ul>
+<li>This plan provides the best flexibility in terms of the variation of instance, size, tenancy and movement of the region.</li>
+<li>As it provides such flexibility the saving on this pricing plan is less, just 66% in place of the 72% promised.</li>
+<li>You can also migrate between fargate and lambda.</li>
+<li>This the best plan if you need all the flexibility. </li>
+</ul>
+</li>
+<li>EC2 Instance saving Plans<ul>
+<li>If you are sure to restrict yourself to a type of instance, say <code>M5</code> or <code>C4</code> in a particular region.</li>
+<li>These provide the best savings of 72% in the savings plans.</li>
+<li>We can change the size of the instance from <code>.xlarge</code> to <code>.2xlarge</code>.</li>
+<li>We can even choose the different OS on these EC2 instance.</li>
+<li>We can change the tenancy from Host to, dedicated to, default.</li>
+</ul>
+</li>
+<li>SageMaker saving plans<ul>
+<li>This plan offers 64% savings. </li>
+<li>This plan is applicable to all SageMaker Instance and provide all the flexibility of the <strong>Compute Pricing Plans</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>Irrespective of which savings plans, you take, a few things you should always keep in mind.</p>
+<ul>
+<li>Saving Plans do not provide capacity reservation.</li>
+<li>Saving Plans provide discounted pricing based on the On Demand pricing, so we cannot cancel the request.</li>
+</ul>
+<p>You can choose a savings plan by searching for "Saving Plans" in AWS console, and you will get a screen like below. Choose the type of plan you want as described earlier. You also need to select the term of 1 year or 3 years.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Saving Plan 01 " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Saving-Plan-01.png" title="AWS Made Easy | AWS EC2 | Saving Plan 01"/></p>
+<p>Once you select the Type of plan and the term, next is to choose the hourly pricing. You can take help of the AWS Cost Explorer. The AWS Cost Explorer will check for your existing usage and suggest an appropriate plan to purchase.</p>
+<p>Next just select the payment option mentioned earlier. Choose a start date and done.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Saving Plan 01 " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Saving-Plan-02.png" title="AWS Made Easy | AWS EC2 | Saving Plan 01"/></p>
+<p><em>Can you sell AWS savings plans?</em></p>
+<p>You cannot resell the AWS Savings plans like the Reserved Instance had a marketplace.</p>
+<p><em>Can you cancel AWS savings plan?</em></p>
+<p>Once purchased, you cannot cancel the AWS Savings plans.</p>
+<p>You are now aware of AWS Savings Plans, which is also called Reserved Instance 2.0 or (RI 2.0). Now let take a step back and learn about the Reserved Instance.</p>
+<h3 id="aws-ec2-reserved-instance-pricing">AWS EC2 Reserved Instance Pricing<a class="headerlink" href="#aws-ec2-reserved-instance-pricing" title="Permanent link">¶</a></h3>
+<p>You have already learned about Savings Plans which is an improvement over Reserved Instances. You might be wondering what was in reserve instance, that led to creating savings plans. Reserved Instance and Savings plans looks almost the same. </p>
+<p>You might still be wondering, will reserved instance exists down the like as savings plans are flexible. Let's try to find some of those answers and in the process learn about reserving instance.</p>
+<p>The first thing to note is when you say reserved instance, it does not mean a physical instance reserved for you in AWS. It's just a terminology for a billing discount. This discount is applied to the On Demand prices.</p>
+<p>The reserved pricing also based on 3 factors.</p>
+<p>The first one and the very obvious one being instance type. You have to choose the same 4 attributes for an instance you chose in the savings plan.</p>
+<ul>
+<li>Instance Type - <code>m4.large</code>, You have to select both instance family type and the size of the instance.</li>
+<li>Region - Obviously, you have to tell the region where the instance would be needed, as EC2 is a regional service.</li>
+<li>Tenancy - If you want to run it on the shared tenancy model or already have any dedicated instance.</li>
+<li>Platform - Unix or Window.</li>
+</ul>
+<p>The above choice is almost similar to the EC2 Instance saving Plans, the difference being, we selected the family of instance there, and the size of instances could be changed.</p>
+<p>Once you are ready with your instance type, the next selection you have to do is for the Term commitment. There are same 2 choice like EC2 Instance saving Plans. The bigger the commitment you give, the bigger is the savings.</p>
+<ul>
+<li>One - year </li>
+<li>Three - year</li>
+</ul>
+<p>The thing to note here is, the term does not get renewed automatically, we have to renew it else it will be charged on the on-demand rates once the term ends.</p>
+<p>There are similar payment option like EC2 Instance saving Plans, and the names are self explanatory, The more you pay upfront the more you save.</p>
+<ul>
+<li>All Upfront</li>
+<li>Partial Upfront </li>
+<li>No Upfront - You are required to have a billing history before you opt for this option.</li>
+</ul>
+<p>The reserved instance also provides some flexibility depending on something called an offering class.</p>
+<ul>
+<li>Standard <ul>
+<li>It allows some attributes of the instance to be modified.</li>
+<li>These instances can't be exchanged.</li>
+<li>It can be bought and sold in a Reserved instance marketplace.</li>
+</ul>
+</li>
+<li>Convertible<ul>
+<li>It also allows some instance attributes to be modified.</li>
+<li>These instances can be exchanged.</li>
+<li>It cannot be bought and sold in the marketplace.</li>
+</ul>
+</li>
+</ul>
+<p>You cannot cancel your purchase of Reserved Instances. Though depending on the type of offering class you have chosen, you can modify, exchange or sell the reserved instance.</p>
+<p>There are also two different types of Reserved instance, you can purchase.</p>
+<ul>
+<li>Regional Reserved Instance<ul>
+<li>This does not provide capacity reservation.</li>
+</ul>
+</li>
+<li>Zonal Reserved Instance<ul>
+<li>These provide capacity reservation on an Availability Zone.</li>
+</ul>
+</li>
+</ul>
+<p>Here is a snapshot to depict the type of savings you can get based on the reserved instance.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Reserved Instance " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Reserved-Instance.png" title="AWS Made Easy | AWS EC2 | Reserved Instance"/></p>
+<p><em>Can I cancel AWS Reserved Instance?</em></p>
+<p>You cannot cancel your AWS Reserved Instance once you have purchased it. You can modify the instance, or trade them in the reserved instance market place.</p>
+<p>You have learned about the Reserved Instance, and also learned that there is a capacity reservation in case of Zonal Reserved Instances, let us see how this capacity reservation helps us.</p>
+<p>Can we reserve capacity when using Regional reserved instance, or AWS EC2 Savings Plans. These 2 does not offer any capacity reservation.</p>
+<h3 id="aws-ec2-capacity-reservation">AWS EC2 Capacity Reservation<a class="headerlink" href="#aws-ec2-capacity-reservation" title="Permanent link">¶</a></h3>
+<p>You have Zonal Capacity Reservation, which reserves capacity in a particular Availability Zone. This reservation provides a type of peace of mind, knowing that you can launch an EC2 instance at any given moment during high traffic as there is reservation. </p>
+<p>AWS EC2 Savings plans and Regional Reserved Instance do not have this option, we can enable this by creating an independent capacity reservation. When you create a capacity reservation, you have to specify,</p>
+<ul>
+<li>The Availability Zone (AZs) in which the capacity will be reserved.</li>
+<li>The Number of instance </li>
+<li>Instance attributes, like tenancy, instance type etc.</li>
+</ul>
+<p>Please note that the capacity reservation will only be applicable only when you have the above matching instance running. If there is a mismatch the above capacity reservation will not be applied.</p>
+<p>You have learned about all the pricing options available for an AWS instance, be it the default On Demand pricing, or highly discounted Spot instance used for non productive work, and immensely save cost using reserved instance or savings plans (RI 2.0). </p>
+<p>There is also another factor for AWS instance, i.e. the tenancy, the physical host on which you run the AWS EC2 instance.</p>
+<p>You cannot run an AWS EC2 instance, in a shared mode, which is the default because of compliance with laws in any case and in some case because of efficiency. Let's dive into the world of AWS EC2 tenancy.</p>
+<h2 id="aws-ec2-tenancy">AWS EC2 Tenancy<a class="headerlink" href="#aws-ec2-tenancy" title="Permanent link">¶</a></h2>
+<p>You can see in the below snapshot, that there are 3 types of tenancy available.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Pricing and Tenancy " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Options.png" title="AWS Made Easy | AWS EC2 | Pricing and Tenancy"/></p>
+<ul>
+<li>Shared Tenancy</li>
+<li>Dedicated Instance</li>
+<li>Dedicated Host</li>
+</ul>
+<p>Tenancy is just like we rent a house when we move to a new city. How we move between houses is what is called tenancy.</p>
+<h3 id="aws-ec2-shared-host">AWS EC2 Shared Host<a class="headerlink" href="#aws-ec2-shared-host" title="Permanent link">¶</a></h3>
+<p>Share Host or Tenancy, it is more like few friend rents 2 or more houses in the city. The rent of the house is being paid, but which individual stays in which house is not predictable. </p>
+<p>You can live in one house, but for a party, you can to the other house, if you sleep there, you will wake up in the same house, but if you leave the house there is an option you can land it either of the two houses.</p>
+<p>The same is the case with AWS EC2 instance, when in the shared tenancy mode, the AWS EC2 instance can be launched on any physical machine. In case of reboot only the host will remain same else when you start or stop the instance can switch to a new host or physical machine.</p>
+<h3 id="aws-ec2-dedicated-instance">AWS EC2 Dedicated Instance<a class="headerlink" href="#aws-ec2-dedicated-instance" title="Permanent link">¶</a></h3>
+<p>The next one is a dedicated instance, it is more like a township of a big factory in a remote place. The township is created by the factory as people who work in the factory has to live. </p>
+<p>You can live in one house in the township created by the factory and then in few years move to a bigger or a better house in the same township as you may seem suitable.</p>
+<p>AWS EC2 dedicated instance is also a lot similar, when an instance is launched in this mode, AWS makes sure that it launches this instance, in the same physical host which has another instance of the same AWS Account.</p>
+<p>When you stop and restart the instance it may not start the instance on the same instance, but it will make sure it starts the instance on a physical host where only your account instance are running.</p>
+<p><em>When would you use a dedicated instance?</em>
+Compliance is a big reason why you would want to launch a dedicated instance.</p>
+<h3 id="aws-ec2-dedicated-host">AWS EC2 Dedicated Host<a class="headerlink" href="#aws-ec2-dedicated-host" title="Permanent link">¶</a></h3>
+<p>When you are more stable in your life, with family, you need a house which you do not have to change. This is where you buy your own house.</p>
+<p>The AWS EC2 dedicated host is also similar. A lot of time, especially in Banks and other financial organization they need surety that the application is running on a server which is physically separated from the other.</p>
+<p>In addition to the compliance issue, there is also the case of software licenses, some costly licenses are per machine basis, if you have a physical server with AWS running only your instance, then you can move your licenses to these servers.</p>
+<p>You can create your own dedicated host by selecting the proper option in the below snapshot. This we will discuss in details later.</p>
+<p><img alt="AWS Made Easy | AWS EC2 | Dedicated Host " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Dedicated-Host-01.png" title="AWS Made Easy | AWS EC2 | Dedicated Host"/>
+<img alt="AWS Made Easy | AWS EC2 | Dedicated Host " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Dedicated-Host-02.png" title="AWS Made Easy | AWS EC2 | Dedicated Host"/></p>
+<ul>
+<li>What are the three main reasons for using a dedicated host?*
+The main reason for using dedicated host is compliance. Software licenses bought per machine basis is also a reason for this.</li>
+</ul>
+<p><em>What happens if the physical host we are using goes down?</em>
+If failure is detected on the physical host then AWS runs something called a Host recovery, which will basically recreate the same host instance setting. You can also use the AWS licenses Manager to migrate the licenses to this new machine.</p>
+<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">¶</a></h2>
+<h3 id="regional-vs-zonal-reserved-instance">Regional Vs Zonal Reserved Instance<a class="headerlink" href="#regional-vs-zonal-reserved-instance" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Regional Reserved Instance</th>
+<th align="center">Zonal Reserved Instance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Does not provide any capacity reservation.</td>
+<td align="center">Provides capacity reservation in a specific Availability Zone.</td>
+</tr>
+<tr>
+<td align="center">Reserved instance discount applies to any instance running in the region.</td>
+<td align="center">The discount is only specific to a Availability Zone</td>
+</tr>
+<tr>
+<td align="center">It provides flexibility in the same instance class, you can change the size of the instance.</td>
+<td align="center">It is very specific to the instance type and its corresponding size.</td>
+</tr>
+<tr>
+<td align="center">The purchase can be queued.</td>
+<td align="center">The purchase cannot be queued.</td>
+</tr>
+<tr>
+<td align="center">The limit of regional reserved instance to be launched is equal to the limit of the EC2 instance that can be launched in the region.</td>
+<td align="center">This provides addition limit from the regional limits.</td>
+</tr>
+<tr>
+<td align="center">This is just a billing discount.</td>
+<td align="center">Capacity reservation comes paired withe the discount.</td>
+</tr>
+<tr>
+<td align="center">Additional capacity reservation can be taken to make it more flexible.</td>
+<td align="center">No additional flexibility can be taken.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | Regional Vs Zonal RIs " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Reserved-Instance-Regional-Vs-Zonal.png" title="AWS Made Easy | AWS EC2 | Regional Vs Zonal RIs"/></p>
+<h3 id="standard-vs-convertible-reserved-instance">Standard Vs Convertible Reserved Instance<a class="headerlink" href="#standard-vs-convertible-reserved-instance" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Standard Reserved Instance</th>
+<th align="center">Convertible Reserved Instance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">You can modify only the Availability Zone, Scope, Networking Type and instance Size.</td>
+<td align="center">You can modify the instance family, OS, and tenancy in addition.</td>
+</tr>
+<tr>
+<td align="center">It cannot be exchanged.</td>
+<td align="center">It can be exchanged as long as the new instance is also convertible of higher or same pricing.</td>
+</tr>
+<tr>
+<td align="center">It can be bought and sold in the reserved instance marketplace.</td>
+<td align="center">It cannot be bought and sold in the reserved instance marketplace.</td>
+</tr>
+<tr>
+<td align="center">It provides the limited flexibility in configuration changes.</td>
+<td align="center">It provides the maximum flexibility in configuration changes.</td>
+</tr>
+<tr>
+<td align="center">Limited flexibility, hence highest discount.</td>
+<td align="center">Maximum Flexibility, hence limited discount</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | Standard Vs Convertible " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Reserved-Instance-Standard-Vs-Convertible.png" title="AWS Made Easy | AWS EC2 | Standard Vs Convertible"/></p>
+<h3 id="compute-vs-ec2-savings-plans">Compute Vs EC2 Savings Plans<a class="headerlink" href="#compute-vs-ec2-savings-plans" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Compute Savings Plans</th>
+<th align="center">EC2 Savings Plans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Provides the maximum flexibility.</td>
+<td align="center">Provides the minimum flexibility.</td>
+</tr>
+<tr>
+<td align="center">Provides the minimum discount.</td>
+<td align="center">Provides the maximum discount.</td>
+</tr>
+<tr>
+<td align="center">Discount can go up to 66%.</td>
+<td align="center">Discount can go up to 72%</td>
+</tr>
+<tr>
+<td align="center">Flexible across Instance family, AWS ECS, EKS using Fargate and even Lambda.</td>
+<td align="center">Flexible only across the instance size.</td>
+</tr>
+<tr>
+<td align="center">Can be compared to Convertible Reserved Instance.</td>
+<td align="center">Can be compared to Standard Reserved Instance.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | Compute Vs EC2 Savings Plans " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Savings-Plans-Compute-Vs-EC2-Instance.png" title="AWS Made Easy | AWS EC2 | Compute Vs EC2 Savings Plans"/></p>
+<h3 id="compute-savings-plans-vs-convertible-reserved-instance">Compute Savings Plans Vs Convertible Reserved Instance<a class="headerlink" href="#compute-savings-plans-vs-convertible-reserved-instance" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Compute Savings Plans</th>
+<th align="center">Convertible Savings Plans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">66% discount</td>
+<td align="center">66% discount</td>
+</tr>
+<tr>
+<td align="center">Does not provide capacity reservation.</td>
+<td align="center">Does not provide capacity reservation.</td>
+</tr>
+<tr>
+<td align="center">Same term or 1 or 3 years.</td>
+<td align="center">Same term or 1 or 3 years.</td>
+</tr>
+<tr>
+<td align="center">Applies the pricing discount automatically across instance family, tenancy or OS.</td>
+<td align="center">The benefits needs to be manually applied. across instance family, tenancy or OS.</td>
+</tr>
+<tr>
+<td align="center">Flexible across region.</td>
+<td align="center">Not flexible across region.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | Compute Savings Vs Convertible RIs " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Compute-Savings-Plans-Vs-Convertible-RI.png" title="AWS Made Easy | AWS EC2 | Compute Savings Vs Convertible RIs"/></p>
+<h3 id="ec2-savings-plans-vs-standard-reserved-instance">EC2 Savings Plans Vs Standard Reserved Instance<a class="headerlink" href="#ec2-savings-plans-vs-standard-reserved-instance" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">EC2 Savings Plans</th>
+<th align="center">Standard Savings Plans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">72% discount</td>
+<td align="center">72% discount</td>
+</tr>
+<tr>
+<td align="center">Does not provide capacity reservation.</td>
+<td align="center">Does not provide capacity reservation.</td>
+</tr>
+<tr>
+<td align="center">Same term or 1 or 3 years.</td>
+<td align="center">Same term or 1 or 3 years.</td>
+</tr>
+<tr>
+<td align="center">Applies the pricing discount automatically across instance size, tenancy or OS.</td>
+<td align="center">The benefits needs to be manually applied. across instance size, tenancy or OS.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | EC2 Savings Vs Standard RIs " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-EC2-Savings-Plans-Vs-Standard-RI.png" title="AWS Made Easy | AWS EC2 | EC2 Savings Vs Standard RIs"/></p>
+<h3 id="aws-reserved-instances-vs-savings-plan">AWS Reserved Instances vs Savings Plan<a class="headerlink" href="#aws-reserved-instances-vs-savings-plan" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Savings Plans</th>
+<th align="center">Reserved Instances</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">66% to 72% discount</td>
+<td align="center">66% to 72% discount</td>
+</tr>
+<tr>
+<td align="center">Discount is provided on On-Demand price based on the spending commitment.</td>
+<td align="center">Discount is provided on On-Demand price based on the utilisation commitment.</td>
+</tr>
+<tr>
+<td align="center">ECS, Fargate &amp; Lambda are also covered in this discount.</td>
+<td align="center">None of these services are covered in RIs.</td>
+</tr>
+<tr>
+<td align="center">RDS instance are not covered under the Savings plans</td>
+<td align="center">RDS instance are covered under RIs</td>
+</tr>
+<tr>
+<td align="center">There is no marketplace for Savings Plans</td>
+<td align="center">There is a marketplace for Reserved Instance.</td>
+</tr>
+<tr>
+<td align="center">There is no capacity reservation.</td>
+<td align="center">There is a capacity reservation in Zonal RIs.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | Savings Plans Vs Reserved Instance " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Savings-Plans-Vs-Reserved-Instance.png" title="AWS Made Easy | AWS EC2 | Savings Plans Vs Reserved Instance"/></p>
+<h3 id="aws-dedicated-instances-vs-dedicated-host">AWS Dedicated Instances vs Dedicated Host<a class="headerlink" href="#aws-dedicated-instances-vs-dedicated-host" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Dedicated Instances</th>
+<th align="center">Dedicated Host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">The Instance is not guaranteed to launch on same host.</td>
+<td align="center">The complete Host is dedicated.</td>
+</tr>
+<tr>
+<td align="center">The instance is always launched on host where same account instance are running.</td>
+<td align="center">The instance is always running on the same host.</td>
+</tr>
+<tr>
+<td align="center">You cannot use license which is per machine basis.</td>
+<td align="center">You can use license which are per machine basis.</td>
+</tr>
+<tr>
+<td align="center">It can be of any instance type.</td>
+<td align="center">The machine is based on instance type, so different size of same instance type can be launched.</td>
+</tr>
+<tr>
+<td align="center">There is no compute power wastage.</td>
+<td align="center">If the completed compute power of the host is not used, then the wastage is your responsibility.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS Made Easy | AWS EC2 | Dedicated Instance Vs Dedicated Host " src="https://www.archerimagine.com/images/aws/ec2/05-AWS-EC2-Tenancy-Dedicated-host-Vs-dedicated-Instance.png" title="AWS Made Easy | AWS EC2 | Dedicated Instance Vs Dedicated Host"/></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>AWS Pricing and tenancy is little confusing. There are just too many terms to go over. Let's keep it simple, Tenancy mean who owns the actual resources. Pricing means the discount provided for better commitment.</p>
+<p>You should understand that in AWS Pricing options, except EC2 on-demand pricing and spot instance, the other two are just discount on the bill over the on-demand price. </p>
+<p>On-demand is the default pricing options, and it is the costliest option. This can be used for production environment.</p>
+<p>AWS Spot instance, are the unused instance, which AWS sells at a cheap discount. These are good for non productive work. AWS gives a 2 minute window to wind up the current activity on the instance before reclaiming.</p>
+<p>Now coming to the discount schemes, both Reserved Instance and Savings Plans provide somewhere up to 66% to 72% discount over on-demand prices. This discount is based on commitment from us, to make use of the compute power for certain predefined duration, or agreeing to pay a certain amount per hour for using the same instance.</p>
+<p>Savings plans are the newer version of discount pricing. It gives a better discount when you commit to a pay per hour a certain amount for compute usage. It also extends beyond just EC2 instance to AWS Fargate, ECS and AWS Lambda.</p>
+<p>There is a one plan which is very flexible, Compute Savings Plans, this provide lots of choice in instance family, size, tenancy, etc.As this is a flexible option it provides limited savings.</p>
+<p>If you are okay with a particular type of EC2 instance in a particular region, then EC2 Savings plans are a great plan, which can save you up to 72% from on-demand prices.</p>
+<p>Savings plans are still not applicable to AWS RDS.</p>
+<p>The last pricing option to discuss is the AWS Reserved Instances. This pricing option lowers the bill if we commit to a certain type or EC2 instance for a certain duration of time. The Reserved instance comes in 2 form like Savings Plans, Standard and convertible.</p>
+<p>The difference between these 2 is that, the provide what degree of flexibility. More flexibility means less discount.</p>
+<p>AWS has there type of tenancy. Shared, Dedicated Instance, and dedicated host.</p>
+<p>Shared is the default tenancy mode, where an instance can come up on any number of physical hosts, with instance from other account also present on the same server.</p>
+<p>Dedicated Instance means that the instance will only be launched in a physical server where it is already running the instance from the same account.</p>
+<p>Dedicated hosting, means that the completed physical server is owned by you. You have to just books an instance type. Per software licenses loves such server.</p>
+<p>Now the idea of AWS EC2 tenancy and pricing might be clear. If you want to launch an  EC2 instance. Checkout, the free tier EC2 instance launch article. see <a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html">Step by Step guide to create an EC2 instance </a>. </p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<ul>
+<li>Reinvent Videos<ul>
+<li><a href="https://www.youtube.com/watch?v=uQ9ry-9uUvo">AWS re:Invent 2019: [REPEAT 1] Dive deep on how to save with AWS Savings Plans (CMP210-R1)</a></li>
+<li><a href="https://www.youtube.com/watch?v=7q5AeoKsGJw">AWS re:Invent 2019: Save up to 90% and run production workloads on Spot Instances (CMP331-R1)</a></li>
+</ul>
+</li>
+<li>YouTube Videos<ul>
+<li><a href="https://www.youtube.com/watch?v=sOsALtwltLQ">AWS - Shared, Dedicated Instances &amp; Dedicated Host Differences - EC2 Tenancy Models</a></li>
+<li><a href="https://www.youtube.com/watch?v=YvZ4seVgyYY&amp;list=PLTyrc6mz8dg9AIAuZocHAqekMgA0eDfQb">Pricing PlayList</a></li>
+<li><a href="https://www.youtube.com/watch?v=cbV8bnbMe9w">Introducing Savings Plans for Amazon EC2, AWS Fargate, and AWS Lambda - AWS Online Tech Talks</a></li>
+<li><a href="https://www.youtube.com/watch?v=c_zlPQimrvY">AWS Savings Plan - Nov 2019</a></li>
+</ul>
+</li>
+<li>AWS Tenancy<ul>
+<li><a href="https://theithollow.com/2017/10/16/understanding-aws-tenancy/">Understanding AWS Tenancy.</a></li>
+<li><a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with a launch configuration</a></li>
+<li><a href="https://www.trek10.com/blog/dedicated-hosts-and-dedicated-instances">What is the Difference Between Dedicated Hosts and Dedicated Instances on AWS?</a></li>
+</ul>
+</li>
+<li>AWS EC2 Pricing<ul>
+<li><a href="https://aws.amazon.com/ec2/pricing/">Amazon EC2 pricing</a></li>
+</ul>
+</li>
+<li>Savings Plans<ul>
+<li><a href="https://aws.amazon.com/blogs/aws/new-savings-plans-for-aws-compute-services/">New – Savings Plans for AWS Compute Services</a></li>
+<li><a href="https://aws.amazon.com/savingsplans/">AWS Savings Plans</a></li>
+</ul>
+</li>
+<li>Spot Instance<ul>
+<li><a href="https://stackoverflow.com/questions/61906684/how-to-identify-if-a-ec2-instance-is-a-spot-instance-or-a-on-demand-instance">How to Identify if a ec2 instance is a spot instance or a on demand instance?</a></li>
+<li><a href="https://www.youtube.com/watch?v=H24h3DoOZtE">Launch an AWS Spot Instance</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Using AWS EC2 Spot Instance.</a></li>
+</ul>
+</li>
+<li>AWS Reserved Instances<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html">Reserved Instances</a></li>
+<li><a href="https://docs.aws.amazon.com/whitepapers/latest/cost-optimization-reservation-models/cost-optimization-reservation-models.pdf">Amazon EC2 Reserved Instances and Other AWS Reservation Models AWS Whitepaper</a></li>
+</ul>
+</li>
+<li>Capacity Reservation.<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand Capacity Reservations</a></li>
+</ul>
+</li>
+</ul>
+
+             
+
+
+<div class="applause_button">
+    <applause-button url=https://www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html> </applause-button>
+</div>
+
+ 
+                <p id="post-share-links">
+    Spread the word....
+      <a href="https://twitter.com/intent/tweet?text=Save%2072%25%20of%20AWS%20EC2%20cost%20with%20these%20pricing%20and%20tenancy%20options.%20&url=https%3A//www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html&via=animeshkbhadra&hashtags=aws,cloud,aws-ec2,ec2,compute" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Save%2072%25%20of%20AWS%20EC2%20cost%20with%20these%20pricing%20and%20tenancy%20options.%20&amp;body=https%3A//www.archerimagine.com/articles/aws/aws-ec2-tenancy-and-pricing-tutorial.html" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://www.archerimagine.com/articles/aws/aws-inspector-tutorials.html" title="The AWS Inspector Blog of your dreams - The secret agent in cloud [2021].">The AWS Inspector Blog of your dreams <small>The secret agent in cloud [2021].</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-cognito-tutorials.html" title="How to start using AWS Cognito - Authorize, Authenticate and Federate user in [2021]">How to start using AWS Cognito <small>Authorize, Authenticate and Federate user in [2021]</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html" title="The Insider&#39;s Guide to AWS EC2 - Create first EC2 Instance in [2021]">The Insider's Guide to AWS EC2 <small>Create first EC2 Instance in [2021]</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html" title="The complete beginner&#39;s guide to AWS AMIs - Amazon Machine Image [2021]">The complete beginner's guide to AWS AMIs <small>Amazon Machine Image [2021]</small></a></li>
+<li><a href="https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" title="The unconventional guide to AWS EC2 instance types.">The unconventional guide to AWS EC2 instance types.</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" title="Previous: The unconventional guide to AWS EC2 instance types.">The unconventional guide to AWS EC2 instance types.</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+    <h4>Reading Time</h4>
+    <p>~19 min read</p>
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-06-06T11:05:22+05:30">Sun 06 June 2021</time>
+<h4>Last Updated</h4>
+<time datetime="2021-11-01T23:48:17+05:30">Nov 1, 2021</time>
+
+        <h4>AWS EC2 Instance Tutorials</h4>
+    <ul class="multi-parts-list">
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-ec2-tutorial.html" title="The Insider's Guide to AWS EC2">Part 1: The Insider's Guide to AWS EC2</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-ami-tutorial.html" title="The complete beginner's guide to AWS AMIs">Part 2: The complete beginner's guide to AWS AMIs</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-cli-and-sdk-installation-tutorial.html" title="How not knowing AWS CLI and SDKs makes you a Rookie.">Part 3: How not knowing AWS CLI and SDKs makes you a Rookie.</a>
+            </li>
+            <li >
+            <a href="https://www.archerimagine.com/articles/aws/aws-ec2-instance-type-tutorial.html" title="The unconventional guide to AWS EC2 instance types.">Part 4: The unconventional guide to AWS EC2 instance types.</a>
+            </li>
+            <li  class="active-part">
+            Part 5: Save 72% of AWS EC2 cost with these pricing and tenancy options.
+            </li>
+    </ul>
+            <h4>Category</h4>
+            <a class="category-link" href="https://www.archerimagine.com/categories#aws-ref">aws</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://www.archerimagine.com/tags#aws-ref">aws
+                    <span class="superscript">15</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#aws-ec2-ref">aws-ec2
+                    <span class="superscript">4</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#cloud-ref">cloud
+                    <span class="superscript">15</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#compute-ref">compute
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://www.archerimagine.com/tags#ec2-ref">ec2
+                    <span class="superscript">5</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/archeranimesh" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Facebook" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1877f2"/><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.reddit.com/user/archerimagine/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Reddit" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+    </a>
+    <a href="https://twitter.com/animeshkbhadra" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+</div>
+            
+
+
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//archerimagine.us15.list-manage.com/subscribe/post?u=e95cf93fc00f17a742b9480eb&amp;id=b690f10a78" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Email Newsletter</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Archer Imagine</span> - Anyone can do my job, but no one can be me. Harvey
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        
+        <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+        <script src="https://www.archerimagine.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+        
+    <!--
+        <script defer src="https://my.hellobar.com/0b8d4f8c5d8236e3cfef139b484c76d42822714a.js" type="text/javascript" charset="utf-8" async="async"></script>
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e95cf93fc00f17a742b9480eb/16be0e7e213bab86a6795bec4.js");</script>
+        <script>
+        !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+        },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+        a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+        // Insert Twitter Pixel ID and Standard Event data below
+        twq('init','o648l');
+        twq('track','PageView');
+        </script>
+    
+    <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='3bce642f377979511f2addc6af908c7b854c74137d5a52ca3f2b996bb51bfa0c';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+    -->
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
